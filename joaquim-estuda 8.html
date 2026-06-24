@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joaquim Estuda</title>
+<style>
+  :root {
+    --terra: #A8632B;
+    --terra-claro: #D89B5E;
+    --verde: #4A6B4D;
+    --verde-claro: #8FAE8C;
+    --creme: #FAF6EE;
+    --marrom-escuro: #3E2F22;
+    --azul-acerto: #4A7C59;
+    --vermelho-erro: #B5573D;
+    --branco: #FFFFFF;
+    --azul-ingles: #3D6E8C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Atkinson Hyperlegible', 'Verdana', sans-serif;
+    background: var(--creme);
+    color: var(--marrom-escuro);
+    line-height: 1.6;
+    padding-bottom: 60px;
+  }
+
+  h1, h2, h3 { font-family: 'Fredoka', sans-serif; }
+
+  /* MENU PRINCIPAL FIXO */
+  .menu-principal {
+    background: var(--marrom-escuro);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .menu-principal button {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: none;
+    background: #5A4636;
+    color: var(--branco);
+    cursor: pointer;
+  }
+
+  .menu-principal button.ativo {
+    background: var(--terra-claro);
+    color: var(--marrom-escuro);
+  }
+
+  /* PAGINAS (Inicio, Geografia, Historia, Ingles) */
+  .pagina { display: none; }
+  .pagina.ativa { display: block; }
+
+  /* PAGINA INICIAL */
+  .header-inicio {
+    background: var(--terra);
+    color: var(--branco);
+    padding: 36px 20px;
+    text-align: center;
+    border-bottom: 6px solid var(--marrom-escuro);
+  }
+
+  .header-inicio h1 { font-size: 2rem; margin-bottom: 8px; }
+  .header-inicio p { font-size: 1.1rem; opacity: 0.95; }
+
+  /* CALENDÁRIO DE PROVAS */
+  .calendario-provas {
+    max-width: 600px;
+    margin: 26px auto 0;
+    padding: 0 20px;
+  }
+
+  .calendario-provas h2 {
+    font-size: 1.25rem;
+    color: var(--terra);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .lista-dias-prova {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dia-prova {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    background: var(--branco);
+    border: 3px solid var(--verde-claro);
+    border-radius: 16px;
+    padding: 14px 16px;
+    box-shadow: 0 4px 0 rgba(62,47,34,0.08);
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.15s ease;
+  }
+
+  .dia-prova:active {
+    transform: scale(0.98);
+    background: #FFF9F0;
+  }
+
+  .dia-prova.sem-clique {
+    cursor: default;
+  }
+
+  .dia-prova.sem-clique:active {
+    transform: none;
+    background: var(--branco);
+  }
+
+  .dia-prova.feito {
+    opacity: 0.55;
+  }
+
+  .dia-prova .data-bloco {
+    background: var(--terra);
+    color: var(--branco);
+    border-radius: 12px;
+    padding: 8px 12px;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 56px;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  .dia-prova .data-bloco .dia-numero {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .dia-prova .data-bloco .dia-semana {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.9;
+    margin-top: 2px;
+  }
+
+  .dia-prova .info-prova {
+    flex: 1;
+  }
+
+  .dia-prova .info-prova .materia-nome {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--marrom-escuro);
+  }
+
+  .dia-prova .info-prova .materia-tema {
+    font-size: 0.92rem;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+
+  /* HEADER DE CADA MATERIA */
+  .header-materia {
+    background: var(--terra);
+    color: var(--branco);
+    padding: 24px 20px;
+    text-align: center;
+    border-bottom: 6px solid var(--marrom-escuro);
+  }
+
+  .header-materia h1 { font-size: 1.7rem; margin-bottom: 6px; }
+  .header-materia p { font-size: 1.02rem; opacity: 0.95; }
+
+  /* SUB-NAV Estudar/Praticar dentro de cada materia */
+  .sub-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 18px;
+    background: var(--verde-claro);
+  }
+
+  .sub-nav button {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 16px;
+    border: 3px solid var(--marrom-escuro);
+    background: var(--branco);
+    color: var(--marrom-escuro);
+    cursor: pointer;
+  }
+
+  .sub-nav button.ativo { background: var(--terra); color: var(--branco); }
+
+  main.conteudo-materia { max-width: 760px; margin: 0 auto; padding: 24px 16px; }
+
+  /* LINHA DO TEMPO HORIZONTAL (Geografia e História) */
+  .linha-tempo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4px;
+    margin-bottom: 26px;
+    padding: 0 4px;
+    overflow-x: auto;
+  }
+
+  .linha-tempo-etapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 70px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    position: relative;
+    padding-top: 6px;
+  }
+
+  .linha-tempo-etapa:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    width: 100%;
+    height: 4px;
+    background: var(--verde-claro);
+    z-index: 0;
+  }
+
+  .linha-tempo-etapa.feito:not(:last-child)::after {
+    background: var(--verde);
+  }
+
+  .linha-tempo-bola {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--branco);
+    border: 4px solid var(--verde-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    color: var(--marrom-escuro);
+    z-index: 1;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .linha-tempo-etapa.atual .linha-tempo-bola {
+    background: var(--terra);
+    border-color: var(--terra);
+    color: var(--branco);
+    transform: scale(1.15);
+  }
+
+  .linha-tempo-etapa.feito .linha-tempo-bola {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: var(--branco);
+  }
+
+  .linha-tempo-label {
+    font-size: 0.78rem;
+    text-align: center;
+    color: var(--marrom-escuro);
+    line-height: 1.2;
+    max-width: 80px;
+  }
+
+  .linha-tempo-etapa.atual .linha-tempo-label { font-weight: 700; }
+
+  /* LAYOUT COM ROTEIRO LATERAL (Inglês) */
+  .layout-com-roteiro {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .roteiro-lateral {
+    position: sticky;
+    top: 70px;
+    width: 150px;
+    flex-shrink: 0;
+    background: var(--branco);
+    border: 3px solid var(--verde-claro);
+    border-radius: 16px;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .roteiro-titulo {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--terra);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .roteiro-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 8px;
+    cursor: pointer;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 0.82rem;
+    text-align: left;
+    color: var(--marrom-escuro);
+    line-height: 1.25;
+  }
+
+  .roteiro-item .roteiro-bolinha {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--creme);
+    border: 3px solid var(--verde-claro);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  .roteiro-item.atual {
+    background: #FFF3DD;
+  }
+
+  .roteiro-item.atual .roteiro-bolinha {
+    background: var(--terra);
+    border-color: var(--terra);
+    color: var(--branco);
+  }
+
+  .roteiro-item.feito .roteiro-bolinha {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: var(--branco);
+  }
+
+  .conteudo-com-roteiro { flex: 1; min-width: 0; }
+
+  @media (max-width: 600px) {
+    .layout-com-roteiro { flex-direction: column; }
+    .roteiro-lateral {
+      position: static;
+      width: 100%;
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 4px;
+    }
+    .roteiro-titulo { display: none; }
+    .roteiro-item {
+      flex-direction: column;
+      font-size: 0.7rem;
+      min-width: 64px;
+      text-align: center;
+    }
+  }
+
+  .sub-secao { display: none; }
+  .sub-secao.ativa { display: block; }
+
+  /* CARTOES DE CONTEUDO */
+  .cartao {
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 22px;
+    border: 3px solid var(--verde-claro);
+    box-shadow: 0 4px 0 rgba(62,47,34,0.08);
+  }
+
+  .cartao h2 {
+    color: var(--terra);
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cartao p { font-size: 1.1rem; margin-bottom: 10px; }
+  .cartao ul { margin: 10px 0 10px 22px; font-size: 1.08rem; }
+  .cartao ul li { margin-bottom: 8px; }
+
+  .destaque {
+    background: #FFF3DD;
+    border-left: 6px solid var(--terra-claro);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    margin-top: 10px;
+  }
+
+  /* VIDEO EMBUTIDO */
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 12px;
+    border: 3px solid var(--verde);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  .video-assistir {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--verde);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 1.02rem;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  .video-assistir:hover { background: #3a5640; }
+
+  /* VOCABULARIO INGLES */
+  .lista-vocab { list-style: none; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
+  .lista-vocab li { background: var(--creme); border-radius: 10px; padding: 10px 14px; font-size: 1.05rem; }
+  .lista-vocab .en { color: var(--azul-ingles); font-weight: 700; font-family: 'Fredoka', sans-serif; }
+  .lista-vocab .pt { opacity: 0.85; }
+
+  .gramatica-box {
+    background: #EAF2F6;
+    border: 2px solid var(--azul-ingles);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    font-size: 1.05rem;
+  }
+  .gramatica-box strong { color: var(--azul-ingles); font-family: 'Fredoka', sans-serif; }
+
+  /* QUIZ */
+  .progresso-container {
+    background: var(--branco);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    border: 3px solid var(--verde-claro);
+  }
+
+  .progresso-texto { font-family: 'Fredoka', sans-serif; font-weight: 600; margin-bottom: 8px; font-size: 1.1rem; }
+  .barra-fundo { background: #EAE3D3; border-radius: 10px; height: 16px; overflow: hidden; }
+  .barra-preenchida { background: var(--verde); height: 100%; border-radius: 10px; transition: width 0.3s ease; }
+
+  .pergunta-cartao {
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 28px 24px;
+    border: 3px solid var(--terra-claro);
+    box-shadow: 0 4px 0 rgba(62,47,34,0.08);
+  }
+
+  .pergunta-numero { font-family: 'Fredoka', sans-serif; color: var(--terra); font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .pergunta-texto { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; font-family: 'Fredoka', sans-serif; }
+
+  .opcoes { display: flex; flex-direction: column; gap: 12px; }
+
+  .opcao {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    border: 3px solid #DDD3BD;
+    background: var(--creme);
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  .opcao .letra {
+    background: var(--terra-claro);
+    color: var(--branco);
+    font-weight: 700;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  .opcao.correta { background: #E3F0E1; border-color: var(--azul-acerto); }
+  .opcao.correta .letra { background: var(--azul-acerto); }
+  .opcao.errada { background: #F7E4DC; border-color: var(--vermelho-erro); }
+  .opcao.errada .letra { background: var(--vermelho-erro); }
+  .opcao:disabled { cursor: default; }
+
+  .feedback {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    font-size: 1.08rem;
+    display: none;
+  }
+  .feedback.mostrar { display: block; }
+  .feedback.acertou { background: #E3F0E1; border: 2px solid var(--azul-acerto); color: #2D4F33; }
+  .feedback.errou { background: #F7E4DC; border: 2px solid var(--vermelho-erro); color: #7A3B27; }
+  .feedback strong { font-family: 'Fredoka', sans-serif; }
+
+  .botao-proxima {
+    margin-top: 18px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 14px;
+    border: none;
+    background: var(--terra);
+    color: var(--branco);
+    cursor: pointer;
+    display: none;
+    width: 100%;
+  }
+  .botao-proxima.mostrar { display: block; }
+
+  .tela-final { text-align: center; padding: 30px 20px; }
+  .tela-final .emoji-grande { font-size: 4rem; margin-bottom: 10px; }
+  .tela-final h2 { font-size: 1.7rem; color: var(--terra); margin-bottom: 14px; }
+
+  .placar { font-size: 2.2rem; font-weight: 700; font-family: 'Fredoka', sans-serif; color: var(--verde); margin: 16px 0; }
+
+  .botao-reiniciar {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 14px 26px;
+    border-radius: 14px;
+    border: 3px solid var(--terra);
+    background: var(--branco);
+    color: var(--terra);
+    cursor: pointer;
+    margin-top: 16px;
+  }
+
+  .botao-revisar-erros {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 14px 26px;
+    border-radius: 14px;
+    border: 3px solid var(--vermelho-erro);
+    background: #F7E4DC;
+    color: var(--vermelho-erro);
+    cursor: pointer;
+    margin-top: 16px;
+  }
+
+  .botoes-tela-final {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .botoes-tela-final .botao-reiniciar,
+  .botoes-tela-final .botao-revisar-erros {
+    margin-top: 0;
+  }
+
+  .placar-sessao {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: var(--marrom-escuro);
+    opacity: 0.75;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+  }
+
+  .lista-revisao { margin-top: 24px; text-align: left; }
+
+  .item-revisao {
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    font-size: 0.98rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .item-revisao.acertou-rev { background: #E3F0E1; }
+  .item-revisao.errou-rev { background: #F7E4DC; }
+
+  footer { text-align: center; color: var(--marrom-escuro); opacity: 0.6; font-size: 0.9rem; padding: 20px; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<nav class="menu-principal">
+  <button class="botao-pagina ativo" data-pagina="inicio">🏠 Início</button>
+  <button class="botao-pagina" data-pagina="matematica">📐 Matemática</button>
+  <button class="botao-pagina" data-pagina="portugues">📝 Português</button>
+  <button class="botao-pagina" data-pagina="ciencias">🔬 Ciências</button>
+  <button class="botao-pagina" data-pagina="geografia">🌾 Geografia</button>
+  <button class="botao-pagina" data-pagina="historia">⛵ História</button>
+  <button class="botao-pagina" data-pagina="ingles">🌊 Inglês</button>
+</nav>
+
+<!-- ===================== PÁGINA INICIAL ===================== -->
+<div class="pagina ativa" id="pagina-inicio">
+  <header class="header-inicio">
+    <h1>🌟 Joaquim Estuda 🌟</h1>
+    <p>7º Ano — Provas Parciais — 2º Trimestre</p>
+    <p>Escolha a matéria para estudar</p>
+  </header>
+
+  <div class="calendario-provas">
+    <h2>📅 Dias das provas</h2>
+    <div class="lista-dias-prova">
+      <div class="dia-prova feito sem-clique">
+        <div class="data-bloco"><span class="dia-numero">11</span><span class="dia-semana">5ª feira</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">✍️ Redação</div>
+          <div class="materia-tema">Texto dramático</div>
+        </div>
+      </div>
+
+      <button class="dia-prova feito" data-ir-para="matematica">
+        <div class="data-bloco"><span class="dia-numero">15</span><span class="dia-semana">2ª feira</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">📐 Matemática / Geometria</div>
+          <div class="materia-tema">Equações, inequações, triângulos e polígonos</div>
+        </div>
+      </button>
+
+      <button class="dia-prova feito" data-ir-para="portugues">
+        <div class="data-bloco"><span class="dia-numero">17</span><span class="dia-semana">4ª feira</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">📝 Língua Portuguesa</div>
+          <div class="materia-tema">Classes gramaticais, sujeito e predicado, coesão</div>
+        </div>
+      </button>
+
+      <button class="dia-prova feito" data-ir-para="ciencias">
+        <div class="data-bloco"><span class="dia-numero">18</span><span class="dia-semana">5ª feira</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">🔬 Ciências</div>
+          <div class="materia-tema">Classificação dos seres vivos e reinos</div>
+        </div>
+      </button>
+
+      <button class="dia-prova" data-ir-para="geografia">
+        <div class="data-bloco"><span class="dia-numero">22</span><span class="dia-semana">2ª feira</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">🌾 Geografia</div>
+          <div class="materia-tema">Espaço rural e urbano brasileiro</div>
+        </div>
+      </button>
+
+      <button class="dia-prova" data-ir-para="historia">
+        <div class="data-bloco"><span class="dia-numero">24</span><span class="dia-semana">4ª feira</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">⛵ História</div>
+          <div class="materia-tema">Navegações, Reinos Africanos, Colonização</div>
+        </div>
+      </button>
+
+      <button class="dia-prova" data-ir-para="ingles">
+        <div class="data-bloco"><span class="dia-numero">25</span><span class="dia-semana">5ª feira</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">🌊 Inglês</div>
+          <div class="materia-tema">There's No Planet B / Water Is Life</div>
+        </div>
+      </button>
+
+      <div class="dia-prova sem-clique">
+        <div class="data-bloco"><span class="dia-numero">—</span><span class="dia-semana">A combinar</span></div>
+        <div class="info-prova">
+          <div class="materia-nome">🎨 Artes</div>
+          <div class="materia-tema">Atividade prática orientada pelo professor em sala</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Feito com carinho para o estudo do Joaquim 💛</footer>
+</div>
+
+<!-- ===================== MATEMÁTICA ===================== -->
+<div class="pagina" id="pagina-matematica">
+
+  <header class="header-materia">
+    <h1>📐 Equações, Triângulos e Polígonos 📐</h1>
+    <p>7º Ano — Prova Parcial — 2º Trimestre — Matemática / Geometria</p>
+  </header>
+
+  <nav class="sub-nav">
+    <button class="sub-aba ativo" data-materia="matematica" data-secao="estudar">📖 Estudar</button>
+    <button class="sub-aba" data-materia="matematica" data-secao="quiz">✏️ Praticar</button>
+  </nav>
+
+  <main class="conteudo-materia">
+
+    <section class="sub-secao ativa" id="matematica-estudar">
+
+      <div class="linha-tempo" id="matematica-linha-tempo">
+        <button class="linha-tempo-etapa" data-destino="mat-topico-1">
+          <span class="linha-tempo-bola">1</span>
+          <span class="linha-tempo-label">Expressões Algébricas</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-2">
+          <span class="linha-tempo-bola">2</span>
+          <span class="linha-tempo-label">Equação 1º grau</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-3">
+          <span class="linha-tempo-bola">3</span>
+          <span class="linha-tempo-label">Inequação 1º grau</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-4">
+          <span class="linha-tempo-bola">4</span>
+          <span class="linha-tempo-label">Triângulos</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-5">
+          <span class="linha-tempo-bola">5</span>
+          <span class="linha-tempo-label">Polígonos</span>
+        </button>
+      </div>
+
+      <div class="cartao" id="mat-topico-1">
+        <h2>🔢 Expressões Algébricas</h2>
+        <p>Expressão algébrica é uma conta com números e letras juntos.</p>
+        <ul>
+          <li>A letra (como <strong>x</strong> ou <strong>a</strong>) representa um número que não conhecemos.</li>
+          <li><strong>Simplificar</strong> = juntar os termos parecidos. Ex: 3x + 2x = 5x.</li>
+          <li><strong>Valor numérico</strong> = trocar a letra por um número e fazer a conta. Ex: se x=2, então 3x+1 = 3×2+1 = 7.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: a letra é uma "caixinha" que guarda um número escondido.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/j3Kx9firjV0" title="Expressões Algébricas e Valor Numérico" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=j3Kx9firjV0" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="mat-topico-2">
+        <h2>⚖️ Equação do 1º Grau</h2>
+        <p>Uma equação é como uma balança: os dois lados do <strong>=</strong> têm que ficar iguais.</p>
+        <ul>
+          <li>Exemplo: <strong>x + 3 = 7</strong>. Qual número, somado com 3, dá 7? É o 4. Então x = 4.</li>
+          <li>Para resolver, isolamos o x: tudo que está somando passa subtraindo pro outro lado (e vice-versa).</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: o que você faz de um lado da balança, tem que fazer do outro lado também, pra ela continuar equilibrada.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/TLkqE_CWY2E" title="Equação do 1º Grau" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=TLkqE_CWY2E" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="mat-topico-3">
+        <h2>📏 Inequação do 1º Grau</h2>
+        <p>É parecido com a equação, mas em vez de <strong>=</strong>, usamos sinais de "maior" ou "menor".</p>
+        <ul>
+          <li><strong>&gt;</strong> = maior que</li>
+          <li><strong>&lt;</strong> = menor que</li>
+          <li>Exemplo: <strong>x + 2 &gt; 5</strong>. Isso significa: que número, somado com 2, é maior que 5? Resposta: x &gt; 3.</li>
+        </ul>
+        <div class="destaque">💡 Cuidado: se multiplicar ou dividir por número negativo, o sinal da inequação inverte!</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/fAKwRRptIJo" title="Inequação do 1º Grau" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=fAKwRRptIJo" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="mat-topico-4">
+        <h2>📐 Triângulos</h2>
+        <p>A soma dos 3 ângulos internos de qualquer triângulo é sempre <strong>180°</strong>.</p>
+        <ul>
+          <li><strong>Quanto aos lados:</strong> Equilátero (3 lados iguais), Isósceles (2 lados iguais), Escaleno (3 lados diferentes).</li>
+          <li><strong>Quanto aos ângulos:</strong> Acutângulo (todos menores que 90°), Retângulo (um ângulo de 90°), Obtusângulo (um ângulo maior que 90°).</li>
+          <li><strong>Ângulo externo</strong> = o ângulo de fora do triângulo, ao lado do ângulo interno.</li>
+        </ul>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/0F77T9jsBfs" title="Classificação dos Triângulos" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=0F77T9jsBfs" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="mat-topico-5">
+        <h2>🔷 Polígonos</h2>
+        <p>Polígono é uma figura plana fechada, feita só de linhas retas.</p>
+        <ul>
+          <li><strong>Nomes:</strong> triângulo (3 lados), quadrilátero (4), pentágono (5), hexágono (6)...</li>
+          <li><strong>Convexo</strong> = não tem "buracos" pra dentro. <strong>Côncavo</strong> = tem parte afundada pra dentro.</li>
+          <li><strong>Soma dos ângulos internos</strong> = (número de lados − 2) × 180°.</li>
+        </ul>
+        <div class="destaque">💡 Exemplo: um pentágono (5 lados): (5−2) × 180° = 3 × 180° = 540°.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/3ihvVifG258" title="Ângulos no Triângulo e Polígonos" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=3ihvVifG258" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+    </section>
+
+    <section class="sub-secao" id="matematica-quiz">
+
+      <div class="progresso-container" id="matematica-progresso-container">
+        <div class="progresso-texto" id="matematica-progresso-texto">Pergunta 1 de 20</div>
+        <div class="barra-fundo"><div class="barra-preenchida" id="matematica-barra-preenchida" style="width: 5%;"></div></div>
+      </div>
+
+      <div id="matematica-area-pergunta"></div>
+
+      <div id="matematica-tela-final" class="cartao tela-final" style="display:none;">
+        <div class="emoji-grande">🌟</div>
+        <h2>Você terminou!</h2>
+        <div class="placar" id="matematica-placar-final">0 de 20</div>
+        <p id="matematica-mensagem-final">Muito bem, Joaquim!</p>
+        <div class="botoes-tela-final" id="matematica-botoes-tela-final">
+          <button class="botao-reiniciar" id="matematica-botao-reiniciar">🔁 Mais 20 perguntas</button>
+        </div>
+        <p class="placar-sessao" id="matematica-placar-sessao"></p>
+        <div class="lista-revisao" id="matematica-lista-revisao"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>Feito com carinho para o estudo do Joaquim 💛</footer>
+</div>
+
+<!-- ===================== PORTUGUÊS ===================== -->
+<div class="pagina" id="pagina-portugues">
+
+  <header class="header-materia">
+    <h1>📝 Gramática e Interpretação 📝</h1>
+    <p>7º Ano — Prova Parcial — 2º Trimestre — Língua Portuguesa</p>
+  </header>
+
+  <nav class="sub-nav">
+    <button class="sub-aba ativo" data-materia="portugues" data-secao="estudar">📖 Estudar</button>
+    <button class="sub-aba" data-materia="portugues" data-secao="quiz">✏️ Praticar</button>
+  </nav>
+
+  <main class="conteudo-materia">
+
+    <section class="sub-secao ativa" id="portugues-estudar">
+
+      <div class="linha-tempo" id="portugues-linha-tempo">
+        <button class="linha-tempo-etapa" data-destino="port-topico-1">
+          <span class="linha-tempo-bola">1</span>
+          <span class="linha-tempo-label">Classes Gramaticais</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="port-topico-2">
+          <span class="linha-tempo-bola">2</span>
+          <span class="linha-tempo-label">Sujeito e Predicado</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="port-topico-3">
+          <span class="linha-tempo-bola">3</span>
+          <span class="linha-tempo-label">Coesão Textual</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="port-topico-4">
+          <span class="linha-tempo-bola">4</span>
+          <span class="linha-tempo-label">Interpretação</span>
+        </button>
+      </div>
+
+      <div class="cartao" id="port-topico-1">
+        <h2>🔤 Classes Gramaticais</h2>
+        <p>São os "tipos" de palavra. As que mais caem na prova:</p>
+        <ul>
+          <li><strong>Preposição:</strong> liga palavras (a, de, para, com). Ex: "Vou <strong>para</strong> a escola."</li>
+          <li><strong>Conjunção:</strong> liga frases ou ideias (e, mas, porque). Ex: "Estudei, <strong>mas</strong> esqueci."</li>
+          <li><strong>Advérbio:</strong> dá informação sobre o verbo (rápido, hoje, bem). Ex: "Ele correu <strong>rápido</strong>."</li>
+          <li><strong>Pronome:</strong> substitui o nome (ele, ela, isso). Ex: "Joaquim estudou. <strong>Ele</strong> é esforçado."</li>
+        </ul>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/GM0XRcaW00c" title="Classes Gramaticais" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=GM0XRcaW00c" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="port-topico-2">
+        <h2>🧩 Sujeito e Predicado</h2>
+        <p>Toda frase tem essas duas partes:</p>
+        <ul>
+          <li><strong>Sujeito</strong> = de quem ou do que a frase fala.</li>
+          <li><strong>Predicado</strong> = o que se diz sobre o sujeito (geralmente tem o verbo).</li>
+          <li>Exemplo: "<strong>O Joaquim</strong> (sujeito) <strong>estuda Geografia</strong> (predicado)."</li>
+        </ul>
+        <div class="destaque">💡 Tipos de sujeito: <strong>simples</strong> (1 só núcleo: "O cão correu"), <strong>composto</strong> (2 ou mais: "O cão e o gato correram"), <strong>desinencial/oculto</strong> (não aparece, mas dá pra saber pelo verbo: "Estudamos muito" = nós).</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/vzMPEHFUGSo" title="O que é Sujeito e Predicado" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=vzMPEHFUGSo" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="port-topico-3">
+        <h2>🔗 Coesão Textual</h2>
+        <p>Coesão é o que liga as partes de um texto, pra não ficar tudo solto.</p>
+        <ul>
+          <li><strong>Coesão referencial:</strong> usar uma palavra para "lembrar" outra já dita. Ex: "Ana chegou. <strong>Ela</strong> estava cansada." (ela = Ana)</li>
+          <li><strong>Coesão sequencial:</strong> usar conjunções e verbos pra ligar uma ideia na outra. Ex: "Estudei, <strong>portanto</strong> passei."</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: coesão é a "cola" que junta as frases de um texto.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/DYCcyb5VAu4" title="O que é Coesão Textual" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=DYCcyb5VAu4" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="port-topico-4">
+        <h2>📖 Interpretação e Linguagem Figurada</h2>
+        <p>Interpretar um texto é entender o que ele realmente quer dizer.</p>
+        <ul>
+          <li>Preste atenção em quem fala, sobre o que fala, e qual é a ideia principal.</li>
+          <li><strong>Linguagem figurada</strong> = quando a frase não quer dizer ao pé da letra. Ex: "Choveu canivete" não significa que caíram canivetes do céu, significa que choveu muito forte.</li>
+          <li>Verbos no modo Indicativo (fala de fatos certos), Subjuntivo (fala de dúvida/desejo) e Imperativo (dá ordem ou pedido) também ajudam a entender a intenção do texto.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="sub-secao" id="portugues-quiz">
+
+      <div class="progresso-container" id="portugues-progresso-container">
+        <div class="progresso-texto" id="portugues-progresso-texto">Pergunta 1 de 20</div>
+        <div class="barra-fundo"><div class="barra-preenchida" id="portugues-barra-preenchida" style="width: 5%;"></div></div>
+      </div>
+
+      <div id="portugues-area-pergunta"></div>
+
+      <div id="portugues-tela-final" class="cartao tela-final" style="display:none;">
+        <div class="emoji-grande">🌟</div>
+        <h2>Você terminou!</h2>
+        <div class="placar" id="portugues-placar-final">0 de 20</div>
+        <p id="portugues-mensagem-final">Muito bem, Joaquim!</p>
+        <div class="botoes-tela-final" id="portugues-botoes-tela-final">
+          <button class="botao-reiniciar" id="portugues-botao-reiniciar">🔁 Mais 20 perguntas</button>
+        </div>
+        <p class="placar-sessao" id="portugues-placar-sessao"></p>
+        <div class="lista-revisao" id="portugues-lista-revisao"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>Feito com carinho para o estudo do Joaquim 💛</footer>
+</div>
+
+<!-- ===================== CIÊNCIAS ===================== -->
+<div class="pagina" id="pagina-ciencias">
+
+  <header class="header-materia">
+    <h1>🔬 Classificação dos Seres Vivos 🦠</h1>
+    <p>7º Ano — Prova Parcial — 2º Trimestre — Ciências</p>
+  </header>
+
+  <nav class="sub-nav">
+    <button class="sub-aba ativo" data-materia="ciencias" data-secao="estudar">📖 Estudar</button>
+    <button class="sub-aba" data-materia="ciencias" data-secao="quiz">✏️ Praticar</button>
+  </nav>
+
+  <main class="conteudo-materia">
+
+    <section class="sub-secao ativa" id="ciencias-estudar">
+
+      <div class="linha-tempo" id="ciencias-linha-tempo">
+        <button class="linha-tempo-etapa" data-destino="cien-topico-1">
+          <span class="linha-tempo-bola">1</span>
+          <span class="linha-tempo-label">Taxonomia</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-2">
+          <span class="linha-tempo-bola">2</span>
+          <span class="linha-tempo-label">Os 5 Reinos</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-3">
+          <span class="linha-tempo-bola">3</span>
+          <span class="linha-tempo-label">Invertebrados</span>
+        </button>
+      </div>
+
+      <div class="cartao" id="cien-topico-1">
+        <h2>🗂️ Taxonomia — Organizando a Vida</h2>
+        <p>Taxonomia é a ciência que organiza os seres vivos em grupos, pra ficar mais fácil estudar.</p>
+        <ul>
+          <li>Os cientistas usam <strong>nome científico</strong> (em latim) pra cada ser vivo, igual em qualquer país.</li>
+          <li>Os grupos vão do maior pro menor: <strong>Reino → Filo → Classe → Ordem → Família → Gênero → Espécie</strong>.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: é como organizar uma gaveta de roupas — primeiro por tipo (camisas, calças), depois por cor, depois por tamanho.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/El2Wq79fIZI" title="Taxonomia: Como classificar os seres vivos" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=El2Wq79fIZI" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="cien-topico-2">
+        <h2>👑 Os 5 Reinos dos Seres Vivos</h2>
+        <p>Todos os seres vivos são divididos em 5 grandes grupos (reinos):</p>
+        <ul>
+          <li><strong>Monera:</strong> bactérias. Muito pequenas, só 1 célula.</li>
+          <li><strong>Protista (Protoctista):</strong> protozoários e algas.</li>
+          <li><strong>Fungi:</strong> fungos, cogumelos, mofo.</li>
+          <li><strong>Plantae:</strong> todas as plantas.</li>
+          <li><strong>Animalia:</strong> todos os animais.</li>
+        </ul>
+        <div class="destaque">💡 Algumas doenças vêm de cada reino: bactérias causam infecções, fungos causam micoses, protozoários causam malária.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/3c2GXWOnFEg" title="Os Cinco Reinos dos Seres Vivos" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=3c2GXWOnFEg" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="cien-topico-3">
+        <h2>🐚 Reino Animalia — Invertebrados</h2>
+        <p>Invertebrados são animais que não têm coluna vertebral (osso nas costas).</p>
+        <ul>
+          <li><strong>Poríferos:</strong> esponjas do mar, corpo cheio de furinhos.</li>
+          <li><strong>Cnidários:</strong> água-viva, coral, anêmona. Têm tentáculos que picam.</li>
+          <li><strong>Platelmintos:</strong> vermes "achatados", como a tênia.</li>
+          <li><strong>Nematelmintos:</strong> vermes "redondos", como a lombriga.</li>
+          <li><strong>Anelídeos:</strong> minhoca, sanguessuga. Corpo em "anéis".</li>
+          <li><strong>Moluscos:</strong> caracol, lula, polvo, ostra.</li>
+          <li><strong>Equinodermos:</strong> estrela-do-mar, ouriço-do-mar.</li>
+          <li><strong>Artrópodes:</strong> insetos, aranhas, caranguejos. Têm pernas articuladas.</li>
+        </ul>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/BnMtrLlPZ_s" title="Poríferos, Cnidários e Platelmintos" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=BnMtrLlPZ_s" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+    </section>
+
+    <section class="sub-secao" id="ciencias-quiz">
+
+      <div class="progresso-container" id="ciencias-progresso-container">
+        <div class="progresso-texto" id="ciencias-progresso-texto">Pergunta 1 de 20</div>
+        <div class="barra-fundo"><div class="barra-preenchida" id="ciencias-barra-preenchida" style="width: 5%;"></div></div>
+      </div>
+
+      <div id="ciencias-area-pergunta"></div>
+
+      <div id="ciencias-tela-final" class="cartao tela-final" style="display:none;">
+        <div class="emoji-grande">🌟</div>
+        <h2>Você terminou!</h2>
+        <div class="placar" id="ciencias-placar-final">0 de 20</div>
+        <p id="ciencias-mensagem-final">Muito bem, Joaquim!</p>
+        <div class="botoes-tela-final" id="ciencias-botoes-tela-final">
+          <button class="botao-reiniciar" id="ciencias-botao-reiniciar">🔁 Mais 20 perguntas</button>
+        </div>
+        <p class="placar-sessao" id="ciencias-placar-sessao"></p>
+        <div class="lista-revisao" id="ciencias-lista-revisao"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>Feito com carinho para o estudo do Joaquim 💛</footer>
+</div>
+
+<!-- ===================== GEOGRAFIA ===================== -->
+<div class="pagina" id="pagina-geografia">
+
+  <header class="header-materia">
+    <h1>🌾 Espaço Rural e Urbano 🏙️</h1>
+    <p>7º Ano — Prova Parcial — 2º Trimestre — Geografia</p>
+  </header>
+
+  <nav class="sub-nav">
+    <button class="sub-aba ativo" data-materia="geografia" data-secao="estudar">📖 Estudar</button>
+    <button class="sub-aba" data-materia="geografia" data-secao="quiz">✏️ Praticar Espaço Rural</button>
+    <button class="sub-aba" data-materia="geografia" data-secao="quiz-urbano">✏️ Praticar Espaço Urbano</button>
+  </nav>
+
+  <main class="conteudo-materia">
+
+    <section class="sub-secao ativa" id="geografia-estudar">
+
+      <div class="linha-tempo" id="geografia-linha-tempo">
+        <button class="linha-tempo-etapa" data-destino="geo-topico-1">
+          <span class="linha-tempo-bola">1</span>
+          <span class="linha-tempo-label">Agropecuária</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-2">
+          <span class="linha-tempo-bola">2</span>
+          <span class="linha-tempo-label">Sistema Extensivo x Intensivo</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-3">
+          <span class="linha-tempo-bola">3</span>
+          <span class="linha-tempo-label">Agropecuária no Brasil</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-4">
+          <span class="linha-tempo-bola">4</span>
+          <span class="linha-tempo-label">Estrutura Fundiária</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-5">
+          <span class="linha-tempo-bola">5</span>
+          <span class="linha-tempo-label">Extrativismo</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-6">
+          <span class="linha-tempo-bola">6</span>
+          <span class="linha-tempo-label">Espaço Urbano</span>
+        </button>
+      </div>
+
+      <div class="cartao" id="geo-topico-1">
+        <h2>🚜 Agropecuária Brasileira</h2>
+        <p>Agropecuária = agricultura (plantar) + pecuária (criar animais).</p>
+        <ul>
+          <li>O ser humano plantava e criava animais desde muito tempo atrás. Isso ajudou as pessoas a morar em um só lugar, sem precisar se mudar toda hora.</li>
+          <li>Hoje a agropecuária fornece <strong>matéria-prima</strong> (a base) para muitos produtos: a soja vira ração e óleo, o algodão vira roupa, a cana vira açúcar e combustível.</li>
+          <li>A agropecuária é uma <strong>atividade do setor primário</strong> (junto com o extrativismo) — ou seja, ela tira ou produz a matéria-prima que depois as fábricas vão usar.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: antes de existir a roupa que você usa, existiu uma plantação de algodão. A agropecuária é o primeiro passo de muita coisa que a gente usa.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/RuzwM0e1NhU" title="A evolução da agricultura" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=RuzwM0e1NhU" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="geo-topico-2">
+        <h2>⚙️ Sistema Extensivo x Sistema Intensivo</h2>
+        <p>Existem duas formas principais de produzir na agropecuária:</p>
+        <ul>
+          <li><strong>Sistema extensivo:</strong> usa pouca máquina e pouca tecnologia. Para produzir muito, precisa de uma <strong>área de terra muito grande</strong>. É mais comum em fazendas de família, com produção tradicional.</li>
+          <li><strong>Sistema intensivo:</strong> usa muita máquina, adubo químico e tecnologia. Por isso, produz muito em uma área <strong>pequena</strong>. É a chamada agropecuária moderna.</li>
+        </ul>
+        <div class="destaque">💡 Exemplo para lembrar: o fazendeiro Fernando tem 3 vacas, cada uma produz 10 litros de leite (total: 30 litros) — ele precisa de mais espaço para as 3 vacas. O fazendeiro Carlos tem só 1 vaca, mas ela produz 30 litros — essa vaca tem produtividade maior, e ele usa menos terra para o mesmo resultado.</div>
+        <div class="gramatica-box">📌 <strong>Revolução Verde:</strong> entre 1960 e 1970, o mundo passou a usar muito mais máquinas, adubos químicos e sementes melhoradas na agricultura. Isso fez a produção aumentar bastante, e por isso esse período ganhou esse nome.</div>
+        <div class="gramatica-box">📌 <strong>Complexo agroindustrial:</strong> é a ligação entre a fazenda e a fábrica. Por exemplo: produzir insumos → plantar/criar → transportar → processar na fábrica → guardar → vender. Cada etapa é feita por uma parte diferente da economia.</div>
+      </div>
+
+      <div class="cartao" id="geo-topico-3">
+        <h2>🗺️ A Agropecuária no Brasil</h2>
+        <p>No Brasil, as duas formas de produzir (extensiva e intensiva) acontecem em lugares diferentes:</p>
+        <ul>
+          <li><strong>Norte e Nordeste (interior, Amazônia, Sertão, Pantanal):</strong> mais comum o sistema <strong>extensivo</strong>. Exemplo: a pecuária no Sertão Nordestino e no Pantanal, feita há muito tempo pelos vaqueiros.</li>
+          <li><strong>Centro-Sul (Sul, Sudeste e parte do Centro-Oeste):</strong> mais comum o sistema <strong>intensivo</strong>, com a agropecuária moderna. Tem fábricas perto, mais dinheiro investido e mais tecnologia.</li>
+          <li>O Brasil é um dos maiores produtores de <strong>soja</strong> do mundo. A soja é usada para fazer ração de animais (farelo) e óleo, e boa parte é vendida para outros países, principalmente a China.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: quanto mais tecnologia uma região tem, menos terra ela precisa para produzir muito — por isso o Centro-Sul produz tanto em áreas menores.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/87yYvlP3mps" title="Pecuária e agropecuária no Brasil" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=87yYvlP3mps" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="geo-topico-4">
+        <h2>📐 Estrutura Fundiária</h2>
+        <p>Estrutura fundiária é como as terras do Brasil são divididas entre as pessoas.</p>
+        <ul>
+          <li><strong>Latifúndio</strong> = propriedade rural muito grande.</li>
+          <li><strong>Minifúndio</strong> = propriedade rural pequena, normalmente de família.</li>
+          <li>No Brasil, a estrutura fundiária é <strong>concentrada</strong>: poucas pessoas têm muita terra, e muitas pessoas têm pouca ou nenhuma terra.</li>
+          <li>Isso vem de muito tempo atrás: no Brasil Colônia, Portugal dava terras enormes (chamadas <strong>sesmarias</strong>) só para algumas famílias.</li>
+          <li>Quando um latifúndio não é usado para produzir nada, ele é chamado de <strong>latifúndio improdutivo</strong>.</li>
+        </ul>
+        <div class="destaque">💡 Dica para lembrar: <strong>LATI</strong>fúndio é <strong>LA</strong>rgo e grande. <strong>MINI</strong>fúndio é <strong>MIN</strong>ininho!</div>
+        <div class="gramatica-box">📌 <strong>Reforma agrária:</strong> é uma política para dividir melhor as terras, dando terra para quem não tem. O Incra é o órgão do governo que cuida disso.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/87yYvlP3mps" title="Latifúndios e Minifúndios" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=87yYvlP3mps" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="geo-topico-5">
+        <h2>🌳 Extrativismo</h2>
+        <p>É tirar recursos direto da natureza, sem plantar e sem criar.</p>
+        <ul>
+          <li><strong>Vegetal:</strong> coleta de madeira, látex (borracha), castanha-do-pará, açaí, babaçu.</li>
+          <li><strong>Mineral:</strong> extração de ferro, ouro.</li>
+          <li><strong>Animal:</strong> pesca, caça e coleta de caranguejo.</li>
+          <li>Muito praticado na <strong>Amazônia</strong>, por ser a floresta com mais variedade de plantas e animais do mundo.</li>
+          <li>Quem faz a coleta do babaçu (uma palmeira) são as <strong>quebradeiras de coco babaçu</strong>, muitas mulheres do Maranhão e Piauí.</li>
+        </ul>
+        <div class="destaque">💡 Extrativismo sustentável = tirar da natureza sem destruir, para que ela continue dando recursos por muito tempo.</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/hFbtP6KUNHI" title="O que é Extrativismo?" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=hFbtP6KUNHI" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="geo-topico-6">
+        <h2>🏙️ Espaço Urbano Brasileiro</h2>
+        <p>É onde ficam as cidades. Hoje a maioria das pessoas no Brasil mora em cidades.</p>
+        <ul>
+          <li><strong>Urbanização</strong> = quando as cidades crescem e mais gente passa a morar nelas em vez de morar no campo.</li>
+          <li><strong>Êxodo rural</strong> = pessoas saindo do campo para morar nas cidades. No Brasil, isso aconteceu muito a partir de 1930 (começo das fábricas) e principalmente a partir de 1960 (o campo passou a usar mais máquinas, e isso deixou menos gente trabalhando lá).</li>
+          <li>Até a década de 1960, a maioria dos brasileiros morava no campo. A partir de 1970, isso mudou: a maioria passou a morar nas cidades. Hoje, mais de 87% dos brasileiros moram em área urbana.</li>
+          <li><strong>Rede urbana</strong> = cidades grandes, médias e pequenas, conectadas por estradas e comunicação. As cidades muito grandes e importantes se chamam <strong>metrópoles</strong> (exemplos: São Paulo, Rio de Janeiro).</li>
+          <li><strong>Região metropolitana</strong> = quando uma metrópole cresce tanto que as cidades vizinhas passam a depender dela e a trabalhar junto com ela (ex: Região Metropolitana de São Paulo).</li>
+          <li><strong>Conurbação</strong> = quando duas cidades crescem tanto que se juntam, sem espaço vazio entre elas.</li>
+          <li><strong>Problemas urbanos:</strong> trânsito, falta de moradia (favelas), enchentes.</li>
+          <li><strong>Transportes:</strong> rodoviário (estradas, o mais usado no Brasil), ferroviário (trens).</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: o Brasil era um país do campo até 1960. Em poucas décadas, virou um país de cidades — por isso o espaço urbano cresceu tão rápido.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1sGnAyY5Ne7_pCzJhGMO1Ri9ywcyRQNwS/preview" title="O Espaço Urbano Brasileiro" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1sGnAyY5Ne7_pCzJhGMO1Ri9ywcyRQNwS/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+    </section>
+
+    <section class="sub-secao" id="geografia-quiz">
+
+      <div class="progresso-container" id="geografia-progresso-container">
+        <div class="progresso-texto" id="geografia-progresso-texto">Pergunta 1 de 50</div>
+        <div class="barra-fundo"><div class="barra-preenchida" id="geografia-barra-preenchida" style="width: 2%;"></div></div>
+      </div>
+
+      <div id="geografia-area-pergunta"></div>
+
+      <div id="geografia-tela-final" class="cartao tela-final" style="display:none;">
+        <div class="emoji-grande">🌟</div>
+        <h2>Você terminou!</h2>
+        <div class="placar" id="geografia-placar-final">0 de 50</div>
+        <p id="geografia-mensagem-final">Muito bem, Joaquim!</p>
+        <div class="botoes-tela-final" id="geografia-botoes-tela-final">
+          <button class="botao-reiniciar" id="geografia-botao-reiniciar">🔁 Mais 50 perguntas</button>
+        </div>
+        <p class="placar-sessao" id="geografia-placar-sessao"></p>
+        <div class="lista-revisao" id="geografia-lista-revisao"></div>
+      </div>
+
+    </section>
+
+    <section class="sub-secao" id="geografia-quiz-urbano">
+
+      <div class="progresso-container" id="geografia-urbano-progresso-container">
+        <div class="progresso-texto" id="geografia-urbano-progresso-texto">Pergunta 1 de 15</div>
+        <div class="barra-fundo"><div class="barra-preenchida" id="geografia-urbano-barra-preenchida" style="width: 6%;"></div></div>
+      </div>
+
+      <div id="geografia-urbano-area-pergunta"></div>
+
+      <div id="geografia-urbano-tela-final" class="cartao tela-final" style="display:none;">
+        <div class="emoji-grande">🌟</div>
+        <h2>Você terminou!</h2>
+        <div class="placar" id="geografia-urbano-placar-final">0 de 15</div>
+        <p id="geografia-urbano-mensagem-final">Muito bem, Joaquim!</p>
+        <div class="botoes-tela-final" id="geografia-urbano-botoes-tela-final">
+          <button class="botao-reiniciar" id="geografia-urbano-botao-reiniciar">🔁 Mais 15 perguntas</button>
+        </div>
+        <p class="placar-sessao" id="geografia-urbano-placar-sessao"></p>
+        <div class="lista-revisao" id="geografia-urbano-lista-revisao"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>Feito com carinho para o estudo do Joaquim 💛</footer>
+</div>
+
+<!-- ===================== HISTÓRIA ===================== -->
+<div class="pagina" id="pagina-historia">
+
+  <header class="header-materia">
+    <h1>🎨 Renascimento, Navegações, África e Colonização 🏰</h1>
+    <p>7º Ano — Prova Parcial — 2º Trimestre — História</p>
+  </header>
+
+  <nav class="sub-nav">
+    <button class="sub-aba ativo" data-materia="historia" data-secao="estudar">📖 Estudar</button>
+    <button class="sub-aba" data-materia="historia" data-secao="quiz">✏️ Praticar</button>
+  </nav>
+
+  <main class="conteudo-materia">
+
+    <section class="sub-secao ativa" id="historia-estudar">
+
+      <div class="linha-tempo" id="historia-linha-tempo">
+        <button class="linha-tempo-etapa" data-destino="hist-topico-0">
+          <span class="linha-tempo-bola">1</span>
+          <span class="linha-tempo-label">Renascimento e Fibonacci</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="hist-topico-1">
+          <span class="linha-tempo-bola">2</span>
+          <span class="linha-tempo-label">Grandes Navegações</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="hist-topico-2">
+          <span class="linha-tempo-bola">3</span>
+          <span class="linha-tempo-label">Reinos Africanos</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="hist-topico-3">
+          <span class="linha-tempo-bola">4</span>
+          <span class="linha-tempo-label">Colonização Espanhola e Inglesa</span>
+        </button>
+      </div>
+
+      <div class="cartao" id="hist-topico-0">
+        <h2>🎨 Renascimento Cultural e a Sequência de Fibonacci</h2>
+        <p>O Renascimento foi um período em que as ideias da Grécia e Roma Antiga "nasceram de novo" na Europa.</p>
+        <ul>
+          <li>Aconteceu principalmente entre os <strong>séculos XIV e XVI</strong>, na Europa, sobretudo na Itália.</li>
+          <li>Antes dele, na Idade Média, quase tudo era explicado pela religião. No Renascimento, as pessoas voltaram a estudar a ciência e a arte com curiosidade.</li>
+          <li>Na <strong>arte</strong>, os pintores passaram a usar a <strong>perspectiva</strong> — uma técnica de desenho que dá a sensação de profundidade, como se você pudesse entrar na imagem.</li>
+          <li><strong>Leonardo Fibonacci</strong> foi um matemático italiano (viveu por volta de 1200) que trouxe para a Europa o sistema de números que usamos até hoje (0 a 9), no lugar dos números romanos, que eram mais difíceis de calcular.</li>
+          <li>A <strong>Sequência de Fibonacci</strong> é uma lista de números em que cada número novo é a <strong>soma dos dois anteriores</strong>: 0, 1, 1, 2, 3, 5, 8, 13...</li>
+          <li>Essa sequência aparece em padrões da natureza, como em conchas e em folhas de plantas, e foi usada por artistas do Renascimento para criar proporções bonitas em pinturas e construções.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: 1 + 1 = 2 / 1 + 2 = 3 / 2 + 3 = 5. Cada número novo "nasce" da soma dos dois números que vieram antes — parecido com o próprio espírito do Renascimento: usar o conhecimento antigo para criar algo novo.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1d_UdjsJDRMDAf-V4-S-DeKzqTlX4XWl4/preview" title="Renascimento Cultural e a Sequência de Fibonacci" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1d_UdjsJDRMDAf-V4-S-DeKzqTlX4XWl4/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+      <div class="cartao" id="hist-topico-1">
+        <h2>⛵ As Grandes Navegações</h2>
+        <p>Os europeus saíram em navios para conhecer terras novas e encontrar um novo caminho até o Oriente.</p>
+        <ul>
+          <li>Cidades italianas e o <strong>Império Turco-Otomano</strong> controlavam as rotas terrestres até o Oriente e cobravam taxas muito altas. Por isso, era preciso achar um caminho novo pelo mar.</li>
+          <li>Os instrumentos de navegação mais importantes eram o <strong>astrolábio</strong> (calculava a posição usando as estrelas) e a <strong>bússola</strong> (sempre apontava a mesma direção).</li>
+          <li><strong>Portugal</strong> foi o primeiro país a se aventurar nas Grandes Navegações. O Infante <strong>Dom Henrique</strong>, conhecido como "o Navegador", incentivou fortemente essas expedições.</li>
+          <li>Os portugueses fizeram o <strong>Périplo Africano</strong>: foram contornando a costa da África pouco a pouco. Em 1434, <strong>Gil Eanes</strong> passou pelo Cabo Bojador. Em 1488, <strong>Bartolomeu Dias</strong> chegou ao Cabo da Boa Esperança. Em 1498, <strong>Vasco da Gama</strong> finalmente chegou à Índia.</li>
+          <li>Em 1500, <strong>Pedro Álvares Cabral</strong> chegou ao litoral do que viria a ser o Brasil — que já era habitado por povos indígenas há milhares de anos.</li>
+          <li><strong>Cristóvão Colombo</strong>, financiado pela Espanha, acreditava que dava para chegar ao Oriente navegando para o Ocidente. Em 1492, chegou ao Caribe e chamou os povos de lá de "índios", pensando ter chegado às Índias.</li>
+          <li><strong>Américo Vespúcio</strong> ajudou a provar que aquelas terras eram um continente novo — por isso o continente foi batizado de "América".</li>
+          <li><strong>Fernão de Magalhães</strong> comandou a primeira viagem de <strong>circum-navegação</strong> (dar a volta completa no globo), o que comprovou que a Terra é esférica.</li>
+          <li>O <strong>Tratado de Tordesilhas</strong> (1494) criou uma linha imaginária dividindo as terras: a leste seria de Portugal, a oeste seria da Espanha.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: Portugal contornou a África para chegar ao Oriente (foi para o leste). Colombo tentou chegar ao Oriente indo para o lado contrário (foi para o oeste) e, sem saber, encontrou um continente novo.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1SgNhy_fK5Lry-Gf-OgbMTLKQcTkzsPI8/preview" title="As Grandes Navegações" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1SgNhy_fK5Lry-Gf-OgbMTLKQcTkzsPI8/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+      <div class="cartao" id="hist-topico-2">
+        <h2>👑 Reinos e Povos Africanos</h2>
+        <p>Antes dos europeus chegarem, a África já tinha reinos grandes, organizados e ricos.</p>
+        <ul>
+          <li>Muitas sociedades africanas guardavam sua história através da <strong>história oral</strong>: pessoas chamadas <strong>griots</strong> contavam e cantavam a história do seu povo de geração em geração.</li>
+          <li>As sociedades se organizavam em <strong>clãs</strong> — grupos de pessoas que reconhecem um mesmo ancestral em comum.</li>
+          <li>Em sistemas <strong>matrilineares</strong>, a herança passa pela linha da mãe (da esposa). Mas atenção: isso não significa que as mulheres tinham o poder — o poder político continuava, na maioria das vezes, com os homens.</li>
+          <li>O comércio africano tinha dois tipos: <strong>produtos de subsistência</strong> (comida e roupas, para uso da própria comunidade) e <strong>bens de prestígio</strong> (ouro, cobre, sal — vendidos para fora em rotas comerciais longas).</li>
+          <li>Os <strong>berberes</strong> organizavam caravanas de camelos para atravessar o deserto do Saara, conectando a África ao Mar Mediterrâneo.</li>
+          <li>Três grandes reinos surgiram perto do Rio Níger, um depois do outro: <strong>Reino de Gana</strong> (séc. VI-XIII), <strong>Reino de Mali</strong> (séc. XIII-XVI, com o famoso rei <strong>Mansa Musa</strong>, um dos homens mais ricos da história) e <strong>Reino de Songhai</strong> (séc. XIV-XVI).</li>
+          <li>O <strong>Reino do Benim</strong> (atual Nigéria) ficou famoso por sua arte em bronze. Em 1897, o Império Britânico invadiu a cidade e levou várias obras de arte para a Inglaterra.</li>
+          <li>A ideia de que "a África é um lugar só" está errada — é fruto do <strong>eurocentrismo</strong>, a visão de que a cultura europeia seria superior ou a única referência válida.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: a África tinha reis, cidades, comércio e arte muito antes dos europeus chegarem lá. Não era um continente "vazio" nem "igual em todo lugar" — eram centenas de povos diferentes.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1-PVBwHamYxT7Yc8wg4X87yv0RrQja-tG/preview" title="Reinos e Povos Africanos" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1-PVBwHamYxT7Yc8wg4X87yv0RrQja-tG/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+      <div class="cartao" id="hist-topico-3">
+        <h2>🌎 Colonização Espanhola e Inglesa na América</h2>
+        <p>Depois das navegações, espanhóis e ingleses passaram a morar e governar terras na América — de formas bem diferentes.</p>
+        <ul>
+          <li>Antes dos europeus, a América já tinha povos grandes e organizados: <strong>astecas</strong> (México), <strong>maias</strong> (sul do México e América Central) e <strong>incas</strong> (região andina, atual Peru).</li>
+          <li>Em 1521, <strong>Hernán Cortés</strong> derrotou o Império Asteca. Ele se aliou a povos que já eram inimigos dos astecas, e alguns astecas acreditaram que ele poderia ser o deus Quetzalcóatl, retornando conforme uma lenda antiga.</li>
+          <li>Em 1533, <strong>Francisco Pizarro</strong> dominou o Império Inca, também de forma muito violenta.</li>
+          <li>A Espanha organizou suas colônias em <strong>vice-reinos</strong> (áreas grandes) e <strong>Capitanias Gerais</strong> (áreas menores).</li>
+          <li>Os espanhóis usaram trabalho forçado indígena: a <strong>mita</strong> (sorteio para trabalhar nas minas, com pagamento muito baixo) e a <strong>encomienda</strong> (indígenas confiados a um colonizador, que deveria "cuidar" da catequização deles).</li>
+          <li>Em 1620, o navio <strong>Mayflower</strong> trouxe para a América do Norte os <strong>peregrinos</strong> — ingleses, em sua maioria puritanos, que buscavam <strong>liberdade religiosa</strong>.</li>
+          <li>A Inglaterra praticou a <strong>negligência salutar</strong>: deixou suas colônias se organizarem com pouca interferência. Por isso, existia o <strong>self-government</strong> (autogoverno) nas Treze Colônias.</li>
+          <li>Diferença importante: a Espanha encontrou muito <strong>ouro e prata</strong> na América; a Inglaterra <strong>não</strong> encontrou riquezas minerais importantes em sua região colonizada.</li>
+          <li>A colonização causou muito sofrimento aos povos indígenas: violência, doenças trazidas pelos europeus e deslocamentos forçados, como a <strong>Trilha das Lágrimas</strong>, no século XIX.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: a Espanha colonizou buscando ouro e prata, controlando de perto suas colônias. A Inglaterra não achou riqueza mineral e, por isso, deixou suas colônias se organizarem sozinhas — isso é a negligência salutar.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1QMhCXFn2N3YXz0-boBGgO6lU9wxtMzPr/preview" title="Colonização Espanhola e Inglesa" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1QMhCXFn2N3YXz0-boBGgO6lU9wxtMzPr/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+    </section>
+
+    <section class="sub-secao" id="historia-quiz">
+
+      <div class="progresso-container" id="historia-progresso-container">
+        <div class="progresso-texto" id="historia-progresso-texto">Pergunta 1 de 50</div>
+        <div class="barra-fundo"><div class="barra-preenchida" id="historia-barra-preenchida" style="width: 2%;"></div></div>
+      </div>
+
+      <div id="historia-area-pergunta"></div>
+
+      <div id="historia-tela-final" class="cartao tela-final" style="display:none;">
+        <div class="emoji-grande">🌟</div>
+        <h2>Você terminou!</h2>
+        <div class="placar" id="historia-placar-final">0 de 50</div>
+        <p id="historia-mensagem-final">Muito bem, Joaquim!</p>
+        <div class="botoes-tela-final" id="historia-botoes-tela-final">
+          <button class="botao-reiniciar" id="historia-botao-reiniciar">🔁 Mais 50 perguntas</button>
+        </div>
+        <p class="placar-sessao" id="historia-placar-sessao"></p>
+        <div class="lista-revisao" id="historia-lista-revisao"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>Feito com carinho para o estudo do Joaquim 💛</footer>
+</div>
+
+<!-- ===================== INGLÊS ===================== -->
+<div class="pagina" id="pagina-ingles">
+
+  <header class="header-materia">
+    <h1>🌊 There's No Planet B 🌍</h1>
+    <p>7º Ano — Prova Parcial — 2º Trimestre — Inglês</p>
+  </header>
+
+  <nav class="sub-nav">
+    <button class="sub-aba ativo" data-materia="ingles" data-secao="estudar">📖 Estudar</button>
+    <button class="sub-aba" data-materia="ingles" data-secao="quiz">✏️ Praticar</button>
+  </nav>
+
+  <main class="conteudo-materia">
+
+    <section class="sub-secao ativa" id="ingles-estudar">
+
+      <div class="layout-com-roteiro">
+
+        <nav class="roteiro-lateral" id="ingles-roteiro">
+          <div class="roteiro-titulo">📍 Roteiro</div>
+          <button class="roteiro-item" data-destino="ing-topico-1">
+            <span class="roteiro-bolinha">1</span>
+            <span>Vocabulário</span>
+          </button>
+          <button class="roteiro-item" data-destino="ing-topico-2">
+            <span class="roteiro-bolinha">2</span>
+            <span>Can / Could</span>
+          </button>
+          <button class="roteiro-item" data-destino="ing-topico-3">
+            <span class="roteiro-bolinha">3</span>
+            <span>Present Simple x Continuous</span>
+          </button>
+          <button class="roteiro-item" data-destino="ing-topico-4">
+            <span class="roteiro-bolinha">4</span>
+            <span>Water Is Life</span>
+          </button>
+        </nav>
+
+        <div class="conteudo-com-roteiro">
+
+      <div class="cartao" id="ing-topico-1">
+        <h2>📘 Palavras novas (Vocabulary)</h2>
+        <p>Essas palavras aparecem na prova. Vamos aprender o que cada uma significa:</p>
+        <ul class="lista-vocab">
+          <li><span class="en">water bodies</span> — <span class="pt">corpos de água (rio, mar, lago)</span></li>
+          <li><span class="en">ecosystem</span> — <span class="pt">ecossistema (ambiente onde vivem plantas e animais)</span></li>
+          <li><span class="en">sustainable tourism</span> — <span class="pt">turismo sustentável (turismo que não destrói a natureza)</span></li>
+          <li><span class="en">marine life</span> — <span class="pt">vida marinha (animais e plantas do mar)</span></li>
+          <li><span class="en">biodiversity</span> — <span class="pt">biodiversidade (muitos tipos diferentes de seres vivos)</span></li>
+          <li><span class="en">endangered species</span> — <span class="pt">espécies em risco de extinção</span></li>
+          <li><span class="en">pollution</span> — <span class="pt">poluição</span></li>
+          <li><span class="en">hygiene</span> — <span class="pt">higiene</span></li>
+          <li><span class="en">sanitation</span> — <span class="pt">saneamento (água limpa e esgoto tratado)</span></li>
+        </ul>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/u-l3KfmFNx0" title="Life Below Water" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=u-l3KfmFNx0" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="ing-topico-2">
+        <h2>🔧 Gramática: CAN, COULD, HAVE TO</h2>
+        <div class="gramatica-box">
+          <strong>CAN</strong> = consigo / posso<br>
+          Exemplo: "I can swim" = Eu consigo nadar.
+        </div>
+        <div class="gramatica-box">
+          <strong>CAN'T</strong> = não consigo / não posso<br>
+          Exemplo: "I can't fly" = Eu não consigo voar.
+        </div>
+        <div class="gramatica-box">
+          <strong>COULD</strong> = conseguia (no passado)<br>
+          Exemplo: "I could run fast" = Eu conseguia correr rápido.
+        </div>
+        <div class="gramatica-box">
+          <strong>HAS TO / HAVE TO</strong> = tem que / precisa<br>
+          Exemplo: "We have to protect the ocean" = Nós temos que proteger o oceano.
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/VFJSSbjtbfQ" title="Can / Could - modal verbs" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=VFJSSbjtbfQ" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="ing-topico-3">
+        <h2>⏰ Present Simple x Present Continuous</h2>
+        <p><strong>Present Simple</strong> = coisa que sempre acontece (rotina)</p>
+        <div class="destaque">Exemplo: "Fish live in the ocean" = Peixes vivem no oceano. (sempre é assim)</div>
+        <p style="margin-top:14px;"><strong>Present Continuous</strong> = coisa acontecendo agora</p>
+        <div class="destaque">Exemplo: "The ocean is getting polluted" = O oceano está ficando poluído. (acontecendo agora)</div>
+        <div class="gramatica-box">💡 Dica: Present Continuous sempre tem <strong>IS / ARE / AM</strong> + uma palavra terminada em <strong>-ING</strong>.</div>
+      </div>
+
+      <div class="cartao" id="ing-topico-4">
+        <h2>💧 Water Is Life — Água é Vida</h2>
+        <p>Esse tema fala sobre a importância da água limpa para a saúde.</p>
+        <ul class="lista-vocab">
+          <li><span class="en">quality</span> — <span class="pt">qualidade</span></li>
+          <li><span class="en">safety</span> — <span class="pt">segurança</span></li>
+          <li><span class="en">clean water</span> — <span class="pt">água limpa</span></li>
+        </ul>
+        <div class="destaque">💡 SDG 6 e SDG 14 são metas mundiais: água limpa para todos (SDG 6) e proteger a vida no mar (SDG 14).</div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/y1ObvXZDQNs" title="Water Pollution explicado" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://www.youtube.com/watch?v=y1ObvXZDQNs" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section class="sub-secao" id="ingles-quiz">
+
+      <div class="progresso-container" id="ingles-progresso-container">
+        <div class="progresso-texto" id="ingles-progresso-texto">Pergunta 1 de 20</div>
+        <div class="barra-fundo"><div class="barra-preenchida" id="ingles-barra-preenchida" style="width: 5%;"></div></div>
+      </div>
+
+      <div id="ingles-area-pergunta"></div>
+
+      <div id="ingles-tela-final" class="cartao tela-final" style="display:none;">
+        <div class="emoji-grande">🌟</div>
+        <h2>Você terminou!</h2>
+        <div class="placar" id="ingles-placar-final">0 de 20</div>
+        <p id="ingles-mensagem-final">Muito bem, Joaquim!</p>
+        <div class="botoes-tela-final" id="ingles-botoes-tela-final">
+          <button class="botao-reiniciar" id="ingles-botao-reiniciar">🔁 Mais 20 perguntas</button>
+        </div>
+        <p class="placar-sessao" id="ingles-placar-sessao"></p>
+        <div class="lista-revisao" id="ingles-lista-revisao"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>Feito com carinho para o estudo do Joaquim 💛</footer>
+</div>
+
+<script>
+// Navegação entre páginas principais (Início / Geografia / História / Inglês)
+const botoesPagina = document.querySelectorAll('.botao-pagina');
+const paginas = document.querySelectorAll('.pagina');
+
+function irParaPagina(nomePagina) {
+  botoesPagina.forEach(b => b.classList.toggle('ativo', b.dataset.pagina === nomePagina));
+  paginas.forEach(p => p.classList.toggle('ativa', p.id === `pagina-${nomePagina}`));
+  window.scrollTo({top: 0, behavior: 'instant'});
+}
+
+botoesPagina.forEach(botao => {
+  botao.addEventListener('click', () => irParaPagina(botao.dataset.pagina));
+});
+
+// Botões do calendário de provas na página inicial também navegam
+document.querySelectorAll('.dia-prova[data-ir-para]').forEach(botao => {
+  botao.addEventListener('click', () => irParaPagina(botao.dataset.irPara));
+});
+
+// Sub-navegação (Estudar / Praticar) dentro de cada matéria
+const subAbas = document.querySelectorAll('.sub-aba');
+subAbas.forEach(botao => {
+  botao.addEventListener('click', () => {
+    const materia = botao.dataset.materia;
+    const secao = botao.dataset.secao;
+
+    document.querySelectorAll(`.sub-aba[data-materia="${materia}"]`).forEach(b => b.classList.remove('ativo'));
+    botao.classList.add('ativo');
+
+    document.querySelectorAll(`#pagina-${materia} .sub-secao`).forEach(s => s.classList.remove('ativa'));
+    document.getElementById(`${materia}-${secao}`).classList.add('ativa');
+  });
+});
+
+// ===================== BANCO DE PERGUNTAS =====================
+const perguntasMatematica = [
+  {pergunta:"O que é uma expressão algébrica?",opcoes:["Uma conta só com números","Uma conta com números e letras juntos","Um desenho geométrico","Um tipo de gráfico"],correta:1,explicacao:"Expressão algébrica é uma expressão matemática que tem números e letras (variáveis) juntos."},
+  {pergunta:"O que significa 'simplificar' uma expressão algébrica?",opcoes:["Apagar as letras","Juntar os termos parecidos (semelhantes)","Trocar todos os números por letras","Desenhar um gráfico"],correta:1,explicacao:"Simplificar é juntar (somar ou subtrair) os termos que têm a mesma parte literal, deixando a expressão mais curta."},
+  {pergunta:"Se x = 2, qual é o valor numérico de 3x + 1?",opcoes:["5","6","7","9"],correta:2,explicacao:"Substituindo x por 2: 3×2+1 = 6+1 = 7."},
+  {pergunta:"O que é uma equação do 1º grau?",opcoes:["Uma igualdade com uma incógnita elevada a 1","Uma figura geométrica","Um tipo de gráfico","Uma soma de números pares"],correta:0,explicacao:"Equação do 1º grau é uma igualdade matemática que tem uma incógnita (letra) elevada a 1."},
+  {pergunta:"Na equação x + 3 = 7, qual é o valor de x?",opcoes:["3","4","7","10"],correta:1,explicacao:"x + 3 = 7, então x = 7 - 3 = 4."},
+  {pergunta:"O que diferencia uma inequação de uma equação?",opcoes:["A inequação usa sinais de maior/menor, em vez de igual","A inequação não tem números","A inequação só tem letras","Não tem diferença"],correta:0,explicacao:"Inequação usa os sinais de maior (>) ou menor (<), enquanto a equação usa o sinal de igual (=)."},
+  {pergunta:"Na inequação x + 2 > 5, qual é a solução?",opcoes:["x > 3","x < 3","x = 3","x > 7"],correta:0,explicacao:"x + 2 > 5, então x > 5 - 2, ou seja, x > 3."},
+  {pergunta:"O que acontece com o sinal de uma inequação ao multiplicar por um número negativo?",opcoes:["Nada muda","O sinal se inverte","A inequação desaparece","Vira uma equação"],correta:1,explicacao:"Ao multiplicar ou dividir uma inequação por um número negativo, o sinal de maior/menor se inverte."},
+  {pergunta:"Quanto é a soma dos ângulos internos de qualquer triângulo?",opcoes:["90°","180°","270°","360°"],correta:1,explicacao:"A soma dos ângulos internos de qualquer triângulo é sempre 180°."},
+  {pergunta:"Como se chama o triângulo que tem os 3 lados iguais?",opcoes:["Escaleno","Isósceles","Equilátero","Retângulo"],correta:2,explicacao:"Triângulo equilátero é aquele que tem os 3 lados (e os 3 ângulos) iguais."},
+  {pergunta:"Como se chama o triângulo que tem 2 lados iguais?",opcoes:["Escaleno","Isósceles","Equilátero","Obtusângulo"],correta:1,explicacao:"Triângulo isósceles é aquele que tem 2 lados iguais."},
+  {pergunta:"Como se chama o triângulo que tem todos os lados diferentes?",opcoes:["Escaleno","Isósceles","Equilátero","Acutângulo"],correta:0,explicacao:"Triângulo escaleno é aquele que tem os 3 lados com medidas diferentes."},
+  {pergunta:"Um triângulo retângulo tem um ângulo de quantos graus?",opcoes:["45°","60°","90°","180°"],correta:2,explicacao:"Triângulo retângulo tem um ângulo de exatamente 90°."},
+  {pergunta:"Um triângulo obtusângulo tem um ângulo:",opcoes:["Menor que 90°","Igual a 90°","Maior que 90°","Igual a 180°"],correta:2,explicacao:"Triângulo obtusângulo tem um ângulo maior que 90°."},
+  {pergunta:"O que é um polígono?",opcoes:["Uma figura plana fechada feita de linhas retas","Um número grande","Uma equação","Um tipo de ângulo"],correta:0,explicacao:"Polígono é uma figura plana, fechada, formada só por linhas retas (lados)."},
+  {pergunta:"Como se chama o polígono de 5 lados?",opcoes:["Quadrilátero","Pentágono","Hexágono","Heptágono"],correta:1,explicacao:"Pentágono é o polígono que tem 5 lados."},
+  {pergunta:"Qual é a diferença entre polígono convexo e côncavo?",opcoes:["Não existe diferença","O côncavo tem uma parte afundada pra dentro","O convexo é sempre maior","O côncavo não tem lados"],correta:1,explicacao:"Polígono côncavo tem uma parte do contorno afundada pra dentro da figura; o convexo não tem essa parte afundada."},
+  {pergunta:"Qual é a fórmula da soma dos ângulos internos de um polígono com n lados?",opcoes:["n × 180°","(n-2) × 180°","n + 180°","(n+2) × 90°"],correta:1,explicacao:"A soma dos ângulos internos de um polígono é dada por (n-2) × 180°, onde n é o número de lados."},
+  {pergunta:"Qual é a soma dos ângulos internos de um pentágono (5 lados)?",opcoes:["360°","540°","720°","180°"],correta:1,explicacao:"(5-2) × 180° = 3 × 180° = 540°."},
+  {pergunta:"O ângulo externo de um triângulo fica:",opcoes:["Dentro do triângulo","Do lado de fora, ao lado do ângulo interno","Sempre igual a 180°","No meio do triângulo"],correta:1,explicacao:"O ângulo externo de um triângulo é o ângulo que fica do lado de fora, formado ao lado do ângulo interno."},
+  {pergunta:"Se a = -4, qual é o valor numérico de 2a + 3?",opcoes:["-11","-5","-8","5"],correta:1,explicacao:"Substituindo a por -4: 2×(-4)+3 = -8+3 = -5."},
+  {pergunta:"Qual é o resultado de simplificar 5x + 3x?",opcoes:["8x","15x","8x²","53x"],correta:0,explicacao:"5x + 3x são termos semelhantes (mesma parte literal x), então somamos os coeficientes: 5+3=8, ficando 8x."},
+  {pergunta:"Qual é o resultado de simplificar 7y - 2y?",opcoes:["9y","5y","5","14y"],correta:1,explicacao:"7y - 2y: subtraímos os coeficientes (7-2=5), mantendo a parte literal y, resultando em 5y."},
+  {pergunta:"Em uma expressão algébrica, o que é o coeficiente?",opcoes:["A letra da expressão","O número que multiplica a letra","O sinal de igual","O resultado final"],correta:1,explicacao:"O coeficiente é o número que aparece multiplicando a letra (variável) em um termo algébrico."},
+  {pergunta:"Na expressão 4x, qual é o coeficiente?",opcoes:["x","4","4x","Não tem coeficiente"],correta:1,explicacao:"Na expressão 4x, o número 4 é o coeficiente, que multiplica a variável x."},
+  {pergunta:"O que são 'termos semelhantes' em uma expressão algébrica?",opcoes:["Termos com a mesma parte literal (mesma letra e expoente)","Termos com o mesmo coeficiente","Termos que começam com a mesma letra do alfabeto","Termos que têm o mesmo número de letras"],correta:0,explicacao:"Termos semelhantes são aqueles que têm exatamente a mesma parte literal (mesma letra com mesmo expoente)."},
+  {pergunta:"Se x = 3 e y = 2, qual é o valor numérico de x + y?",opcoes:["1","5","6","23"],correta:1,explicacao:"Substituindo: 3 + 2 = 5."},
+  {pergunta:"Se x = 5, qual é o valor numérico de 2x - 4?",opcoes:["6","10","14","1"],correta:0,explicacao:"Substituindo x por 5: 2×5-4 = 10-4 = 6."},
+  {pergunta:"Na equação 2x = 10, qual é o valor de x?",opcoes:["2","5","8","20"],correta:1,explicacao:"2x = 10, então x = 10 ÷ 2 = 5."},
+  {pergunta:"Na equação x - 5 = 3, qual é o valor de x?",opcoes:["2","-2","8","15"],correta:2,explicacao:"x - 5 = 3, então x = 3 + 5 = 8."},
+  {pergunta:"Na equação 3x + 1 = 10, qual é o valor de x?",opcoes:["2","3","9","11"],correta:1,explicacao:"3x + 1 = 10, então 3x = 9, e x = 9 ÷ 3 = 3."},
+  {pergunta:"O que significa resolver uma equação?",opcoes:["Descobrir o valor da incógnita que torna a igualdade verdadeira","Apagar a letra da equação","Trocar o sinal de igual por outro símbolo","Somar todos os números"],correta:0,explicacao:"Resolver uma equação significa encontrar o valor da incógnita (letra) que faz a igualdade ser verdadeira."},
+  {pergunta:"Qual destas é uma equação do 1º grau?",opcoes:["x + 5 = 9","x² + 5 = 9","x³ = 27","Não existe equação do 1º grau"],correta:0,explicacao:"x + 5 = 9 é uma equação do 1º grau, pois a incógnita x está elevada a 1 (sem expoente maior)."},
+  {pergunta:"Em um problema do dia a dia, para que servem as equações?",opcoes:["Para representar e resolver situações com valores desconhecidos","Apenas para fazer desenhos","Para classificar animais","Para medir o tempo"],correta:0,explicacao:"Equações ajudam a representar matematicamente situações do cotidiano com valores desconhecidos (incógnitas) e resolvê-las."},
+  {pergunta:"Na inequação x - 3 < 5, qual é a solução?",opcoes:["x < 8","x > 8","x < 2","x > 2"],correta:0,explicacao:"x - 3 < 5, então x < 5 + 3, ou seja, x < 8."},
+  {pergunta:"Na inequação 2x ≥ 10, qual é a solução?",opcoes:["x ≥ 5","x ≤ 5","x ≥ 20","x ≥ 8"],correta:0,explicacao:"2x ≥ 10, então x ≥ 10 ÷ 2, ou seja, x ≥ 5."},
+  {pergunta:"O símbolo ≥ significa:",opcoes:["Maior ou igual a","Menor ou igual a","Diferente de","Igual a"],correta:0,explicacao:"O símbolo ≥ significa 'maior ou igual a'."},
+  {pergunta:"O símbolo ≤ significa:",opcoes:["Maior que","Menor ou igual a","Diferente de","Maior ou igual a"],correta:1,explicacao:"O símbolo ≤ significa 'menor ou igual a'."},
+  {pergunta:"Uma inequação pode ter quantas soluções possíveis?",opcoes:["Apenas uma","Nenhuma","Várias, formando um conjunto de valores","Sempre zero"],correta:2,explicacao:"Diferente da equação (que geralmente tem uma solução), a inequação tem várias soluções possíveis, formando um intervalo de valores."},
+  {pergunta:"Quantos lados tem um triângulo?",opcoes:["2","3","4","5"],correta:1,explicacao:"O triângulo é um polígono que tem 3 lados."},
+  {pergunta:"Se dois ângulos de um triângulo medem 50° e 60°, quanto mede o terceiro?",opcoes:["60°","70°","80°","90°"],correta:1,explicacao:"A soma dos ângulos é 180°. Então: 180° - 50° - 60° = 70°."},
+  {pergunta:"Se dois ângulos de um triângulo medem 40° e 90°, quanto mede o terceiro?",opcoes:["40°","50°","60°","90°"],correta:1,explicacao:"180° - 40° - 90° = 50°."},
+  {pergunta:"Um triângulo acutângulo tem todos os ângulos:",opcoes:["Maiores que 90°","Iguais a 90°","Menores que 90°","Iguais a 180°"],correta:2,explicacao:"Triângulo acutângulo é aquele em que todos os 3 ângulos são menores que 90°."},
+  {pergunta:"Um triângulo pode ser classificado ao mesmo tempo por lados E por ângulos?",opcoes:["Não, só por um critério","Sim, por exemplo: isósceles e retângulo ao mesmo tempo","Não, isso é impossível","Só os polígonos podem"],correta:1,explicacao:"Um triângulo pode receber uma classificação por lados (equilátero, isósceles, escaleno) e outra por ângulos (acutângulo, retângulo, obtusângulo) ao mesmo tempo."},
+  {pergunta:"Um triângulo equilátero é sempre também:",opcoes:["Obtusângulo","Retângulo","Acutângulo","Côncavo"],correta:2,explicacao:"Como todos os ângulos de um triângulo equilátero medem 60°, ele é sempre acutângulo (todos os ângulos menores que 90°)."},
+  {pergunta:"Quantos lados tem um quadrilátero?",opcoes:["3","4","5","6"],correta:1,explicacao:"Quadrilátero é o polígono que tem 4 lados."},
+  {pergunta:"Quantos lados tem um hexágono?",opcoes:["5","6","7","8"],correta:1,explicacao:"Hexágono é o polígono que tem 6 lados."},
+  {pergunta:"Quantos lados tem um heptágono?",opcoes:["6","7","8","9"],correta:1,explicacao:"Heptágono é o polígono que tem 7 lados."},
+  {pergunta:"Quantos lados tem um octógono?",opcoes:["7","8","9","10"],correta:1,explicacao:"Octógono é o polígono que tem 8 lados."},
+  {pergunta:"Um polígono convexo é aquele que:",opcoes:["Tem uma parte afundada pra dentro","Não tem nenhuma parte afundada pra dentro","Sempre tem 4 lados","Não pode ter ângulos retos"],correta:1,explicacao:"Polígono convexo é aquele que não tem nenhuma parte do contorno afundada para dentro da figura."},
+  {pergunta:"Qual é a soma dos ângulos internos de um hexágono (6 lados)?",opcoes:["540°","720°","900°","360°"],correta:1,explicacao:"(6-2) × 180° = 4 × 180° = 720°."},
+  {pergunta:"Qual é a soma dos ângulos internos de um quadrilátero (4 lados)?",opcoes:["180°","270°","360°","450°"],correta:2,explicacao:"(4-2) × 180° = 2 × 180° = 360°."},
+  {pergunta:"Qual é a soma dos ângulos internos de um octógono (8 lados)?",opcoes:["1080°","900°","720°","1440°"],correta:0,explicacao:"(8-2) × 180° = 6 × 180° = 1080°."},
+  {pergunta:"Na fórmula (n-2) × 180°, o que representa a letra n?",opcoes:["O número de ângulos retos","O número de lados do polígono","A soma dos ângulos externos","Um valor fixo, sempre igual a 2"],correta:1,explicacao:"Na fórmula, n representa o número de lados do polígono."},
+  {pergunta:"Quantos triângulos podem ser formados dentro de um pentágono, traçando diagonais de um vértice?",opcoes:["2","3","4","5"],correta:1,explicacao:"Em um pentágono (5 lados), é possível formar 3 triângulos a partir de um único vértice, o que justifica a fórmula (n-2)."},
+  {pergunta:"Quanto vale 4x quando x = 0?",opcoes:["4","0","1","Não é possível calcular"],correta:1,explicacao:"Qualquer número multiplicado por 0 resulta em 0, então 4×0 = 0."},
+  {pergunta:"Na equação x + x = 10, qual é o valor de x?",opcoes:["5","10","20","2"],correta:0,explicacao:"x + x = 2x = 10, então x = 10 ÷ 2 = 5."},
+  {pergunta:"Em geometria, o que significa 'classificar' um triângulo?",opcoes:["Apagar o triângulo","Identificar o tipo dele, conforme lados ou ângulos","Medir sua área","Pintar o triângulo"],correta:1,explicacao:"Classificar um triângulo significa identificar seu tipo, de acordo com a medida dos lados ou dos ângulos."},
+  {pergunta:"Em uma inequação como x > 4, o número 4 pode ser uma solução?",opcoes:["Sim, pois 4 é maior que 4","Não, pois o símbolo é só 'maior que', sem o igual","Sempre, em qualquer caso","Depende da cor do número"],correta:1,explicacao:"Como o símbolo é '>' (maior que, sem o igual), o próprio número 4 não é solução; só números maiores que 4."},
+  {pergunta:"Na inequação x ≤ 6, o número 6 é uma solução válida?",opcoes:["Não, nunca","Sim, porque o símbolo inclui o 'igual'","Só se x for negativo","Não é possível saber"],correta:1,explicacao:"O símbolo ≤ significa 'menor ou igual a', então o próprio número 6 também é uma solução válida."}
+];
+
+const perguntasPortugues = [
+  {pergunta:"O que é uma preposição?",opcoes:["Uma palavra que liga outras palavras (a, de, para)","Um tipo de verbo","Uma figura geométrica","Um número"],correta:0,explicacao:"Preposição é uma palavra que liga termos da frase, como 'a', 'de', 'para', 'com'."},
+  {pergunta:"O que é uma conjunção?",opcoes:["Liga frases ou ideias (e, mas, porque)","Substitui um nome","Indica quantidade","Dá ordem"],correta:0,explicacao:"Conjunção é a palavra que liga frases ou ideias, como 'e', 'mas', 'porque'."},
+  {pergunta:"O que é um advérbio?",opcoes:["Dá informação sobre o verbo (rápido, hoje, bem)","Substitui um substantivo","Liga duas frases","É sempre um número"],correta:0,explicacao:"Advérbio modifica o sentido do verbo, adjetivo ou outro advérbio, como 'rápido', 'hoje', 'bem'."},
+  {pergunta:"O que é um pronome?",opcoes:["Uma palavra que substitui o nome (ele, ela, isso)","Um tipo de verbo","Uma preposição","Um advérbio de tempo"],correta:0,explicacao:"Pronome é a palavra que substitui ou acompanha um substantivo, como 'ele', 'ela', 'isso'."},
+  {pergunta:"Na frase 'Joaquim estudou para a prova', qual é o sujeito?",opcoes:["Estudou","Joaquim","Para a prova","A prova"],correta:1,explicacao:"O sujeito é de quem a frase fala: 'Joaquim'."},
+  {pergunta:"O que é o predicado de uma frase?",opcoes:["De quem a frase fala","O que se diz sobre o sujeito","Sempre um substantivo","Uma preposição"],correta:1,explicacao:"O predicado é a parte da frase que diz algo sobre o sujeito, geralmente contendo o verbo."},
+  {pergunta:"Na frase 'O cão e o gato correram', o sujeito é do tipo:",opcoes:["Simples","Composto","Oculto","Indeterminado"],correta:1,explicacao:"Sujeito composto tem 2 ou mais núcleos: 'o cão' e 'o gato'."},
+  {pergunta:"Na frase 'Estudamos muito ontem', o sujeito é do tipo:",opcoes:["Simples","Composto","Oculto/desinencial (nós)","Indeterminado"],correta:2,explicacao:"O sujeito não aparece escrito, mas pode ser identificado pela conjugação do verbo: 'nós estudamos'."},
+  {pergunta:"O que é coesão textual?",opcoes:["O que liga as partes de um texto","Um tipo de pontuação","A introdução do texto","Apenas o título"],correta:0,explicacao:"Coesão é o conjunto de recursos que liga as partes de um texto, criando conexão entre as ideias."},
+  {pergunta:"Na frase 'Ana chegou. Ela estava cansada.', o que a palavra 'Ela' faz?",opcoes:["Não tem função","Retoma 'Ana' (coesão referencial)","É uma conjunção","É um advérbio"],correta:1,explicacao:"'Ela' retoma 'Ana', funcionando como um recurso de coesão referencial."},
+  {pergunta:"O que é coesão sequencial?",opcoes:["Usar conjunções e verbos pra ligar uma ideia na outra","Repetir sempre a mesma palavra","Não usar pontuação","Separar o texto em parágrafos sem conexão"],correta:0,explicacao:"Coesão sequencial usa conjunções e flexões verbais para encadear as ideias do texto."},
+  {pergunta:"O que significa interpretar um texto?",opcoes:["Copiar o texto","Entender o que ele realmente quer dizer","Contar as palavras","Decorar o texto"],correta:1,explicacao:"Interpretar é compreender o sentido e a intenção real do texto."},
+  {pergunta:"O que é linguagem figurada?",opcoes:["Quando a frase não quer dizer ao pé da letra","Quando o texto só tem números","Um tipo de letra de forma","Um tipo de pontuação"],correta:0,explicacao:"Linguagem figurada é quando o sentido da frase não é literal. Ex: 'choveu canivete' significa que choveu muito forte."},
+  {pergunta:"O verbo no modo Indicativo expressa:",opcoes:["Fatos certos, reais","Dúvida ou desejo","Uma ordem","Apenas o passado"],correta:0,explicacao:"O modo Indicativo é usado para expressar fatos certos e reais."},
+  {pergunta:"O verbo no modo Subjuntivo expressa:",opcoes:["Fatos certos","Dúvida, desejo ou possibilidade","Sempre uma ordem","Um substantivo"],correta:1,explicacao:"O modo Subjuntivo expressa dúvida, desejo ou possibilidade."},
+  {pergunta:"O verbo no modo Imperativo expressa:",opcoes:["Uma ordem ou pedido","Uma dúvida","Um fato passado","Um substantivo"],correta:0,explicacao:"O modo Imperativo é usado para dar ordens ou fazer pedidos."},
+  {pergunta:"Qual destas é uma conjunção?",opcoes:["Rápido","Mas","Ele","Casa"],correta:1,explicacao:"'Mas' é uma conjunção, pois liga duas ideias opostas."},
+  {pergunta:"Qual destas é um advérbio?",opcoes:["Casa","Rápido","Ele","Para"],correta:1,explicacao:"'Rápido' é um advérbio, pois modifica o sentido de uma ação (verbo)."},
+  {pergunta:"Em 'Joaquim e Maria estudaram juntos', qual é o núcleo do sujeito?",opcoes:["Estudaram","Joaquim e Maria","Juntos","Não tem sujeito"],correta:1,explicacao:"O núcleo do sujeito composto são os dois nomes: 'Joaquim' e 'Maria'."},
+  {pergunta:"Qual destas frases usa linguagem figurada?",opcoes:["O cachorro correu no parque.","Choveu canivete a noite toda.","Maria foi ao mercado.","Hoje está frio."],correta:1,explicacao:"'Choveu canivete' é uma expressão figurada que significa 'choveu muito forte', não que canivetes caíram do céu."},
+  {pergunta:"Qual destas é uma preposição?",opcoes:["Rápido","Para","Ele","Casa"],correta:1,explicacao:"'Para' é uma preposição, pois liga termos da frase."},
+  {pergunta:"Na frase 'O livro está sobre a mesa', qual palavra é a preposição?",opcoes:["Livro","Está","Sobre","Mesa"],correta:2,explicacao:"'Sobre' é a preposição, indicando a relação de lugar entre 'livro' e 'mesa'."},
+  {pergunta:"Na frase 'Estudei, mas não entendi tudo', qual palavra é a conjunção?",opcoes:["Estudei","Mas","Não","Entendi"],correta:1,explicacao:"'Mas' é a conjunção que liga as duas ideias opostas da frase."},
+  {pergunta:"Qual destas conjunções indica uma ideia de oposição?",opcoes:["E","Mas","Porque","Se"],correta:1,explicacao:"'Mas' é uma conjunção que indica oposição ou contraste entre duas ideias."},
+  {pergunta:"Na frase 'Ele chegou tarde porque choveu', qual palavra é a conjunção?",opcoes:["Ele","Chegou","Porque","Choveu"],correta:2,explicacao:"'Porque' é a conjunção que indica a causa de ele ter chegado tarde."},
+  {pergunta:"Na frase 'Ela cantou bem', qual palavra é o advérbio?",opcoes:["Ela","Cantou","Bem","Não tem advérbio"],correta:2,explicacao:"'Bem' é o advérbio, pois indica como a ação de cantar foi feita."},
+  {pergunta:"Na frase 'Hoje vamos estudar', qual palavra é o advérbio?",opcoes:["Hoje","Vamos","Estudar","Não tem advérbio"],correta:0,explicacao:"'Hoje' é um advérbio de tempo, indicando quando a ação vai acontecer."},
+  {pergunta:"Qual destes é um pronome?",opcoes:["Casa","Rápido","Ela","Estudar"],correta:2,explicacao:"'Ela' é um pronome, pois substitui um nome (substantivo)."},
+  {pergunta:"Na frase 'Joaquim estudou. Ele é esforçado', qual palavra é o pronome?",opcoes:["Joaquim","Estudou","Ele","Esforçado"],correta:2,explicacao:"'Ele' é o pronome que substitui o nome 'Joaquim', evitando repetição."},
+  {pergunta:"Qual é a função principal de um pronome?",opcoes:["Indicar tempo","Substituir ou acompanhar um substantivo","Ligar duas frases","Indicar lugar"],correta:1,explicacao:"A função principal do pronome é substituir ou acompanhar um substantivo, evitando repetições."},
+  {pergunta:"Na frase 'O menino correu rapidamente', qual é o sujeito?",opcoes:["Correu","O menino","Rapidamente","Não tem sujeito"],correta:1,explicacao:"'O menino' é o sujeito, pois é quem pratica a ação de correr."},
+  {pergunta:"Na frase 'A professora explicou a matéria', qual é o predicado?",opcoes:["A professora","Explicou a matéria","A matéria","Não tem predicado"],correta:1,explicacao:"'Explicou a matéria' é o predicado, pois é o que se diz sobre o sujeito 'a professora'."},
+  {pergunta:"O que é o núcleo do sujeito?",opcoes:["A palavra mais importante do sujeito","O verbo da frase","A última palavra da frase","Sempre um pronome"],correta:0,explicacao:"O núcleo do sujeito é a palavra mais importante dentro dele, geralmente um substantivo."},
+  {pergunta:"Na frase 'As crianças brincam no parque', qual é o núcleo do sujeito?",opcoes:["As","Crianças","Brincam","Parque"],correta:1,explicacao:"'Crianças' é o núcleo do sujeito 'as crianças', a palavra central que indica quem pratica a ação."},
+  {pergunta:"Na frase 'Cantamos a música toda', qual é o tipo de sujeito?",opcoes:["Simples","Composto","Oculto/desinencial (nós)","Não tem sujeito"],correta:2,explicacao:"O sujeito não aparece escrito, mas é identificado pela terminação do verbo 'cantamos': nós."},
+  {pergunta:"Na frase 'O cão late', qual é o tipo de sujeito?",opcoes:["Simples","Composto","Oculto","Inexistente"],correta:0,explicacao:"Sujeito simples tem apenas um núcleo: 'cão'."},
+  {pergunta:"Na frase 'Pedro, Ana e Lucas viajaram juntos', qual é o tipo de sujeito?",opcoes:["Simples","Composto","Oculto","Inexistente"],correta:1,explicacao:"Sujeito composto tem mais de um núcleo: 'Pedro', 'Ana' e 'Lucas'."},
+  {pergunta:"O que liga as ideias dentro de um texto, evitando que ele fique 'solto'?",opcoes:["A coesão","A pontuação apenas","O título","O tamanho das frases"],correta:0,explicacao:"A coesão é o conjunto de recursos linguísticos que conecta as partes de um texto."},
+  {pergunta:"Na frase 'Comprei um livro. Ele é muito interessante', o pronome 'ele' faz o papel de:",opcoes:["Conjunção","Coesão referencial, retomando 'livro'","Advérbio de tempo","Preposição"],correta:1,explicacao:"'Ele' retoma a palavra 'livro' já citada, fazendo a coesão referencial do texto."},
+  {pergunta:"Qual destas palavras costuma indicar coesão sequencial (ligando ideias em sequência)?",opcoes:["Portanto","Casa","Bonito","Devagar"],correta:0,explicacao:"'Portanto' é uma conjunção que liga uma ideia à conclusão da anterior, fazendo a coesão sequencial."},
+  {pergunta:"O que significa interpretar corretamente um texto?",opcoes:["Ler rápido sem pensar","Compreender a ideia principal e a intenção do autor","Decorar todas as palavras","Contar quantas frases tem o texto"],correta:1,explicacao:"Interpretar significa compreender a ideia central e a intenção de quem escreveu o texto."},
+  {pergunta:"Qual destas frases tem sentido literal (não figurado)?",opcoes:["Ele tem um coração de pedra.","Choveu canivete ontem.","O cachorro correu no quintal.","Ela está nas nuvens."],correta:2,explicacao:"'O cachorro correu no quintal' tem sentido literal, descreve exatamente o que aconteceu, sem figura de linguagem."},
+  {pergunta:"A expressão 'ele tem um coração de pedra' quer dizer que a pessoa é:",opcoes:["Literalmente feita de pedra","Sem sentimentos, dura no trato com os outros","Muito forte fisicamente","Uma pessoa de pedra preciosa"],correta:1,explicacao:"É uma linguagem figurada que significa que a pessoa é insensível ou dura emocionalmente, não que seja feita de pedra."},
+  {pergunta:"O verbo 'estudasse', no Subjuntivo, expressa:",opcoes:["Um fato certo","Uma possibilidade ou desejo","Uma ordem direta","Um substantivo"],correta:1,explicacao:"Verbos no modo Subjuntivo expressam dúvida, desejo ou possibilidade, como em 'se eu estudasse...'."},
+  {pergunta:"O verbo 'estude!' (como ordem), está no modo:",opcoes:["Indicativo","Subjuntivo","Imperativo","Nenhum dos três"],correta:2,explicacao:"'Estude!' é uma ordem ou pedido direto, característico do modo Imperativo."},
+  {pergunta:"A frase 'Joaquim estuda todos os dias' está no modo:",opcoes:["Indicativo","Subjuntivo","Imperativo","Nenhum"],correta:0,explicacao:"A frase expressa um fato certo e real (uma rotina), por isso está no modo Indicativo."},
+  {pergunta:"Qual é a diferença entre sujeito simples e composto?",opcoes:["Não existe diferença","O simples tem 1 núcleo, o composto tem 2 ou mais","O composto é sempre maior em tamanho de letras","O simples não tem verbo"],correta:1,explicacao:"Sujeito simples tem apenas um núcleo, enquanto o composto tem dois ou mais núcleos."},
+  {pergunta:"Quando o verbo está na 1ª pessoa do plural (nós) mas o 'nós' não aparece escrito, o sujeito é:",opcoes:["Composto","Indeterminado","Desinencial/oculto","Inexistente"],correta:2,explicacao:"Esse é o sujeito desinencial (ou oculto), identificado pela terminação do verbo, mesmo sem aparecer escrito."},
+  {pergunta:"Qual destas é uma função das classes gramaticais?",opcoes:["Ajudar a entender o papel de cada palavra na frase","Decorar a página com cores","Substituir os números","Apagar a pontuação"],correta:0,explicacao:"As classes gramaticais ajudam a entender qual é o papel (função) de cada palavra dentro da frase."},
+  {pergunta:"Na frase 'O menino e a menina correram', qual é o núcleo do sujeito composto?",opcoes:["Correram","Menino e menina","O e a","Não tem núcleo"],correta:1,explicacao:"Os núcleos do sujeito composto são 'menino' e 'menina'."},
+  {pergunta:"Qual destas palavras é uma conjunção que indica adição de ideias?",opcoes:["Mas","E","Porque","Se"],correta:1,explicacao:"'E' é a conjunção que soma ou adiciona ideias na frase."},
+  {pergunta:"Na frase 'Se chover, não saio de casa', qual conjunção indica condição?",opcoes:["Se","Não","Saio","Casa"],correta:0,explicacao:"'Se' é a conjunção que indica uma condição para que algo aconteça."},
+  {pergunta:"O que significa 'retomar uma informação' em um texto?",opcoes:["Apagar a informação anterior","Repetir a mesma palavra sempre","Usar uma palavra (como pronome) pra se referir a algo já dito","Começar um novo texto"],correta:2,explicacao:"Retomar uma informação significa se referir a algo já mencionado, geralmente usando pronomes, fazendo a coesão do texto."},
+  {pergunta:"Qual destas frases tem um advérbio de lugar?",opcoes:["Ele mora aqui.","Ele é alto.","Ele estuda muito.","Ele é gentil."],correta:0,explicacao:"'Aqui' é um advérbio de lugar, indicando onde a ação (morar) acontece."},
+  {pergunta:"Qual destas frases tem um advérbio de modo?",opcoes:["Ele chegou ontem.","Ele correu rapidamente.","Ele mora ali.","Ele tem dois cachorros."],correta:1,explicacao:"'Rapidamente' é um advérbio de modo, indicando como a ação de correr foi feita."},
+  {pergunta:"Na frase 'Comprei pão, leite e ovos', qual conjunção poderia substituir as vírgulas antes do último item?",opcoes:["Mas","E","Porque","Se"],correta:1,explicacao:"A conjunção 'e' é usada para ligar o último elemento de uma enumeração."},
+  {pergunta:"Qual é a importância de interpretar bem um texto numa prova?",opcoes:["Não tem importância","Ajuda a responder as perguntas corretamente, entendendo o que é pedido","Serve só para textos longos","Só é importante em redação"],correta:1,explicacao:"Interpretar bem o texto ajuda a entender exatamente o que está sendo perguntado, facilitando respostas corretas."},
+  {pergunta:"A frase 'Está na cara que ele mentiu' usa qual recurso?",opcoes:["Linguagem literal","Linguagem figurada","Apenas uma preposição","Um pronome"],correta:1,explicacao:"'Está na cara' é uma expressão de linguagem figurada que significa 'é muito óbvio', não que algo está literalmente no rosto."},
+  {pergunta:"Pronomes pessoais (eu, tu, ele, nós) têm a função de:",opcoes:["Substituir nomes de pessoas","Indicar lugar","Ligar frases","Expressar dúvida"],correta:0,explicacao:"Pronomes pessoais substituem os nomes das pessoas que participam da conversa ou da frase."},
+  {pergunta:"Na frase 'Ele estuda à noite', qual palavra é o advérbio de tempo?",opcoes:["Ele","Estuda","À noite","Não tem"],correta:2,explicacao:"'À noite' é uma expressão adverbial de tempo, indicando quando a ação acontece."}
+];
+
+const perguntasCiencias = [
+  {pergunta:"O que é taxonomia?",opcoes:["A ciência que organiza os seres vivos em grupos","Um tipo de planta","Uma doença","Um tipo de rocha"],correta:0,explicacao:"Taxonomia é a ciência que classifica e organiza os seres vivos em grupos."},
+  {pergunta:"Como é escrito o nome científico de um ser vivo?",opcoes:["Em português, com letra maiúscula","Em latim, com duas palavras","Apenas com números","Em qualquer idioma, sem regra"],correta:1,explicacao:"O nome científico é escrito em latim, com duas palavras (nomenclatura binominal)."},
+  {pergunta:"Qual é a ordem correta dos grupos taxonômicos, do maior para o menor?",opcoes:["Reino, Filo, Classe, Ordem, Família, Gênero, Espécie","Espécie, Gênero, Reino, Filo","Filo, Reino, Classe, Espécie","Gênero, Espécie, Reino, Filo"],correta:0,explicacao:"A ordem correta, do maior grupo para o menor, é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie."},
+  {pergunta:"Quantos são os reinos dos seres vivos, na classificação clássica?",opcoes:["3","4","5","7"],correta:2,explicacao:"São 5 reinos: Monera, Protista, Fungi, Plantae e Animalia."},
+  {pergunta:"O Reino Monera é formado por quais seres vivos?",opcoes:["Plantas","Bactérias","Animais","Fungos"],correta:1,explicacao:"O Reino Monera é formado pelas bactérias, seres de uma só célula."},
+  {pergunta:"O Reino Fungi é formado por quais seres vivos?",opcoes:["Bactérias","Fungos, cogumelos, mofo","Plantas","Animais marinhos"],correta:1,explicacao:"O Reino Fungi inclui fungos, cogumelos e mofos."},
+  {pergunta:"O Reino Plantae é formado por:",opcoes:["Todas as plantas","Todos os animais","Bactérias","Vírus"],correta:0,explicacao:"O Reino Plantae é formado por todas as plantas."},
+  {pergunta:"O Reino Animalia é formado por:",opcoes:["Todas as plantas","Todos os animais","Apenas bactérias","Apenas fungos"],correta:1,explicacao:"O Reino Animalia é formado por todos os animais."},
+  {pergunta:"O que são invertebrados?",opcoes:["Animais sem coluna vertebral","Animais sem boca","Plantas sem raiz","Fungos sem esporos"],correta:0,explicacao:"Invertebrados são animais que não possuem coluna vertebral (esqueleto de ossos nas costas)."},
+  {pergunta:"As esponjas do mar pertencem a qual grupo de invertebrados?",opcoes:["Cnidários","Poríferos","Moluscos","Artrópodes"],correta:1,explicacao:"As esponjas são Poríferos, animais com o corpo cheio de poros (furinhos)."},
+  {pergunta:"Água-viva e coral pertencem a qual grupo?",opcoes:["Poríferos","Cnidários","Anelídeos","Equinodermos"],correta:1,explicacao:"Água-viva e coral são Cnidários, animais com tentáculos que podem picar."},
+  {pergunta:"A minhoca pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Artrópodes","Cnidários"],correta:0,explicacao:"A minhoca é um Anelídeo, animal com o corpo dividido em anéis."},
+  {pergunta:"O caracol e o polvo pertencem a qual grupo?",opcoes:["Artrópodes","Moluscos","Equinodermos","Poríferos"],correta:1,explicacao:"Caracol e polvo são Moluscos."},
+  {pergunta:"A estrela-do-mar pertence a qual grupo?",opcoes:["Equinodermos","Cnidários","Anelídeos","Artrópodes"],correta:0,explicacao:"A estrela-do-mar é um Equinodermo."},
+  {pergunta:"Insetos e aranhas pertencem a qual grupo de invertebrados?",opcoes:["Moluscos","Anelídeos","Artrópodes","Poríferos"],correta:2,explicacao:"Insetos e aranhas são Artrópodes, animais com pernas articuladas."},
+  {pergunta:"A tênia é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Moluscos","Cnidários"],correta:0,explicacao:"A tênia é um Platelminto, verme de corpo achatado."},
+  {pergunta:"A lombriga é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Equinodermos"],correta:1,explicacao:"A lombriga é um Nematelminto, verme de corpo redondo (cilíndrico)."},
+  {pergunta:"Qual critério NÃO é usado para classificar os seres vivos em reinos?",opcoes:["Modo de nutrição","Modo de reprodução","Cor predominante","Tipo de sustentação do corpo"],correta:2,explicacao:"A cor não é um critério científico de classificação; usa-se nutrição, reprodução, obtenção de oxigênio e sustentação do corpo."},
+  {pergunta:"Doenças causadas por fungos são chamadas de:",opcoes:["Viroses","Bacterioses","Micoses","Protozooses"],correta:2,explicacao:"Doenças causadas por fungos são chamadas de micoses."},
+  {pergunta:"Por que é importante classificar os seres vivos em grupos?",opcoes:["Para deixar mais difícil de estudar","Para facilitar o estudo, agrupando os que são parecidos","Não tem importância nenhuma","Só para decorar nomes"],correta:1,explicacao:"Classificar facilita o estudo, organizando os seres vivos por características semelhantes."},
+  {pergunta:"O grupo taxonômico 'Espécie' representa:",opcoes:["O maior grupo de todos","O menor e mais específico grupo","Um grupo apenas de plantas","Um grupo apenas de bactérias"],correta:1,explicacao:"Espécie é o menor e mais específico nível da classificação taxonômica."},
+  {pergunta:"O grupo taxonômico 'Reino' representa:",opcoes:["O menor grupo de todos","Um dos maiores e mais amplos grupos","Apenas animais marinhos","Um tipo de doença"],correta:1,explicacao:"Reino é um dos grupos mais amplos da classificação, reunindo seres vivos com características bem gerais em comum."},
+  {pergunta:"Por que o nome científico é escrito em latim?",opcoes:["Porque é mais bonito","Para ser igual em qualquer país do mundo, evitando confusão","Porque é mais fácil de pronunciar","Não há motivo especial"],correta:1,explicacao:"O latim é usado para que o nome científico seja reconhecido da mesma forma em qualquer lugar do mundo, evitando confusão entre idiomas."},
+  {pergunta:"Bactérias fazem parte de qual reino?",opcoes:["Plantae","Animalia","Monera","Fungi"],correta:2,explicacao:"Bactérias pertencem ao Reino Monera, formado por seres unicelulares simples."},
+  {pergunta:"Cogumelos fazem parte de qual reino?",opcoes:["Monera","Fungi","Plantae","Protista"],correta:1,explicacao:"Cogumelos fazem parte do Reino Fungi."},
+  {pergunta:"Protozoários e algas fazem parte de qual reino?",opcoes:["Monera","Fungi","Protista","Animalia"],correta:2,explicacao:"Protozoários e algas pertencem ao Reino Protista (também chamado Protoctista)."},
+  {pergunta:"Uma doença causada por bactérias é chamada de:",opcoes:["Micose","Bacteriose","Virose","Protozoose"],correta:1,explicacao:"Doenças causadas por bactérias são chamadas de bacterioses."},
+  {pergunta:"Uma doença causada por vírus é chamada de:",opcoes:["Virose","Micose","Bacteriose","Helmintose"],correta:0,explicacao:"Doenças causadas por vírus são chamadas de viroses."},
+  {pergunta:"Uma doença causada por vermes é chamada de:",opcoes:["Virose","Micose","Helmintose","Bacteriose"],correta:2,explicacao:"Doenças causadas por vermes (helmintos) são chamadas de helmintoses."},
+  {pergunta:"Vírus são considerados seres vivos pelos critérios tradicionais de classificação?",opcoes:["Sim, sem nenhuma dúvida","Não se encaixam bem nos 5 reinos clássicos, sendo tratados separadamente","Pertencem ao Reino Animalia","Pertencem ao Reino Plantae"],correta:1,explicacao:"Vírus não se encaixam perfeitamente na classificação dos 5 reinos, sendo geralmente estudados separadamente."},
+  {pergunta:"Qual destes é um critério usado para classificar os seres vivos?",opcoes:["Modo de nutrição","Cor da pele","Local de nascimento","Tamanho dos pés"],correta:0,explicacao:"O modo de nutrição é um dos critérios científicos usados para agrupar seres vivos."},
+  {pergunta:"Qual destes é outro critério usado para classificar os seres vivos?",opcoes:["Modo de reprodução","Nome da família humana","Cor da roupa","Local onde foi comprado"],correta:0,explicacao:"O modo de reprodução é um critério científico usado na classificação dos seres vivos."},
+  {pergunta:"O que significa 'sustentação do corpo', como critério de classificação?",opcoes:["Como o ser vivo se equilibra ou se apoia (esqueleto, tronco, etc.)","A cor da pele do ser vivo","O peso do ser vivo","O nome popular do animal"],correta:0,explicacao:"Sustentação do corpo se refere à estrutura que dá suporte ao ser vivo, como esqueleto interno, externo, ou outras formas de sustentação."},
+  {pergunta:"O que diferencia um invertebrado de um vertebrado?",opcoes:["O tamanho do corpo","A presença ou ausência de coluna vertebral","A cor da pele","O local onde vive"],correta:1,explicacao:"Vertebrados possuem coluna vertebral; invertebrados não possuem essa estrutura."},
+  {pergunta:"Os Poríferos têm o corpo:",opcoes:["Cheio de poros (furinhos)","Coberto de penas","Com casca dura","Com pelos longos"],correta:0,explicacao:"Poríferos (esponjas) têm o corpo cheio de pequenos poros, por onde a água circula."},
+  {pergunta:"Os Cnidários têm como característica:",opcoes:["Tentáculos que podem picar","Asas para voar","Pernas articuladas","Concha protetora"],correta:0,explicacao:"Cnidários (água-viva, coral, anêmona) têm tentáculos com células urticantes que podem picar."},
+  {pergunta:"O corpo achatado é uma característica de qual grupo?",opcoes:["Platelmintos","Anelídeos","Artrópodes","Equinodermos"],correta:0,explicacao:"Platelmintos têm o corpo achatado, como a tênia."},
+  {pergunta:"O corpo dividido em anéis é uma característica de qual grupo?",opcoes:["Moluscos","Anelídeos","Cnidários","Poríferos"],correta:1,explicacao:"Anelídeos (como a minhoca) têm o corpo dividido em segmentos parecidos com anéis."},
+  {pergunta:"Pernas articuladas são uma característica de qual grupo?",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes (insetos, aranhas, caranguejos) têm pernas articuladas (com 'juntas')."},
+  {pergunta:"A concha é uma característica comum em qual grupo de invertebrados?",opcoes:["Moluscos","Cnidários","Artrópodes","Platelmintos"],correta:0,explicacao:"Muitos Moluscos (como caracol e ostra) possuem concha, uma estrutura dura de proteção."},
+  {pergunta:"O ouriço-do-mar pertence a qual grupo?",opcoes:["Cnidários","Moluscos","Equinodermos","Artrópodes"],correta:2,explicacao:"O ouriço-do-mar é um Equinodermo, grupo que inclui também a estrela-do-mar."},
+  {pergunta:"O caranguejo pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Cnidários","Poríferos"],correta:1,explicacao:"O caranguejo é um Artrópode, animal com pernas articuladas e exoesqueleto."},
+  {pergunta:"A lula pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Anelídeos","Cnidários"],correta:0,explicacao:"A lula é um Molusco, assim como o polvo e o caracol."},
+  {pergunta:"A sanguessuga pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Cnidários","Equinodermos"],correta:0,explicacao:"A sanguessuga é um Anelídeo, com corpo dividido em anéis, assim como a minhoca."},
+  {pergunta:"Animais com corpo redondo (cilíndrico), como a lombriga, são chamados de:",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Cnidários"],correta:1,explicacao:"Nematelmintos têm o corpo em formato cilíndrico (redondo), diferente dos Platelmintos, que são achatados."},
+  {pergunta:"Os fungos se alimentam principalmente:",opcoes:["Fazendo fotossíntese como as plantas","Absorvendo nutrientes de matéria orgânica","Caçando outros animais","Fazendo fotossíntese aquática"],correta:1,explicacao:"Fungos não fazem fotossíntese; eles absorvem nutrientes de matéria orgânica em decomposição ou de outros organismos."},
+  {pergunta:"As plantas se destacam por realizar qual processo para obter energia?",opcoes:["Fotossíntese","Fermentação apenas","Caça","Decomposição"],correta:0,explicacao:"As plantas realizam fotossíntese, processo que usa luz solar para produzir energia."},
+  {pergunta:"Os animais, de modo geral, obtêm alimento:",opcoes:["Fazendo fotossíntese","Se alimentando de outros seres vivos ou partes deles","Absorvendo luz do sol diretamente","Não precisam se alimentar"],correta:1,explicacao:"Animais obtêm energia se alimentando de outros seres vivos (plantas, outros animais, etc.), pois não fazem fotossíntese."},
+  {pergunta:"Qual é a diferença entre o Reino Plantae e o Reino Fungi quanto à nutrição?",opcoes:["Não existe diferença","Plantas fazem fotossíntese; fungos absorvem nutrientes de matéria orgânica","Fungos fazem fotossíntese; plantas não","Os dois caçam outros seres vivos"],correta:1,explicacao:"Plantas produzem seu próprio alimento por fotossíntese, enquanto fungos absorvem nutrientes já existentes na matéria orgânica."},
+  {pergunta:"O Reino Protista inclui organismos que podem ser:",opcoes:["Apenas multicelulares grandes","Geralmente unicelulares, como protozoários e algumas algas","Apenas vertebrados","Apenas fungos"],correta:1,explicacao:"O Reino Protista é formado principalmente por organismos unicelulares, como protozoários e certas algas."},
+  {pergunta:"O grupo taxonômico 'Filo' vem depois de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Gênero","Reino","Família"],correta:2,explicacao:"A ordem do maior para o menor é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie. Filo vem logo depois de Reino."},
+  {pergunta:"O grupo taxonômico 'Gênero' vem antes de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Família","Reino","Filo"],correta:0,explicacao:"Gênero vem antes de Espécie, que é o último e mais específico nível da classificação."},
+  {pergunta:"As bactérias têm quantas células?",opcoes:["Uma só (unicelulares)","Milhares","Exatamente duas","Não têm células"],correta:0,explicacao:"Bactérias são organismos unicelulares, formados por apenas uma célula."},
+  {pergunta:"Qual destes seres vivos NÃO pertence ao Reino Animalia?",opcoes:["Cachorro","Minhoca","Cogumelo","Borboleta"],correta:2,explicacao:"O cogumelo pertence ao Reino Fungi, não ao Reino Animalia."},
+  {pergunta:"Qual destes seres vivos pertence ao Reino Plantae?",opcoes:["Bactéria","Samambaia","Fungo","Água-viva"],correta:1,explicacao:"A samambaia é uma planta, pertencendo ao Reino Plantae."},
+  {pergunta:"O mofo que aparece em pão velho pertence a qual reino?",opcoes:["Monera","Fungi","Plantae","Animalia"],correta:1,explicacao:"O mofo é um tipo de fungo, pertencendo ao Reino Fungi."},
+  {pergunta:"Qual destes é um exemplo de Reino Monera?",opcoes:["Bactéria causadora de uma infecção","Cogumelo","Samambaia","Estrela-do-mar"],correta:0,explicacao:"Bactérias pertencem ao Reino Monera."},
+  {pergunta:"A malária é causada por um organismo de qual reino?",opcoes:["Monera","Protista","Fungi","Animalia"],correta:1,explicacao:"A malária é causada por um protozoário, organismo do Reino Protista."},
+  {pergunta:"Animais que têm o corpo coberto por exoesqueleto (esqueleto externo duro) geralmente são:",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes possuem exoesqueleto, uma estrutura dura externa que protege e sustenta o corpo."},
+  {pergunta:"A classificação taxonômica ajuda os cientistas a:",opcoes:["Confundir os nomes dos seres vivos","Organizar e comunicar informações sobre os seres vivos de forma padronizada","Aumentar a quantidade de espécies","Tornar a ciência mais difícil"],correta:1,explicacao:"A taxonomia padroniza a forma de organizar e comunicar informações sobre os seres vivos entre cientistas do mundo todo."}
+];
+
+const perguntasGeografia = [
+  {pergunta:"O que é agropecuária?",opcoes:["A junção da agricultura com a pecuária","Só a criação de animais","Só o plantio de árvores","Um tipo de cidade"],correta:0,explicacao:"Agropecuária é a junção da agricultura (plantar) com a pecuária (criar animais)."},
+  {pergunta:"O Brasil é um grande produtor mundial de qual produto?",opcoes:["Petróleo","Soja","Carvão","Trigo"],correta:1,explicacao:"O Brasil é um dos maiores produtores de soja do mundo."},
+  {pergunta:"A agropecuária faz parte de qual setor da economia?",opcoes:["Setor primário","Setor secundário","Setor terciário","Nenhum setor"],correta:0,explicacao:"A agropecuária e o extrativismo fazem parte do setor primário, que produz a matéria-prima usada pelas fábricas."},
+  {pergunta:"O sistema extensivo de produção é marcado por:",opcoes:["Pouca tecnologia e necessidade de uma área de terra muito grande","Muita tecnologia e pouca área de terra","Produção só dentro das cidades","Não usar nenhuma terra"],correta:0,explicacao:"O sistema extensivo usa pouca máquina e pouco adubo químico, por isso precisa de uma área grande para produzir bastante."},
+  {pergunta:"O sistema intensivo de produção é marcado por:",opcoes:["Pouca tecnologia e área enorme","Muita tecnologia, máquinas e adubos, em área menor","Não usar máquinas","Ser praticado só na cidade"],correta:1,explicacao:"O sistema intensivo usa muita tecnologia, máquinas e adubos químicos, o que permite produzir muito em uma área menor."},
+  {pergunta:"No exemplo dos fazendeiros: Fernando tem 3 vacas que dão 10 litros cada (30 litros no total). Carlos tem 1 vaca que dá 30 litros. Quem tem a vaca com maior produtividade?",opcoes:["Fernando","Carlos","Os dois têm a mesma produtividade","Nenhum dos dois produz leite"],correta:1,explicacao:"A vaca de Carlos produz 30 litros sozinha, enquanto as de Fernando precisam de 3 vacas para dar o mesmo total. Por isso, a vaca de Carlos tem maior produtividade."},
+  {pergunta:"O que foi a Revolução Verde?",opcoes:["Um período (1960-1970) em que a agricultura passou a usar muito mais máquinas, adubos e sementes melhoradas","Uma lei que proibiu o uso de máquinas no campo","Uma revolução que aconteceu só no Brasil","Um movimento para plantar só árvores"],correta:0,explicacao:"A Revolução Verde foi o período de modernização da agricultura, entre as décadas de 1960 e 1970, que aumentou muito a produção agrícola no mundo."},
+  {pergunta:"O que é um complexo agroindustrial?",opcoes:["A ligação entre a produção agropecuária e as atividades industriais (produzir, transportar, processar, vender)","Um tipo de fazenda muito pequena","Um prédio onde só se planta","Uma lei sobre terras"],correta:0,explicacao:"O complexo agroindustrial é a integração entre a agropecuária e a indústria, formando uma cadeia: produção de insumos, produção agropecuária, transporte, processamento, armazenagem e comercialização."},
+  {pergunta:"No Brasil, em quais regiões o sistema extensivo é mais comum?",opcoes:["No interior do Nordeste, na Amazônia e no Pantanal","Apenas nas grandes cidades","Apenas no Sudeste","Em nenhuma região"],correta:0,explicacao:"O sistema extensivo, com agricultura familiar e pecuária tradicional, é mais comum no interior do Nordeste, na Amazônia e no Pantanal."},
+  {pergunta:"No Brasil, em quais regiões a agropecuária moderna (sistema intensivo) está mais concentrada?",opcoes:["Sul, Sudeste e parte do Centro-Oeste","Apenas no Norte","Apenas no Nordeste","Em nenhuma região específica"],correta:0,explicacao:"A agropecuária moderna está mais concentrada nas regiões Sul e Sudeste, e em algumas áreas do Centro-Oeste, onde há mais tecnologia e capital."},
+  {pergunta:"A pecuária extensiva do Sertão Nordestino e do Pantanal é praticada há muito tempo por quem?",opcoes:["Pelos vaqueiros","Pelos pescadores","Pelos mineradores","Pelos engenheiros"],correta:0,explicacao:"Os vaqueiros desenvolveram, há séculos, habilidades e técnicas para cuidar do gado nessas regiões."},
+  {pergunta:"O que é agronegócio?",opcoes:["Pequena horta de quintal","Sistema moderno de produção agrícola em grande escala, com tecnologia","Um tipo de cidade pequena","Uma lei sobre terras"],correta:1,explicacao:"Agronegócio é a produção agrícola moderna, em grande escala, com tecnologia."},
+  {pergunta:"O que é estrutura fundiária?",opcoes:["O clima do Brasil","A forma como as terras são divididas entre as pessoas","O tipo de solo","Um rio do Brasil"],correta:1,explicacao:"Estrutura fundiária é como as terras rurais são distribuídas entre as pessoas."},
+  {pergunta:"No Brasil, a estrutura fundiária é chamada de:",opcoes:["Equilibrada (todos têm terras parecidas)","Concentrada (poucos têm muita terra, muitos têm pouca)","Inexistente (não há terras divididas)","Pública apenas"],correta:1,explicacao:"A estrutura fundiária brasileira é concentrada: poucas pessoas têm a maior parte das terras, e muitas pessoas têm pouca ou nenhuma."},
+  {pergunta:"O que significa 'latifúndio'?",opcoes:["Uma propriedade rural pequena","Uma cidade grande","Uma propriedade rural muito grande","Um rio"],correta:2,explicacao:"Latifúndio é uma propriedade rural de grande extensão."},
+  {pergunta:"O que significa 'minifúndio'?",opcoes:["Uma propriedade rural pequena, normalmente de família","Uma propriedade rural enorme","Uma fábrica","Um tipo de animal"],correta:0,explicacao:"Minifúndio é uma propriedade rural pequena, com mão de obra geralmente familiar."},
+  {pergunta:"No período do Brasil Colônia, como as terras eram distribuídas pelos portugueses?",opcoes:["Em pedaços pequenos e iguais para cada pessoa","Em grandes extensões chamadas sesmarias, doadas para poucas famílias","Não havia distribuição de terras","As terras eram só do rei, sem doação"],correta:1,explicacao:"Durante o período colonial, Portugal doava grandes extensões de terra (sesmarias) para uma elite, o que ajudou a criar o latifúndio como base da propriedade rural no Brasil."},
+  {pergunta:"O que caracteriza um latifúndio improdutivo?",opcoes:["Uma terra grande que não é usada para nenhuma produção","Uma terra pequena muito produtiva","Uma fazenda só de gado","Uma plantação de frutas"],correta:0,explicacao:"Latifúndio improdutivo é uma propriedade rural muito grande que não está sendo usada para produção, o que gera críticas e pode levar à desapropriação para reforma agrária."},
+  {pergunta:"O que é reforma agrária?",opcoes:["Construir mais fazendas grandes","Redistribuir terras de forma mais justa entre a população","Proibir o plantio no Brasil","Transformar todo o campo em cidade"],correta:1,explicacao:"Reforma agrária é a redistribuição de terras buscando reduzir a concentração nas mãos de poucos, dando terra a quem precisa."},
+  {pergunta:"Qual órgão do governo brasileiro cuida da reforma agrária?",opcoes:["Incra (Instituto Nacional de Colonização e Reforma Agrária)","IBGE","FAO","ONU"],correta:0,explicacao:"O Incra é o órgão responsável por organizar a distribuição de terras e a reforma agrária no Brasil."},
+  {pergunta:"O que é extrativismo?",opcoes:["Plantar alimentos em fazendas","Tirar recursos direto da natureza, sem plantar e sem criar","Construir cidades","Criar gado"],correta:1,explicacao:"Extrativismo é retirar recursos que a natureza já oferece, sem cultivo nem criação."},
+  {pergunta:"Quais são os três tipos de extrativismo?",opcoes:["Vegetal, animal e mineral","Urbano, rural e industrial","Norte, sul e centro","Grande, médio e pequeno"],correta:0,explicacao:"Os três tipos de extrativismo são: vegetal (plantas), animal (pesca e caça) e mineral (minérios)."},
+  {pergunta:"Qual região do Brasil é muito conhecida pelo extrativismo, por ter a maior variedade de plantas e animais do mundo?",opcoes:["Sul","Amazônia","Litoral de São Paulo","Centro de Brasília"],correta:1,explicacao:"A região amazônica é muito conhecida pelo extrativismo, por ter a maior biodiversidade do planeta."},
+  {pergunta:"O látex (borracha) e a castanha-do-pará são exemplos de qual tipo de extrativismo?",opcoes:["Mineral","Animal","Vegetal","Urbano"],correta:2,explicacao:"O látex e a castanha vêm de árvores, por isso são produtos do extrativismo vegetal."},
+  {pergunta:"O ferro e o ouro são exemplos de qual tipo de extrativismo?",opcoes:["Vegetal","Mineral","Animal","Industrial"],correta:1,explicacao:"Ferro e ouro são minérios, por isso fazem parte do extrativismo mineral."},
+  {pergunta:"O garimpo é uma atividade de qual tipo de extrativismo?",opcoes:["Vegetal","Animal","Mineral","Urbano"],correta:2,explicacao:"O garimpo é a extração de minérios (como ouro), sendo uma atividade de extrativismo mineral."},
+  {pergunta:"Quem são as 'quebradeiras de coco babaçu'?",opcoes:["Mulheres que coletam e quebram o coco babaçu, principalmente no Maranhão e Piauí","Máquinas usadas nas fazendas","Um tipo de animal da Amazônia","Donas de grandes fazendas"],correta:0,explicacao:"As quebradeiras de coco babaçu são milhares de mulheres que vivem em comunidades rurais e coletam o babaçu, uma palmeira do Cerrado, Caatinga e Amazônia."},
+  {pergunta:"O extrativismo sustentável busca:",opcoes:["Retirar recursos da natureza sem destruí-la","Acabar com toda a vegetação","Construir fábricas na floresta","Proibir qualquer uso da natureza"],correta:0,explicacao:"Extrativismo sustentável retira recursos naturais de forma equilibrada, sem destruir o meio ambiente, para que ele continue produzindo no futuro."},
+  {pergunta:"A extração de madeira na Amazônia, quando feita sem controle, pode causar:",opcoes:["Mais chuva na região","Desmatamento e problemas ambientais","Aumento da biodiversidade","Nenhum problema"],correta:1,explicacao:"A extração descontrolada de madeira pode causar desmatamento e sérios problemas ambientais."},
+  {pergunta:"O que é urbanização?",opcoes:["Quando as pessoas vão do campo para morar nas cidades","Quando as cidades desaparecem","Quando só existe zona rural","A criação de fazendas"],correta:0,explicacao:"Urbanização é o processo de crescimento das cidades, com pessoas saindo do campo."},
+  {pergunta:"Qual é uma consequência comum do crescimento desordenado das cidades?",opcoes:["Menos trânsito","Surgimento de favelas e problemas de moradia","Mais áreas verdes automaticamente","Diminuição da população"],correta:1,explicacao:"O crescimento urbano desordenado costuma gerar problemas de moradia, como o surgimento de favelas."},
+  {pergunta:"O que é uma metrópole, em termos de hierarquia urbana?",opcoes:["Uma cidade pequena isolada","Uma cidade grande, com grande influência sobre outras cidades","Uma vila rural","Um bairro de uma cidade"],correta:1,explicacao:"Metrópole é uma cidade de grande porte que exerce forte influência econômica e social sobre outras cidades da região."},
+  {pergunta:"Qual destas é considerada uma metrópole brasileira?",opcoes:["São Paulo","Uma vila com 500 habitantes","Uma fazenda","Um povoado isolado"],correta:0,explicacao:"São Paulo é uma das principais metrópoles do Brasil, com grande população e influência econômica."},
+  {pergunta:"O transporte ferroviário no Brasil é feito por meio de:",opcoes:["Trens","Caminhões","Aviões apenas","Bicicletas"],correta:0,explicacao:"O transporte ferroviário é realizado por trens, que circulam sobre trilhos."},
+  {pergunta:"Por que o transporte rodoviário é o mais usado no Brasil?",opcoes:["Porque o Brasil não tem rios","Porque há uma grande malha de estradas e poucos investimentos em outros modais","Porque é o transporte mais barato sempre","Porque não existem outros tipos de transporte"],correta:1,explicacao:"O Brasil investiu historicamente mais em estradas (rodovias) do que em outros tipos de transporte, como ferrovias."},
+  {pergunta:"O que é êxodo rural?",opcoes:["Quando as pessoas saem do campo para morar nas cidades","Quando as pessoas saem das cidades para o campo","Um tipo de plantação","Um tipo de animal"],correta:0,explicacao:"Êxodo rural é o processo de saída das pessoas do campo para morar nas cidades, um dos motores da urbanização."},
+  {pergunta:"O que pode causar enchentes nas grandes cidades brasileiras?",opcoes:["Falta de planejamento urbano e impermeabilização do solo","Excesso de áreas verdes","Pouca população","Falta de trânsito"],correta:0,explicacao:"A falta de planejamento urbano e a impermeabilização do solo (asfalto, concreto) dificultam o escoamento da água da chuva, causando enchentes."},
+  {pergunta:"O que significa 'impermeabilização do solo' nas cidades?",opcoes:["Cobrir o solo com asfalto ou concreto, impedindo a água de penetrar","Plantar mais árvores","Construir rios artificiais","Aumentar a quantidade de terra"],correta:0,explicacao:"Impermeabilização é quando o solo é cobrido com material que não deixa a água passar, como asfalto e concreto."},
+  {pergunta:"O Brasil é considerado, atualmente, um país predominantemente:",opcoes:["Rural","Urbano","Sem população","Desértico"],correta:1,explicacao:"O Brasil é hoje um país predominantemente urbano, com a maior parte da população vivendo em cidades."},
+  {pergunta:"Qual é o papel das redes de transporte na economia do Brasil?",opcoes:["Não têm nenhum papel","Conectar regiões e facilitar o transporte de produtos e pessoas","Servem apenas para lazer","Substituem as cidades"],correta:1,explicacao:"As redes de transporte conectam diferentes regiões do país, facilitando a circulação de produtos e pessoas, essencial para a economia."},
+  {pergunta:"O agronegócio brasileiro depende fortemente de qual tipo de transporte para exportação?",opcoes:["Apenas bicicletas","Rodoviário, ferroviário e aquaviário (portos)","Apenas a pé","Não depende de transporte"],correta:1,explicacao:"O agronegócio depende de uma combinação de transportes (rodovias, ferrovias e portos) para escoar a produção até os mercados de exportação."},
+  {pergunta:"O que são 'cidades médias', na rede urbana brasileira?",opcoes:["Cidades de tamanho intermediário, entre pequenas cidades e metrópoles","Cidades sem nenhuma população","Apenas capitais de estado","Vilas isoladas"],correta:0,explicacao:"Cidades médias são aquelas de porte intermediário, com influência regional, mas menor que as metrópoles."},
+  {pergunta:"Qual é uma vantagem do extrativismo sustentável para as comunidades locais?",opcoes:["Gera renda preservando a floresta","Destrói toda a vegetação rapidamente","Não gera nenhuma renda","Obriga as pessoas a saírem da região"],correta:0,explicacao:"O extrativismo sustentável permite que comunidades obtenham renda da floresta sem destruí-la."},
+  {pergunta:"A pecuária extensiva, no Brasil, costuma ocupar:",opcoes:["Pequenas áreas com muitos animais","Grandes áreas de pasto, com criação de gado","Apenas áreas urbanas","Apenas montanhas"],correta:1,explicacao:"A pecuária extensiva ocupa grandes áreas de pasto, criando gado em larga escala."},
+  {pergunta:"O que é estrutura fundiária concentrada?",opcoes:["Quando a terra está dividida igualmente entre todos","Quando poucas pessoas possuem a maior parte das terras","Quando não existem terras agrícolas","Quando só existem cidades"],correta:1,explicacao:"Estrutura fundiária concentrada significa que poucas pessoas (ou empresas) possuem a maior parte das terras de um território."},
+  {pergunta:"Qual é um exemplo de problema causado pela concentração de terras no Brasil?",opcoes:["Conflitos no campo e desigualdade social","Mais empregos para todos automaticamente","Menos produção agrícola sempre","Fim da pobreza"],correta:0,explicacao:"A concentração de terras gera desigualdade social e é uma das causas de conflitos no campo."},
+  {pergunta:"O que significa 'rede e hierarquia urbana'?",opcoes:["A organização das cidades por tamanho e importância, conectadas entre si","Apenas o nome das ruas de uma cidade","Um tipo de transporte","Uma lei sobre terras"],correta:0,explicacao:"Rede e hierarquia urbana é a forma como as cidades se organizam por tamanho e importância, formando uma rede de conexões."},
+  {pergunta:"Qual destas é uma causa do crescimento das favelas nas grandes cidades?",opcoes:["Excesso de moradias disponíveis e baratas","Falta de moradia acessível para a população de baixa renda","Diminuição da população urbana","Excesso de áreas verdes"],correta:1,explicacao:"A falta de moradia acessível é uma das principais causas do surgimento e crescimento de favelas nas cidades."},
+  {pergunta:"O extrativismo vegetal pode incluir a coleta de:",opcoes:["Ouro e ferro","Látex e madeira","Peixes e crustáceos","Apenas água"],correta:1,explicacao:"O extrativismo vegetal envolve a coleta de produtos de plantas, como látex (borracha) e madeira."},
+  {pergunta:"O que pode acontecer se o extrativismo for feito sem controle ambiental?",opcoes:["Sempre melhora o meio ambiente","Pode causar esgotamento dos recursos naturais","Aumenta automaticamente a biodiversidade","Não tem nenhum efeito"],correta:1,explicacao:"Sem controle, o extrativismo pode esgotar os recursos naturais, prejudicando o meio ambiente a longo prazo."},
+  {pergunta:"As grandes metrópoles brasileiras enfrentam frequentemente qual problema relacionado à mobilidade?",opcoes:["Excesso de bicicletas","Congestionamentos e transporte público insuficiente","Falta de carros","Excesso de espaço nas ruas"],correta:1,explicacao:"Congestionamentos e transporte público insuficiente são problemas comuns de mobilidade nas grandes metrópoles brasileiras."},
+  {pergunta:"O agronegócio utiliza intensamente qual recurso para aumentar a produção?",opcoes:["Apenas trabalho manual, sem máquinas","Tecnologia e máquinas modernas","Apenas animais de tração","Não usa nenhum recurso tecnológico"],correta:1,explicacao:"O agronegócio se caracteriza pelo uso intenso de tecnologia e máquinas modernas para aumentar a produtividade."},
+  {pergunta:"Por que algumas regiões do Brasil têm mais minifúndios e outras mais latifúndios?",opcoes:["Por causa do clima local apenas","Por causa da história de ocupação e distribuição de terras em cada região","Não há explicação histórica","Por sorteio aleatório"],correta:1,explicacao:"A distribuição de minifúndios e latifúndios varia conforme a história de ocupação e colonização de cada região do Brasil."},
+  {pergunta:"O que pode ajudar a reduzir os problemas urbanos como enchentes e trânsito?",opcoes:["Planejamento urbano adequado e investimento em infraestrutura","Não fazer nada e esperar","Construir mais sem nenhum planejamento","Diminuir a população das cidades drasticamente"],correta:0,explicacao:"Planejamento urbano e investimento em infraestrutura ajudam a reduzir problemas como enchentes e congestionamentos."},
+  {pergunta:"Qual é a relação entre industrialização e crescimento das cidades no Brasil?",opcoes:["Não há relação","A industrialização atraiu pessoas do campo para as cidades, em busca de emprego","A industrialização fez as cidades diminuírem","Só ocorreu no campo"],correta:1,explicacao:"A industrialização atraiu trabalhadores do campo para as cidades, contribuindo para o processo de urbanização brasileira."},
+  {pergunta:"O que é um cartograma, usado em mapas temáticos?",opcoes:["Um tipo de mapa que representa dados (como população ou economia) de forma visual","Um desenho sem nenhuma informação","Um tipo de bússola","Um aparelho de GPS"],correta:0,explicacao:"Cartograma é um tipo de mapa usado para representar visualmente dados demográficos ou econômicos de uma região."},
+  {pergunta:"Por que é importante interpretar mapas temáticos sobre o Brasil?",opcoes:["Para entender padrões espaciais, como distribuição de população e riqueza","Não tem nenhuma importância","Apenas para decorar a parede","Só professores precisam saber disso"],correta:0,explicacao:"Interpretar mapas temáticos ajuda a entender padrões espaciais, como a distribuição de população, riqueza e atividades econômicas no território."},
+  {pergunta:"O que caracteriza uma 'regionalização' no estudo da Geografia?",opcoes:["Dividir um território em regiões com características semelhantes","Misturar todas as regiões em uma só","Apagar as fronteiras dos países","Um tipo de transporte"],correta:0,explicacao:"Regionalização é o processo de dividir um território em regiões que compartilham características semelhantes (econômicas, sociais, naturais)."},
+  {pergunta:"Qual destas é uma cidade considerada metrópole no Brasil?",opcoes:["Rio de Janeiro","Uma vila com poucos moradores","Uma fazenda isolada","Um povoado rural"],correta:0,explicacao:"O Rio de Janeiro é uma das principais metrópoles do Brasil, com grande população e influência regional e nacional."},
+  {pergunta:"O crescimento das cidades brasileiras no século 20 foi influenciado principalmente por:",opcoes:["A industrialização e o êxodo rural","A diminuição da população","O fim da agricultura","A ausência de qualquer mudança econômica"],correta:0,explicacao:"A industrialização atraiu trabalhadores do campo para as cidades (êxodo rural), impulsionando fortemente o crescimento urbano no século 20."}
+];
+
+const perguntasGeografiaUrbano = [
+  {pergunta:"Desde a história antiga, onde os primeiros núcleos urbanos costumavam se formar?",opcoes:["Em qualquer lugar, sem critério","Perto de rios, com solo fértil e clima favorável","Apenas no topo de montanhas","Bem longe da água"],correta:1,explicacao:"As cidades sempre se formaram em áreas favoráveis: perto de rios, com solo bom e clima adequado. Foi assim, por exemplo, com as cidades dos rios Tigre e Eufrates, no Oriente Médio."},
+  {pergunta:"No Brasil, os primeiros núcleos urbanos (vilas) surgiram durante:",opcoes:["A colonização portuguesa","A chegada dos extraterrestres","O século 21","A independência do Brasil"],correta:0,explicacao:"Os primeiros núcleos urbanos do Brasil surgiram na colonização portuguesa, entre os séculos XVI e XVII, com a fundação de vilas."},
+  {pergunta:"Por que as primeiras vilas brasileiras ficavam perto do litoral?",opcoes:["Porque facilitava o transporte de mercadorias para Portugal","Porque não existia mais nenhum espaço no interior","Porque era proibido morar no interior","Porque havia mais montanhas no litoral"],correta:0,explicacao:"As primeiras vilas ficavam perto do litoral porque isso facilitava o escoamento de mercadorias, como o açúcar das fazendas de cana, para serem exportadas."},
+  {pergunta:"O que levou as vilas brasileiras a se espalharem para o interior do país, depois do litoral?",opcoes:["A mineração e a pecuária","A falta de água no litoral","A proibição de morar perto do mar","Não houve interiorização"],correta:0,explicacao:"Atividades como a mineração (a partir do século XVIII) e a pecuária fizeram as pessoas migrarem para o interior, criando novas vilas ao longo do caminho."},
+  {pergunta:"O que significa 'urbanização'?",opcoes:["O processo de crescimento e desenvolvimento das cidades","A construção de fazendas","O fim das estradas","A diminuição da população"],correta:0,explicacao:"Urbanização é o processo de crescimento das cidades, que envolve a transformação de áreas rurais em áreas urbanas."},
+  {pergunta:"O que é êxodo rural?",opcoes:["Pessoas saindo do campo para morar nas cidades","Pessoas saindo da cidade para morar no campo","Um tipo de festa rural","Uma doença de plantação"],correta:0,explicacao:"Êxodo rural é a saída de pessoas do campo em direção às cidades, em busca de emprego e melhores condições de vida."},
+  {pergunta:"A partir de qual década o Brasil começou a se industrializar, criando a necessidade de mais mão de obra nas cidades?",opcoes:["Década de 1930","Década de 1990","Década de 1800","Não houve industrialização no Brasil"],correta:0,explicacao:"A partir da década de 1930, começou a industrialização no Brasil, e as fábricas precisavam de trabalhadores, o que atraiu pessoas para as cidades."},
+  {pergunta:"A partir da década de 1960, o que aconteceu no campo que ajudou a empurrar trabalhadores para as cidades?",opcoes:["O campo passou a usar mais máquinas (mecanização), reduzindo a necessidade de trabalhadores","O campo parou de produzir alimentos","Todo mundo recebeu uma fazenda","As cidades foram proibidas de crescer"],correta:0,explicacao:"A partir de 1960, a mecanização do campo substituiu trabalhadores por máquinas, aumentando o desemprego rural e empurrando pessoas para as cidades."},
+  {pergunta:"Até qual década a maior parte da população brasileira morava no campo (Brasil rural)?",opcoes:["Até a década de 1960","Até a década de 2000","Até a década de 1800","O Brasil nunca foi rural"],correta:0,explicacao:"Até a década de 1960, o Brasil era um país predominantemente rural, com a maioria das pessoas morando no campo."},
+  {pergunta:"A partir de qual ano a população urbana do Brasil passou a ser maior que a população rural?",opcoes:["1970","1500","2020","1900"],correta:0,explicacao:"A partir de 1970, o Brasil se tornou um país urbano, com a população das cidades superando a população do campo."},
+  {pergunta:"O que é rede urbana?",opcoes:["Um conjunto de cidades conectadas por transporte e comunicação","Uma rede de pesca usada nas cidades","Um tipo de rede social","Um sistema de irrigação"],correta:0,explicacao:"Rede urbana é o conjunto de cidades que se conectam por meio de transportes e comunicações, permitindo a circulação de pessoas, mercadorias e informações."},
+  {pergunta:"Qual é a cidade brasileira classificada como 'Grande Metrópole Nacional', a de maior influência do país?",opcoes:["São Paulo","Brasília","Manaus","Curitiba"],correta:0,explicacao:"São Paulo é a Grande Metrópole Nacional, o maior conjunto urbano do país, com grande influência econômica, cultural e científica."},
+  {pergunta:"O que é uma região metropolitana?",opcoes:["Um conjunto de cidades integradas economicamente e socialmente a uma metrópole","Uma região sem nenhuma cidade","Uma fazenda muito grande","Um país vizinho ao Brasil"],correta:0,explicacao:"Região metropolitana é formada por cidades que são integradas (economicamente, socialmente) a uma metrópole, compartilhando serviços como linhas de metrô."},
+  {pergunta:"O que é conurbação?",opcoes:["Quando duas cidades crescem tanto que se juntam, sem espaço vazio entre elas","Quando uma cidade desaparece","Quando duas cidades ficam mais distantes uma da outra","Um tipo de prédio muito alto"],correta:0,explicacao:"Conurbação é o processo de junção de duas áreas urbanas que crescem até se encontrarem, formando uma área urbana contínua."},
+  {pergunta:"O que é uma megalópole?",opcoes:["A junção de duas ou mais metrópoles que passaram pelo processo de conurbação","Uma vila muito pequena","Um tipo de transporte","Uma fazenda de gado"],correta:0,explicacao:"Megalópole é a formação que ocorre quando duas ou mais metrópoles se fundem pelo processo de conurbação. No Brasil, está se formando uma megalópole entre São Paulo e Rio de Janeiro."}
+];
+
+const perguntasHistoria = [
+  {pergunta:"O que significa a palavra \"Renascimento\"?",opcoes:["Construir castelos","Nascer de novo","Viagem ao espaço","Fim do mundo"],correta:1,explicacao:"Renascimento quer dizer \"nascer de novo\". As ideias da Grécia e Roma Antiga voltaram a ser valorizadas."},
+  {pergunta:"O Renascimento aconteceu principalmente em qual período?",opcoes:["Séculos I e II","Século XX","Séculos XIV a XVI","Séculos VIII e IX"],correta:2,explicacao:"O Renascimento aconteceu principalmente entre os séculos XIV e XVI, na Europa, sobretudo na Itália."},
+  {pergunta:"No Renascimento, os artistas passaram a pintar de um jeito mais realista usando uma técnica de profundidade chamada:",opcoes:["Caligrafia","Perspectiva","Cartografia","Sequência"],correta:1,explicacao:"A perspectiva é a técnica de desenhar dando a sensação de profundidade, como se a pessoa pudesse entrar na imagem."},
+  {pergunta:"Quem foi Leonardo Fibonacci?",opcoes:["Um rei português","Um navegador espanhol","Um matemático italiano","Um padre"],correta:2,explicacao:"Fibonacci foi um matemático italiano que viveu por volta do ano 1200 e trouxe o sistema de números árabe-indiano para a Europa."},
+  {pergunta:"Na Sequência de Fibonacci, cada número novo nasce de quê?",opcoes:["Da soma dos dois números anteriores","De um número sorteado","Da multiplicação dos dois números anteriores","Da divisão por dois"],correta:0,explicacao:"Na Sequência de Fibonacci, somamos os dois últimos números para achar o próximo: 1+1=2, 1+2=3, 2+3=5..."},
+  {pergunta:"Qual é o início correto da Sequência de Fibonacci?",opcoes:["1, 2, 4, 8, 16","0, 5, 10, 15","2, 4, 6, 8, 10","0, 1, 1, 2, 3, 5, 8"],correta:3,explicacao:"A sequência começa com 0 e 1, e cada número seguinte é a soma dos dois anteriores: 0, 1, 1, 2, 3, 5, 8..."},
+  {pergunta:"A Sequência de Fibonacci pode ser observada em:",opcoes:["Em padrões da natureza, como em conchas e plantas","Apenas no espaço","Apenas em livros de matemática","Em nenhum lugar real"],correta:0,explicacao:"A Sequência de Fibonacci aparece em padrões da natureza, como na forma de conchas, folhas e sementes de girassol."},
+  {pergunta:"Antes de Fibonacci trazer o novo sistema, a Europa usava principalmente quais números, que eram mais difíceis de calcular?",opcoes:["Números binários","Números romanos","Números árabes","Números egípcios"],correta:1,explicacao:"Antes de Fibonacci, a Europa usava bastante os números romanos, que são mais difíceis de calcular do que o sistema de 0 a 9."},
+  {pergunta:"Por que os europeus queriam achar um novo caminho marítimo para chegar ao Oriente?",opcoes:["Porque o Oriente não existia ainda","Porque queriam fazer turismo","Porque cidades italianas e o Império Turco-Otomano cobravam taxas e controlavam as rotas","Porque era proibido viajar por terra"],correta:2,explicacao:"Cidades italianas e o Império Turco-Otomano controlavam as rotas terrestres e cobravam taxas altas, por isso buscou-se um novo caminho pelo mar."},
+  {pergunta:"Quais eram os instrumentos de navegação muito importantes usados nas Grandes Navegações?",opcoes:["Vela e remo apenas","Mapa e lanterna","Astrolábio e bússola","Telescópio e relógio"],correta:2,explicacao:"O astrolábio ajudava a calcular a posição observando as estrelas, e a bússola indicava sempre a mesma direção."},
+  {pergunta:"Qual país foi o pioneiro (o primeiro) nas Grandes Navegações?",opcoes:["Espanha","França","Inglaterra","Portugal"],correta:3,explicacao:"Portugal foi o primeiro país a se aventurar nas Grandes Navegações, por ser unificado, ter posição geográfica favorável e conhecimento náutico."},
+  {pergunta:"Quem foi o Infante conhecido como \"o Navegador\", que incentivou as expedições marítimas portuguesas?",opcoes:["Dom João","Dom Manuel","Dom Pedro","Dom Henrique"],correta:3,explicacao:"O Infante Dom Henrique, filho do rei português, ficou conhecido como \"o Navegador\" por incentivar fortemente as Grandes Navegações."},
+  {pergunta:"O que foi o Périplo Africano?",opcoes:["Um tipo de navio","Uma cidade da África","A estratégia portuguesa de contornar a costa da África aos poucos","Uma guerra entre reinos africanos"],correta:2,explicacao:"O Périplo Africano foi a estratégia portuguesa de ir contornando, pouco a pouco, toda a costa ocidental da África."},
+  {pergunta:"Em 1434, qual navegador português conseguiu passar pelo Cabo Bojador, considerado intransponível até então?",opcoes:["Gil Eanes","Vasco da Gama","Bartolomeu Dias","Pedro Álvares Cabral"],correta:0,explicacao:"Gil Eanes foi o navegador que, em 1434, conseguiu passar pelo Cabo Bojador, um marco importante para as navegações."},
+  {pergunta:"Em 1488, qual navegador português chegou ao extremo sul da África, em um local depois chamado de Cabo da Boa Esperança?",opcoes:["Bartolomeu Dias","Fernão de Magalhães","Américo Vespúcio","Cristóvão Colombo"],correta:0,explicacao:"Bartolomeu Dias chegou, em 1488, ao extremo sul da África, em um ponto chamado primeiro Cabo das Tormentas e depois Cabo da Boa Esperança."},
+  {pergunta:"Em 1498, qual navegador português conseguiu, finalmente, chegar à Índia contornando toda a África?",opcoes:["Pedro Álvares Cabral","Hernán Cortés","Francisco Pizarro","Vasco da Gama"],correta:3,explicacao:"Vasco da Gama chegou à Índia em 1498, completando o trajeto contornando a costa africana."},
+  {pergunta:"Em 1500, qual navegador português comandou a expedição que chegou ao litoral do que viria a ser o Brasil?",opcoes:["Cristóvão Colombo","Pedro Álvares Cabral","Américo Vespúcio","Fernão de Magalhães"],correta:1,explicacao:"Pedro Álvares Cabral comandou a expedição portuguesa que chegou ao litoral brasileiro em 1500."},
+  {pergunta:"Cristóvão Colombo acreditava que conseguiria chegar ao Oriente navegando para qual direção?",opcoes:["Para o Ocidente (oeste)","Para o Norte","Para o Sul","Para o Leste"],correta:0,explicacao:"Colombo acreditava que, como a Terra era esférica, seria possível chegar ao Oriente navegando para o Ocidente, cruzando o Atlântico."},
+  {pergunta:"Cristóvão Colombo apresentou primeiro seu projeto de viagem a qual país, que recusou financiá-lo?",opcoes:["França","Portugal","Holanda","Inglaterra"],correta:1,explicacao:"Colombo apresentou seu projeto primeiro a Portugal, que recusou financiar a expedição."},
+  {pergunta:"Quem financiou a viagem de Cristóvão Colombo em 1492?",opcoes:["O rei de Portugal","O Papa","O Império Turco-Otomano","Os reis da Espanha, Fernando e Isabel"],correta:3,explicacao:"Os reis espanhóis Fernando e Isabel financiaram a viagem de Colombo, que partiu em 1492."},
+  {pergunta:"Por que Colombo chamou os povos que encontrou no Caribe de \"índios\"?",opcoes:["Porque era o nome de uma tribo específica","Porque eles se chamavam assim","Porque essa era a tradução de seu nome verdadeiro","Porque ele pensou que tinha chegado às Índias"],correta:3,explicacao:"Colombo acreditava ter chegado às Índias, no Oriente, por isso chamou os povos encontrados de \"índios\"."},
+  {pergunta:"Qual navegador ajudou a provar que as terras encontradas por Colombo não eram a Ásia, e por isso deu nome ao continente americano?",opcoes:["Bartolomeu Dias","Américo Vespúcio","Vasco da Gama","Fernão de Magalhães"],correta:1,explicacao:"Américo Vespúcio questionou se as terras eram a Ásia e ajudou a provar que era um novo continente, que por isso foi chamado de América."},
+  {pergunta:"A expedição de Fernão de Magalhães foi importante porque:",opcoes:["Descobriu o Brasil","Criou o Tratado de Tordesilhas","Inventou a bússola","Comprovou que a Terra era esférica, completando a primeira circum-navegação"],correta:3,explicacao:"A expedição de Fernão de Magalhães comprovou a esfericidade da Terra ao completar a primeira viagem de circum-navegação, contornando todo o globo."},
+  {pergunta:"O que foi o Tratado de Tordesilhas, assinado em 1494?",opcoes:["Uma linha imaginária que dividia as terras entre Portugal e Espanha","Um tratado sobre a Igreja Católica","Um acordo de paz entre indígenas","Uma lei sobre o comércio de especiarias"],correta:0,explicacao:"O Tratado de Tordesilhas criou uma linha imaginária no mapa: terras a leste seriam de Portugal, e a oeste, da Espanha."},
+  {pergunta:"Na África, as pessoas que guardavam a história do seu povo através da palavra falada, cantando e contando histórias, eram chamadas de:",opcoes:["Mansas","Cabildos","Vice-reis","Griots"],correta:3,explicacao:"Os griots eram contadores de histórias, músicos e poetas, responsáveis por guardar e transmitir a história de seu povo através da fala."},
+  {pergunta:"Como se chama a forma de guardar a história através da fala, muito comum em sociedades africanas?",opcoes:["História escrita","História oral","História matemática","História silenciosa"],correta:1,explicacao:"A história oral é a forma de guardar e passar conhecimento através da fala, muito importante nas sociedades africanas."},
+  {pergunta:"Um clã é um grupo de pessoas que:",opcoes:["Mora na mesma cidade, sem ligação de família","Fala línguas diferentes sem nenhuma relação","Reconhece um mesmo ancestral em comum","Não tem nenhuma organização"],correta:2,explicacao:"Um clã é formado por pessoas que reconhecem um ancestral comum, ou seja, todos descendem de uma mesma família mais antiga."},
+  {pergunta:"No sistema de sucessão chamado matrilinear, a herança e a linhagem passam principalmente por qual lado da família?",opcoes:["Pelo lado da mãe","Pelos dois lados igualmente, sempre","Pelo lado do pai","Não passa por ninguém"],correta:0,explicacao:"No sistema matrilinear, a sucessão e a linhagem são contadas a partir da família da mãe (da esposa)."},
+  {pergunta:"No sistema matrilinear africano, quem geralmente tinha o poder político, mesmo a linhagem sendo da mulher?",opcoes:["As crianças","Nenhum gênero tinha poder","As mulheres","Os homens"],correta:3,explicacao:"Mesmo em sistemas matrilineares, o poder político era, na maioria dos casos, predominantemente masculino — só a linhagem é que seguia a família da esposa."},
+  {pergunta:"No comércio africano, os produtos feitos para uso da própria comunidade, como comida e roupas, eram chamados de:",opcoes:["Bens de prestígio","Produtos de subsistência","Produtos importados","Produtos proibidos"],correta:1,explicacao:"Produtos de subsistência eram feitos para atender as necessidades da própria população local, como alimentos e roupas comuns."},
+  {pergunta:"Produtos especiais, como ouro, cobre e sal, vendidos para fora através de rotas comerciais longas, eram chamados de:",opcoes:["Produtos de subsistência","Produtos descartáveis","Bens de prestígio","Produtos proibidos"],correta:2,explicacao:"Bens de prestígio eram produtos valiosos, controlados pelas elites, exportados através de rotas comerciais de longa distância."},
+  {pergunta:"As caravanas que atravessavam o deserto do Saara, conectando a África ao Mar Mediterrâneo, eram organizadas principalmente por qual povo?",opcoes:["Os vikings","Os berberes","Os incas","Os romanos"],correta:1,explicacao:"Os berberes, povos nômades do deserto, organizavam caravanas com camelos para cruzar o Saara e transportar mercadorias."},
+  {pergunta:"Qual foi o primeiro grande reino formado na região do Rio Níger, que existiu entre os séculos VI e XIII?",opcoes:["Reino de Songhai","Reino de Mali","Reino do Benim","Reino de Gana"],correta:3,explicacao:"O Reino de Gana foi o primeiro grande reino dessa região, ficando rico com impostos sobre rotas de comércio de ouro e sal."},
+  {pergunta:"Qual governante do Reino de Mali ficou famoso por ser um dos homens mais ricos da história, fazendo uma viagem religiosa até Meca?",opcoes:["Sunni Ali","Oranyan","Mansa Musa","Sundiata Keita"],correta:2,explicacao:"Mansa Musa, governante do Reino de Mali, ficou famoso por sua enorme riqueza, demonstrada em sua peregrinação a Meca com uma grande caravana de ouro."},
+  {pergunta:"Qual foi o último dos três grandes reinos formados perto do Rio Níger, crescendo quando o Reino de Mali perdeu força?",opcoes:["Império Asteca","Reino do Congo","Reino de Songhai","Reino de Gana"],correta:2,explicacao:"O Reino de Songhai foi o último dos três grandes reinos da região, crescendo a partir do declínio do Reino de Mali."},
+  {pergunta:"O Reino do Benim, localizado na atual Nigéria, ficou muito conhecido por sua produção artística de:",opcoes:["Esculturas e máscaras de bronze","Pirâmides de pedra","Joias de diamante","Tapetes de seda"],correta:0,explicacao:"O Reino do Benim ficou famoso pelos chamados \"bronzes do Benim\", esculturas e máscaras muito sofisticadas usadas em rituais religiosos."},
+  {pergunta:"Em 1897, o Império Britânico invadiu a cidade do Benim e:",opcoes:["Levou várias obras de arte para a Inglaterra","Não causou nenhum impacto","Construiu escolas para os Edo","Devolveu terras aos povos locais"],correta:0,explicacao:"Em 1897, o Império Britânico invadiu o Benim, destruiu parte da cidade e levou diversas obras de arte para museus na Inglaterra."},
+  {pergunta:"A ideia de que a África seria \"um lugar só\", com um único povo e cultura, é chamada de:",opcoes:["Periplo","Eurocentrismo","Matrilinearidade","Africanismo"],correta:1,explicacao:"Eurocentrismo é a visão de que a cultura europeia é superior ou um referencial único, e foi usada para criar a ideia errada de que a África é homogênea."},
+  {pergunta:"Quem foi Hernán Cortés?",opcoes:["O rei de Portugal","O líder do Império Inca","O espanhol que derrotou o Império Asteca em 1521","O navegador que descobriu o Brasil"],correta:2,explicacao:"Hernán Cortés foi o espanhol que, em 1521, conseguiu derrotar o Império Asteca, no atual território mexicano."},
+  {pergunta:"Um dos motivos que ajudaram Cortés a derrotar os astecas foi:",opcoes:["Não houve nenhum conflito","Os astecas pediram ajuda aos espanhóis","Ele tinha um exército maior que o dos astecas","Ele se aliou a povos que já eram inimigos dos astecas"],correta:3,explicacao:"Cortés se aliou a povos indígenas que já eram inimigos dos astecas, formando uma força maior para derrotar o império."},
+  {pergunta:"Quem foi Francisco Pizarro?",opcoes:["O imperador asteca","O navegador português que chegou à Índia","O espanhol que dominou o Império Inca em 1533","O rei da Espanha"],correta:2,explicacao:"Francisco Pizarro foi o espanhol que, em 1533, conseguiu dominar o Império Inca, na América do Sul."},
+  {pergunta:"As grandes áreas administrativas criadas pela Espanha para organizar suas colônias na América eram chamadas de:",opcoes:["Clãs","Vice-reinos","Griots","Mansas"],correta:1,explicacao:"A Espanha dividiu o território colonial em grandes áreas administrativas chamadas vice-reinos, e em áreas menores chamadas Capitanias Gerais."},
+  {pergunta:"A forma de trabalho forçado em que indígenas eram escolhidos por sorteio para trabalhar nas minas espanholas era chamada de:",opcoes:["Mita","Negligência salutar","Encomienda","Self-government"],correta:0,explicacao:"A mita era uma forma de trabalho obrigatório em que indígenas eram sorteados para trabalhar, principalmente nas minas, recebendo pagamento muito baixo."},
+  {pergunta:"A forma de trabalho em que indígenas eram colocados sob responsabilidade de um colonizador, que deveria \"cuidar\" da catequização deles, era chamada de:",opcoes:["Périplo","Mita","Encomienda","Circum-navegação"],correta:2,explicacao:"A encomienda era um sistema de trabalho obrigatório em que indígenas eram confiados a um colonizador em troca de catequização."},
+  {pergunta:"Em 1620, o navio Mayflower trouxe para a América um grupo de ingleses chamados:",opcoes:["Peregrinos","Berberes","Griots","Cabildos"],correta:0,explicacao:"Os peregrinos, em sua maioria puritanos, vieram da Inglaterra a bordo do Mayflower, em busca de liberdade religiosa."},
+  {pergunta:"O que motivou os peregrinos puritanos a saírem da Inglaterra rumo à América?",opcoes:["Buscar liberdade religiosa, pois eram perseguidos por não seguir a religião oficial","Eles foram expulsos por crimes comuns","Buscar ouro e prata apenas","Fugir de uma guerra com a França"],correta:0,explicacao:"Os puritanos eram perseguidos religiosamente na Inglaterra e buscaram na América a liberdade de praticar sua própria fé."},
+  {pergunta:"A política inglesa de não controlar de perto suas colônias na América do Norte foi chamada de:",opcoes:["Mita","Encomienda","Circum-navegação","Negligência salutar"],correta:3,explicacao:"A negligência salutar foi a política inglesa de deixar as colônias se organizarem com pouca interferência direta da metrópole."},
+  {pergunta:"O sistema em que as próprias colônias inglesas administravam grande parte de suas leis, com pouca participação da Inglaterra, era chamado de:",opcoes:["Mita","Self-government (autogoverno)","Vice-reinado","Capitania Geral"],correta:1,explicacao:"O self-government, ou autogoverno, permitia que as Treze Colônias inglesas administrassem boa parte de suas próprias leis e decisões."},
+  {pergunta:"Uma diferença importante entre a colonização espanhola e a inglesa é que:",opcoes:["A espanhola encontrou muito ouro e prata; a inglesa não encontrou riquezas minerais importantes","A inglesa converteu mais indígenas ao cristianismo que a espanhola","As duas encontraram as mesmas riquezas","Não existiu nenhuma diferença entre elas"],correta:0,explicacao:"A colonização espanhola encontrou muitas riquezas minerais, como ouro e prata, enquanto a inglesa não encontrou riquezas minerais importantes na região colonizada."},
+  {pergunta:"O deslocamento forçado de povos indígenas na América do Norte, no século XIX, que causou fome, frio e muitas mortes, é conhecido como:",opcoes:["Tratado de Tordesilhas","Trilha das Lágrimas","Périplo Africano","Circum-navegação"],correta:1,explicacao:"A Trilha das Lágrimas foi o deslocamento forçado de povos indígenas, que tiveram que abandonar suas terras e caminhar centenas de quilômetros, enfrentando fome e doenças."},
+];
+
+const perguntasIngles = [
+  {pergunta:"O que significa 'water bodies' em português?",opcoes:["Corpos de água (rio, mar, lago)","Corpo humano","Roupa de banho","Tipo de comida"],correta:0,explicacao:"'Water bodies' significa corpos de água, como rios, mares e lagos."},
+  {pergunta:"O que significa 'marine life'?",opcoes:["Vida na cidade","Vida marinha (animais do mar)","Um tipo de esporte","Vida no campo"],correta:1,explicacao:"'Marine life' significa vida marinha, os animais e plantas que vivem no mar."},
+  {pergunta:"O que significa 'pollution'?",opcoes:["Limpeza","Poluição","Comida saudável","Água limpa"],correta:1,explicacao:"'Pollution' significa poluição."},
+  {pergunta:"O que significa 'endangered species'?",opcoes:["Espécies em risco de extinção","Espécies muito comuns","Tipos de plantas","Tipos de peixe"],correta:0,explicacao:"'Endangered species' são espécies em risco de extinção."},
+  {pergunta:"O que significa 'biodiversity'?",opcoes:["Um só tipo de animal","Muitos tipos diferentes de seres vivos","Um tipo de doença","Um tipo de comida"],correta:1,explicacao:"'Biodiversity' significa biodiversidade: muitos tipos diferentes de seres vivos."},
+  {pergunta:"O que significa 'sustainable tourism'?",opcoes:["Turismo que destrói a natureza","Turismo que não prejudica a natureza","Um tipo de hotel","Viagem de avião"],correta:1,explicacao:"'Sustainable tourism' é o turismo que não destrói a natureza."},
+  {pergunta:"O que significa 'sanitation'?",opcoes:["Saneamento (água limpa e esgoto tratado)","Um tipo de roupa","Comida saudável","Um animal marinho"],correta:0,explicacao:"'Sanitation' significa saneamento: água limpa e esgoto tratado."},
+  {pergunta:"Complete: 'I ___ swim very well.' (Eu consigo nadar muito bem)",opcoes:["can","could","have to","is"],correta:0,explicacao:"'Can' significa 'consigo' no presente. 'I can swim' = Eu consigo nadar."},
+  {pergunta:"Complete: 'We ___ to protect the ocean.' (Nós temos que proteger o oceano)",opcoes:["can","have","could","are"],correta:1,explicacao:"'Have to' significa 'ter que'. A frase completa é 'have to protect'."},
+  {pergunta:"O que significa 'can't'?",opcoes:["Consigo","Não consigo","Tenho que","Estava fazendo"],correta:1,explicacao:"'Can't' é a forma negativa de 'can', significa 'não consigo'."},
+  {pergunta:"O que significa 'could', no passado?",opcoes:["Consigo agora","Conseguia (no passado)","Não consigo","Vou conseguir"],correta:1,explicacao:"'Could' é a forma no passado de 'can', significa 'conseguia'."},
+  {pergunta:"Qual frase está no Present Simple (rotina, sempre acontece)?",opcoes:["Fish live in the ocean","Fish is swimming now","Fish are eating right now","Fish was sleeping"],correta:0,explicacao:"'Fish live in the ocean' está no Present Simple, descrevendo algo que sempre é verdade."},
+  {pergunta:"Qual frase está no Present Continuous (acontecendo agora)?",opcoes:["Fish live in water","The ocean is getting polluted","Fish swim every day","Water is important"],correta:1,explicacao:"'The ocean is getting polluted' está no Present Continuous, mostrando algo acontecendo agora."},
+  {pergunta:"Qual destas terminações indica o Present Continuous?",opcoes:["-ED","-ING","-S","-LY"],correta:1,explicacao:"O Present Continuous sempre usa uma palavra terminada em '-ING' junto com is/are/am."},
+  {pergunta:"O que significa 'quality', no contexto de água?",opcoes:["Quantidade","Qualidade","Cor","Temperatura"],correta:1,explicacao:"'Quality' significa qualidade."},
+  {pergunta:"O que significa 'clean water'?",opcoes:["Água poluída","Água limpa","Água do mar","Água quente"],correta:1,explicacao:"'Clean water' significa água limpa."},
+  {pergunta:"O que é SDG 14?",opcoes:["Uma meta sobre proteger a vida no mar","Uma meta sobre carros","Uma meta sobre esportes","Uma meta sobre roupas"],correta:0,explicacao:"SDG 14 é uma meta mundial chamada 'Life Below Water', sobre proteger a vida marinha."},
+  {pergunta:"O que é SDG 6?",opcoes:["Água limpa e saneamento para todos","Educação para todos","Energia limpa","Fim da pobreza"],correta:0,explicacao:"SDG 6 é a meta mundial de água limpa e saneamento para todos."},
+  {pergunta:"O que significa 'hygiene'?",opcoes:["Higiene","Felicidade","Comida","Roupa"],correta:0,explicacao:"'Hygiene' significa higiene."},
+  {pergunta:"Complete: 'They ___ studying right now.' (Eles estão estudando agora)",opcoes:["are","can","have to","could"],correta:0,explicacao:"No Present Continuous usamos 'are' antes do verbo com -ING para o plural: 'they are studying'."},
+  {pergunta:"O que significa 'ecosystem'?",opcoes:["Ecossistema (ambiente onde vivem plantas e animais)","Um tipo de roupa","Um animal específico","Uma cidade grande"],correta:0,explicacao:"'Ecosystem' significa ecossistema, o ambiente onde plantas e animais vivem e interagem."},
+  {pergunta:"O que significa 'safety', no contexto da água?",opcoes:["Segurança","Perigo","Cor","Velocidade"],correta:0,explicacao:"'Safety' significa segurança."},
+  {pergunta:"Complete: 'She ___ speak three languages.' (Ela consegue falar três idiomas)",opcoes:["can","have to","is","could"],correta:0,explicacao:"'Can' é usado para expressar habilidade no presente: 'she can speak'."},
+  {pergunta:"Complete: 'He ___ swim when he was 5 years old.' (Ele conseguia nadar quando tinha 5 anos)",opcoes:["can","could","have to","is"],correta:1,explicacao:"'Could' é usado para expressar habilidade no passado: 'he could swim'."},
+  {pergunta:"Qual é a forma negativa de 'have to'?",opcoes:["don't have to","can't have","haven't to","not have to"],correta:0,explicacao:"A forma negativa de 'have to' é 'don't have to' (não precisa)."},
+  {pergunta:"Complete: 'We ___ recycle to help the planet.' (Nós temos que reciclar para ajudar o planeta)",opcoes:["can","have to","could","is"],correta:1,explicacao:"'Have to' expressa obrigação ou necessidade: 'we have to recycle'."},
+  {pergunta:"Qual destas frases está no Present Simple?",opcoes:["The river flows to the sea.","The river is flowing now.","The rivers are flowing.","Rivers was flowing."],correta:0,explicacao:"'The river flows to the sea' está no Present Simple, descrevendo um fato geral e constante."},
+  {pergunta:"Qual destas frases está no Present Continuous?",opcoes:["Fish swim in water.","Fish is swimming right now.","Fish swims every day.","Fish swam yesterday."],correta:1,explicacao:"'Fish is swimming right now' está no Present Continuous, indicando uma ação em andamento."},
+  {pergunta:"Qual é a terminação típica dos verbos no Present Continuous?",opcoes:["-ED","-S","-ING","-EST"],correta:2,explicacao:"O Present Continuous usa a terminação -ING no verbo principal, junto com is/are/am."},
+  {pergunta:"Complete: 'I ___ reading a book about the ocean.' (Eu estou lendo um livro sobre o oceano)",opcoes:["am","can","have to","could"],correta:0,explicacao:"No Present Continuous, usamos 'am' com 'I': 'I am reading'."},
+  {pergunta:"O que significa 'natural water bodies'?",opcoes:["Corpos de água naturais, como rios e lagos","Piscinas artificiais","Garrafas de água","Tipos de roupa de banho"],correta:0,explicacao:"'Natural water bodies' refere-se a corpos de água que existem naturalmente, como rios, lagos e mares."},
+  {pergunta:"O que significa 'tourism'?",opcoes:["Turismo","Esporte","Comida","Roupa"],correta:0,explicacao:"'Tourism' significa turismo."},
+  {pergunta:"Qual destas é uma forma de proteger a vida marinha?",opcoes:["Sustainable tourism (turismo sustentável)","Mais poluição","Jogar lixo no mar","Pesca sem nenhum controle"],correta:0,explicacao:"O turismo sustentável é uma prática que ajuda a proteger ambientes naturais, incluindo a vida marinha."},
+  {pergunta:"O que significa 'species', em inglês?",opcoes:["Espécie(s)","Comida","Roupa","Cor"],correta:0,explicacao:"'Species' significa espécie(s), referindo-se a tipos de seres vivos."},
+  {pergunta:"Complete: 'Some animals are in danger and need protection.' Qual termo descreve esses animais?",opcoes:["Endangered species","Healthy species","Strong species","Big species"],correta:0,explicacao:"'Endangered species' são espécies em perigo de extinção, que precisam de proteção."},
+  {pergunta:"O que significa 'safety of water'?",opcoes:["Segurança da água (se é segura para beber/usar)","Cor da água","Temperatura da água","Velocidade da água"],correta:0,explicacao:"'Safety of water' refere-se a se a água é segura para o uso, sem contaminação."},
+  {pergunta:"Complete: 'You ___ throw trash in the ocean.' (Você não pode jogar lixo no oceano) — forma negativa",opcoes:["can't","could","have","are"],correta:0,explicacao:"'Can't' é usado para expressar proibição ou incapacidade: 'you can't throw trash'."},
+  {pergunta:"O que significa 'biodiversity loss'?",opcoes:["Perda de biodiversidade (diminuição dos tipos de seres vivos)","Aumento de animais","Um tipo de turismo","Uma cor específica"],correta:0,explicacao:"'Biodiversity loss' significa a perda ou diminuição da diversidade de seres vivos em um ambiente."},
+  {pergunta:"Qual destas é uma boa prática para preservar a vida marinha?",opcoes:["Reduzir a poluição plástica nos oceanos","Aumentar o lixo no mar","Pescar espécies em extinção sem controle","Ignorar o problema"],correta:0,explicacao:"Reduzir a poluição plástica é uma prática importante para preservar a vida marinha."},
+  {pergunta:"O que significa 'fresh water'?",opcoes:["Água doce (não salgada)","Água do mar","Água quente","Água gelada"],correta:0,explicacao:"'Fresh water' significa água doce, encontrada em rios e lagos, diferente da água salgada do mar."},
+  {pergunta:"Complete: 'The water in this river ___ clean.' (A água deste rio é limpa)",opcoes:["is","are","can","have"],correta:0,explicacao:"Usamos 'is' com sujeito no singular ('the water'): 'the water is clean'."},
+  {pergunta:"Qual é a tradução de 'access to clean water'?",opcoes:["Acesso à água limpa","Falta de água","Poluição da água","Cor da água"],correta:0,explicacao:"'Access to clean water' significa acesso à água limpa, um direito básico defendido pela SDG 6."},
+  {pergunta:"O que significa 'wastewater'?",opcoes:["Água usada/suja, que precisa ser tratada","Água potável limpa","Água do mar","Água da chuva"],correta:0,explicacao:"'Wastewater' significa água residual ou suja, que precisa passar por tratamento."},
+  {pergunta:"Complete: 'Fish ___ in the ocean.' (Peixes vivem no oceano) — Present Simple",opcoes:["live","living","is living","lives"],correta:0,explicacao:"No Present Simple, com sujeito no plural ('fish'), usamos a forma base do verbo: 'fish live'."},
+  {pergunta:"Complete: 'My sister ___ in the sea right now.' (Minha irmã está nadando no mar agora)",opcoes:["swim","swims","is swimming","swam"],correta:2,explicacao:"No Present Continuous, com sujeito no singular, usamos 'is' + verbo com -ING: 'is swimming'."},
+  {pergunta:"O que significa 'protect the environment'?",opcoes:["Proteger o meio ambiente","Destruir o meio ambiente","Ignorar o meio ambiente","Vender o meio ambiente"],correta:0,explicacao:"'Protect the environment' significa proteger o meio ambiente."},
+  {pergunta:"Qual destas frases usa corretamente o modal 'can' para habilidade?",opcoes:["She can play the piano.","She cans play the piano.","She can plays the piano.","She is can play the piano."],correta:0,explicacao:"A forma correta do modal 'can' não muda com a pessoa e é seguida pelo verbo na forma base: 'she can play'."},
+  {pergunta:"Complete: 'In the past, people ___ travel by sea easily.' (No passado, as pessoas não conseguiam viajar pelo mar facilmente) — negativo",opcoes:["couldn't","can't","don't have to","aren't"],correta:0,explicacao:"'Couldn't' é a forma negativa de 'could', usada para expressar incapacidade no passado."},
+  {pergunta:"Qual é o sentido de 'SDG' (Sustainable Development Goals)?",opcoes:["Objetivos de Desenvolvimento Sustentável","Um tipo de animal marinho","Um tipo de roupa","Um esporte"],correta:0,explicacao:"SDG significa 'Sustainable Development Goals', os Objetivos de Desenvolvimento Sustentável definidos pela ONU."},
+  {pergunta:"O que significa 'water scarcity'?",opcoes:["Escassez de água (falta de água)","Excesso de água","Água muito limpa","Água colorida"],correta:0,explicacao:"'Water scarcity' significa escassez de água, ou seja, a falta de água suficiente para as necessidades das pessoas."},
+  {pergunta:"Complete: 'They ___ to save water every day.' (Eles têm que economizar água todos os dias)",opcoes:["have","has","have to","can"],correta:2,explicacao:"'Have to' (têm que) é usado com sujeitos no plural como 'they': 'they have to save water'."},
+  {pergunta:"O que significa 'marine ecosystem'?",opcoes:["Ecossistema marinho","Um tipo de praia","Um animal específico","Um tipo de barco"],correta:0,explicacao:"'Marine ecosystem' significa ecossistema marinho, o ambiente natural dos seres vivos do mar."},
+  {pergunta:"Complete: 'The ocean ___ many different species.' (O oceano tem muitas espécies diferentes)",opcoes:["have","has","having","is have"],correta:1,explicacao:"Com sujeito no singular ('the ocean'), usamos 'has' no Present Simple."},
+  {pergunta:"Qual destas é uma ação que ajuda a reduzir a poluição da água?",opcoes:["Reduce, reuse, recycle (reduzir, reutilizar, reciclar)","Throw more trash","Use more plastic","Waste water"],correta:0,explicacao:"'Reduce, reuse, recycle' são práticas que ajudam a reduzir a poluição e o desperdício, incluindo o da água."},
+  {pergunta:"O que significa 'drinking water'?",opcoes:["Água potável (para beber)","Água do mar","Água da piscina","Água quente"],correta:0,explicacao:"'Drinking water' significa água potável, segura para consumo humano."},
+  {pergunta:"Complete: 'We ___ protect endangered species.' (Nós podemos proteger espécies em risco)",opcoes:["can","could (no passado)","have to (apenas)","is"],correta:0,explicacao:"'Can' expressa capacidade no presente: 'we can protect'."},
+  {pergunta:"O que significa 'coral reef'?",opcoes:["Recife de coral","Tipo de peixe","Tipo de praia","Tipo de barco"],correta:0,explicacao:"'Coral reef' significa recife de coral, um importante ecossistema marinho."},
+  {pergunta:"Por que os recifes de coral são importantes para a vida marinha?",opcoes:["Servem de abrigo e alimento para muitas espécies marinhas","Não têm nenhuma importância","Servem apenas para turismo","Poluem o oceano"],correta:0,explicacao:"Recifes de coral são ecossistemas ricos que servem de abrigo e fonte de alimento para muitas espécies marinhas."},
+  {pergunta:"Complete: 'Plastic pollution ___ a big problem for the ocean.' (A poluição plástica é um grande problema para o oceano)",opcoes:["is","are","can","have"],correta:0,explicacao:"Com sujeito no singular ('plastic pollution'), usamos 'is' no Present Simple."},
+  {pergunta:"O que significa 'climate change'?",opcoes:["Mudança climática","Tipo de roupa","Tipo de comida","Tipo de animal"],correta:0,explicacao:"'Climate change' significa mudança climática, um tema relacionado à proteção do meio ambiente."}
+];
+
+// ===================== MOTOR DE QUIZ REUTILIZÁVEL =====================
+function embaralhar(array) {
+  const copia = [...array];
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+  return copia;
+}
+
+function criarQuiz(materia, bancoCompleto, tamanhoRodada = 20) {
+  const TAMANHO_RODADA = tamanhoRodada;
+
+  let indicesDisponiveis = embaralhar(bancoCompleto.map((_, i) => i));
+  let perguntas = [];      // as 20 perguntas da rodada atual
+  let indiceAtual = 0;     // posicao dentro da rodada atual
+  let acertosRodada = 0;
+  let acertosSessao = 0;
+  let totalRespondidasSessao = 0;
+  let respostas = [];
+  let numeroRodada = 1;
+  let perguntasErradasRodada = []; // perguntas (objeto completo) erradas na rodada que acabou
+  let modoRevisao = false;         // true quando a rodada atual é uma revisão de erros
+
+  const areaPergunta = document.getElementById(`${materia}-area-pergunta`);
+  const progressoTexto = document.getElementById(`${materia}-progresso-texto`);
+  const barraPreenchida = document.getElementById(`${materia}-barra-preenchida`);
+  const telaFinal = document.getElementById(`${materia}-tela-final`);
+  const progressoContainer = document.getElementById(`${materia}-progresso-container`);
+  const botoesTelaFinal = document.getElementById(`${materia}-botoes-tela-final`);
+
+  function sortearNovaRodada() {
+    modoRevisao = false;
+    perguntasErradasRodada = [];
+    // Se sobrou menos que uma rodada cheia, completa sorteando de novo (reciclando o banco)
+    if (indicesDisponiveis.length < TAMANHO_RODADA) {
+      const usados = bancoCompleto.map((_, i) => i).filter(i => !indicesDisponiveis.includes(i));
+      indicesDisponiveis = indicesDisponiveis.concat(embaralhar(usados));
+    }
+
+    const escolhidos = indicesDisponiveis.slice(0, TAMANHO_RODADA);
+    indicesDisponiveis = indicesDisponiveis.slice(TAMANHO_RODADA);
+
+    perguntas = escolhidos.map(i => bancoCompleto[i]);
+    indiceAtual = 0;
+    acertosRodada = 0;
+    respostas = [];
+  }
+
+  function iniciarRodadaRevisao(perguntasParaRevisar) {
+    modoRevisao = true;
+    perguntasErradasRodada = [];
+    perguntas = embaralhar(perguntasParaRevisar);
+    indiceAtual = 0;
+    acertosRodada = 0;
+    respostas = [];
+  }
+
+  function renderizarPergunta() {
+    const p = perguntas[indiceAtual];
+    progressoTexto.textContent = modoRevisao
+      ? `Pergunta ${indiceAtual + 1} de ${perguntas.length} — Revisão dos erros 🎯`
+      : `Pergunta ${indiceAtual + 1} de ${perguntas.length} — Rodada ${numeroRodada}`;
+    barraPreenchida.style.width = `${((indiceAtual) / perguntas.length) * 100}%`;
+
+    const letras = ['A','B','C','D'];
+    areaPergunta.innerHTML = `
+      <div class="pergunta-cartao">
+        <div class="pergunta-numero">PERGUNTA ${indiceAtual + 1}</div>
+        <div class="pergunta-texto">${p.pergunta}</div>
+        <div class="opcoes">
+          ${p.opcoes.map((op, i) => `
+            <button class="opcao" data-indice="${i}">
+              <span class="letra">${letras[i]}</span>
+              <span>${op}</span>
+            </button>
+          `).join('')}
+        </div>
+        <div class="feedback" id="${materia}-feedback"></div>
+        <button class="botao-proxima" id="${materia}-botao-proxima">Próxima pergunta →</button>
+      </div>
+    `;
+
+    areaPergunta.querySelectorAll('.opcao').forEach(botao => {
+      botao.addEventListener('click', () => responder(parseInt(botao.dataset.indice)));
+    });
+  }
+
+  function responder(indiceEscolhido) {
+    const p = perguntas[indiceAtual];
+    const botoesOpcao = areaPergunta.querySelectorAll('.opcao');
+    const feedback = document.getElementById(`${materia}-feedback`);
+    const botaoProxima = document.getElementById(`${materia}-botao-proxima`);
+
+    botoesOpcao.forEach(b => b.disabled = true);
+
+    const acertou = indiceEscolhido === p.correta;
+    if (acertou) { acertosRodada++; acertosSessao++; }
+    totalRespondidasSessao++;
+
+    botoesOpcao[p.correta].classList.add('correta');
+    if (!acertou) botoesOpcao[indiceEscolhido].classList.add('errada');
+
+    feedback.classList.add('mostrar', acertou ? 'acertou' : 'errou');
+    feedback.innerHTML = acertou
+      ? `<strong>✅ Isso! Você acertou!</strong><br>${p.explicacao}`
+      : `<strong>💛 Quase! A resposta certa é a ${['A','B','C','D'][p.correta]}.</strong><br>${p.explicacao}`;
+
+    botaoProxima.classList.add('mostrar');
+    respostas.push({pergunta: p.pergunta, acertou: acertou, explicacao: p.explicacao, original: p});
+    if (!acertou) perguntasErradasRodada.push(p);
+    botaoProxima.addEventListener('click', proximaPergunta, {once: true});
+  }
+
+  function proximaPergunta() {
+    indiceAtual++;
+    if (indiceAtual < perguntas.length) {
+      renderizarPergunta();
+    } else {
+      mostrarTelaFinal();
+    }
+  }
+
+  function mostrarTelaFinal() {
+    progressoContainer.style.display = 'none';
+    areaPergunta.style.display = 'none';
+    telaFinal.style.display = 'block';
+
+    document.getElementById(`${materia}-placar-final`).textContent = `${acertosRodada} de ${perguntas.length}`;
+
+    let mensagem = '';
+    const percentualAcerto = acertosRodada / perguntas.length;
+    if (percentualAcerto >= 0.8) mensagem = 'Excelente, Joaquim! Você está muito bem preparado! 🌟';
+    else if (percentualAcerto >= 0.5) mensagem = 'Muito bom! Vamos revisar juntos o que faltou e você vai arrasar! 💪';
+    else mensagem = 'Bom começo! Vamos rever esses temas juntos com calma. Você consegue! 🌻';
+    document.getElementById(`${materia}-mensagem-final`).textContent = mensagem;
+
+    const placarSessaoEl = document.getElementById(`${materia}-placar-sessao`);
+    if (placarSessaoEl) {
+      if (modoRevisao) {
+        placarSessaoEl.textContent = `Rodada de revisão — não conta no total de hoje.`;
+      } else {
+        placarSessaoEl.textContent = `Total de hoje: ${acertosSessao} de ${totalRespondidasSessao} (${numeroRodada} ${numeroRodada === 1 ? 'rodada' : 'rodadas'})`;
+      }
+    }
+
+    const listaRevisao = document.getElementById(`${materia}-lista-revisao`);
+    listaRevisao.innerHTML = '<h3 style="margin-bottom:12px;">📋 Revisão das respostas:</h3>' +
+      respostas.map(r => `
+        <div class="item-revisao ${r.acertou ? 'acertou-rev' : 'errou-rev'}">
+          <span>${r.acertou ? '✅' : '💛'}</span>
+          <div><strong>${r.pergunta}</strong><br><span style="opacity:0.85;">${r.explicacao}</span></div>
+        </div>
+      `).join('');
+
+    // Botão "Refazer as que errei" — só aparece se houve erros nesta rodada
+    let botaoRevisar = document.getElementById(`${materia}-botao-revisar-erros`);
+    if (perguntasErradasRodada.length > 0) {
+      if (!botaoRevisar) {
+        botaoRevisar = document.createElement('button');
+        botaoRevisar.className = 'botao-revisar-erros';
+        botaoRevisar.id = `${materia}-botao-revisar-erros`;
+        botoesTelaFinal.insertBefore(botaoRevisar, botoesTelaFinal.firstChild);
+      }
+      const n = perguntasErradasRodada.length;
+      botaoRevisar.textContent = `🎯 Refazer ${n} ${n === 1 ? 'pergunta que errei' : 'perguntas que errei'}`;
+      botaoRevisar.style.display = 'inline-block';
+      const paraRevisar = perguntasErradasRodada.slice();
+      botaoRevisar.onclick = () => {
+        iniciarRodadaRevisao(paraRevisar);
+        progressoContainer.style.display = 'block';
+        areaPergunta.style.display = 'block';
+        telaFinal.style.display = 'none';
+        renderizarPergunta();
+      };
+    } else if (botaoRevisar) {
+      botaoRevisar.style.display = 'none';
+    }
+  }
+
+  function iniciarNovaRodada() {
+    numeroRodada++;
+    sortearNovaRodada();
+    progressoContainer.style.display = 'block';
+    areaPergunta.style.display = 'block';
+    telaFinal.style.display = 'none';
+    renderizarPergunta();
+  }
+
+  document.getElementById(`${materia}-botao-reiniciar`).addEventListener('click', iniciarNovaRodada);
+
+  sortearNovaRodada();
+  renderizarPergunta();
+}
+
+criarQuiz('matematica', perguntasMatematica);
+criarQuiz('portugues', perguntasPortugues);
+criarQuiz('ciencias', perguntasCiencias);
+criarQuiz('geografia', perguntasGeografia, 50);
+criarQuiz('geografia-urbano', perguntasGeografiaUrbano, 15);
+criarQuiz('historia', perguntasHistoria, 50);
+criarQuiz('ingles', perguntasIngles);
+
+// ===================== NAVEGAÇÃO POR TÓPICOS (linha do tempo + roteiro lateral) =====================
+function configurarNavegacaoTopicos(idsNav) {
+  idsNav.forEach(idNav => {
+    const nav = document.getElementById(idNav);
+    if (!nav) return;
+
+    const itens = nav.querySelectorAll('[data-destino]');
+
+    // Clique leva até o tópico, com rolagem suave
+    itens.forEach(item => {
+      item.addEventListener('click', () => {
+        const destino = document.getElementById(item.dataset.destino);
+        if (destino) {
+          destino.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      });
+    });
+
+    // Observa quais tópicos estão visíveis para marcar "atual" e "feito"
+    const topicos = Array.from(itens).map(item => document.getElementById(item.dataset.destino)).filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const indice = topicos.indexOf(entry.target);
+        if (indice === -1) return;
+        const item = itens[indice];
+
+        if (entry.isIntersecting) {
+          itens.forEach(i => i.classList.remove('atual'));
+          item.classList.add('atual');
+          // marca os anteriores como feitos
+          for (let i = 0; i < indice; i++) {
+            itens[i].classList.add('feito');
+            itens[i].classList.remove('atual');
+          }
+        }
+      });
+    }, {rootMargin: '-15% 0px -60% 0px', threshold: 0});
+
+    topicos.forEach(topico => observer.observe(topico));
+  });
+}
+
+configurarNavegacaoTopicos(['matematica-linha-tempo', 'portugues-linha-tempo', 'ciencias-linha-tempo', 'geografia-linha-tempo', 'historia-linha-tempo', 'ingles-roteiro']);
+</script>
+
+</body>
+</html>
