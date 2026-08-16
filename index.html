@@ -570,6 +570,47 @@
 
   .video-assistir:hover { background: #3a5640; }
 
+  /* BOTÃO PRATICAR (ao lado do Assistir) */
+  .botao-praticar {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--terra);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 12px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .botao-praticar:hover { background: #8a5327; }
+
+  .pratica-inline {
+    margin-top: 16px;
+  }
+  .pratica-inline .pergunta-cartao { padding: 20px 18px; }
+  .pratica-inline .botao-gerar-mais {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    background: var(--verde);
+    color: var(--branco);
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+  }
+  .pratica-inline .botao-gerar-mais:hover { background: #3a5640; }
+  .pratica-progresso { font-family: 'Fredoka', sans-serif; font-weight: 600; margin-bottom: 10px; font-size: 1rem; color: var(--terra); }
+
   /* VOCABULARIO INGLES */
   .lista-vocab { list-style: none; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
   .lista-vocab li { background: var(--creme); border-radius: 10px; padding: 10px 14px; font-size: 1.05rem; }
@@ -1218,14 +1259,7 @@
     <p>7º Ano — 2º Trimestre — Parciais e Abrangente</p>
   </header>
 
-  <nav class="sub-nav">
-    <button class="sub-aba ativo" data-materia="ciencias" data-secao="estudar">📖 Estudar</button>
-    <button class="sub-aba" data-materia="ciencias" data-secao="quiz">✏️ Praticar</button>
-  </nav>
-
   <main class="conteudo-materia">
-
-    <section class="sub-secao ativa" id="ciencias-estudar">
 
       <div class="linha-tempo" id="ciencias-linha-tempo">
         <button class="linha-tempo-etapa" data-destino="cien-topico-1">
@@ -1274,6 +1308,8 @@
           <iframe src="https://www.youtube.com/embed/El2Wq79fIZI" title="Taxonomia: Como classificar os seres vivos" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=El2Wq79fIZI" target="_blank">▶️ Assistir no YouTube</a>
+        <button class="botao-praticar" data-praticar="cien-topico-1">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-1" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-2">
@@ -1291,6 +1327,8 @@
           <iframe src="https://www.youtube.com/embed/3c2GXWOnFEg" title="Os Cinco Reinos dos Seres Vivos" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=3c2GXWOnFEg" target="_blank">▶️ Assistir no YouTube</a>
+        <button class="botao-praticar" data-praticar="cien-topico-2">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-2" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-3">
@@ -1310,6 +1348,8 @@
           <iframe src="https://www.youtube.com/embed/BnMtrLlPZ_s" title="Poríferos, Cnidários e Platelmintos" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=BnMtrLlPZ_s" target="_blank">▶️ Assistir no YouTube</a>
+        <button class="botao-praticar" data-praticar="cien-topico-3">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-3" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-4">
@@ -1328,6 +1368,8 @@
           <iframe src="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/preview" title="Vermes Parasitas" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <button class="botao-praticar" data-praticar="cien-topico-4">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-4" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-5">
@@ -1344,6 +1386,8 @@
           <iframe src="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/preview" title="Peixes e Anfíbios" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <button class="botao-praticar" data-praticar="cien-topico-5">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-5" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-6">
@@ -1369,6 +1413,8 @@
         <a class="video-assistir" href="https://drive.google.com/file/d/1OSWE9A-Lvl9INrYx3MAlWu8TRhCRogq9/view" target="_blank" style="display:inline-flex;margin-top:10px;">▶️ Extra: só Répteis</a>
         <br>
         <a class="video-assistir" href="https://drive.google.com/file/d/1nDFxsK39ALZZEPlFBjfEAjzJQoyq_Y5S/view" target="_blank" style="display:inline-flex;margin-top:10px;">▶️ Extra: só Aves e Mamíferos</a>
+        <button class="botao-praticar" data-praticar="cien-topico-6" style="margin-top:14px;">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-6" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-8">
@@ -1384,6 +1430,8 @@
           <iframe src="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/preview" title="Biomas Brasileiros - Parte 1" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <button class="botao-praticar" data-praticar="cien-topico-8">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-8" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-9">
@@ -1399,32 +1447,9 @@
           <iframe src="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/preview" title="Biomas Brasileiros - Parte 2" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <button class="botao-praticar" data-praticar="cien-topico-9">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-9" style="display:none;"></div>
       </div>
-
-    </section>
-
-    <section class="sub-secao" id="ciencias-quiz">
-
-      <div class="progresso-container" id="ciencias-progresso-container">
-        <div class="progresso-texto" id="ciencias-progresso-texto">Pergunta 1 de 20</div>
-        <div class="barra-fundo"><div class="barra-preenchida" id="ciencias-barra-preenchida" style="width: 5%;"></div></div>
-      </div>
-
-      <div id="ciencias-area-pergunta"></div>
-
-      <div id="ciencias-tela-final" class="cartao tela-final" style="display:none;">
-        <div class="emoji-grande">🌟</div>
-        <h2>Você terminou!</h2>
-        <div class="placar" id="ciencias-placar-final">0 de 20</div>
-        <p id="ciencias-mensagem-final">Muito bem, Joaquim!</p>
-        <div class="botoes-tela-final" id="ciencias-botoes-tela-final">
-          <button class="botao-reiniciar" id="ciencias-botao-reiniciar">🔁 Mais 20 perguntas</button>
-        </div>
-        <p class="placar-sessao" id="ciencias-placar-sessao"></p>
-        <div class="lista-revisao" id="ciencias-lista-revisao"></div>
-      </div>
-
-    </section>
 
   </main>
 
@@ -2168,113 +2193,6 @@ const perguntasPortugues = [
   {pergunta:"Na frase 'Ele estuda à noite', qual palavra é o advérbio de tempo?",opcoes:["Ele","Estuda","À noite","Não tem"],correta:2,explicacao:"'À noite' é uma expressão adverbial de tempo, indicando quando a ação acontece."}
 ];
 
-const perguntasCiencias = [
-  {pergunta:"O que é um verme parasita?",opcoes:["Um verme que vive livre no solo","Um verme que vive dentro do corpo de outro ser vivo e se alimenta dele","Um verme que só existe no mar","Um verme que não se alimenta"],correta:1,explicacao:"Parasita é o organismo que vive às custas de um hospedeiro, tirando alimento dele e causando prejuízo."},
-  {pergunta:"A tênia (solitária) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Anelídeo","Molusco"],correta:0,explicacao:"A tênia é um platelminto, verme de corpo achatado."},
-  {pergunta:"Como uma pessoa geralmente se contamina com a tênia?",opcoes:["Comendo carne de porco ou boi crua ou mal cozida","Respirando ar poluído","Tomando sol em excesso","Bebendo leite fervido"],correta:0,explicacao:"A tênia é transmitida principalmente pela ingestão de carne mal cozida contendo larvas do parasita."},
-  {pergunta:"A esquistossomose é causada por um verme que, em parte do seu ciclo, vive dentro de:",opcoes:["Um caramujo de água doce","Um mosquito","Um porco","Um peixe"],correta:0,explicacao:"O esquistossomo tem um caramujo de água doce como hospedeiro intermediário em seu ciclo de vida."},
-  {pergunta:"Como a larva do esquistossomo entra no corpo da pessoa?",opcoes:["Pela picada de um inseto","Penetrando na pele durante o contato com água contaminada","Só pela ingestão de água","Pelo ar respirado"],correta:1,explicacao:"A larva do esquistossomo penetra ativamente na pele da pessoa que entra em contato com água doce contaminada."},
-  {pergunta:"A lombriga (Ascaris) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Cnidário","Anelídeo"],correta:1,explicacao:"A lombriga é um nematelminto, verme de corpo redondo (cilíndrico)."},
-  {pergunta:"Qual doença é causada pela lombriga?",opcoes:["Ascaridíase","Esquistossomose","Teníase","Malária"],correta:0,explicacao:"A infecção pela lombriga (Ascaris lumbricoides) é chamada de ascaridíase."},
-  {pergunta:"O ancilóstomo (causador do 'amarelão') geralmente entra no corpo humano:",opcoes:["Pela pele, principalmente pelos pés descalços em solo contaminado","Somente pela respiração","Somente pelo leite","Não infecta seres humanos"],correta:0,explicacao:"A larva do ancilóstomo penetra pela pele, sendo comum a infecção por andar descalço em solo contaminado."},
-  {pergunta:"Qual atitude ajuda a prevenir vermes parasitas como a lombriga e o ancilóstomo?",opcoes:["Lavar bem as mãos e os alimentos, e usar sapatos","Comer carne crua","Beber água de qualquer fonte","Andar descalço no solo"],correta:0,explicacao:"Higiene das mãos e alimentos, além do uso de calçados, ajuda a evitar a contaminação por esses parasitas."},
-  {pergunta:"Peixes respiram através de qual estrutura?",opcoes:["Pulmões","Brânquias","Pele apenas","Traqueias"],correta:1,explicacao:"Peixes retiram o oxigênio dissolvido na água usando as brânquias."},
-  {pergunta:"O corpo dos peixes é geralmente coberto por:",opcoes:["Pelos","Penas","Escamas","Placas ósseas apenas"],correta:2,explicacao:"A maioria dos peixes tem o corpo coberto por escamas."},
-  {pergunta:"Tubarões e raias são exemplos de peixes:",opcoes:["Ósseos","Cartilaginosos","Sem esqueleto","Anfíbios"],correta:1,explicacao:"Tubarões e raias têm esqueleto formado por cartilagem, sendo peixes cartilaginosos."},
-  {pergunta:"O que caracteriza um anfíbio?",opcoes:["Vive só na água durante toda a vida","Vive parte da vida na água e parte na terra","Vive só em ambientes secos","Tem o corpo coberto de penas"],correta:1,explicacao:"Os anfíbios vivem parte da vida na água (fase larval) e parte na terra (fase adulta, na maioria das espécies)."},
-  {pergunta:"O girino é a fase jovem de qual animal?",opcoes:["Peixe","Sapo (anfíbio)","Lagarto","Ave"],correta:1,explicacao:"O girino é a fase larval do sapo, que vive na água antes de se transformar em adulto."},
-  {pergunta:"A transformação do girino em sapo adulto é chamada de:",opcoes:["Metamorfose","Fotossíntese","Fecundação","Taxonomia"],correta:0,explicacao:"Metamorfose é o conjunto de transformações que o corpo do anfíbio sofre durante seu desenvolvimento."},
-  {pergunta:"A pele dos anfíbios é geralmente:",opcoes:["Grossa e seca, coberta de escamas","Fina e úmida, usada também para respirar","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"A pele dos anfíbios é fina e úmida, permitindo também a respiração cutânea (pela pele)."},
-  {pergunta:"A pele dos répteis é caracterizada por ser:",opcoes:["Fina e úmida","Seca e coberta de escamas","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"Répteis têm pele seca e coberta de escamas, o que ajuda a evitar a perda de água do corpo."},
-  {pergunta:"Répteis são chamados de ectotérmicos porque:",opcoes:["Produzem calor próprio como os mamíferos","Não controlam sozinhos a própria temperatura corporal","Vivem só na água","Não respiram"],correta:1,explicacao:"Ectotérmicos dependem de fontes externas de calor (como o sol) para regular a temperatura do corpo."},
-  {pergunta:"A tartaruga, o cágado e o jabuti pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:2,explicacao:"Esses animais pertencem ao grupo dos Quelônios, caracterizados por possuírem um casco (carapaça e plastrão)."},
-  {pergunta:"As cobras pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:0,explicacao:"As cobras pertencem ao grupo dos Ofídios, répteis sem patas."},
-  {pergunta:"Os lagartos pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:1,explicacao:"Os lagartos pertencem ao grupo dos Lacertílios, répteis que possuem patas."},
-  {pergunta:"O jacaré, o crocodilo e o gavial pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:3,explicacao:"Esses animais pertencem ao grupo dos Crocodilianos, répteis que passam bastante tempo na água."},
-  {pergunta:"A capacidade de alguns lagartos soltarem a cauda para escapar de um predador é chamada de:",opcoes:["Metamorfose","Autotomia","Fotossíntese","Fecundação"],correta:1,explicacao:"Autotomia é a capacidade de alguns lagartos soltarem a própria cauda quando ameaçados, escapando do predador."},
-  {pergunta:"A característica mais marcante das aves é possuir:",opcoes:["Pelos","Penas","Escamas","Brânquias"],correta:1,explicacao:"A presença de penas é a característica que define e diferencia as aves dos demais vertebrados."},
-  {pergunta:"Os ossos das aves são chamados de pneumáticos porque:",opcoes:["São muito pesados","Possuem espaços ocos preenchidos com ar, tornando-os leves","São feitos de cartilagem","Não existem nas aves"],correta:1,explicacao:"Ossos pneumáticos têm cavidades com ar, o que reduz o peso do corpo da ave e facilita o voo."},
-  {pergunta:"No lugar de dentes, as aves possuem:",opcoes:["Um bico córneo","Escamas na boca","Uma língua áspera","Nada no lugar dos dentes"],correta:0,explicacao:"As aves não têm dentes; no lugar, possuem um bico córneo, estrutura dura usada para se alimentar."},
-  {pergunta:"A quilha é uma estrutura óssea das aves que serve para:",opcoes:["Prender os músculos usados no voo","Filtrar o ar respirado","Produzir o som do canto","Proteger os ovos"],correta:0,explicacao:"A quilha é um osso do peito das aves onde ficam presos os fortes músculos responsáveis pelo batimento das asas."},
-  {pergunta:"A característica mais marcante dos mamíferos é possuir:",opcoes:["Penas","Pelos","Escamas","Casco"],correta:1,explicacao:"A presença de pelos é a característica que define os mamíferos."},
-  {pergunta:"As glândulas mamárias das fêmeas dos mamíferos produzem:",opcoes:["Veneno","Leite, para alimentar os filhotes","Muco","Cera"],correta:1,explicacao:"As glândulas mamárias produzem leite, usado para alimentar os filhotes nos primeiros meses de vida."},
-  {pergunta:"A maioria dos mamíferos, como o cachorro e o ser humano, pertence a qual grupo?",opcoes:["Monotremados","Marsupiais","Placentários","Anfíbios"],correta:2,explicacao:"Os placentários são a maioria dos mamíferos; o filhote se desenvolve completamente na barriga da mãe antes de nascer."},
-  {pergunta:"O canguru e o gambá são exemplos de mamíferos:",opcoes:["Placentários","Marsupiais","Monotremados","Ovíparos apenas"],correta:1,explicacao:"Marsupiais nascem ainda incompletos e terminam de se desenvolver dentro de uma bolsa (marsúpio) da mãe."},
-  {pergunta:"O ornitorrinco é um exemplo de mamífero:",opcoes:["Placentário","Marsupial","Monotremado","Réptil"],correta:2,explicacao:"O ornitorrinco é um monotremado, grupo raro de mamíferos que nascem de ovos."},
-  {pergunta:"O que é um bioma?",opcoes:["Um tipo de rocha","Uma grande área com clima, vegetação e fauna parecidos","Um tipo de doença","Um instrumento de laboratório"],correta:1,explicacao:"Bioma é um conjunto de ecossistemas com clima, vegetação e fauna semelhantes, numa grande área geográfica."},
-  {pergunta:"Qual é o maior bioma tropical do mundo, localizado no Brasil?",opcoes:["Caatinga","Cerrado","Amazônia","Pampa"],correta:2,explicacao:"A Floresta Amazônica é a maior floresta tropical do mundo."},
-  {pergunta:"Qual bioma brasileiro fica no litoral e foi muito desmatado ao longo da história?",opcoes:["Amazônia","Mata Atlântica","Pantanal","Pampa"],correta:1,explicacao:"A Mata Atlântica, localizada no litoral, teve grande parte de sua cobertura original destruída pela ocupação humana."},
-  {pergunta:"O mico-leão-dourado é um animal símbolo de qual bioma?",opcoes:["Cerrado","Caatinga","Mata Atlântica","Pantanal"],correta:2,explicacao:"O mico-leão-dourado é um animal símbolo da Mata Atlântica."},
-  {pergunta:"Qual bioma brasileiro tem clima semiárido, com pouca chuva, localizado no Nordeste?",opcoes:["Amazônia","Caatinga","Pantanal","Pampa"],correta:1,explicacao:"A Caatinga tem clima semiárido, com baixa quantidade de chuva, e fica na região Nordeste."},
-  {pergunta:"Por que muitas plantas da Caatinga têm espinhos no lugar de folhas grandes?",opcoes:["Para atrair mais água da chuva","Para reduzir a perda de água em um clima seco","Para produzir mais oxigênio","Não tem relação com o clima"],correta:1,explicacao:"Espinhos, no lugar de folhas grandes, ajudam a planta a perder menos água por transpiração, uma adaptação ao clima seco."},
-  {pergunta:"O Cerrado é conhecido como 'berço das águas' porque:",opcoes:["Tem o maior rio do Brasil","Muitos rios importantes do Brasil nascem lá","É o único bioma com água","Fica embaixo do mar"],correta:1,explicacao:"O Cerrado abriga as nascentes de diversas bacias hidrográficas importantes do Brasil."},
-  {pergunta:"Uma característica das árvores do Cerrado é ter:",opcoes:["Tronco reto e fino","Tronco torto e casca grossa","Nenhuma casca","Raízes muito curtas"],correta:1,explicacao:"As árvores do Cerrado costumam ter tronco torto e casca grossa, o que ajuda a proteger contra o fogo, comum na região."},
-  {pergunta:"Qual bioma brasileiro é conhecido como a maior área alagada do mundo?",opcoes:["Amazônia","Pantanal","Pampa","Cerrado"],correta:1,explicacao:"O Pantanal é considerado a maior planície alagável (área alagada) do mundo."},
-  {pergunta:"A capivara e a arara-azul são animais bem conhecidos de qual bioma?",opcoes:["Pampa","Caatinga","Pantanal","Mata Atlântica"],correta:2,explicacao:"Capivara e arara-azul são animais bem representativos da fauna do Pantanal."},
-  {pergunta:"Qual bioma brasileiro fica no Sul do país e é formado principalmente por campos?",opcoes:["Pampa","Cerrado","Caatinga","Amazônia"],correta:0,explicacao:"A Pampa fica no Rio Grande do Sul e é formada principalmente por campos, com poucas árvores."},
-  {pergunta:"Por que a Pampa é muito usada para a pecuária (criação de bois e ovelhas)?",opcoes:["Porque tem floresta densa","Porque é formada por campos, ideais para o pasto dos animais","Porque não tem nenhuma vegetação","Porque fica no litoral"],correta:1,explicacao:"A vegetação de campos da Pampa, com pastagens naturais, favorece a criação de gado e ovelhas."},
-  {pergunta:"O que é taxonomia?",opcoes:["A ciência que organiza os seres vivos em grupos","Um tipo de planta","Uma doença","Um tipo de rocha"],correta:0,explicacao:"Taxonomia é a ciência que classifica e organiza os seres vivos em grupos."},
-  {pergunta:"Como é escrito o nome científico de um ser vivo?",opcoes:["Em português, com letra maiúscula","Em latim, com duas palavras","Apenas com números","Em qualquer idioma, sem regra"],correta:1,explicacao:"O nome científico é escrito em latim, com duas palavras (nomenclatura binominal)."},
-  {pergunta:"Qual é a ordem correta dos grupos taxonômicos, do maior para o menor?",opcoes:["Reino, Filo, Classe, Ordem, Família, Gênero, Espécie","Espécie, Gênero, Reino, Filo","Filo, Reino, Classe, Espécie","Gênero, Espécie, Reino, Filo"],correta:0,explicacao:"A ordem correta, do maior grupo para o menor, é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie."},
-  {pergunta:"Quantos são os reinos dos seres vivos, na classificação clássica?",opcoes:["3","4","5","7"],correta:2,explicacao:"São 5 reinos: Monera, Protista, Fungi, Plantae e Animalia."},
-  {pergunta:"O Reino Monera é formado por quais seres vivos?",opcoes:["Plantas","Bactérias","Animais","Fungos"],correta:1,explicacao:"O Reino Monera é formado pelas bactérias, seres de uma só célula."},
-  {pergunta:"O Reino Fungi é formado por quais seres vivos?",opcoes:["Bactérias","Fungos, cogumelos, mofo","Plantas","Animais marinhos"],correta:1,explicacao:"O Reino Fungi inclui fungos, cogumelos e mofos."},
-  {pergunta:"O Reino Plantae é formado por:",opcoes:["Todas as plantas","Todos os animais","Bactérias","Vírus"],correta:0,explicacao:"O Reino Plantae é formado por todas as plantas."},
-  {pergunta:"O Reino Animalia é formado por:",opcoes:["Todas as plantas","Todos os animais","Apenas bactérias","Apenas fungos"],correta:1,explicacao:"O Reino Animalia é formado por todos os animais."},
-  {pergunta:"O que são invertebrados?",opcoes:["Animais sem coluna vertebral","Animais sem boca","Plantas sem raiz","Fungos sem esporos"],correta:0,explicacao:"Invertebrados são animais que não possuem coluna vertebral (esqueleto de ossos nas costas)."},
-  {pergunta:"As esponjas do mar pertencem a qual grupo de invertebrados?",opcoes:["Cnidários","Poríferos","Moluscos","Artrópodes"],correta:1,explicacao:"As esponjas são Poríferos, animais com o corpo cheio de poros (furinhos)."},
-  {pergunta:"Água-viva e coral pertencem a qual grupo?",opcoes:["Poríferos","Cnidários","Anelídeos","Equinodermos"],correta:1,explicacao:"Água-viva e coral são Cnidários, animais com tentáculos que podem picar."},
-  {pergunta:"A minhoca pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Artrópodes","Cnidários"],correta:0,explicacao:"A minhoca é um Anelídeo, animal com o corpo dividido em anéis."},
-  {pergunta:"O caracol e o polvo pertencem a qual grupo?",opcoes:["Artrópodes","Moluscos","Equinodermos","Poríferos"],correta:1,explicacao:"Caracol e polvo são Moluscos."},
-  {pergunta:"A estrela-do-mar pertence a qual grupo?",opcoes:["Equinodermos","Cnidários","Anelídeos","Artrópodes"],correta:0,explicacao:"A estrela-do-mar é um Equinodermo."},
-  {pergunta:"Insetos e aranhas pertencem a qual grupo de invertebrados?",opcoes:["Moluscos","Anelídeos","Artrópodes","Poríferos"],correta:2,explicacao:"Insetos e aranhas são Artrópodes, animais com pernas articuladas."},
-  {pergunta:"A tênia é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Moluscos","Cnidários"],correta:0,explicacao:"A tênia é um Platelminto, verme de corpo achatado."},
-  {pergunta:"A lombriga é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Equinodermos"],correta:1,explicacao:"A lombriga é um Nematelminto, verme de corpo redondo (cilíndrico)."},
-  {pergunta:"Qual critério NÃO é usado para classificar os seres vivos em reinos?",opcoes:["Modo de nutrição","Modo de reprodução","Cor predominante","Tipo de sustentação do corpo"],correta:2,explicacao:"A cor não é um critério científico de classificação; usa-se nutrição, reprodução, obtenção de oxigênio e sustentação do corpo."},
-  {pergunta:"Doenças causadas por fungos são chamadas de:",opcoes:["Viroses","Bacterioses","Micoses","Protozooses"],correta:2,explicacao:"Doenças causadas por fungos são chamadas de micoses."},
-  {pergunta:"Por que é importante classificar os seres vivos em grupos?",opcoes:["Para deixar mais difícil de estudar","Para facilitar o estudo, agrupando os que são parecidos","Não tem importância nenhuma","Só para decorar nomes"],correta:1,explicacao:"Classificar facilita o estudo, organizando os seres vivos por características semelhantes."},
-  {pergunta:"O grupo taxonômico 'Espécie' representa:",opcoes:["O maior grupo de todos","O menor e mais específico grupo","Um grupo apenas de plantas","Um grupo apenas de bactérias"],correta:1,explicacao:"Espécie é o menor e mais específico nível da classificação taxonômica."},
-  {pergunta:"O grupo taxonômico 'Reino' representa:",opcoes:["O menor grupo de todos","Um dos maiores e mais amplos grupos","Apenas animais marinhos","Um tipo de doença"],correta:1,explicacao:"Reino é um dos grupos mais amplos da classificação, reunindo seres vivos com características bem gerais em comum."},
-  {pergunta:"Por que o nome científico é escrito em latim?",opcoes:["Porque é mais bonito","Para ser igual em qualquer país do mundo, evitando confusão","Porque é mais fácil de pronunciar","Não há motivo especial"],correta:1,explicacao:"O latim é usado para que o nome científico seja reconhecido da mesma forma em qualquer lugar do mundo, evitando confusão entre idiomas."},
-  {pergunta:"Bactérias fazem parte de qual reino?",opcoes:["Plantae","Animalia","Monera","Fungi"],correta:2,explicacao:"Bactérias pertencem ao Reino Monera, formado por seres unicelulares simples."},
-  {pergunta:"Cogumelos fazem parte de qual reino?",opcoes:["Monera","Fungi","Plantae","Protista"],correta:1,explicacao:"Cogumelos fazem parte do Reino Fungi."},
-  {pergunta:"Protozoários e algas fazem parte de qual reino?",opcoes:["Monera","Fungi","Protista","Animalia"],correta:2,explicacao:"Protozoários e algas pertencem ao Reino Protista (também chamado Protoctista)."},
-  {pergunta:"Uma doença causada por bactérias é chamada de:",opcoes:["Micose","Bacteriose","Virose","Protozoose"],correta:1,explicacao:"Doenças causadas por bactérias são chamadas de bacterioses."},
-  {pergunta:"Uma doença causada por vírus é chamada de:",opcoes:["Virose","Micose","Bacteriose","Helmintose"],correta:0,explicacao:"Doenças causadas por vírus são chamadas de viroses."},
-  {pergunta:"Uma doença causada por vermes é chamada de:",opcoes:["Virose","Micose","Helmintose","Bacteriose"],correta:2,explicacao:"Doenças causadas por vermes (helmintos) são chamadas de helmintoses."},
-  {pergunta:"Vírus são considerados seres vivos pelos critérios tradicionais de classificação?",opcoes:["Sim, sem nenhuma dúvida","Não se encaixam bem nos 5 reinos clássicos, sendo tratados separadamente","Pertencem ao Reino Animalia","Pertencem ao Reino Plantae"],correta:1,explicacao:"Vírus não se encaixam perfeitamente na classificação dos 5 reinos, sendo geralmente estudados separadamente."},
-  {pergunta:"Qual destes é um critério usado para classificar os seres vivos?",opcoes:["Modo de nutrição","Cor da pele","Local de nascimento","Tamanho dos pés"],correta:0,explicacao:"O modo de nutrição é um dos critérios científicos usados para agrupar seres vivos."},
-  {pergunta:"Qual destes é outro critério usado para classificar os seres vivos?",opcoes:["Modo de reprodução","Nome da família humana","Cor da roupa","Local onde foi comprado"],correta:0,explicacao:"O modo de reprodução é um critério científico usado na classificação dos seres vivos."},
-  {pergunta:"O que significa 'sustentação do corpo', como critério de classificação?",opcoes:["Como o ser vivo se equilibra ou se apoia (esqueleto, tronco, etc.)","A cor da pele do ser vivo","O peso do ser vivo","O nome popular do animal"],correta:0,explicacao:"Sustentação do corpo se refere à estrutura que dá suporte ao ser vivo, como esqueleto interno, externo, ou outras formas de sustentação."},
-  {pergunta:"O que diferencia um invertebrado de um vertebrado?",opcoes:["O tamanho do corpo","A presença ou ausência de coluna vertebral","A cor da pele","O local onde vive"],correta:1,explicacao:"Vertebrados possuem coluna vertebral; invertebrados não possuem essa estrutura."},
-  {pergunta:"Os Poríferos têm o corpo:",opcoes:["Cheio de poros (furinhos)","Coberto de penas","Com casca dura","Com pelos longos"],correta:0,explicacao:"Poríferos (esponjas) têm o corpo cheio de pequenos poros, por onde a água circula."},
-  {pergunta:"Os Cnidários têm como característica:",opcoes:["Tentáculos que podem picar","Asas para voar","Pernas articuladas","Concha protetora"],correta:0,explicacao:"Cnidários (água-viva, coral, anêmona) têm tentáculos com células urticantes que podem picar."},
-  {pergunta:"O corpo achatado é uma característica de qual grupo?",opcoes:["Platelmintos","Anelídeos","Artrópodes","Equinodermos"],correta:0,explicacao:"Platelmintos têm o corpo achatado, como a tênia."},
-  {pergunta:"O corpo dividido em anéis é uma característica de qual grupo?",opcoes:["Moluscos","Anelídeos","Cnidários","Poríferos"],correta:1,explicacao:"Anelídeos (como a minhoca) têm o corpo dividido em segmentos parecidos com anéis."},
-  {pergunta:"Pernas articuladas são uma característica de qual grupo?",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes (insetos, aranhas, caranguejos) têm pernas articuladas (com 'juntas')."},
-  {pergunta:"A concha é uma característica comum em qual grupo de invertebrados?",opcoes:["Moluscos","Cnidários","Artrópodes","Platelmintos"],correta:0,explicacao:"Muitos Moluscos (como caracol e ostra) possuem concha, uma estrutura dura de proteção."},
-  {pergunta:"O ouriço-do-mar pertence a qual grupo?",opcoes:["Cnidários","Moluscos","Equinodermos","Artrópodes"],correta:2,explicacao:"O ouriço-do-mar é um Equinodermo, grupo que inclui também a estrela-do-mar."},
-  {pergunta:"O caranguejo pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Cnidários","Poríferos"],correta:1,explicacao:"O caranguejo é um Artrópode, animal com pernas articuladas e exoesqueleto."},
-  {pergunta:"A lula pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Anelídeos","Cnidários"],correta:0,explicacao:"A lula é um Molusco, assim como o polvo e o caracol."},
-  {pergunta:"A sanguessuga pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Cnidários","Equinodermos"],correta:0,explicacao:"A sanguessuga é um Anelídeo, com corpo dividido em anéis, assim como a minhoca."},
-  {pergunta:"Animais com corpo redondo (cilíndrico), como a lombriga, são chamados de:",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Cnidários"],correta:1,explicacao:"Nematelmintos têm o corpo em formato cilíndrico (redondo), diferente dos Platelmintos, que são achatados."},
-  {pergunta:"Os fungos se alimentam principalmente:",opcoes:["Fazendo fotossíntese como as plantas","Absorvendo nutrientes de matéria orgânica","Caçando outros animais","Fazendo fotossíntese aquática"],correta:1,explicacao:"Fungos não fazem fotossíntese; eles absorvem nutrientes de matéria orgânica em decomposição ou de outros organismos."},
-  {pergunta:"As plantas se destacam por realizar qual processo para obter energia?",opcoes:["Fotossíntese","Fermentação apenas","Caça","Decomposição"],correta:0,explicacao:"As plantas realizam fotossíntese, processo que usa luz solar para produzir energia."},
-  {pergunta:"Os animais, de modo geral, obtêm alimento:",opcoes:["Fazendo fotossíntese","Se alimentando de outros seres vivos ou partes deles","Absorvendo luz do sol diretamente","Não precisam se alimentar"],correta:1,explicacao:"Animais obtêm energia se alimentando de outros seres vivos (plantas, outros animais, etc.), pois não fazem fotossíntese."},
-  {pergunta:"Qual é a diferença entre o Reino Plantae e o Reino Fungi quanto à nutrição?",opcoes:["Não existe diferença","Plantas fazem fotossíntese; fungos absorvem nutrientes de matéria orgânica","Fungos fazem fotossíntese; plantas não","Os dois caçam outros seres vivos"],correta:1,explicacao:"Plantas produzem seu próprio alimento por fotossíntese, enquanto fungos absorvem nutrientes já existentes na matéria orgânica."},
-  {pergunta:"O Reino Protista inclui organismos que podem ser:",opcoes:["Apenas multicelulares grandes","Geralmente unicelulares, como protozoários e algumas algas","Apenas vertebrados","Apenas fungos"],correta:1,explicacao:"O Reino Protista é formado principalmente por organismos unicelulares, como protozoários e certas algas."},
-  {pergunta:"O grupo taxonômico 'Filo' vem depois de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Gênero","Reino","Família"],correta:2,explicacao:"A ordem do maior para o menor é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie. Filo vem logo depois de Reino."},
-  {pergunta:"O grupo taxonômico 'Gênero' vem antes de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Família","Reino","Filo"],correta:0,explicacao:"Gênero vem antes de Espécie, que é o último e mais específico nível da classificação."},
-  {pergunta:"As bactérias têm quantas células?",opcoes:["Uma só (unicelulares)","Milhares","Exatamente duas","Não têm células"],correta:0,explicacao:"Bactérias são organismos unicelulares, formados por apenas uma célula."},
-  {pergunta:"Qual destes seres vivos NÃO pertence ao Reino Animalia?",opcoes:["Cachorro","Minhoca","Cogumelo","Borboleta"],correta:2,explicacao:"O cogumelo pertence ao Reino Fungi, não ao Reino Animalia."},
-  {pergunta:"Qual destes seres vivos pertence ao Reino Plantae?",opcoes:["Bactéria","Samambaia","Fungo","Água-viva"],correta:1,explicacao:"A samambaia é uma planta, pertencendo ao Reino Plantae."},
-  {pergunta:"O mofo que aparece em pão velho pertence a qual reino?",opcoes:["Monera","Fungi","Plantae","Animalia"],correta:1,explicacao:"O mofo é um tipo de fungo, pertencendo ao Reino Fungi."},
-  {pergunta:"Qual destes é um exemplo de Reino Monera?",opcoes:["Bactéria causadora de uma infecção","Cogumelo","Samambaia","Estrela-do-mar"],correta:0,explicacao:"Bactérias pertencem ao Reino Monera."},
-  {pergunta:"A malária é causada por um organismo de qual reino?",opcoes:["Monera","Protista","Fungi","Animalia"],correta:1,explicacao:"A malária é causada por um protozoário, organismo do Reino Protista."},
-  {pergunta:"Animais que têm o corpo coberto por exoesqueleto (esqueleto externo duro) geralmente são:",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes possuem exoesqueleto, uma estrutura dura externa que protege e sustenta o corpo."},
-  {pergunta:"A classificação taxonômica ajuda os cientistas a:",opcoes:["Confundir os nomes dos seres vivos","Organizar e comunicar informações sobre os seres vivos de forma padronizada","Aumentar a quantidade de espécies","Tornar a ciência mais difícil"],correta:1,explicacao:"A taxonomia padroniza a forma de organizar e comunicar informações sobre os seres vivos entre cientistas do mundo todo."},
-];
-
 const perguntasGeografia = [
   {pergunta:"O que é agropecuária?",opcoes:["A junção da agricultura com a pecuária","Só a criação de animais","Só o plantio de árvores","Um tipo de cidade"],correta:0,explicacao:"Agropecuária é a junção da agricultura (plantar) com a pecuária (criar animais)."},
   {pergunta:"O Brasil é um grande produtor mundial de qual produto?",opcoes:["Petróleo","Soja","Carvão","Trigo"],correta:1,explicacao:"O Brasil é um dos maiores produtores de soja do mundo."},
@@ -2669,7 +2587,286 @@ function criarQuiz(materia, bancoCompleto, tamanhoRodada = 20, qtdPrioridade = 0
 
 criarQuiz('matematica', perguntasMatematica);
 criarQuiz('portugues', perguntasPortugues);
-criarQuiz('ciencias', perguntasCiencias, 30, 44);
+window.PRATICA_CIENCIAS = {
+  'cien-topico-1': [
+  {pergunta:"O que é taxonomia?",opcoes:["A ciência que organiza os seres vivos em grupos","Um tipo de planta","Uma doença","Um tipo de rocha"],correta:0,explicacao:"Taxonomia é a ciência que classifica e organiza os seres vivos em grupos."},
+  {pergunta:"Como é escrito o nome científico de um ser vivo?",opcoes:["Em português, com letra maiúscula","Em latim, com duas palavras","Apenas com números","Em qualquer idioma, sem regra"],correta:1,explicacao:"O nome científico é escrito em latim, com duas palavras (nomenclatura binominal)."},
+  {pergunta:"Qual é a ordem correta dos grupos taxonômicos, do maior para o menor?",opcoes:["Reino, Filo, Classe, Ordem, Família, Gênero, Espécie","Espécie, Gênero, Reino, Filo","Filo, Reino, Classe, Espécie","Gênero, Espécie, Reino, Filo"],correta:0,explicacao:"A ordem correta, do maior grupo para o menor, é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie."},
+  {pergunta:"Por que é importante classificar os seres vivos em grupos?",opcoes:["Para deixar mais difícil de estudar","Para facilitar o estudo, agrupando os que são parecidos","Não tem importância nenhuma","Só para decorar nomes"],correta:1,explicacao:"Classificar facilita o estudo, organizando os seres vivos por características semelhantes."},
+  {pergunta:"O grupo taxonômico 'Espécie' representa:",opcoes:["O maior grupo de todos","O menor e mais específico grupo","Um grupo apenas de plantas","Um grupo apenas de bactérias"],correta:1,explicacao:"Espécie é o menor e mais específico nível da classificação taxonômica."},
+  {pergunta:"O grupo taxonômico 'Reino' representa:",opcoes:["O menor grupo de todos","Um dos maiores e mais amplos grupos","Apenas animais marinhos","Um tipo de doença"],correta:1,explicacao:"Reino é um dos grupos mais amplos da classificação, reunindo seres vivos com características bem gerais em comum."},
+  {pergunta:"Por que o nome científico é escrito em latim?",opcoes:["Porque é mais bonito","Para ser igual em qualquer país do mundo, evitando confusão","Porque é mais fácil de pronunciar","Não há motivo especial"],correta:1,explicacao:"O latim é usado para que o nome científico seja reconhecido da mesma forma em qualquer lugar do mundo, evitando confusão entre idiomas."},
+  {pergunta:"O grupo taxonômico 'Filo' vem depois de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Gênero","Reino","Família"],correta:2,explicacao:"A ordem do maior para o menor é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie. Filo vem logo depois de Reino."},
+  {pergunta:"O grupo taxonômico 'Gênero' vem antes de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Família","Reino","Filo"],correta:0,explicacao:"Gênero vem antes de Espécie, que é o último e mais específico nível da classificação."},
+  {pergunta:"A classificação taxonômica ajuda os cientistas a:",opcoes:["Confundir os nomes dos seres vivos","Organizar e comunicar informações sobre os seres vivos de forma padronizada","Aumentar a quantidade de espécies","Tornar a ciência mais difícil"],correta:1,explicacao:"A taxonomia padroniza a forma de organizar e comunicar informações sobre os seres vivos entre cientistas do mundo todo."}
+  ],
+  'cien-topico-2': [
+  {pergunta:"Quantos são os reinos dos seres vivos, na classificação clássica?",opcoes:["3","4","5","7"],correta:2,explicacao:"São 5 reinos: Monera, Protista, Fungi, Plantae e Animalia."},
+  {pergunta:"O Reino Monera é formado por quais seres vivos?",opcoes:["Plantas","Bactérias","Animais","Fungos"],correta:1,explicacao:"O Reino Monera é formado pelas bactérias, seres de uma só célula."},
+  {pergunta:"O Reino Fungi é formado por quais seres vivos?",opcoes:["Bactérias","Fungos, cogumelos, mofo","Plantas","Animais marinhos"],correta:1,explicacao:"O Reino Fungi inclui fungos, cogumelos e mofos."},
+  {pergunta:"O Reino Plantae é formado por:",opcoes:["Todas as plantas","Todos os animais","Bactérias","Vírus"],correta:0,explicacao:"O Reino Plantae é formado por todas as plantas."},
+  {pergunta:"O Reino Animalia é formado por:",opcoes:["Todas as plantas","Todos os animais","Apenas bactérias","Apenas fungos"],correta:1,explicacao:"O Reino Animalia é formado por todos os animais."},
+  {pergunta:"Qual critério NÃO é usado para classificar os seres vivos em reinos?",opcoes:["Modo de nutrição","Modo de reprodução","Cor predominante","Tipo de sustentação do corpo"],correta:2,explicacao:"A cor não é um critério científico de classificação; usa-se nutrição, reprodução, obtenção de oxigênio e sustentação do corpo."},
+  {pergunta:"Doenças causadas por fungos são chamadas de:",opcoes:["Viroses","Bacterioses","Micoses","Protozooses"],correta:2,explicacao:"Doenças causadas por fungos são chamadas de micoses."},
+  {pergunta:"Bactérias fazem parte de qual reino?",opcoes:["Plantae","Animalia","Monera","Fungi"],correta:2,explicacao:"Bactérias pertencem ao Reino Monera, formado por seres unicelulares simples."},
+  {pergunta:"Cogumelos fazem parte de qual reino?",opcoes:["Monera","Fungi","Plantae","Protista"],correta:1,explicacao:"Cogumelos fazem parte do Reino Fungi."},
+  {pergunta:"Protozoários e algas fazem parte de qual reino?",opcoes:["Monera","Fungi","Protista","Animalia"],correta:2,explicacao:"Protozoários e algas pertencem ao Reino Protista (também chamado Protoctista)."},
+  {pergunta:"Uma doença causada por bactérias é chamada de:",opcoes:["Micose","Bacteriose","Virose","Protozoose"],correta:1,explicacao:"Doenças causadas por bactérias são chamadas de bacterioses."},
+  {pergunta:"Uma doença causada por vírus é chamada de:",opcoes:["Virose","Micose","Bacteriose","Helmintose"],correta:0,explicacao:"Doenças causadas por vírus são chamadas de viroses."},
+  {pergunta:"Uma doença causada por vermes é chamada de:",opcoes:["Virose","Micose","Helmintose","Bacteriose"],correta:2,explicacao:"Doenças causadas por vermes (helmintos) são chamadas de helmintoses."},
+  {pergunta:"Vírus são considerados seres vivos pelos critérios tradicionais de classificação?",opcoes:["Sim, sem nenhuma dúvida","Não se encaixam bem nos 5 reinos clássicos, sendo tratados separadamente","Pertencem ao Reino Animalia","Pertencem ao Reino Plantae"],correta:1,explicacao:"Vírus não se encaixam perfeitamente na classificação dos 5 reinos, sendo geralmente estudados separadamente."},
+  {pergunta:"Qual destes é um critério usado para classificar os seres vivos?",opcoes:["Modo de nutrição","Cor da pele","Local de nascimento","Tamanho dos pés"],correta:0,explicacao:"O modo de nutrição é um dos critérios científicos usados para agrupar seres vivos."},
+  {pergunta:"Qual destes é outro critério usado para classificar os seres vivos?",opcoes:["Modo de reprodução","Nome da família humana","Cor da roupa","Local onde foi comprado"],correta:0,explicacao:"O modo de reprodução é um critério científico usado na classificação dos seres vivos."},
+  {pergunta:"O que significa 'sustentação do corpo', como critério de classificação?",opcoes:["Como o ser vivo se equilibra ou se apoia (esqueleto, tronco, etc.)","A cor da pele do ser vivo","O peso do ser vivo","O nome popular do animal"],correta:0,explicacao:"Sustentação do corpo se refere à estrutura que dá suporte ao ser vivo, como esqueleto interno, externo, ou outras formas de sustentação."},
+  {pergunta:"Os fungos se alimentam principalmente:",opcoes:["Fazendo fotossíntese como as plantas","Absorvendo nutrientes de matéria orgânica","Caçando outros animais","Fazendo fotossíntese aquática"],correta:1,explicacao:"Fungos não fazem fotossíntese; eles absorvem nutrientes de matéria orgânica em decomposição ou de outros organismos."},
+  {pergunta:"As plantas se destacam por realizar qual processo para obter energia?",opcoes:["Fotossíntese","Fermentação apenas","Caça","Decomposição"],correta:0,explicacao:"As plantas realizam fotossíntese, processo que usa luz solar para produzir energia."},
+  {pergunta:"Os animais, de modo geral, obtêm alimento:",opcoes:["Fazendo fotossíntese","Se alimentando de outros seres vivos ou partes deles","Absorvendo luz do sol diretamente","Não precisam se alimentar"],correta:1,explicacao:"Animais obtêm energia se alimentando de outros seres vivos (plantas, outros animais, etc.), pois não fazem fotossíntese."},
+  {pergunta:"Qual é a diferença entre o Reino Plantae e o Reino Fungi quanto à nutrição?",opcoes:["Não existe diferença","Plantas fazem fotossíntese; fungos absorvem nutrientes de matéria orgânica","Fungos fazem fotossíntese; plantas não","Os dois caçam outros seres vivos"],correta:1,explicacao:"Plantas produzem seu próprio alimento por fotossíntese, enquanto fungos absorvem nutrientes já existentes na matéria orgânica."},
+  {pergunta:"O Reino Protista inclui organismos que podem ser:",opcoes:["Apenas multicelulares grandes","Geralmente unicelulares, como protozoários e algumas algas","Apenas vertebrados","Apenas fungos"],correta:1,explicacao:"O Reino Protista é formado principalmente por organismos unicelulares, como protozoários e certas algas."},
+  {pergunta:"As bactérias têm quantas células?",opcoes:["Uma só (unicelulares)","Milhares","Exatamente duas","Não têm células"],correta:0,explicacao:"Bactérias são organismos unicelulares, formados por apenas uma célula."},
+  {pergunta:"Qual destes seres vivos NÃO pertence ao Reino Animalia?",opcoes:["Cachorro","Minhoca","Cogumelo","Borboleta"],correta:2,explicacao:"O cogumelo pertence ao Reino Fungi, não ao Reino Animalia."},
+  {pergunta:"Qual destes seres vivos pertence ao Reino Plantae?",opcoes:["Bactéria","Samambaia","Fungo","Água-viva"],correta:1,explicacao:"A samambaia é uma planta, pertencendo ao Reino Plantae."},
+  {pergunta:"O mofo que aparece em pão velho pertence a qual reino?",opcoes:["Monera","Fungi","Plantae","Animalia"],correta:1,explicacao:"O mofo é um tipo de fungo, pertencendo ao Reino Fungi."},
+  {pergunta:"Qual destes é um exemplo de Reino Monera?",opcoes:["Bactéria causadora de uma infecção","Cogumelo","Samambaia","Estrela-do-mar"],correta:0,explicacao:"Bactérias pertencem ao Reino Monera."},
+  {pergunta:"A malária é causada por um organismo de qual reino?",opcoes:["Monera","Protista","Fungi","Animalia"],correta:1,explicacao:"A malária é causada por um protozoário, organismo do Reino Protista."}
+  ],
+  'cien-topico-3': [
+  {pergunta:"O que são invertebrados?",opcoes:["Animais sem coluna vertebral","Animais sem boca","Plantas sem raiz","Fungos sem esporos"],correta:0,explicacao:"Invertebrados são animais que não possuem coluna vertebral (esqueleto de ossos nas costas)."},
+  {pergunta:"As esponjas do mar pertencem a qual grupo de invertebrados?",opcoes:["Cnidários","Poríferos","Moluscos","Artrópodes"],correta:1,explicacao:"As esponjas são Poríferos, animais com o corpo cheio de poros (furinhos)."},
+  {pergunta:"Água-viva e coral pertencem a qual grupo?",opcoes:["Poríferos","Cnidários","Anelídeos","Equinodermos"],correta:1,explicacao:"Água-viva e coral são Cnidários, animais com tentáculos que podem picar."},
+  {pergunta:"A minhoca pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Artrópodes","Cnidários"],correta:0,explicacao:"A minhoca é um Anelídeo, animal com o corpo dividido em anéis."},
+  {pergunta:"O caracol e o polvo pertencem a qual grupo?",opcoes:["Artrópodes","Moluscos","Equinodermos","Poríferos"],correta:1,explicacao:"Caracol e polvo são Moluscos."},
+  {pergunta:"A estrela-do-mar pertence a qual grupo?",opcoes:["Equinodermos","Cnidários","Anelídeos","Artrópodes"],correta:0,explicacao:"A estrela-do-mar é um Equinodermo."},
+  {pergunta:"Insetos e aranhas pertencem a qual grupo de invertebrados?",opcoes:["Moluscos","Anelídeos","Artrópodes","Poríferos"],correta:2,explicacao:"Insetos e aranhas são Artrópodes, animais com pernas articuladas."},
+  {pergunta:"A tênia é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Moluscos","Cnidários"],correta:0,explicacao:"A tênia é um Platelminto, verme de corpo achatado."},
+  {pergunta:"A lombriga é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Equinodermos"],correta:1,explicacao:"A lombriga é um Nematelminto, verme de corpo redondo (cilíndrico)."},
+  {pergunta:"O que diferencia um invertebrado de um vertebrado?",opcoes:["O tamanho do corpo","A presença ou ausência de coluna vertebral","A cor da pele","O local onde vive"],correta:1,explicacao:"Vertebrados possuem coluna vertebral; invertebrados não possuem essa estrutura."},
+  {pergunta:"Os Poríferos têm o corpo:",opcoes:["Cheio de poros (furinhos)","Coberto de penas","Com casca dura","Com pelos longos"],correta:0,explicacao:"Poríferos (esponjas) têm o corpo cheio de pequenos poros, por onde a água circula."},
+  {pergunta:"Os Cnidários têm como característica:",opcoes:["Tentáculos que podem picar","Asas para voar","Pernas articuladas","Concha protetora"],correta:0,explicacao:"Cnidários (água-viva, coral, anêmona) têm tentáculos com células urticantes que podem picar."},
+  {pergunta:"O corpo achatado é uma característica de qual grupo?",opcoes:["Platelmintos","Anelídeos","Artrópodes","Equinodermos"],correta:0,explicacao:"Platelmintos têm o corpo achatado, como a tênia."},
+  {pergunta:"O corpo dividido em anéis é uma característica de qual grupo?",opcoes:["Moluscos","Anelídeos","Cnidários","Poríferos"],correta:1,explicacao:"Anelídeos (como a minhoca) têm o corpo dividido em segmentos parecidos com anéis."},
+  {pergunta:"Pernas articuladas são uma característica de qual grupo?",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes (insetos, aranhas, caranguejos) têm pernas articuladas (com 'juntas')."},
+  {pergunta:"A concha é uma característica comum em qual grupo de invertebrados?",opcoes:["Moluscos","Cnidários","Artrópodes","Platelmintos"],correta:0,explicacao:"Muitos Moluscos (como caracol e ostra) possuem concha, uma estrutura dura de proteção."},
+  {pergunta:"O ouriço-do-mar pertence a qual grupo?",opcoes:["Cnidários","Moluscos","Equinodermos","Artrópodes"],correta:2,explicacao:"O ouriço-do-mar é um Equinodermo, grupo que inclui também a estrela-do-mar."},
+  {pergunta:"O caranguejo pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Cnidários","Poríferos"],correta:1,explicacao:"O caranguejo é um Artrópode, animal com pernas articuladas e exoesqueleto."},
+  {pergunta:"A lula pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Anelídeos","Cnidários"],correta:0,explicacao:"A lula é um Molusco, assim como o polvo e o caracol."},
+  {pergunta:"A sanguessuga pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Cnidários","Equinodermos"],correta:0,explicacao:"A sanguessuga é um Anelídeo, com corpo dividido em anéis, assim como a minhoca."},
+  {pergunta:"Animais com corpo redondo (cilíndrico), como a lombriga, são chamados de:",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Cnidários"],correta:1,explicacao:"Nematelmintos têm o corpo em formato cilíndrico (redondo), diferente dos Platelmintos, que são achatados."},
+  {pergunta:"Animais que têm o corpo coberto por exoesqueleto (esqueleto externo duro) geralmente são:",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes possuem exoesqueleto, uma estrutura dura externa que protege e sustenta o corpo."}
+  ],
+  'cien-topico-4': [
+  {pergunta:"O que é um verme parasita?",opcoes:["Um verme que vive livre no solo","Um verme que vive dentro do corpo de outro ser vivo e se alimenta dele","Um verme que só existe no mar","Um verme que não se alimenta"],correta:1,explicacao:"Parasita é o organismo que vive às custas de um hospedeiro, tirando alimento dele e causando prejuízo."},
+  {pergunta:"A tênia (solitária) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Anelídeo","Molusco"],correta:0,explicacao:"A tênia é um platelminto, verme de corpo achatado."},
+  {pergunta:"Como uma pessoa geralmente se contamina com a tênia?",opcoes:["Comendo carne de porco ou boi crua ou mal cozida","Respirando ar poluído","Tomando sol em excesso","Bebendo leite fervido"],correta:0,explicacao:"A tênia é transmitida principalmente pela ingestão de carne mal cozida contendo larvas do parasita."},
+  {pergunta:"A esquistossomose é causada por um verme que, em parte do seu ciclo, vive dentro de:",opcoes:["Um caramujo de água doce","Um mosquito","Um porco","Um peixe"],correta:0,explicacao:"O esquistossomo tem um caramujo de água doce como hospedeiro intermediário em seu ciclo de vida."},
+  {pergunta:"Como a larva do esquistossomo entra no corpo da pessoa?",opcoes:["Pela picada de um inseto","Penetrando na pele durante o contato com água contaminada","Só pela ingestão de água","Pelo ar respirado"],correta:1,explicacao:"A larva do esquistossomo penetra ativamente na pele da pessoa que entra em contato com água doce contaminada."},
+  {pergunta:"A lombriga (Ascaris) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Cnidário","Anelídeo"],correta:1,explicacao:"A lombriga é um nematelminto, verme de corpo redondo (cilíndrico)."},
+  {pergunta:"Qual doença é causada pela lombriga?",opcoes:["Ascaridíase","Esquistossomose","Teníase","Malária"],correta:0,explicacao:"A infecção pela lombriga (Ascaris lumbricoides) é chamada de ascaridíase."},
+  {pergunta:"O ancilóstomo (causador do 'amarelão') geralmente entra no corpo humano:",opcoes:["Pela pele, principalmente pelos pés descalços em solo contaminado","Somente pela respiração","Somente pelo leite","Não infecta seres humanos"],correta:0,explicacao:"A larva do ancilóstomo penetra pela pele, sendo comum a infecção por andar descalço em solo contaminado."},
+  {pergunta:"Qual atitude ajuda a prevenir vermes parasitas como a lombriga e o ancilóstomo?",opcoes:["Lavar bem as mãos e os alimentos, e usar sapatos","Comer carne crua","Beber água de qualquer fonte","Andar descalço no solo"],correta:0,explicacao:"Higiene das mãos e alimentos, além do uso de calçados, ajuda a evitar a contaminação por esses parasitas."},
+  {pergunta:"O que diferencia o corpo de um platelminto do corpo de um nematelminto?",opcoes:["Platelminto é achatado; nematelminto é redondo (cilíndrico)","Não existe diferença","Platelminto vive só na água; nematelminto só na terra","Nematelminto é sempre maior"],correta:0,explicacao:"Platelmintos têm corpo achatado (como uma fita); nematelmintos têm corpo redondo, em formato de fio."},
+  {pergunta:"Além da higiene pessoal, o que mais ajuda a reduzir a contaminação por vermes parasitas numa comunidade?",opcoes:["Saneamento básico (tratamento de água e esgoto)","Evitar tomar banho","Comer mais doces","Não usar remédios nunca"],correta:0,explicacao:"O saneamento básico, com tratamento de água e esgoto, reduz muito a circulação de ovos e larvas desses parasitas no ambiente."},
+  {pergunta:"Por que é importante cozinhar bem a carne de porco e de boi antes de comer?",opcoes:["Só para melhorar o sabor","Para eliminar larvas de parasitas como a tênia, que podem estar na carne crua","Não tem nenhum motivo de saúde","Para deixar a carne mais dura"],correta:1,explicacao:"O cozimento adequado elimina larvas de parasitas, como as da tênia, que podem estar presentes na carne crua ou mal passada."}
+  ],
+  'cien-topico-5': [
+  {pergunta:"Peixes respiram através de qual estrutura?",opcoes:["Pulmões","Brânquias","Pele apenas","Traqueias"],correta:1,explicacao:"Peixes retiram o oxigênio dissolvido na água usando as brânquias."},
+  {pergunta:"O corpo dos peixes é geralmente coberto por:",opcoes:["Pelos","Penas","Escamas","Placas ósseas apenas"],correta:2,explicacao:"A maioria dos peixes tem o corpo coberto por escamas."},
+  {pergunta:"Tubarões e raias são exemplos de peixes:",opcoes:["Ósseos","Cartilaginosos","Sem esqueleto","Anfíbios"],correta:1,explicacao:"Tubarões e raias têm esqueleto formado por cartilagem, sendo peixes cartilaginosos."},
+  {pergunta:"O que caracteriza um anfíbio?",opcoes:["Vive só na água durante toda a vida","Vive parte da vida na água e parte na terra","Vive só em ambientes secos","Tem o corpo coberto de penas"],correta:1,explicacao:"Os anfíbios vivem parte da vida na água (fase larval) e parte na terra (fase adulta, na maioria das espécies)."},
+  {pergunta:"O girino é a fase jovem de qual animal?",opcoes:["Peixe","Sapo (anfíbio)","Lagarto","Ave"],correta:1,explicacao:"O girino é a fase larval do sapo, que vive na água antes de se transformar em adulto."},
+  {pergunta:"A transformação do girino em sapo adulto é chamada de:",opcoes:["Metamorfose","Fotossíntese","Fecundação","Taxonomia"],correta:0,explicacao:"Metamorfose é o conjunto de transformações que o corpo do anfíbio sofre durante seu desenvolvimento."},
+  {pergunta:"A pele dos anfíbios é geralmente:",opcoes:["Grossa e seca, coberta de escamas","Fina e úmida, usada também para respirar","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"A pele dos anfíbios é fina e úmida, permitindo também a respiração cutânea (pela pele)."},
+  {pergunta:"As nadadeiras dos peixes servem principalmente para:",opcoes:["Respirar","Se locomover (nadar) na água","Digerir o alimento","Produzir som"],correta:1,explicacao:"As nadadeiras ajudam o peixe a se impulsionar e se equilibrar enquanto nada."},
+  {pergunta:"Durante a metamorfose do sapo, o que acontece com a cauda do girino?",opcoes:["Ela cresce ainda mais","Ela é reabsorvida (desaparece) enquanto as pernas se desenvolvem","Ela vira uma nadadeira","Nada acontece com a cauda"],correta:1,explicacao:"Durante a metamorfose, a cauda do girino é gradualmente reabsorvida enquanto o animal desenvolve pernas e se prepara para a vida terrestre."},
+  {pergunta:"Uma característica que peixes e anfíbios têm em comum é:",opcoes:["Os dois são vertebrados","Os dois têm penas","Os dois vivem só na terra","Os dois têm pelos"],correta:0,explicacao:"Tanto peixes quanto anfíbios são vertebrados, ou seja, possuem coluna vertebral."},
+  {pergunta:"Os peixes cartilaginosos, como o tubarão, têm o esqueleto formado por:",opcoes:["Osso","Cartilagem","Quitina","Escamas apenas"],correta:1,explicacao:"Peixes cartilaginosos, como tubarões e raias, possuem esqueleto formado por cartilagem, mais flexível que o osso."},
+  {pergunta:"Qual é a principal diferença entre a fase de girino e a fase adulta de um sapo?",opcoes:["Não existe diferença nenhuma","O girino vive na água e respira por guelras; o adulto vive na terra e respira por pulmões e pele","O girino é maior que o adulto","O adulto vive só na água"],correta:1,explicacao:"O girino é aquático e respira por guelras (brânquias); após a metamorfose, o sapo adulto passa a respirar principalmente pelos pulmões e pela pele."}
+  ],
+  'cien-topico-6': [
+  {pergunta:"A pele dos répteis é caracterizada por ser:",opcoes:["Fina e úmida","Seca e coberta de escamas","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"Répteis têm pele seca e coberta de escamas, o que ajuda a evitar a perda de água do corpo."},
+  {pergunta:"Répteis são chamados de ectotérmicos porque:",opcoes:["Produzem calor próprio como os mamíferos","Não controlam sozinhos a própria temperatura corporal","Vivem só na água","Não respiram"],correta:1,explicacao:"Ectotérmicos dependem de fontes externas de calor (como o sol) para regular a temperatura do corpo."},
+  {pergunta:"A tartaruga, o cágado e o jabuti pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:2,explicacao:"Esses animais pertencem ao grupo dos Quelônios, caracterizados por possuírem um casco (carapaça e plastrão)."},
+  {pergunta:"As cobras pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:0,explicacao:"As cobras pertencem ao grupo dos Ofídios, répteis sem patas."},
+  {pergunta:"Os lagartos pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:1,explicacao:"Os lagartos pertencem ao grupo dos Lacertílios, répteis que possuem patas."},
+  {pergunta:"O jacaré, o crocodilo e o gavial pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:3,explicacao:"Esses animais pertencem ao grupo dos Crocodilianos, répteis que passam bastante tempo na água."},
+  {pergunta:"A capacidade de alguns lagartos soltarem a cauda para escapar de um predador é chamada de:",opcoes:["Metamorfose","Autotomia","Fotossíntese","Fecundação"],correta:1,explicacao:"Autotomia é a capacidade de alguns lagartos soltarem a própria cauda quando ameaçados, escapando do predador."},
+  {pergunta:"A característica mais marcante das aves é possuir:",opcoes:["Pelos","Penas","Escamas","Brânquias"],correta:1,explicacao:"A presença de penas é a característica que define e diferencia as aves dos demais vertebrados."},
+  {pergunta:"Os ossos das aves são chamados de pneumáticos porque:",opcoes:["São muito pesados","Possuem espaços ocos preenchidos com ar, tornando-os leves","São feitos de cartilagem","Não existem nas aves"],correta:1,explicacao:"Ossos pneumáticos têm cavidades com ar, o que reduz o peso do corpo da ave e facilita o voo."},
+  {pergunta:"No lugar de dentes, as aves possuem:",opcoes:["Um bico córneo","Escamas na boca","Uma língua áspera","Nada no lugar dos dentes"],correta:0,explicacao:"As aves não têm dentes; no lugar, possuem um bico córneo, estrutura dura usada para se alimentar."},
+  {pergunta:"A quilha é uma estrutura óssea das aves que serve para:",opcoes:["Prender os músculos usados no voo","Filtrar o ar respirado","Produzir o som do canto","Proteger os ovos"],correta:0,explicacao:"A quilha é um osso do peito das aves onde ficam presos os fortes músculos responsáveis pelo batimento das asas."},
+  {pergunta:"A característica mais marcante dos mamíferos é possuir:",opcoes:["Penas","Pelos","Escamas","Casco"],correta:1,explicacao:"A presença de pelos é a característica que define os mamíferos."},
+  {pergunta:"As glândulas mamárias das fêmeas dos mamíferos produzem:",opcoes:["Veneno","Leite, para alimentar os filhotes","Muco","Cera"],correta:1,explicacao:"As glândulas mamárias produzem leite, usado para alimentar os filhotes nos primeiros meses de vida."},
+  {pergunta:"A maioria dos mamíferos, como o cachorro e o ser humano, pertence a qual grupo?",opcoes:["Monotremados","Marsupiais","Placentários","Anfíbios"],correta:2,explicacao:"Os placentários são a maioria dos mamíferos; o filhote se desenvolve completamente na barriga da mãe antes de nascer."},
+  {pergunta:"O canguru e o gambá são exemplos de mamíferos:",opcoes:["Placentários","Marsupiais","Monotremados","Ovíparos apenas"],correta:1,explicacao:"Marsupiais nascem ainda incompletos e terminam de se desenvolver dentro de uma bolsa (marsúpio) da mãe."},
+  {pergunta:"O ornitorrinco é um exemplo de mamífero:",opcoes:["Placentário","Marsupial","Monotremado","Réptil"],correta:2,explicacao:"O ornitorrinco é um monotremado, grupo raro de mamíferos que nascem de ovos."},
+  {pergunta:"Os répteis respiram através de qual estrutura, mesmo os que vivem na água, como o jacaré?",opcoes:["Brânquias","Pulmões","Pele apenas","Guelras"],correta:1,explicacao:"Todos os répteis, mesmo os aquáticos como o jacaré, respiram pelos pulmões."},
+  {pergunta:"O diafragma é um músculo que, nos mamíferos, auxilia principalmente na:",opcoes:["Digestão","Respiração","Visão","Reprodução"],correta:1,explicacao:"O diafragma é um músculo importante que auxilia os mamíferos na respiração."},
+  {pergunta:"A maioria das aves cuida dos ovos até o nascimento do filhote por meio de qual comportamento?",opcoes:["Enterrando o ovo no solo","Chocando o ovo (ficando sobre ele para esquentá-lo)","Deixando o ovo à própria sorte, sempre","Congelando o ovo"],correta:1,explicacao:"A maioria das aves choca os ovos, ficando sobre eles para mantê-los aquecidos até o nascimento do filhote."},
+  {pergunta:"Quantos grupos de mamíferos existem, considerando a forma como o filhote nasce?",opcoes:["1","2","3","5"],correta:2,explicacao:"Existem 3 grupos: placentários, marsupiais e monotremados, que se diferenciam pela forma como o filhote se desenvolve e nasce."}
+  ],
+  'cien-topico-8': [
+  {pergunta:"O que é um bioma?",opcoes:["Um tipo de rocha","Uma grande área com clima, vegetação e fauna parecidos","Um tipo de doença","Um instrumento de laboratório"],correta:1,explicacao:"Bioma é um conjunto de ecossistemas com clima, vegetação e fauna semelhantes, numa grande área geográfica."},
+  {pergunta:"Qual é o maior bioma tropical do mundo, localizado no Brasil?",opcoes:["Caatinga","Cerrado","Amazônia","Pampa"],correta:2,explicacao:"A Floresta Amazônica é a maior floresta tropical do mundo."},
+  {pergunta:"Qual bioma brasileiro fica no litoral e foi muito desmatado ao longo da história?",opcoes:["Amazônia","Mata Atlântica","Pantanal","Pampa"],correta:1,explicacao:"A Mata Atlântica, localizada no litoral, teve grande parte de sua cobertura original destruída pela ocupação humana."},
+  {pergunta:"O mico-leão-dourado é um animal símbolo de qual bioma?",opcoes:["Cerrado","Caatinga","Mata Atlântica","Pantanal"],correta:2,explicacao:"O mico-leão-dourado é um animal símbolo da Mata Atlântica."},
+  {pergunta:"Qual bioma brasileiro tem clima semiárido, com pouca chuva, localizado no Nordeste?",opcoes:["Amazônia","Caatinga","Pantanal","Pampa"],correta:1,explicacao:"A Caatinga tem clima semiárido, com baixa quantidade de chuva, e fica na região Nordeste."},
+  {pergunta:"Por que muitas plantas da Caatinga têm espinhos no lugar de folhas grandes?",opcoes:["Para atrair mais água da chuva","Para reduzir a perda de água em um clima seco","Para produzir mais oxigênio","Não tem relação com o clima"],correta:1,explicacao:"Espinhos, no lugar de folhas grandes, ajudam a planta a perder menos água por transpiração, uma adaptação ao clima seco."},
+  {pergunta:"A Amazônia é considerada o bioma brasileiro com maior:",opcoes:["Escassez de água","Biodiversidade (variedade de seres vivos)","Área desertificada","Altitude"],correta:1,explicacao:"A Amazônia possui a maior biodiversidade entre os biomas brasileiros, devido ao seu clima quente e úmido."},
+  {pergunta:"Qual é o clima predominante na Floresta Amazônica?",opcoes:["Semiárido","Tropical quente e úmido","Frio e seco","Temperado"],correta:1,explicacao:"O clima da Amazônia é tropical, caracterizado por altas temperaturas e grande quantidade de chuvas."},
+  {pergunta:"O que aconteceu com grande parte da cobertura original da Mata Atlântica ao longo da história?",opcoes:["Ela cresceu ainda mais","Foi destruída pelo crescimento das cidades e outras atividades humanas","Ela virou deserto naturalmente","Nada mudou"],correta:1,explicacao:"A expansão urbana e outras atividades humanas destruíram grande parte da cobertura original da Mata Atlântica ao longo dos séculos."},
+  {pergunta:"O nome 'Caatinga', em tupi-guarani, significa:",opcoes:["Floresta verde","Mata branca","Terra molhada","Campo aberto"],correta:1,explicacao:"Caatinga significa 'mata branca' em tupi-guarani, referência ao aspecto esbranquiçado da vegetação durante a seca."},
+  {pergunta:"Em qual desses biomas encontramos o Rio Amazonas, um dos maiores rios do mundo?",opcoes:["Caatinga","Cerrado","Amazônia","Pampa"],correta:2,explicacao:"O Rio Amazonas percorre o bioma Amazônia, sendo um dos rios mais extensos e caudalosos do mundo."},
+  {pergunta:"Dos três biomas estudados (Amazônia, Mata Atlântica e Caatinga), qual tem o clima mais seco?",opcoes:["Amazônia","Mata Atlântica","Caatinga","Os três têm o mesmo clima"],correta:2,explicacao:"A Caatinga tem clima semiárido, sendo o mais seco entre os três biomas estudados nesse grupo."}
+  ],
+  'cien-topico-9': [
+  {pergunta:"O Cerrado é conhecido como 'berço das águas' porque:",opcoes:["Tem o maior rio do Brasil","Muitos rios importantes do Brasil nascem lá","É o único bioma com água","Fica embaixo do mar"],correta:1,explicacao:"O Cerrado abriga as nascentes de diversas bacias hidrográficas importantes do Brasil."},
+  {pergunta:"Uma característica das árvores do Cerrado é ter:",opcoes:["Tronco reto e fino","Tronco torto e casca grossa","Nenhuma casca","Raízes muito curtas"],correta:1,explicacao:"As árvores do Cerrado costumam ter tronco torto e casca grossa, o que ajuda a proteger contra o fogo, comum na região."},
+  {pergunta:"Qual bioma brasileiro é conhecido como a maior área alagada do mundo?",opcoes:["Amazônia","Pantanal","Pampa","Cerrado"],correta:1,explicacao:"O Pantanal é considerado a maior planície alagável (área alagada) do mundo."},
+  {pergunta:"A capivara e a arara-azul são animais bem conhecidos de qual bioma?",opcoes:["Pampa","Caatinga","Pantanal","Mata Atlântica"],correta:2,explicacao:"Capivara e arara-azul são animais bem representativos da fauna do Pantanal."},
+  {pergunta:"Qual bioma brasileiro fica no Sul do país e é formado principalmente por campos?",opcoes:["Pampa","Cerrado","Caatinga","Amazônia"],correta:0,explicacao:"A Pampa fica no Rio Grande do Sul e é formada principalmente por campos, com poucas árvores."},
+  {pergunta:"Por que a Pampa é muito usada para a pecuária (criação de bois e ovelhas)?",opcoes:["Porque tem floresta densa","Porque é formada por campos, ideais para o pasto dos animais","Porque não tem nenhuma vegetação","Porque fica no litoral"],correta:1,explicacao:"A vegetação de campos da Pampa, com pastagens naturais, favorece a criação de gado e ovelhas."},
+  {pergunta:"O Cerrado apresenta, ao longo do ano, duas estações bem diferentes, que são:",opcoes:["Uma de frio intenso e outra de calor intenso","Uma bem chuvosa e outra bem seca","Duas estações igualmente chuvosas","O Cerrado não tem estações diferentes"],correta:1,explicacao:"O Cerrado tem clima com duas estações bem marcadas: uma chuvosa e outra seca."},
+  {pergunta:"Em qual região do Brasil está localizado o Cerrado?",opcoes:["Norte","Nordeste","Centro-Oeste, principalmente","Sul"],correta:2,explicacao:"O Cerrado está localizado principalmente na região Centro-Oeste do Brasil."},
+  {pergunta:"O que acontece com os rios do Pantanal durante o período de chuva?",opcoes:["Eles secam completamente","Eles enchem e a água invada a terra ao redor, alagando a região","Não muda nada nos rios","Eles mudam de curso definitivamente"],correta:1,explicacao:"Durante o período de chuvas, os rios do Pantanal enchem e transbordam, alagando a área ao redor — o que dá origem à paisagem característica do bioma."},
+  {pergunta:"Em qual região do Brasil está localizada a Pampa?",opcoes:["Norte","Nordeste","Sudeste","Sul (Rio Grande do Sul)"],correta:3,explicacao:"A Pampa está localizada no Sul do Brasil, principalmente no estado do Rio Grande do Sul."},
+  {pergunta:"O que é pecuária?",opcoes:["O cultivo de plantas","A criação de animais, como bois e ovelhas","A pesca em rios","A extração de minérios"],correta:1,explicacao:"Pecuária é a atividade de criação de animais, como bois e ovelhas, muito praticada na Pampa."},
+  {pergunta:"Dos três biomas estudados nesse grupo (Cerrado, Pantanal e Pampa), qual é conhecido por ser alagado durante boa parte do ano?",opcoes:["Cerrado","Pantanal","Pampa","Nenhum deles"],correta:1,explicacao:"O Pantanal é o bioma conhecido por ficar alagado durante boa parte do ano, sendo a maior área alagada do mundo."}
+  ]
+};
+
+// ===================== PRÁTICA POR TÓPICO (botão "Praticar" dentro de cada cartão) =====================
+const estadoPratica = {}; // chave: topicoId -> { indicesDisponiveis, perguntas, indiceAtual, acertos }
+
+function abrirOuFecharPratica(topicoId) {
+  const container = document.getElementById(`pratica-${topicoId}`);
+  if (!container) return;
+  const estaAberta = container.style.display === 'block';
+  if (estaAberta) {
+    container.style.display = 'none';
+    return;
+  }
+  container.style.display = 'block';
+  if (!estadoPratica[topicoId]) {
+    const banco = window.PRATICA_CIENCIAS[topicoId] || [];
+    estadoPratica[topicoId] = {
+      indicesDisponiveis: embaralhar(banco.map((_, i) => i)),
+      perguntas: [],
+      indiceAtual: 0,
+      acertos: 0
+    };
+    sortearRodadaPratica(topicoId);
+  }
+  container.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+}
+
+function sortearRodadaPratica(topicoId) {
+  const banco = window.PRATICA_CIENCIAS[topicoId] || [];
+  const st = estadoPratica[topicoId];
+  const TAMANHO = Math.min(10, banco.length);
+
+  if (st.indicesDisponiveis.length < TAMANHO) {
+    const usados = banco.map((_, i) => i).filter(i => !st.indicesDisponiveis.includes(i));
+    st.indicesDisponiveis = st.indicesDisponiveis.concat(embaralhar(usados));
+  }
+
+  const escolhidos = st.indicesDisponiveis.slice(0, TAMANHO);
+  st.indicesDisponiveis = st.indicesDisponiveis.slice(TAMANHO);
+
+  st.perguntas = escolhidos.map(i => banco[i]);
+  st.indiceAtual = 0;
+  st.acertos = 0;
+  renderPraticaPergunta(topicoId);
+}
+
+function renderPraticaPergunta(topicoId) {
+  const st = estadoPratica[topicoId];
+  const container = document.getElementById(`pratica-${topicoId}`);
+  const p = st.perguntas[st.indiceAtual];
+  const letras = ['A', 'B', 'C', 'D'];
+
+  container.innerHTML = `
+    <div class="pergunta-cartao">
+      <div class="pratica-progresso">Pergunta ${st.indiceAtual + 1} de ${st.perguntas.length}</div>
+      <div class="pergunta-texto">${p.pergunta}</div>
+      <div class="opcoes">
+        ${p.opcoes.map((op, i) => `
+          <button class="opcao" data-indice="${i}">
+            <span class="letra">${letras[i]}</span>
+            <span>${op}</span>
+          </button>
+        `).join('')}
+      </div>
+      <div class="feedback" id="pratica-feedback-${topicoId}"></div>
+      <button class="botao-proxima" id="pratica-botao-proxima-${topicoId}">Próxima pergunta →</button>
+    </div>
+  `;
+
+  container.querySelectorAll('.opcao').forEach(botao => {
+    botao.addEventListener('click', () => responderPratica(topicoId, parseInt(botao.dataset.indice)));
+  });
+}
+
+function responderPratica(topicoId, indiceEscolhido) {
+  const st = estadoPratica[topicoId];
+  const container = document.getElementById(`pratica-${topicoId}`);
+  const p = st.perguntas[st.indiceAtual];
+  const botoesOpcao = container.querySelectorAll('.opcao');
+  const feedback = document.getElementById(`pratica-feedback-${topicoId}`);
+  const botaoProxima = document.getElementById(`pratica-botao-proxima-${topicoId}`);
+
+  botoesOpcao.forEach(b => b.disabled = true);
+
+  const acertou = indiceEscolhido === p.correta;
+  if (acertou) st.acertos++;
+
+  botoesOpcao[p.correta].classList.add('correta');
+  if (!acertou) botoesOpcao[indiceEscolhido].classList.add('errada');
+
+  feedback.classList.add('mostrar', acertou ? 'acertou' : 'errou');
+  feedback.innerHTML = acertou
+    ? `<strong>✅ Isso! Você acertou!</strong><br>${p.explicacao}`
+    : `<strong>💛 Quase! A resposta certa é a ${['A','B','C','D'][p.correta]}.</strong><br>${p.explicacao}`;
+
+  botaoProxima.classList.add('mostrar');
+  botaoProxima.addEventListener('click', () => proximaPerguntaPratica(topicoId), {once: true});
+}
+
+function proximaPerguntaPratica(topicoId) {
+  const st = estadoPratica[topicoId];
+  st.indiceAtual++;
+  if (st.indiceAtual < st.perguntas.length) {
+    renderPraticaPergunta(topicoId);
+  } else {
+    mostrarFinalPratica(topicoId);
+  }
+}
+
+function mostrarFinalPratica(topicoId) {
+  const st = estadoPratica[topicoId];
+  const container = document.getElementById(`pratica-${topicoId}`);
+  let mensagem = '';
+  const percentual = st.acertos / st.perguntas.length;
+  if (percentual >= 0.8) mensagem = 'Excelente, Joaquim! Você está muito bem preparado! 🌟';
+  else if (percentual >= 0.5) mensagem = 'Muito bom! Vamos revisar juntos o que faltou! 💪';
+  else mensagem = 'Bom começo! Vamos rever esse tema com calma. Você consegue! 🌻';
+
+  container.innerHTML = `
+    <div class="cartao tela-final" style="padding:24px;">
+      <div class="emoji-grande">🌟</div>
+      <h2>Você terminou!</h2>
+      <div class="placar">${st.acertos} de ${st.perguntas.length}</div>
+      <p>${mensagem}</p>
+      <button class="botao-gerar-mais" id="pratica-gerar-mais-${topicoId}">🔁 Gerar mais perguntas</button>
+    </div>
+  `;
+
+  document.getElementById(`pratica-gerar-mais-${topicoId}`).addEventListener('click', () => sortearRodadaPratica(topicoId));
+}
+
+document.querySelectorAll('.botao-praticar[data-praticar]').forEach(botao => {
+  botao.addEventListener('click', () => abrirOuFecharPratica(botao.dataset.praticar));
+});
+
 criarQuiz('geografia', perguntasGeografia, 50);
 criarQuiz('geografia-urbano', perguntasGeografiaUrbano, 15);
 criarQuiz('historia', perguntasHistoria, 50);
