@@ -174,6 +174,104 @@
     margin-top: 2px;
   }
 
+  /* ABAS PARCIAIS / ABRANGENTES */
+  /* ABAS 1º / 2º TRIMESTRE */
+  .tri-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .tri-tabs button {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 3px solid var(--verde);
+    background: var(--branco);
+    color: var(--verde);
+    cursor: pointer;
+  }
+
+  .tri-tabs button.ativo {
+    background: var(--verde);
+    color: var(--branco);
+    box-shadow: 0 3px 0 rgba(62,47,34,0.15);
+  }
+
+  .tri-secao { display: none; }
+  .tri-secao.ativa { display: block; }
+
+  .cal-vazio {
+    max-width: 460px;
+    margin: 10px auto 0;
+    padding: 40px 24px;
+    text-align: center;
+    background: var(--branco);
+    border: 3px dashed var(--verde-claro);
+    border-radius: 20px;
+  }
+
+  .cal-vazio-icone { font-size: 40px; margin-bottom: 12px; }
+
+  .cal-vazio p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  .prova-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .prova-tabs button {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    border-radius: 14px;
+    border: 3px solid var(--terra);
+    background: var(--branco);
+    color: var(--terra);
+    cursor: pointer;
+  }
+
+  .prova-tabs button.ativo {
+    background: var(--terra);
+    color: var(--branco);
+  }
+
+  .prova-periodo {
+    text-align: center;
+    font-size: 0.88rem;
+    opacity: 0.75;
+    margin-bottom: 14px;
+  }
+
+  .prova-secao { display: none; }
+  .prova-secao.ativa { display: block; }
+
+  .dia-prova.em-breve { opacity: 0.7; }
+
+  .selo-em-breve {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--marrom-escuro);
+    background: rgba(62,47,34,0.08);
+    padding: 5px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
   /* HEADER DE CADA MATERIA */
   .header-materia {
     background: var(--terra);
@@ -442,6 +540,19 @@
     border: none;
   }
 
+  /* PLACEHOLDER: vídeo ainda não disponível (Bruno troca pelo video-wrapper quando tiver o link) */
+  .video-pendente {
+    background: #FFF9F0;
+    border: 3px dashed var(--verde-claro);
+    border-radius: 14px;
+    padding: 30px 16px;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 1.05rem;
+    color: var(--marrom-escuro);
+    opacity: 0.75;
+  }
+
   .video-assistir {
     display: inline-flex;
     align-items: center;
@@ -651,76 +762,185 @@
 <div class="pagina ativa" id="pagina-inicio">
   <header class="header-inicio">
     <h1>🌟 Joaquim Estuda 🌟</h1>
-    <p>7º Ano — Provas Parciais — 2º Trimestre</p>
+    <p>7º Ano — 2º Trimestre</p>
     <p>Escolha a matéria para estudar</p>
   </header>
 
   <div class="calendario-provas">
     <h2>📅 Dias das provas</h2>
-    <div class="lista-dias-prova">
-      <div class="dia-prova feito sem-clique">
-        <div class="data-bloco"><span class="dia-numero">11</span><span class="dia-semana">5ª feira</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">✍️ Redação</div>
-          <div class="materia-tema">Texto dramático</div>
+
+    <div class="tri-tabs">
+      <button class="tri-aba" data-tri="1">1º Trimestre</button>
+      <button class="tri-aba ativo" data-tri="2">2º Trimestre</button>
+    </div>
+
+    <!-- ============ 1º TRIMESTRE (ainda sem cronograma) ============ -->
+    <div class="tri-secao" id="tri-1">
+      <div class="cal-vazio">
+        <div class="cal-vazio-icone">🗓️</div>
+        <p>Ainda não temos o cronograma de provas deste trimestre por aqui.<br>Assim que a escola divulgar, a gente atualiza! 💪</p>
+      </div>
+    </div>
+
+    <!-- ============ 2º TRIMESTRE ============ -->
+    <div class="tri-secao ativa" id="tri-2">
+
+    <div class="prova-tabs">
+      <button class="prova-aba" data-prova="parciais">Provas Parciais</button>
+      <button class="prova-aba ativo" data-prova="abrangentes">Provas Abrangentes</button>
+    </div>
+
+    <!-- ============ PROVAS ABRANGENTES ============ -->
+    <div class="prova-secao ativa" id="prova-abrangentes">
+      <p class="prova-periodo">17/08 a 01/09</p>
+      <div class="lista-dias-prova">
+        <div class="dia-prova sem-clique em-breve">
+          <div class="data-bloco"><span class="dia-numero">17</span><span class="dia-semana">2ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">✍️ Redação</div>
+            <div class="materia-tema">Gênero textual: carta de reclamação</div>
+          </div>
+          <span class="selo-em-breve">em breve</span>
+        </div>
+
+        <button class="dia-prova" data-ir-para="ciencias">
+          <div class="data-bloco"><span class="dia-numero">19</span><span class="dia-semana">4ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🔬 Ciências</div>
+            <div class="materia-tema">Reino Animalia (vertebrados), verminoses e biomas brasileiros</div>
+          </div>
+        </button>
+
+        <div class="dia-prova sem-clique em-breve">
+          <div class="data-bloco"><span class="dia-numero">19</span><span class="dia-semana">4ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🎨 Artes</div>
+            <div class="materia-tema">O Barroco e a Fotografia</div>
+          </div>
+          <span class="selo-em-breve">em breve</span>
+        </div>
+
+        <button class="dia-prova" data-ir-para="matematica">
+          <div class="data-bloco"><span class="dia-numero">24</span><span class="dia-semana">2ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">📐 Matemática / Geometria</div>
+            <div class="materia-tema">Expressões algébricas, equações, razão e proporção, triângulos e polígonos</div>
+          </div>
+        </button>
+
+        <button class="dia-prova" data-ir-para="portugues">
+          <div class="data-bloco"><span class="dia-numero">26</span><span class="dia-semana">4ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">📝 Língua Portuguesa</div>
+            <div class="materia-tema">Classes gramaticais, sujeito e predicado, interpretação, coesão</div>
+          </div>
+        </button>
+
+        <button class="dia-prova" data-ir-para="ingles">
+          <div class="data-bloco"><span class="dia-numero">27</span><span class="dia-semana">5ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🌊 Inglês</div>
+            <div class="materia-tema">Units 3, 4 e 5 — sustentabilidade, água e solidariedade</div>
+          </div>
+        </button>
+
+        <div class="dia-prova sem-clique em-breve">
+          <div class="data-bloco"><span class="dia-numero">27</span><span class="dia-semana">5ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🙏 Ensino Religioso</div>
+            <div class="materia-tema">Lideranças religiosas e cultura da paz</div>
+          </div>
+          <span class="selo-em-breve">em breve</span>
+        </div>
+
+        <button class="dia-prova" data-ir-para="historia">
+          <div class="data-bloco"><span class="dia-numero">28</span><span class="dia-semana">6ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">⛵ História</div>
+            <div class="materia-tema">Expansão marítima, reinos africanos e colonização</div>
+          </div>
+        </button>
+
+        <button class="dia-prova" data-ir-para="geografia">
+          <div class="data-bloco"><span class="dia-numero">01</span><span class="dia-semana">3ª feira (SET)</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🌾 Geografia</div>
+            <div class="materia-tema">Espaço rural e urbano, indústria e industrialização brasileira</div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============ PROVAS PARCIAIS (já realizadas) ============ -->
+    <div class="prova-secao" id="prova-parciais">
+      <p class="prova-periodo">11/06 a 25/06</p>
+      <div class="lista-dias-prova">
+        <div class="dia-prova feito sem-clique">
+          <div class="data-bloco"><span class="dia-numero">11</span><span class="dia-semana">5ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">✍️ Redação</div>
+            <div class="materia-tema">Texto dramático</div>
+          </div>
+        </div>
+
+        <button class="dia-prova feito" data-ir-para="matematica">
+          <div class="data-bloco"><span class="dia-numero">15</span><span class="dia-semana">2ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">📐 Matemática / Geometria</div>
+            <div class="materia-tema">Equações, inequações, triângulos e polígonos</div>
+          </div>
+        </button>
+
+        <button class="dia-prova feito" data-ir-para="portugues">
+          <div class="data-bloco"><span class="dia-numero">17</span><span class="dia-semana">4ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">📝 Língua Portuguesa</div>
+            <div class="materia-tema">Classes gramaticais, sujeito e predicado, coesão</div>
+          </div>
+        </button>
+
+        <button class="dia-prova feito" data-ir-para="ciencias">
+          <div class="data-bloco"><span class="dia-numero">18</span><span class="dia-semana">5ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🔬 Ciências</div>
+            <div class="materia-tema">Classificação dos seres vivos e reinos</div>
+          </div>
+        </button>
+
+        <button class="dia-prova feito" data-ir-para="geografia">
+          <div class="data-bloco"><span class="dia-numero">22</span><span class="dia-semana">2ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🌾 Geografia</div>
+            <div class="materia-tema">Espaço rural e urbano brasileiro</div>
+          </div>
+        </button>
+
+        <button class="dia-prova feito" data-ir-para="historia">
+          <div class="data-bloco"><span class="dia-numero">24</span><span class="dia-semana">4ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">⛵ História</div>
+            <div class="materia-tema">Navegações, Reinos Africanos, Colonização</div>
+          </div>
+        </button>
+
+        <button class="dia-prova feito" data-ir-para="ingles">
+          <div class="data-bloco"><span class="dia-numero">25</span><span class="dia-semana">5ª feira</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🌊 Inglês</div>
+            <div class="materia-tema">There's No Planet B / Water Is Life</div>
+          </div>
+        </button>
+
+        <div class="dia-prova feito sem-clique">
+          <div class="data-bloco"><span class="dia-numero">—</span><span class="dia-semana">A combinar</span></div>
+          <div class="info-prova">
+            <div class="materia-nome">🎨 Artes</div>
+            <div class="materia-tema">Atividade prática orientada pelo professor em sala</div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <button class="dia-prova feito" data-ir-para="matematica">
-        <div class="data-bloco"><span class="dia-numero">15</span><span class="dia-semana">2ª feira</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">📐 Matemática / Geometria</div>
-          <div class="materia-tema">Equações, inequações, triângulos e polígonos</div>
-        </div>
-      </button>
-
-      <button class="dia-prova feito" data-ir-para="portugues">
-        <div class="data-bloco"><span class="dia-numero">17</span><span class="dia-semana">4ª feira</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">📝 Língua Portuguesa</div>
-          <div class="materia-tema">Classes gramaticais, sujeito e predicado, coesão</div>
-        </div>
-      </button>
-
-      <button class="dia-prova feito" data-ir-para="ciencias">
-        <div class="data-bloco"><span class="dia-numero">18</span><span class="dia-semana">5ª feira</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">🔬 Ciências</div>
-          <div class="materia-tema">Classificação dos seres vivos e reinos</div>
-        </div>
-      </button>
-
-      <button class="dia-prova" data-ir-para="geografia">
-        <div class="data-bloco"><span class="dia-numero">22</span><span class="dia-semana">2ª feira</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">🌾 Geografia</div>
-          <div class="materia-tema">Espaço rural e urbano brasileiro</div>
-        </div>
-      </button>
-
-      <button class="dia-prova" data-ir-para="historia">
-        <div class="data-bloco"><span class="dia-numero">24</span><span class="dia-semana">4ª feira</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">⛵ História</div>
-          <div class="materia-tema">Navegações, Reinos Africanos, Colonização</div>
-        </div>
-      </button>
-
-      <button class="dia-prova" data-ir-para="ingles">
-        <div class="data-bloco"><span class="dia-numero">25</span><span class="dia-semana">5ª feira</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">🌊 Inglês</div>
-          <div class="materia-tema">There's No Planet B / Water Is Life</div>
-        </div>
-      </button>
-
-      <div class="dia-prova sem-clique">
-        <div class="data-bloco"><span class="dia-numero">—</span><span class="dia-semana">A combinar</span></div>
-        <div class="info-prova">
-          <div class="materia-nome">🎨 Artes</div>
-          <div class="materia-tema">Atividade prática orientada pelo professor em sala</div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -994,8 +1214,8 @@
 <div class="pagina" id="pagina-ciencias">
 
   <header class="header-materia">
-    <h1>🔬 Classificação dos Seres Vivos 🦠</h1>
-    <p>7º Ano — Prova Parcial — 2º Trimestre — Ciências</p>
+    <h1>🔬 Ciências — Seres Vivos 🦠</h1>
+    <p>7º Ano — 2º Trimestre — Parciais e Abrangente</p>
   </header>
 
   <nav class="sub-nav">
@@ -1019,6 +1239,26 @@
         <button class="linha-tempo-etapa" data-destino="cien-topico-3">
           <span class="linha-tempo-bola">3</span>
           <span class="linha-tempo-label">Invertebrados</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-4">
+          <span class="linha-tempo-bola">4</span>
+          <span class="linha-tempo-label">Vermes Parasitas</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-5">
+          <span class="linha-tempo-bola">5</span>
+          <span class="linha-tempo-label">Peixes e Anfíbios</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-6">
+          <span class="linha-tempo-bola">6</span>
+          <span class="linha-tempo-label">Répteis, Aves e Mamíferos</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-8">
+          <span class="linha-tempo-bola">7</span>
+          <span class="linha-tempo-label">Biomas — Parte 1</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-9">
+          <span class="linha-tempo-bola">8</span>
+          <span class="linha-tempo-label">Biomas — Parte 2</span>
         </button>
       </div>
 
@@ -1070,6 +1310,95 @@
           <iframe src="https://www.youtube.com/embed/BnMtrLlPZ_s" title="Poríferos, Cnidários e Platelmintos" allowfullscreen></iframe>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=BnMtrLlPZ_s" target="_blank">▶️ Assistir no YouTube</a>
+      </div>
+
+      <div class="cartao" id="cien-topico-4">
+        <h2>🪱 Vermes Parasitas — Platelmintos e Nematelmintos</h2>
+        <p>Alguns vermes vivem dentro do corpo de outros seres vivos e tiram alimento deles. Isso causa doenças. Esses vermes são chamados de <strong>parasitas</strong>.</p>
+        <ul>
+          <li><strong>Platelmintos:</strong> corpo achatado, como uma fita.</li>
+          <li><strong>Tênia (solitária):</strong> um platelminto que entra no corpo pela carne de porco ou boi crua ou mal cozida.</li>
+          <li><strong>Esquistossomose:</strong> doença causada por um verme (esquistossomo) que vive em caramujos de água doce; a larva entra pela pele quando a pessoa entra na água contaminada.</li>
+          <li><strong>Nematelmintos:</strong> corpo redondo (cilíndrico), como um fio.</li>
+          <li><strong>Lombriga (Ascaris):</strong> um nematelminto que causa a ascaridíase; entra pela ingestão de água, alimentos ou mãos contaminadas com ovos.</li>
+          <li><strong>Ancilóstomo:</strong> causa a ancilostomíase (amarelão); a larva entra pela pele, geralmente pelos pés descalços em solo contaminado.</li>
+        </ul>
+        <div class="destaque">💡 Prevenção: lavar bem as mãos e os alimentos, cozinhar bem a carne, tratar a água e usar sapatos protege contra esses vermes.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/preview" title="Vermes Parasitas" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+      <div class="cartao" id="cien-topico-5">
+        <h2>🐟🐸 Peixes e Anfíbios</h2>
+        <p>Peixes e anfíbios são animais <strong>vertebrados</strong> — têm coluna vertebral (osso nas costas).</p>
+        <ul>
+          <li><strong>Peixes:</strong> vivem só na água, respiram por <strong>brânquias</strong>, têm o corpo coberto de escamas e nadam com nadadeiras.</li>
+          <li>Podem ser <strong>ósseos</strong> (esqueleto de osso, maioria dos peixes) ou <strong>cartilaginosos</strong> (esqueleto de cartilagem, como tubarões e raias).</li>
+          <li><strong>Anfíbios:</strong> vivem parte da vida na água e parte na terra. Pele fina e úmida, usada também para respirar (respiração cutânea).</li>
+          <li><strong>Metamorfose:</strong> o sapo nasce de um ovo, vira girino (parece um peixinho) e depois se transforma em adulto, ganhando pernas e perdendo a cauda.</li>
+        </ul>
+        <div class="destaque">💡 Peixe vive só na água. Anfíbio vive na água E na terra, em fases diferentes da vida.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/preview" title="Peixes e Anfíbios" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+      <div class="cartao" id="cien-topico-6">
+        <h2>🦎🦅🐾 Vertebrados II — Répteis, Aves e Mamíferos</h2>
+        <p>Répteis, aves e mamíferos são vertebrados terrestres, cada um com características bem próprias.</p>
+        <ul>
+          <li><strong>Répteis:</strong> pele <strong>seca</strong>, coberta de <strong>escamas</strong>. São <strong>ectotérmicos</strong> (não controlam sozinhos a própria temperatura) e respiram pelos pulmões.</li>
+          <li><strong>Quelônios:</strong> têm casco (carapaça + plastrão). Ex: tartaruga, cágado, jabuti.</li>
+          <li><strong>Ofídios:</strong> são as cobras, sem patas. Algumas são peçonhentas (têm veneno), como a cascavel.</li>
+          <li><strong>Lacertílios:</strong> são os lagartos, com patas. A cauda pode se soltar para escapar de predadores (autotomia).</li>
+          <li><strong>Crocodilianos:</strong> jacaré, crocodilo e gavial. Vivem bastante tempo na água.</li>
+          <li><strong>Aves:</strong> a característica principal é ter <strong>penas</strong>. Ossos <strong>pneumáticos</strong> (leves), <strong>sacos aéreos</strong> e <strong>quilha</strong> ajudam a voar. Não têm dentes, têm <strong>bico córneo</strong>. Nascem de ovo chocado.</li>
+          <li><strong>Mamíferos:</strong> a característica principal é ter <strong>pelos</strong>. As fêmeas têm <strong>glândulas mamárias</strong>, que produzem leite para o filhote.</li>
+          <li>3 grupos de mamíferos: <strong>Placentários</strong> (maioria, nasce da barriga da mãe, ex: cachorro, humano), <strong>Marsupiais</strong> (nasce incompleto e cresce numa bolsa, ex: canguru, gambá), <strong>Monotremados</strong> (nascem de ovo! ex: ornitorrinco).</li>
+        </ul>
+        <div class="destaque">💡 Réptil tem escama seca. Ave tem pena. Mamífero tem pelo e alimenta o filhote com leite.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1SZjwvuBA8Vl1aOKTNG9wapzP-ypcg_IL/preview" title="Vertebrados II — Répteis, Aves e Mamíferos" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1SZjwvuBA8Vl1aOKTNG9wapzP-ypcg_IL/view" target="_blank">▶️ Assistir no Google Drive</a>
+
+        <div class="destaque" style="margin-top:18px;">🎬 <strong>Vídeos extras</strong> — se quiser assistir só uma parte de novo, separada:</div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1OSWE9A-Lvl9INrYx3MAlWu8TRhCRogq9/view" target="_blank" style="display:inline-flex;margin-top:10px;">▶️ Extra: só Répteis</a>
+        <br>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1nDFxsK39ALZZEPlFBjfEAjzJQoyq_Y5S/view" target="_blank" style="display:inline-flex;margin-top:10px;">▶️ Extra: só Aves e Mamíferos</a>
+      </div>
+
+      <div class="cartao" id="cien-topico-8">
+        <h2>🌳 Biomas Brasileiros — Amazônia, Mata Atlântica e Caatinga</h2>
+        <p>Um <strong>bioma</strong> é uma grande área com clima parecido, plantas parecidas e animais parecidos.</p>
+        <ul>
+          <li><strong>Amazônia:</strong> a maior floresta tropical do mundo. Clima quente e úmido, maior biodiversidade do Brasil, tem o Rio Amazonas.</li>
+          <li><strong>Mata Atlântica:</strong> fica no litoral do Brasil. Foi muito desmatada — restou pouco da cobertura original. Animal símbolo: mico-leão-dourado.</li>
+          <li><strong>Caatinga:</strong> fica no Nordeste. Clima <strong>semiárido</strong> (seco). As plantas têm espinhos e perdem as folhas na seca (como o xique-xique). O nome, em tupi-guarani, significa "mata branca".</li>
+        </ul>
+        <div class="destaque">💡 Amazônia é quente e úmida. Mata Atlântica fica no litoral e foi desmatada. Caatinga é seca, no Nordeste.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/preview" title="Biomas Brasileiros - Parte 1" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/view" target="_blank">▶️ Assistir no Google Drive</a>
+      </div>
+
+      <div class="cartao" id="cien-topico-9">
+        <h2>🌾 Biomas Brasileiros — Cerrado, Pantanal e Pampa</h2>
+        <p>Vamos conhecer mais 3 biomas do Brasil.</p>
+        <ul>
+          <li><strong>Cerrado:</strong> fica no Centro-Oeste. Tem uma estação bem chuvosa e outra bem seca. Árvores de tronco torto e casca grossa (protege do fogo). Chamado de "berço das águas", pois muitos rios nascem lá.</li>
+          <li><strong>Pantanal:</strong> a maior área alagada do mundo. Muito rico em animais, como a capivara e a arara-azul.</li>
+          <li><strong>Pampa:</strong> fica no Sul (Rio Grande do Sul). Formada principalmente por campos (pouca árvore). Muito usada para a pecuária (criação de bois e ovelhas).</li>
+        </ul>
+        <div class="destaque">💡 Cerrado tem seca e chuva bem separadas. Pantanal é alagado. Pampa é feita de campos, no Sul.</div>
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/preview" title="Biomas Brasileiros - Parte 2" allowfullscreen></iframe>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/view" target="_blank">▶️ Assistir no Google Drive</a>
       </div>
 
     </section>
@@ -1673,6 +2002,30 @@ document.querySelectorAll('.dia-prova[data-ir-para]').forEach(botao => {
   botao.addEventListener('click', () => irParaPagina(botao.dataset.irPara));
 });
 
+// Abas 1º Trimestre / 2º Trimestre na página inicial
+const triAbas = document.querySelectorAll('.tri-aba');
+triAbas.forEach(botao => {
+  botao.addEventListener('click', () => {
+    const tri = botao.dataset.tri;
+    triAbas.forEach(b => b.classList.remove('ativo'));
+    botao.classList.add('ativo');
+    document.querySelectorAll('.tri-secao').forEach(s => s.classList.remove('ativa'));
+    document.getElementById(`tri-${tri}`).classList.add('ativa');
+  });
+});
+
+// Abas Provas Parciais / Provas Abrangentes na página inicial
+const provaAbas = document.querySelectorAll('.prova-aba');
+provaAbas.forEach(botao => {
+  botao.addEventListener('click', () => {
+    const prova = botao.dataset.prova;
+    provaAbas.forEach(b => b.classList.remove('ativo'));
+    botao.classList.add('ativo');
+    document.querySelectorAll('.prova-secao').forEach(s => s.classList.remove('ativa'));
+    document.getElementById(`prova-${prova}`).classList.add('ativa');
+  });
+});
+
 // Sub-navegação (Estudar / Praticar) dentro de cada matéria
 const subAbas = document.querySelectorAll('.sub-aba');
 subAbas.forEach(botao => {
@@ -1816,6 +2169,50 @@ const perguntasPortugues = [
 ];
 
 const perguntasCiencias = [
+  {pergunta:"O que é um verme parasita?",opcoes:["Um verme que vive livre no solo","Um verme que vive dentro do corpo de outro ser vivo e se alimenta dele","Um verme que só existe no mar","Um verme que não se alimenta"],correta:1,explicacao:"Parasita é o organismo que vive às custas de um hospedeiro, tirando alimento dele e causando prejuízo."},
+  {pergunta:"A tênia (solitária) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Anelídeo","Molusco"],correta:0,explicacao:"A tênia é um platelminto, verme de corpo achatado."},
+  {pergunta:"Como uma pessoa geralmente se contamina com a tênia?",opcoes:["Comendo carne de porco ou boi crua ou mal cozida","Respirando ar poluído","Tomando sol em excesso","Bebendo leite fervido"],correta:0,explicacao:"A tênia é transmitida principalmente pela ingestão de carne mal cozida contendo larvas do parasita."},
+  {pergunta:"A esquistossomose é causada por um verme que, em parte do seu ciclo, vive dentro de:",opcoes:["Um caramujo de água doce","Um mosquito","Um porco","Um peixe"],correta:0,explicacao:"O esquistossomo tem um caramujo de água doce como hospedeiro intermediário em seu ciclo de vida."},
+  {pergunta:"Como a larva do esquistossomo entra no corpo da pessoa?",opcoes:["Pela picada de um inseto","Penetrando na pele durante o contato com água contaminada","Só pela ingestão de água","Pelo ar respirado"],correta:1,explicacao:"A larva do esquistossomo penetra ativamente na pele da pessoa que entra em contato com água doce contaminada."},
+  {pergunta:"A lombriga (Ascaris) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Cnidário","Anelídeo"],correta:1,explicacao:"A lombriga é um nematelminto, verme de corpo redondo (cilíndrico)."},
+  {pergunta:"Qual doença é causada pela lombriga?",opcoes:["Ascaridíase","Esquistossomose","Teníase","Malária"],correta:0,explicacao:"A infecção pela lombriga (Ascaris lumbricoides) é chamada de ascaridíase."},
+  {pergunta:"O ancilóstomo (causador do 'amarelão') geralmente entra no corpo humano:",opcoes:["Pela pele, principalmente pelos pés descalços em solo contaminado","Somente pela respiração","Somente pelo leite","Não infecta seres humanos"],correta:0,explicacao:"A larva do ancilóstomo penetra pela pele, sendo comum a infecção por andar descalço em solo contaminado."},
+  {pergunta:"Qual atitude ajuda a prevenir vermes parasitas como a lombriga e o ancilóstomo?",opcoes:["Lavar bem as mãos e os alimentos, e usar sapatos","Comer carne crua","Beber água de qualquer fonte","Andar descalço no solo"],correta:0,explicacao:"Higiene das mãos e alimentos, além do uso de calçados, ajuda a evitar a contaminação por esses parasitas."},
+  {pergunta:"Peixes respiram através de qual estrutura?",opcoes:["Pulmões","Brânquias","Pele apenas","Traqueias"],correta:1,explicacao:"Peixes retiram o oxigênio dissolvido na água usando as brânquias."},
+  {pergunta:"O corpo dos peixes é geralmente coberto por:",opcoes:["Pelos","Penas","Escamas","Placas ósseas apenas"],correta:2,explicacao:"A maioria dos peixes tem o corpo coberto por escamas."},
+  {pergunta:"Tubarões e raias são exemplos de peixes:",opcoes:["Ósseos","Cartilaginosos","Sem esqueleto","Anfíbios"],correta:1,explicacao:"Tubarões e raias têm esqueleto formado por cartilagem, sendo peixes cartilaginosos."},
+  {pergunta:"O que caracteriza um anfíbio?",opcoes:["Vive só na água durante toda a vida","Vive parte da vida na água e parte na terra","Vive só em ambientes secos","Tem o corpo coberto de penas"],correta:1,explicacao:"Os anfíbios vivem parte da vida na água (fase larval) e parte na terra (fase adulta, na maioria das espécies)."},
+  {pergunta:"O girino é a fase jovem de qual animal?",opcoes:["Peixe","Sapo (anfíbio)","Lagarto","Ave"],correta:1,explicacao:"O girino é a fase larval do sapo, que vive na água antes de se transformar em adulto."},
+  {pergunta:"A transformação do girino em sapo adulto é chamada de:",opcoes:["Metamorfose","Fotossíntese","Fecundação","Taxonomia"],correta:0,explicacao:"Metamorfose é o conjunto de transformações que o corpo do anfíbio sofre durante seu desenvolvimento."},
+  {pergunta:"A pele dos anfíbios é geralmente:",opcoes:["Grossa e seca, coberta de escamas","Fina e úmida, usada também para respirar","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"A pele dos anfíbios é fina e úmida, permitindo também a respiração cutânea (pela pele)."},
+  {pergunta:"A pele dos répteis é caracterizada por ser:",opcoes:["Fina e úmida","Seca e coberta de escamas","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"Répteis têm pele seca e coberta de escamas, o que ajuda a evitar a perda de água do corpo."},
+  {pergunta:"Répteis são chamados de ectotérmicos porque:",opcoes:["Produzem calor próprio como os mamíferos","Não controlam sozinhos a própria temperatura corporal","Vivem só na água","Não respiram"],correta:1,explicacao:"Ectotérmicos dependem de fontes externas de calor (como o sol) para regular a temperatura do corpo."},
+  {pergunta:"A tartaruga, o cágado e o jabuti pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:2,explicacao:"Esses animais pertencem ao grupo dos Quelônios, caracterizados por possuírem um casco (carapaça e plastrão)."},
+  {pergunta:"As cobras pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:0,explicacao:"As cobras pertencem ao grupo dos Ofídios, répteis sem patas."},
+  {pergunta:"Os lagartos pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:1,explicacao:"Os lagartos pertencem ao grupo dos Lacertílios, répteis que possuem patas."},
+  {pergunta:"O jacaré, o crocodilo e o gavial pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:3,explicacao:"Esses animais pertencem ao grupo dos Crocodilianos, répteis que passam bastante tempo na água."},
+  {pergunta:"A capacidade de alguns lagartos soltarem a cauda para escapar de um predador é chamada de:",opcoes:["Metamorfose","Autotomia","Fotossíntese","Fecundação"],correta:1,explicacao:"Autotomia é a capacidade de alguns lagartos soltarem a própria cauda quando ameaçados, escapando do predador."},
+  {pergunta:"A característica mais marcante das aves é possuir:",opcoes:["Pelos","Penas","Escamas","Brânquias"],correta:1,explicacao:"A presença de penas é a característica que define e diferencia as aves dos demais vertebrados."},
+  {pergunta:"Os ossos das aves são chamados de pneumáticos porque:",opcoes:["São muito pesados","Possuem espaços ocos preenchidos com ar, tornando-os leves","São feitos de cartilagem","Não existem nas aves"],correta:1,explicacao:"Ossos pneumáticos têm cavidades com ar, o que reduz o peso do corpo da ave e facilita o voo."},
+  {pergunta:"No lugar de dentes, as aves possuem:",opcoes:["Um bico córneo","Escamas na boca","Uma língua áspera","Nada no lugar dos dentes"],correta:0,explicacao:"As aves não têm dentes; no lugar, possuem um bico córneo, estrutura dura usada para se alimentar."},
+  {pergunta:"A quilha é uma estrutura óssea das aves que serve para:",opcoes:["Prender os músculos usados no voo","Filtrar o ar respirado","Produzir o som do canto","Proteger os ovos"],correta:0,explicacao:"A quilha é um osso do peito das aves onde ficam presos os fortes músculos responsáveis pelo batimento das asas."},
+  {pergunta:"A característica mais marcante dos mamíferos é possuir:",opcoes:["Penas","Pelos","Escamas","Casco"],correta:1,explicacao:"A presença de pelos é a característica que define os mamíferos."},
+  {pergunta:"As glândulas mamárias das fêmeas dos mamíferos produzem:",opcoes:["Veneno","Leite, para alimentar os filhotes","Muco","Cera"],correta:1,explicacao:"As glândulas mamárias produzem leite, usado para alimentar os filhotes nos primeiros meses de vida."},
+  {pergunta:"A maioria dos mamíferos, como o cachorro e o ser humano, pertence a qual grupo?",opcoes:["Monotremados","Marsupiais","Placentários","Anfíbios"],correta:2,explicacao:"Os placentários são a maioria dos mamíferos; o filhote se desenvolve completamente na barriga da mãe antes de nascer."},
+  {pergunta:"O canguru e o gambá são exemplos de mamíferos:",opcoes:["Placentários","Marsupiais","Monotremados","Ovíparos apenas"],correta:1,explicacao:"Marsupiais nascem ainda incompletos e terminam de se desenvolver dentro de uma bolsa (marsúpio) da mãe."},
+  {pergunta:"O ornitorrinco é um exemplo de mamífero:",opcoes:["Placentário","Marsupial","Monotremado","Réptil"],correta:2,explicacao:"O ornitorrinco é um monotremado, grupo raro de mamíferos que nascem de ovos."},
+  {pergunta:"O que é um bioma?",opcoes:["Um tipo de rocha","Uma grande área com clima, vegetação e fauna parecidos","Um tipo de doença","Um instrumento de laboratório"],correta:1,explicacao:"Bioma é um conjunto de ecossistemas com clima, vegetação e fauna semelhantes, numa grande área geográfica."},
+  {pergunta:"Qual é o maior bioma tropical do mundo, localizado no Brasil?",opcoes:["Caatinga","Cerrado","Amazônia","Pampa"],correta:2,explicacao:"A Floresta Amazônica é a maior floresta tropical do mundo."},
+  {pergunta:"Qual bioma brasileiro fica no litoral e foi muito desmatado ao longo da história?",opcoes:["Amazônia","Mata Atlântica","Pantanal","Pampa"],correta:1,explicacao:"A Mata Atlântica, localizada no litoral, teve grande parte de sua cobertura original destruída pela ocupação humana."},
+  {pergunta:"O mico-leão-dourado é um animal símbolo de qual bioma?",opcoes:["Cerrado","Caatinga","Mata Atlântica","Pantanal"],correta:2,explicacao:"O mico-leão-dourado é um animal símbolo da Mata Atlântica."},
+  {pergunta:"Qual bioma brasileiro tem clima semiárido, com pouca chuva, localizado no Nordeste?",opcoes:["Amazônia","Caatinga","Pantanal","Pampa"],correta:1,explicacao:"A Caatinga tem clima semiárido, com baixa quantidade de chuva, e fica na região Nordeste."},
+  {pergunta:"Por que muitas plantas da Caatinga têm espinhos no lugar de folhas grandes?",opcoes:["Para atrair mais água da chuva","Para reduzir a perda de água em um clima seco","Para produzir mais oxigênio","Não tem relação com o clima"],correta:1,explicacao:"Espinhos, no lugar de folhas grandes, ajudam a planta a perder menos água por transpiração, uma adaptação ao clima seco."},
+  {pergunta:"O Cerrado é conhecido como 'berço das águas' porque:",opcoes:["Tem o maior rio do Brasil","Muitos rios importantes do Brasil nascem lá","É o único bioma com água","Fica embaixo do mar"],correta:1,explicacao:"O Cerrado abriga as nascentes de diversas bacias hidrográficas importantes do Brasil."},
+  {pergunta:"Uma característica das árvores do Cerrado é ter:",opcoes:["Tronco reto e fino","Tronco torto e casca grossa","Nenhuma casca","Raízes muito curtas"],correta:1,explicacao:"As árvores do Cerrado costumam ter tronco torto e casca grossa, o que ajuda a proteger contra o fogo, comum na região."},
+  {pergunta:"Qual bioma brasileiro é conhecido como a maior área alagada do mundo?",opcoes:["Amazônia","Pantanal","Pampa","Cerrado"],correta:1,explicacao:"O Pantanal é considerado a maior planície alagável (área alagada) do mundo."},
+  {pergunta:"A capivara e a arara-azul são animais bem conhecidos de qual bioma?",opcoes:["Pampa","Caatinga","Pantanal","Mata Atlântica"],correta:2,explicacao:"Capivara e arara-azul são animais bem representativos da fauna do Pantanal."},
+  {pergunta:"Qual bioma brasileiro fica no Sul do país e é formado principalmente por campos?",opcoes:["Pampa","Cerrado","Caatinga","Amazônia"],correta:0,explicacao:"A Pampa fica no Rio Grande do Sul e é formada principalmente por campos, com poucas árvores."},
+  {pergunta:"Por que a Pampa é muito usada para a pecuária (criação de bois e ovelhas)?",opcoes:["Porque tem floresta densa","Porque é formada por campos, ideais para o pasto dos animais","Porque não tem nenhuma vegetação","Porque fica no litoral"],correta:1,explicacao:"A vegetação de campos da Pampa, com pastagens naturais, favorece a criação de gado e ovelhas."},
   {pergunta:"O que é taxonomia?",opcoes:["A ciência que organiza os seres vivos em grupos","Um tipo de planta","Uma doença","Um tipo de rocha"],correta:0,explicacao:"Taxonomia é a ciência que classifica e organiza os seres vivos em grupos."},
   {pergunta:"Como é escrito o nome científico de um ser vivo?",opcoes:["Em português, com letra maiúscula","Em latim, com duas palavras","Apenas com números","Em qualquer idioma, sem regra"],correta:1,explicacao:"O nome científico é escrito em latim, com duas palavras (nomenclatura binominal)."},
   {pergunta:"Qual é a ordem correta dos grupos taxonômicos, do maior para o menor?",opcoes:["Reino, Filo, Classe, Ordem, Família, Gênero, Espécie","Espécie, Gênero, Reino, Filo","Filo, Reino, Classe, Espécie","Gênero, Espécie, Reino, Filo"],correta:0,explicacao:"A ordem correta, do maior grupo para o menor, é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie."},
@@ -1875,7 +2272,7 @@ const perguntasCiencias = [
   {pergunta:"Qual destes é um exemplo de Reino Monera?",opcoes:["Bactéria causadora de uma infecção","Cogumelo","Samambaia","Estrela-do-mar"],correta:0,explicacao:"Bactérias pertencem ao Reino Monera."},
   {pergunta:"A malária é causada por um organismo de qual reino?",opcoes:["Monera","Protista","Fungi","Animalia"],correta:1,explicacao:"A malária é causada por um protozoário, organismo do Reino Protista."},
   {pergunta:"Animais que têm o corpo coberto por exoesqueleto (esqueleto externo duro) geralmente são:",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes possuem exoesqueleto, uma estrutura dura externa que protege e sustenta o corpo."},
-  {pergunta:"A classificação taxonômica ajuda os cientistas a:",opcoes:["Confundir os nomes dos seres vivos","Organizar e comunicar informações sobre os seres vivos de forma padronizada","Aumentar a quantidade de espécies","Tornar a ciência mais difícil"],correta:1,explicacao:"A taxonomia padroniza a forma de organizar e comunicar informações sobre os seres vivos entre cientistas do mundo todo."}
+  {pergunta:"A classificação taxonômica ajuda os cientistas a:",opcoes:["Confundir os nomes dos seres vivos","Organizar e comunicar informações sobre os seres vivos de forma padronizada","Aumentar a quantidade de espécies","Tornar a ciência mais difícil"],correta:1,explicacao:"A taxonomia padroniza a forma de organizar e comunicar informações sobre os seres vivos entre cientistas do mundo todo."},
 ];
 
 const perguntasGeografia = [
@@ -2075,10 +2472,20 @@ function embaralhar(array) {
   return copia;
 }
 
-function criarQuiz(materia, bancoCompleto, tamanhoRodada = 20) {
+function criarQuiz(materia, bancoCompleto, tamanhoRodada = 20, qtdPrioridade = 0) {
   const TAMANHO_RODADA = tamanhoRodada;
 
-  let indicesDisponiveis = embaralhar(bancoCompleto.map((_, i) => i));
+  // Se qtdPrioridade > 0, as primeiras rodadas priorizam os primeiros N itens do banco
+  // (útil para começar pelo conteúdo novo, ex: assuntos que não caíram na prova Parcial),
+  // só misturando com o resto do banco depois que essas prioritárias se esgotarem.
+  let indicesDisponiveis;
+  if (qtdPrioridade > 0 && qtdPrioridade < bancoCompleto.length) {
+    const indicesPrioridade = embaralhar(Array.from({length: qtdPrioridade}, (_, i) => i));
+    const indicesResto = embaralhar(Array.from({length: bancoCompleto.length - qtdPrioridade}, (_, i) => i + qtdPrioridade));
+    indicesDisponiveis = indicesPrioridade.concat(indicesResto);
+  } else {
+    indicesDisponiveis = embaralhar(bancoCompleto.map((_, i) => i));
+  }
   let perguntas = [];      // as 20 perguntas da rodada atual
   let indiceAtual = 0;     // posicao dentro da rodada atual
   let acertosRodada = 0;
@@ -2262,7 +2669,7 @@ function criarQuiz(materia, bancoCompleto, tamanhoRodada = 20) {
 
 criarQuiz('matematica', perguntasMatematica);
 criarQuiz('portugues', perguntasPortugues);
-criarQuiz('ciencias', perguntasCiencias);
+criarQuiz('ciencias', perguntasCiencias, 30, 44);
 criarQuiz('geografia', perguntasGeografia, 50);
 criarQuiz('geografia-urbano', perguntasGeografiaUrbano, 15);
 criarQuiz('historia', perguntasHistoria, 50);
