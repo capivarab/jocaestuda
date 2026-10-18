@@ -562,6 +562,14 @@
     font-size: 1.3rem; font-weight: 700; font-family: inherit;
   }
   .video-wrapper.carregado .video-carregar { display: none; }
+
+  .cartao { scroll-margin-top: 90px; }
+  .aviso-prova {
+    display: block; width: 100%; text-align: left; box-sizing: border-box;
+    background: #FFF3D6; border: 3px solid #E0A93B; border-radius: 14px;
+    padding: 14px 16px; margin: 4px 0 18px; font: inherit; font-size: 1.05rem;
+    font-weight: 700; color: var(--marrom-escuro);
+  }
   .video-assistir {
     display: inline-flex;
     align-items: center;
@@ -838,7 +846,7 @@
             <div class="materia-tema">Gênero textual: Conto</div>
           </div>
         </div>
-        <button class="dia-prova" data-ir-para="historia">
+        <button class="dia-prova" data-ir-para="historia" data-ir-topico="hist-topico-9">
           <div class="data-bloco"><span class="dia-numero">19</span><span class="dia-semana">2ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">⛵ História</div>
@@ -960,7 +968,7 @@
           <span class="selo-em-breve">em breve</span>
         </div>
 
-        <button class="dia-prova" data-ir-para="historia">
+        <button class="dia-prova sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">28</span><span class="dia-semana">6ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">⛵ História</div>
@@ -1022,7 +1030,7 @@
           </div>
         </button>
 
-        <button class="dia-prova feito" data-ir-para="historia">
+        <button class="dia-prova feito sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">24</span><span class="dia-semana">4ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">⛵ História</div>
@@ -1732,245 +1740,40 @@
 <div class="pagina" id="pagina-historia">
 
   <header class="header-materia">
-    <h1>🏰 História: Brasil Colonial e Antes 🌎</h1>
-    <p>7º Ano — Parcial do 3º Trimestre (19/10): tópicos 9 a 14, Livro 3 caps. 8 e 9 · 2º Trimestre: tópicos 1 a 8 — História</p>
+    <h1>🏰 História: Brasil Colonial 🍬</h1>
+    <p>7º Ano — 3º Trimestre · Livro 3, caps. 8 e 9 — Prova Parcial 19/10 e Abrangentes (18/11 a 01/12)</p>
   </header>
 
   <main class="conteudo-materia">
 
       <div class="linha-tempo" id="historia-linha-tempo">
-        <button class="linha-tempo-etapa" data-destino="hist-topico-1">
-          <span class="linha-tempo-bola">1</span>
-          <span class="linha-tempo-label">Mulher na Antiguidade e Idade Média</span>
-        </button>
-        <button class="linha-tempo-etapa" data-destino="hist-topico-2">
-          <span class="linha-tempo-bola">2</span>
-          <span class="linha-tempo-label">Renascimento e Fibonacci</span>
-        </button>
-        <button class="linha-tempo-etapa" data-destino="hist-topico-3">
-          <span class="linha-tempo-bola">3</span>
-          <span class="linha-tempo-label">Grandes Navegações</span>
-        </button>
-        <button class="linha-tempo-etapa" data-destino="hist-topico-4">
-          <span class="linha-tempo-bola">4</span>
-          <span class="linha-tempo-label">Reinos Africanos</span>
-        </button>
-        <button class="linha-tempo-etapa" data-destino="hist-topico-5">
-          <span class="linha-tempo-bola">5</span>
-          <span class="linha-tempo-label">Colonização Espanhola e Inglesa</span>
-        </button>
-        <button class="linha-tempo-etapa" data-destino="hist-topico-6">
-          <span class="linha-tempo-bola">6</span>
-          <span class="linha-tempo-label">Organização na América Portuguesa</span>
-        </button>
-        <button class="linha-tempo-etapa" data-destino="hist-topico-7">
-          <span class="linha-tempo-bola">7</span>
-          <span class="linha-tempo-label">Economia e Sociedade Colonial</span>
-        </button>
-        <button class="linha-tempo-etapa" data-destino="hist-topico-8">
-          <span class="linha-tempo-bola">8</span>
-          <span class="linha-tempo-label">Colonizações Comparadas</span>
-        </button>
         <button class="linha-tempo-etapa" data-destino="hist-topico-9">
-          <span class="linha-tempo-bola">9</span>
+          <span class="linha-tempo-bola">1</span>
           <span class="linha-tempo-label">Razões e montagem do açúcar</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="hist-topico-10">
-          <span class="linha-tempo-bola">10</span>
+          <span class="linha-tempo-bola">2</span>
           <span class="linha-tempo-label">O engenho e a produção</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="hist-topico-11">
-          <span class="linha-tempo-bola">11</span>
+          <span class="linha-tempo-bola">3</span>
           <span class="linha-tempo-label">Sociedade colonial</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="hist-topico-12">
-          <span class="linha-tempo-bola">12</span>
+          <span class="linha-tempo-bola">4</span>
           <span class="linha-tempo-label">Dinâmicas comerciais internas</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="hist-topico-13">
-          <span class="linha-tempo-bola">13</span>
+          <span class="linha-tempo-bola">5</span>
           <span class="linha-tempo-label">Indígenas, africanos e tráfico</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="hist-topico-14">
-          <span class="linha-tempo-bola">14</span>
+          <span class="linha-tempo-bola">6</span>
           <span class="linha-tempo-label">Vida, resistência e alforria</span>
         </button>
       </div>
 
-      <div class="cartao" id="hist-topico-1">
-        <h2>👩 O Papel da Mulher no Mundo Antigo e nas Sociedades Medievais</h2>
-        <p>O espaço das mulheres na sociedade mudava muito de acordo com o lugar e a época.</p>
-        <ul>
-          <li><strong>Grécia Antiga (Atenas):</strong> mulheres não podiam votar nem participar das assembleias. A vida era muito ligada à casa: cuidar dos filhos, administrar o lar e participar de festas religiosas.</li>
-          <li><strong>Esparta:</strong> as mulheres tinham mais liberdade que em Atenas — podiam praticar exercícios físicos e tinham mais controle sobre bens e propriedades.</li>
-          <li><strong>Egito Antigo:</strong> algumas mulheres chegaram a governar, como as rainhas <strong>Cleópatra</strong> e <strong>Hatshepsut</strong> (que governou como faraó).</li>
-          <li><strong>Nobreza medieval:</strong> mulheres muitas vezes eram usadas em casamentos arranjados para fortalecer alianças políticas, mas algumas conseguiram grande poder, como rainhas que governaram territórios.</li>
-          <li><strong>Camponesas medievais:</strong> trabalhavam duro no campo, cuidavam da casa e dos filhos, e também faziam tecelagem e produção de alimentos.</li>
-          <li><strong>Mosteiros e conventos:</strong> muitas mulheres se tornavam freiras. Isso podia dar mais autonomia do que o casamento: acesso a estudos, leitura, e até posições de liderança como abadessa.</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: enquanto muitas portas estavam fechadas para as mulheres lá fora, o convento era, para algumas, um dos poucos lugares onde podiam estudar e liderar.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1m3pKQm6wDmdi5tphvp5mNx465xRGuCCT/preview" title="A Encruzilhada Historica - O Papel da Mulher" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1m3pKQm6wDmdi5tphvp5mNx465xRGuCCT/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-1">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-1" style="display:none;"></div>
-      </div>
-
-            <div class="cartao" id="hist-topico-2">
-        <h2>🎨 Renascimento Cultural e a Sequência de Fibonacci</h2>
-        <p>O Renascimento foi um período em que as ideias da Grécia e Roma Antiga "nasceram de novo" na Europa.</p>
-        <ul>
-          <li>Aconteceu principalmente entre os <strong>séculos XIV e XVI</strong>, na Europa, sobretudo na Itália.</li>
-          <li>Antes dele, na Idade Média, quase tudo era explicado pela religião. No Renascimento, as pessoas voltaram a estudar a ciência e a arte com curiosidade.</li>
-          <li>Na <strong>arte</strong>, os pintores passaram a usar a <strong>perspectiva</strong> — uma técnica de desenho que dá a sensação de profundidade, como se você pudesse entrar na imagem.</li>
-          <li><strong>Leonardo Fibonacci</strong> foi um matemático italiano (viveu por volta de 1200) que trouxe para a Europa o sistema de números que usamos até hoje (0 a 9), no lugar dos números romanos, que eram mais difíceis de calcular.</li>
-          <li>A <strong>Sequência de Fibonacci</strong> é uma lista de números em que cada número novo é a <strong>soma dos dois anteriores</strong>: 0, 1, 1, 2, 3, 5, 8, 13...</li>
-          <li>Essa sequência aparece em padrões da natureza, como em conchas e em folhas de plantas, e foi usada por artistas do Renascimento para criar proporções bonitas em pinturas e construções.</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: 1 + 1 = 2 / 1 + 2 = 3 / 2 + 3 = 5. Cada número novo "nasce" da soma dos dois números que vieram antes — parecido com o próprio espírito do Renascimento: usar o conhecimento antigo para criar algo novo.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1d_UdjsJDRMDAf-V4-S-DeKzqTlX4XWl4/preview" title="Renascimento Cultural e a Sequência de Fibonacci" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1d_UdjsJDRMDAf-V4-S-DeKzqTlX4XWl4/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-2">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-2" style="display:none;"></div>
-      </div>
-
-      <div class="cartao" id="hist-topico-3">
-        <h2>⛵ As Grandes Navegações</h2>
-        <p>Os europeus saíram em navios para conhecer terras novas e encontrar um novo caminho até o Oriente.</p>
-        <ul>
-          <li>Cidades italianas e o <strong>Império Turco-Otomano</strong> controlavam as rotas terrestres até o Oriente e cobravam taxas muito altas. Por isso, era preciso achar um caminho novo pelo mar.</li>
-          <li>Os instrumentos de navegação mais importantes eram o <strong>astrolábio</strong> (calculava a posição usando as estrelas) e a <strong>bússola</strong> (sempre apontava a mesma direção).</li>
-          <li><strong>Portugal</strong> foi o primeiro país a se aventurar nas Grandes Navegações. O Infante <strong>Dom Henrique</strong>, conhecido como "o Navegador", incentivou fortemente essas expedições.</li>
-          <li>Os portugueses fizeram o <strong>Périplo Africano</strong>: foram contornando a costa da África pouco a pouco. Em 1434, <strong>Gil Eanes</strong> passou pelo Cabo Bojador. Em 1488, <strong>Bartolomeu Dias</strong> chegou ao Cabo da Boa Esperança. Em 1498, <strong>Vasco da Gama</strong> finalmente chegou à Índia.</li>
-          <li>Em 1500, <strong>Pedro Álvares Cabral</strong> chegou ao litoral do que viria a ser o Brasil — que já era habitado por povos indígenas há milhares de anos.</li>
-          <li><strong>Cristóvão Colombo</strong>, financiado pela Espanha, acreditava que dava para chegar ao Oriente navegando para o Ocidente. Em 1492, chegou ao Caribe e chamou os povos de lá de "índios", pensando ter chegado às Índias.</li>
-          <li><strong>Américo Vespúcio</strong> ajudou a provar que aquelas terras eram um continente novo — por isso o continente foi batizado de "América".</li>
-          <li><strong>Fernão de Magalhães</strong> comandou a primeira viagem de <strong>circum-navegação</strong> (dar a volta completa no globo), o que comprovou que a Terra é esférica.</li>
-          <li>O <strong>Tratado de Tordesilhas</strong> (1494) criou uma linha imaginária dividindo as terras: a leste seria de Portugal, a oeste seria da Espanha.</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: Portugal contornou a África para chegar ao Oriente (foi para o leste). Colombo tentou chegar ao Oriente indo para o lado contrário (foi para o oeste) e, sem saber, encontrou um continente novo.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1SgNhy_fK5Lry-Gf-OgbMTLKQcTkzsPI8/preview" title="As Grandes Navegações" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1SgNhy_fK5Lry-Gf-OgbMTLKQcTkzsPI8/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-3">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-3" style="display:none;"></div>
-      </div>
-
-      <div class="cartao" id="hist-topico-4">
-        <h2>👑 Reinos e Povos Africanos</h2>
-        <p>Antes dos europeus chegarem, a África já tinha reinos grandes, organizados e ricos.</p>
-        <ul>
-          <li>Muitas sociedades africanas guardavam sua história através da <strong>história oral</strong>: pessoas chamadas <strong>griots</strong> contavam e cantavam a história do seu povo de geração em geração.</li>
-          <li>As sociedades se organizavam em <strong>clãs</strong> — grupos de pessoas que reconhecem um mesmo ancestral em comum.</li>
-          <li>Em sistemas <strong>matrilineares</strong>, a herança passa pela linha da mãe (da esposa). Mas atenção: isso não significa que as mulheres tinham o poder — o poder político continuava, na maioria das vezes, com os homens.</li>
-          <li>O comércio africano tinha dois tipos: <strong>produtos de subsistência</strong> (comida e roupas, para uso da própria comunidade) e <strong>bens de prestígio</strong> (ouro, cobre, sal — vendidos para fora em rotas comerciais longas).</li>
-          <li>Os <strong>berberes</strong> organizavam caravanas de camelos para atravessar o deserto do Saara, conectando a África ao Mar Mediterrâneo.</li>
-          <li>Três grandes reinos surgiram perto do Rio Níger, um depois do outro: <strong>Reino de Gana</strong> (séc. VI-XIII), <strong>Reino de Mali</strong> (séc. XIII-XVI, com o famoso rei <strong>Mansa Musa</strong>, um dos homens mais ricos da história) e <strong>Reino de Songhai</strong> (séc. XIV-XVI).</li>
-          <li>O <strong>Reino do Benim</strong> (atual Nigéria) ficou famoso por sua arte em bronze. Em 1897, o Império Britânico invadiu a cidade e levou várias obras de arte para a Inglaterra.</li>
-          <li>A ideia de que "a África é um lugar só" está errada — é fruto do <strong>eurocentrismo</strong>, a visão de que a cultura europeia seria superior ou a única referência válida.</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: a África tinha reis, cidades, comércio e arte muito antes dos europeus chegarem lá. Não era um continente "vazio" nem "igual em todo lugar" — eram centenas de povos diferentes.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1-PVBwHamYxT7Yc8wg4X87yv0RrQja-tG/preview" title="Reinos e Povos Africanos" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1-PVBwHamYxT7Yc8wg4X87yv0RrQja-tG/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-4">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-4" style="display:none;"></div>
-      </div>
-
-      <div class="cartao" id="hist-topico-5">
-        <h2>🌎 Colonização Espanhola e Inglesa na América</h2>
-        <p>Depois das navegações, espanhóis e ingleses passaram a morar e governar terras na América — de formas bem diferentes.</p>
-        <ul>
-          <li>Antes dos europeus, a América já tinha povos grandes e organizados: <strong>astecas</strong> (México), <strong>maias</strong> (sul do México e América Central) e <strong>incas</strong> (região andina, atual Peru).</li>
-          <li>Em 1521, <strong>Hernán Cortés</strong> derrotou o Império Asteca. Ele se aliou a povos que já eram inimigos dos astecas, e alguns astecas acreditaram que ele poderia ser o deus Quetzalcóatl, retornando conforme uma lenda antiga.</li>
-          <li>Em 1533, <strong>Francisco Pizarro</strong> dominou o Império Inca, também de forma muito violenta.</li>
-          <li>A Espanha organizou suas colônias em <strong>vice-reinos</strong> (áreas grandes) e <strong>Capitanias Gerais</strong> (áreas menores).</li>
-          <li>Os espanhóis usaram trabalho forçado indígena: a <strong>mita</strong> (sorteio para trabalhar nas minas, com pagamento muito baixo) e a <strong>encomienda</strong> (indígenas confiados a um colonizador, que deveria "cuidar" da catequização deles).</li>
-          <li>Em 1620, o navio <strong>Mayflower</strong> trouxe para a América do Norte os <strong>peregrinos</strong> — ingleses, em sua maioria puritanos, que buscavam <strong>liberdade religiosa</strong>.</li>
-          <li>A Inglaterra praticou a <strong>negligência salutar</strong>: deixou suas colônias se organizarem com pouca interferência. Por isso, existia o <strong>self-government</strong> (autogoverno) nas Treze Colônias.</li>
-          <li>Diferença importante: a Espanha encontrou muito <strong>ouro e prata</strong> na América; a Inglaterra <strong>não</strong> encontrou riquezas minerais importantes em sua região colonizada.</li>
-          <li>A colonização causou muito sofrimento aos povos indígenas: violência, doenças trazidas pelos europeus e deslocamentos forçados, como a <strong>Trilha das Lágrimas</strong>, no século XIX.</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: a Espanha colonizou buscando ouro e prata, controlando de perto suas colônias. A Inglaterra não achou riqueza mineral e, por isso, deixou suas colônias se organizarem sozinhas — isso é a negligência salutar.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1QMhCXFn2N3YXz0-boBGgO6lU9wxtMzPr/preview" title="Colonização Espanhola e Inglesa" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1QMhCXFn2N3YXz0-boBGgO6lU9wxtMzPr/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-5">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-5" style="display:none;"></div>
-      </div>
-
-<div class="cartao" id="hist-topico-6">
-        <h2>🏛️ Organização na América Portuguesa</h2>
-        <p>Portugal precisou criar diferentes sistemas para administrar e ocupar as terras da colônia.</p>
-        <ul>
-          <li><strong>Capitanias Hereditárias</strong> (1534): o território foi dividido em faixas de terra, cada uma entregue a um <strong>donatário</strong>, que podia passar a terra para os filhos. A maioria fracassou por falta de recursos e ataques indígenas.</li>
-          <li><strong>Sesmarias:</strong> pedaços de terra distribuídos pelos donatários a outras pessoas.</li>
-          <li><strong>Governo-Geral</strong> (1548): sistema mais centralizado, criado porque as capitanias não estavam funcionando bem. <strong>Tomé de Sousa</strong> foi o primeiro governador-geral, fundando <strong>Salvador</strong> em 1549, primeira capital da colônia.</li>
-          <li><strong>Câmaras Municipais:</strong> cuidavam da administração local, formadas pelos "homens bons" — homens brancos, ricos, donos de terra.</li>
-          <li><strong>Jesuítas:</strong> padres da Companhia de Jesus, que catequizavam os povos indígenas e fundaram missões e escolas — mas também entravam em conflito com colonizadores ao defenderem indígenas contra a escravização.</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: era como dar uma vila inteira pra um só cuidar sozinho — sem ajuda, é quase impossível defender e organizar tudo. Por isso o Governo-Geral centralizou o controle.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1laE78WaDx5cjRzz8tfY4aHVXpN61DjGG/preview" title="Organizando a Colonia" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1laE78WaDx5cjRzz8tfY4aHVXpN61DjGG/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-6">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-6" style="display:none;"></div>
-      </div>
-
-      <div class="cartao" id="hist-topico-7">
-        <h2>💰 Economia, Sociedade e Trabalho no Mercado Colonial</h2>
-        <p>A economia colonial girava em torno de um só produto principal, sustentado por trabalho forçado.</p>
-        <ul>
-          <li><strong>Economia açucareira:</strong> engenhos com plantação de cana e fábrica de açúcar. Três características: <strong>latifúndio</strong> (propriedades gigantes), <strong>monocultura</strong> (quase só cana) e <strong>mão de obra escravizada</strong>.</li>
-          <li><strong>Pacto Colonial (Exclusivo Metropolitano):</strong> a colônia só podia comercializar com Portugal — parte do <strong>mercantilismo</strong> europeu.</li>
-          <li><strong>Trabalho indígena:</strong> primeira tentativa de escravização, mas enfrentou fugas, doenças e resistência (inclusive de jesuítas).</li>
-          <li><strong>Tráfico negreiro:</strong> pessoas escravizadas trazidas à força da África, tornando-se a base do trabalho na colônia — engenhos, minas e outras atividades.</li>
-          <li><strong>Sociedade em pirâmide:</strong> senhores de engenho no topo, homens livres pobres no meio, pessoas escravizadas na base.</li>
-          <li><strong>Mercado interno:</strong> produção voltada pra dentro da colônia, com destaque para a <strong>pecuária</strong> no interior do Nordeste (carne, couro, transporte).</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: enquanto o açúcar era a "missão principal" enviada para fora, o mercado interno era o que sustentava o dia a dia de quem vivia na colônia.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1CVb59Z_7GM10dlRDZ4YjE3gY2jvSy6Wr/preview" title="Brasil Colonia" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1CVb59Z_7GM10dlRDZ4YjE3gY2jvSy6Wr/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-7">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-7" style="display:none;"></div>
-      </div>
-
-      <div class="cartao" id="hist-topico-8">
-        <h2>🌍 Colonizações Europeias Comparadas: Cultura, Sociedade, Política e Territorialidades</h2>
-        <p>Diferentes países europeus colonizaram a América de formas bem diferentes.</p>
-        <ul>
-          <li><strong>Ibérica (Portugal e Espanha):</strong> colônias de exploração — extrair riquezas (ouro, prata, açúcar) e enviar para a metrópole, com forte controle político.</li>
-          <li><strong>Anglo-Saxônica (Inglaterra):</strong> no norte da América do Norte, colônias de povoamento com autogoverno (negligência salutar); no sul, plantations com mão de obra escravizada, mais parecidas com as ibéricas.</li>
-          <li><strong>Holandesa:</strong> focada no comércio, com companhias como a Companhia das Índias Ocidentais. No Brasil, ocupou parte do Nordeste (1630-1654), principalmente no governo de <strong>Maurício de Nassau</strong>.</li>
-          <li><strong>Francesa:</strong> focada no comércio de peles, com alianças com povos indígenas locais e menos colonos se estabelecendo permanentemente.</li>
-          <li><strong>Impactos sobre os povos originários:</strong> doenças, trabalho forçado e deslocamento de suas terras.</li>
-          <li><strong>Formas de resistência indígena:</strong> fugas, guerras e revoltas armadas, alianças estratégicas entre povos diferentes, e manutenção de línguas, crenças e costumes.</li>
-        </ul>
-        <div class="destaque">💡 Pense assim: mesmo enfrentando um inimigo muito mais armado, os povos indígenas usaram cada estratégia possível para proteger seu território e sua cultura.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1vul0iEAhyc54x5fb0LlTMfrX-rPHSOrt/preview" title="Colonizacao das Americas" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1vul0iEAhyc54x5fb0LlTMfrX-rPHSOrt/view" target="_blank">▶️ Assistir no Google Drive</a>
-        <button class="botao-praticar" data-praticar="hist-topico-8">✏️ Praticar</button>
-        <div class="pratica-inline" id="pratica-hist-topico-8" style="display:none;"></div>
-      </div>
+      <div class="aviso-prova">📌 Matéria da Prova Parcial (19/10). Ela também cai nas Provas Abrangentes do 3º trimestre (18/11 a 01/12).</div>
 
       <div class="cartao" id="hist-topico-9">
         <h2>🍬 Por que o Açúcar? Razões e Montagem da Produção</h2>
@@ -2394,7 +2197,23 @@ botoesPagina.forEach(botao => {
 
 // Botões do calendário de provas na página inicial também navegam
 document.querySelectorAll('.dia-prova[data-ir-para]').forEach(botao => {
-  botao.addEventListener('click', () => irParaPagina(botao.dataset.irPara));
+  botao.addEventListener('click', () => {
+    irParaPagina(botao.dataset.irPara);
+    if (botao.dataset.irTopico) irParaTopico(botao.dataset.irTopico);
+  });
+});
+
+// Leva direto a um tópico (ex.: tópico 9 de História para a prova do 3º trimestre)
+function irParaTopico(id) {
+  setTimeout(() => {
+    const alvo = document.getElementById(id);
+    if (alvo) alvo.scrollIntoView({behavior: 'smooth', block: 'start'});
+    const etapa = document.querySelector(`.linha-tempo-etapa[data-destino="${id}"]`);
+    if (etapa) etapa.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+  }, 80);
+}
+document.querySelectorAll('.aviso-prova[data-ir-topico]').forEach(b => {
+  b.addEventListener('click', () => irParaTopico(b.dataset.irTopico));
 });
 
 // Abas 1º Trimestre / 2º Trimestre na página inicial
@@ -3141,102 +2960,6 @@ window.PRATICA_GEOGRAFIA = {
   ]
 };
 window.PRATICA_HISTORIA = {
-  'hist-topico-1': [
-  {pergunta:"Em Atenas, na Grécia Antiga, as mulheres podiam votar ou participar das assembleias?",opcoes:["Sim, tinham os mesmos direitos que os homens","Só as mulheres ricas podiam votar","Só depois dos 30 anos","Não, sua vida era muito ligada à casa"],correta:3,explicacao:"Em Atenas, as mulheres não podiam votar nem participar das assembleias; sua vida era voltada para o lar."},
-  {pergunta:"Em que aspecto as mulheres espartanas tinham mais liberdade do que as atenienses?",opcoes:["Não existiam mulheres em Esparta","Podiam votar em todas as leis","Podiam ser reis","Podiam praticar exercícios físicos e tinham mais controle sobre bens"],correta:3,explicacao:"As mulheres espartanas podiam praticar exercícios físicos e tinham mais controle sobre bens e propriedades do que as atenienses."},
-  {pergunta:"Qual rainha do Egito Antigo é a mais famosa por ter governado com grande poder?",opcoes:["Isabel","Maria Antonieta","Cleópatra","Elizabeth"],correta:2,explicacao:"Cleópatra é a rainha egípcia mais famosa, conhecida por seu grande poder político."},
-  {pergunta:"Qual faraó egípcio mulher também governou como faraó?",opcoes:["Hatshepsut","Cleópatra apenas","Nenhuma mulher governou como faraó","Nefertari"],correta:0,explicacao:"Hatshepsut foi uma mulher que governou o Egito como faraó, uma posição normalmente ocupada por homens."},
-  {pergunta:"Para que servia, muitas vezes, o casamento das mulheres da nobreza na Idade Média?",opcoes:["Não existia casamento na nobreza","Fortalecer alianças políticas entre famílias","Apenas amor romântico","Só para festas"],correta:1,explicacao:"Casamentos entre nobres eram frequentemente usados para fortalecer alianças políticas entre famílias importantes."},
-  {pergunta:"Qual era, em geral, a rotina de uma mulher camponesa na Idade Média?",opcoes:["Só descansar o dia todo","Estudar em universidades","Trabalhar no campo, cuidar da casa e dos filhos, e fazer tecelagem","Comandar exércitos"],correta:2,explicacao:"As camponesas medievais trabalhavam duro no campo, cuidavam da casa e dos filhos, além de atividades como tecelagem."},
-  {pergunta:"O que podia dar a algumas mulheres medievais mais autonomia do que o casamento?",opcoes:["Ser escrava","Entrar em mosteiros e conventos","Nada dava mais autonomia","Trabalhar nas minas"],correta:1,explicacao:"Dentro dos conventos, algumas mulheres tinham acesso a estudos, leitura e posições de liderança, como abadessa."},
-  {pergunta:"O que era uma abadessa?",opcoes:["Uma mulher que administrava um convento","Uma rainha guerreira","Uma camponesa comum","Um título masculino"],correta:0,explicacao:"A abadessa era a mulher responsável por administrar um mosteiro ou convento, uma posição de liderança."},
-  {pergunta:"Nos conventos medievais, o que algumas mulheres podiam ter acesso, diferente da vida fora deles?",opcoes:["Estudos e leitura","Nenhum privilégio","Apenas casamento","Apenas trabalho pesado"],correta:0,explicacao:"Dentro dos conventos, algumas mulheres tinham acesso a estudos e leitura, algo raro fora daquele ambiente."},
-  {pergunta:"O papel social das mulheres na Antiguidade e Idade Média era o mesmo em todos os lugares?",opcoes:["Sim, sempre idêntico","Não, variava muito de acordo com o lugar, a época e a classe social","Só variava entre homens","Não existiam diferenças relevantes"],correta:1,explicacao:"O papel das mulheres variava bastante dependendo do lugar (Atenas x Esparta x Egito), da época e da classe social (nobreza x camponesas)."}
-  ],
-  'hist-topico-2': [
-  {pergunta:"Em que séculos aconteceu principalmente o Renascimento?",opcoes:["Séculos I a III","Séculos XIV a XVI","Séculos VI a VIII","Séculos XVIII a XX"],correta:1,explicacao:"O Renascimento aconteceu principalmente entre os séculos XIV e XVI, na Europa."},
-  {pergunta:"Em qual país o Renascimento teve seu maior destaque?",opcoes:["Rússia","Japão","Egito","Itália"],correta:3,explicacao:"O Renascimento teve seu maior destaque na Itália, especialmente em cidades como Florença."},
-  {pergunta:"O que a palavra 'Renascimento' significa?",opcoes:["Construir castelos","Viajar longe","Nascer de novo","Morrer para sempre"],correta:2,explicacao:"'Renascimento' significa 'nascer de novo', referindo-se ao renascimento das ideias da Antiguidade Clássica."},
-  {pergunta:"O que caracterizava a Idade Média, período anterior ao Renascimento, quanto às explicações do mundo?",opcoes:["Quase tudo era explicado pela religião","Não existiam explicações","Tudo era explicado pela ciência","Só a matemática explicava tudo"],correta:0,explicacao:"Na Idade Média, quase tudo era explicado pela religião; no Renascimento, cresceu o interesse pela ciência e pela arte."},
-  {pergunta:"O que é a perspectiva, na arte renascentista?",opcoes:["Uma técnica de desenho que dá sensação de profundidade","Uma cor específica","Um tipo de tinta","Um tipo de pincel"],correta:0,explicacao:"A perspectiva é uma técnica que dá a sensação de profundidade nas pinturas, como se fosse possível entrar na imagem."},
-  {pergunta:"O que Leonardo Fibonacci trouxe para a Europa?",opcoes:["Os números romanos","Um novo idioma","A pólvora","O sistema de números que usamos hoje (0 a 9)"],correta:3,explicacao:"Fibonacci trouxe para a Europa o sistema de numeração indo-arábico (0 a 9), substituindo os números romanos."},
-  {pergunta:"Como funciona a Sequência de Fibonacci?",opcoes:["Cada número dobra o anterior","Cada número é a soma dos dois anteriores","Os números são sempre pares","Cada número é o dobro do primeiro"],correta:1,explicacao:"Na Sequência de Fibonacci, cada número novo é a soma dos dois números anteriores: 0, 1, 1, 2, 3, 5, 8, 13..."},
-  {pergunta:"Onde a Sequência de Fibonacci pode ser observada na natureza?",opcoes:["Apenas no céu","Apenas em rochas","Em conchas e folhas de plantas","Em nenhum lugar da natureza"],correta:2,explicacao:"A Sequência de Fibonacci aparece em padrões naturais, como conchas e folhas de plantas."},
-  {pergunta:"Antes do Renascimento, quais números eram usados na Europa, mais difíceis de calcular?",opcoes:["Números romanos","Números binários","Números arábicos","Números egípcios"],correta:0,explicacao:"Antes do sistema trazido por Fibonacci, a Europa usava os números romanos, mais difíceis para cálculos."},
-  {pergunta:"Artistas do Renascimento usaram a Sequência de Fibonacci para quê?",opcoes:["Fazer mapas de navegação","Criar proporções bonitas em pinturas e construções","Contar exércitos","Calcular impostos"],correta:1,explicacao:"A Sequência de Fibonacci foi usada por artistas renascentistas para criar proporções harmoniosas em suas obras."}
-  ],
-  'hist-topico-3': [
-  {pergunta:"Por que os europeus precisaram buscar um novo caminho marítimo até o Oriente?",opcoes:["Porque o Oriente não existia mais","Porque cidades italianas e o Império Turco-Otomano cobravam taxas altas nas rotas terrestres","Porque queriam só passear","Porque não existiam rotas terrestres"],correta:1,explicacao:"As rotas terrestres controladas por essas potências tinham taxas muito altas, motivando a busca por um caminho marítimo."},
-  {pergunta:"Quais eram os dois instrumentos de navegação mais importantes da época?",opcoes:["Relógio e vela","Astrolábio e bússola","Telescópio e mapa","GPS e rádio"],correta:1,explicacao:"O astrolábio calculava a posição usando as estrelas, e a bússola sempre apontava a mesma direção."},
-  {pergunta:"Qual país foi o primeiro a se aventurar nas Grandes Navegações?",opcoes:["Portugal","Espanha","França","Holanda"],correta:0,explicacao:"Portugal foi o pioneiro nas Grandes Navegações, incentivado pelo Infante Dom Henrique."},
-  {pergunta:"Quem passou pelo Cabo Bojador em 1434?",opcoes:["Bartolomeu Dias","Vasco da Gama","Gil Eanes","Cristóvão Colombo"],correta:2,explicacao:"Gil Eanes passou pelo Cabo Bojador em 1434, um marco importante do Périplo Africano."},
-  {pergunta:"Quem chegou à Índia em 1498?",opcoes:["Fernão de Magalhães","Pedro Álvares Cabral","Américo Vespúcio","Vasco da Gama"],correta:3,explicacao:"Vasco da Gama chegou à Índia em 1498, completando o Périplo Africano."},
-  {pergunta:"Quem chegou ao litoral do que viria a ser o Brasil, em 1500?",opcoes:["Pedro Álvares Cabral","Fernão de Magalhães","Cristóvão Colombo","Américo Vespúcio"],correta:0,explicacao:"Pedro Álvares Cabral chegou ao litoral brasileiro em 1500."},
-  {pergunta:"Cristóvão Colombo, financiado pela Espanha, chegou onde em 1492, pensando ter chegado às Índias?",opcoes:["Austrália","Japão","Caribe","China"],correta:2,explicacao:"Colombo chegou ao Caribe em 1492, pensando ter chegado às Índias, por isso chamou os povos locais de 'índios'."},
-  {pergunta:"Por que o continente foi batizado de 'América'?",opcoes:["Por causa de Colombo","Não tem explicação","Por causa de um rei chamado América","Por causa de Américo Vespúcio, que provou ser um continente novo"],correta:3,explicacao:"Américo Vespúcio ajudou a provar que as terras encontradas eram um continente novo, e por isso foi batizado com seu nome."},
-  {pergunta:"O que a viagem de Fernão de Magalhães comprovou?",opcoes:["Que não existia oceano Pacífico","Que a Terra é esférica","Que a Terra é plana","Que a América não existia"],correta:1,explicacao:"A circum-navegação comandada por Magalhães comprovou que a Terra é esférica, ao dar a volta completa no globo."},
-  {pergunta:"O que o Tratado de Tordesilhas (1494) fez?",opcoes:["Criou uma linha dividindo as terras entre Portugal e Espanha","Proibiu as navegações","Uniu Portugal e Espanha em um só país","Aboliu a escravidão"],correta:0,explicacao:"O Tratado de Tordesilhas criou uma linha imaginária: a leste seria de Portugal, a oeste seria da Espanha."}
-  ],
-  'hist-topico-4': [
-  {pergunta:"O que eram os griots nas sociedades africanas?",opcoes:["Reis guerreiros","Pessoas que contavam e cantavam a história do povo (história oral)","Um tipo de moeda","Um tipo de animal"],correta:1,explicacao:"Os griots eram responsáveis por guardar e transmitir a história oral do seu povo, de geração em geração."},
-  {pergunta:"O que é um clã, nas sociedades africanas?",opcoes:["Um grupo de pessoas que reconhecem um ancestral em comum","Uma cidade grande","Um exército","Um tipo de moeda"],correta:0,explicacao:"Um clã é um grupo de pessoas que reconhecem um mesmo ancestral em comum."},
-  {pergunta:"Em sistemas matrilineares, o poder político geralmente ficava com quem?",opcoes:["Sempre com as mulheres","Com estrangeiros","Não existia poder político","Com os homens, na maioria das vezes"],correta:3,explicacao:"Mesmo em sistemas matrilineares (herança pela linha da mãe), o poder político continuava, na maioria das vezes, com os homens."},
-  {pergunta:"Quais eram os dois tipos de comércio africano mencionados?",opcoes:["Só armas","Produtos de subsistência e bens de prestígio","Só comida","Só ouro e prata"],correta:1,explicacao:"Existiam produtos de subsistência (para uso da comunidade) e bens de prestígio (ouro, cobre, sal, vendidos para fora)."},
-  {pergunta:"Quem organizava caravanas de camelos para atravessar o deserto do Saara?",opcoes:["Os berberes","Os romanos","Os astecas","Os vikings"],correta:0,explicacao:"Os berberes organizavam caravanas de camelos, conectando a África ao Mar Mediterrâneo."},
-  {pergunta:"Qual reino africano teve o famoso rei Mansa Musa, um dos homens mais ricos da história?",opcoes:["Reino de Gana","Reino de Songhai","Reino de Mali","Reino do Benim"],correta:2,explicacao:"Mansa Musa foi um rei do Reino de Mali, conhecido como um dos homens mais ricos da história."},
-  {pergunta:"Qual reino africano ficou famoso por sua arte em bronze?",opcoes:["Reino de Gana","Reino de Songhai","Reino do Benim","Reino de Mali"],correta:2,explicacao:"O Reino do Benim, na atual Nigéria, ficou famoso por sua arte em bronze."},
-  {pergunta:"O que aconteceu em 1897 com a cidade do Benim?",opcoes:["Foi destruída por um terremoto","Foi invadida pelo Império Britânico, que levou obras de arte para a Inglaterra","Se tornou independente","Nada aconteceu"],correta:1,explicacao:"Em 1897, o Império Britânico invadiu a cidade do Benim e levou várias obras de arte para a Inglaterra."},
-  {pergunta:"O que é o eurocentrismo?",opcoes:["Uma língua da África","Um tipo de comércio africano","Um reino africano","A visão de que a cultura europeia seria superior ou a única referência válida"],correta:3,explicacao:"Eurocentrismo é a visão distorcida de que a cultura europeia seria superior às outras, usada para justificar a ideia errada de que a África seria 'um lugar só'."},
-  {pergunta:"A ideia de que 'a África é um lugar só' está correta?",opcoes:["Não, é uma ideia errada, fruto do eurocentrismo","Não se sabe","Só é verdade para o norte da África","Sim, totalmente correta"],correta:0,explicacao:"A ideia de que a África seria 'um lugar só' está errada; o continente tinha centenas de povos diferentes."}
-  ],
-  'hist-topico-5': [
-  {pergunta:"Quais eram os três grandes povos organizados da América antes da chegada dos europeus, mencionados no texto?",opcoes:["Astecas, maias e incas","Romanos, gregos e egípcios","Zulus, bantos e maias","Vikings, celtas e romanos"],correta:0,explicacao:"Astecas (México), maias (sul do México e América Central) e incas (região andina) eram povos grandes e organizados da América."},
-  {pergunta:"Quem derrotou o Império Asteca em 1521?",opcoes:["Hernán Cortés","Francisco Pizarro","Cristóvão Colombo","Fernão de Magalhães"],correta:0,explicacao:"Hernán Cortés derrotou o Império Asteca em 1521, aliando-se a povos inimigos dos astecas."},
-  {pergunta:"Quem dominou o Império Inca em 1533?",opcoes:["Hernán Cortés","Vasco da Gama","Francisco Pizarro","Pedro Álvares Cabral"],correta:2,explicacao:"Francisco Pizarro dominou o Império Inca em 1533, de forma muito violenta."},
-  {pergunta:"Como a Espanha organizou suas colônias na América?",opcoes:["Em um único império sem divisões","Em treze colônias apenas","Em cidades-estado","Em vice-reinos e Capitanias Gerais"],correta:3,explicacao:"A Espanha organizou suas colônias em vice-reinos (áreas grandes) e Capitanias Gerais (áreas menores)."},
-  {pergunta:"O que era a mita, no sistema de trabalho espanhol?",opcoes:["Uma festa religiosa","Um tipo de moeda","Sorteio para trabalho forçado indígena nas minas","Um tipo de navio"],correta:2,explicacao:"A mita era um sistema de sorteio para trabalho forçado indígena nas minas, com pagamento muito baixo."},
-  {pergunta:"O que trouxe o navio Mayflower para a América do Norte, em 1620?",opcoes:["Escravos africanos","Os peregrinos, ingleses em busca de liberdade religiosa","Soldados espanhóis","Comerciantes holandeses"],correta:1,explicacao:"O Mayflower trouxe os peregrinos, ingleses majoritariamente puritanos que buscavam liberdade religiosa."},
-  {pergunta:"O que foi a negligência salutar praticada pela Inglaterra?",opcoes:["Controlar rigidamente todas as colônias","Proibir qualquer governo local","Abandonar totalmente as colônias","Deixar as colônias se organizarem com pouca interferência"],correta:3,explicacao:"A negligência salutar foi a prática inglesa de deixar suas colônias se organizarem com pouca interferência da coroa."},
-  {pergunta:"Qual era a principal diferença entre a colonização espanhola e a inglesa quanto a riquezas minerais?",opcoes:["Só a Inglaterra encontrou ouro","A Espanha encontrou muito ouro e prata; a Inglaterra não encontrou riquezas minerais importantes","Nenhuma das duas encontrou ouro","As duas encontraram a mesma quantidade"],correta:1,explicacao:"A Espanha encontrou muito ouro e prata na América; a Inglaterra não encontrou riquezas minerais importantes em sua região."},
-  {pergunta:"O que foi a Trilha das Lágrimas?",opcoes:["Um deslocamento forçado de povos indígenas, no século XIX","Uma guerra entre europeus","Uma rota comercial","Um tipo de dança indígena"],correta:0,explicacao:"A Trilha das Lágrimas foi um deslocamento forçado sofrido por povos indígenas no século XIX."},
-  {pergunta:"O que era o self-government nas Treze Colônias inglesas?",opcoes:["Governo controlado pela Espanha","Autogoverno, com pouca interferência da coroa","Governo direto do rei da Inglaterra","Um sistema sem nenhum governo"],correta:1,explicacao:"O self-government era o autogoverno das Treze Colônias, resultado da negligência salutar inglesa."}
-  ],
-  'hist-topico-6': [
-  {pergunta:"O que eram as Capitanias Hereditárias?",opcoes:["Um exército português","Uma moeda colonial","Faixas de terra entregues a donatários, que podiam passar aos filhos","Um tipo de imposto"],correta:2,explicacao:"As Capitanias Hereditárias eram faixas de terra entregues a donatários de confiança do rei, com direito de passar aos filhos."},
-  {pergunta:"Por que a maioria das Capitanias Hereditárias fracassou?",opcoes:["Porque não existiam donatários","Porque o rei proibiu logo depois","Porque não havia terra suficiente","Falta de recursos e ataques indígenas"],correta:3,explicacao:"A maioria das capitanias fracassou por falta de dinheiro, ataques indígenas e terras grandes demais para poucos administrarem."},
-  {pergunta:"O que eram as sesmarias?",opcoes:["Um tipo de navio","Pedaços de terra distribuídos pelos donatários a outras pessoas","Um tipo de imposto sobre o açúcar","Um cargo do governo"],correta:1,explicacao:"Sesmarias eram pedaços de terra que os donatários distribuíam para outras pessoas povoarem."},
-  {pergunta:"Por que o Governo-Geral foi criado em 1548?",opcoes:["Porque não existiam mais donatários","Porque as capitanias não estavam funcionando bem","Porque a Espanha exigiu","Porque o rei queria abandonar a colônia"],correta:1,explicacao:"O Governo-Geral foi criado para centralizar a administração, já que o sistema de capitanias não estava dando certo."},
-  {pergunta:"Quem foi o primeiro governador-geral do Brasil?",opcoes:["Mem de Sá","Duarte Coelho","Martim Afonso de Sousa","Tomé de Sousa"],correta:3,explicacao:"Tomé de Sousa foi o primeiro governador-geral, chegando em 1549."},
-  {pergunta:"Qual cidade foi fundada por Tomé de Sousa e se tornou a primeira capital da colônia?",opcoes:["Salvador","São Paulo","Recife","Rio de Janeiro"],correta:0,explicacao:"Tomé de Sousa fundou Salvador em 1549, que se tornou a primeira capital da colônia."},
-  {pergunta:"Quem formava as Câmaras Municipais?",opcoes:["Apenas os padres","Os 'homens bons' — homens brancos, ricos, donos de terra","Todos os moradores da cidade, sem exceção","Apenas os escravizados"],correta:1,explicacao:"As Câmaras Municipais eram formadas pelos 'homens bons', homens brancos, ricos e donos de terra."},
-  {pergunta:"Qual era a missão dos jesuítas na colônia?",opcoes:["Administrar as capitanias","Comandar exércitos","Catequizar os povos indígenas","Cobrar impostos"],correta:2,explicacao:"Os jesuítas, padres da Companhia de Jesus, tinham a missão de catequizar os povos indígenas."},
-  {pergunta:"Por que os jesuítas às vezes entravam em conflito com os colonizadores?",opcoes:["Porque defendiam os indígenas contra a escravização","Porque não acreditavam em Deus","Porque eram contra a catequização","Porque queriam mais terras para si"],correta:0,explicacao:"Os jesuítas muitas vezes defendiam os indígenas contra a escravização, entrando em conflito com colonizadores."},
-  {pergunta:"O que as Capitanias Hereditárias obrigavam o donatário a fazer?",opcoes:["Povoar a terra, distribuir sesmarias, cobrar impostos e defender a região","Vender a terra rapidamente","Nada, era só um título honorário","Apenas visitar a terra uma vez por ano"],correta:0,explicacao:"O donatário tinha obrigações como povoar a terra, distribuir sesmarias, cobrar impostos e defender a capitania."}
-  ],
-  'hist-topico-7': [
-  {pergunta:"Quais são as três características marcantes da economia açucareira?",opcoes:["Pequenas propriedades, diversidade de produtos e trabalho livre","Latifúndio, monocultura e mão de obra escravizada","Indústria, comércio e serviços","Pesca, caça e coleta"],correta:1,explicacao:"A economia açucareira se caracterizava por latifúndio, monocultura e mão de obra escravizada."},
-  {pergunta:"O que era o Pacto Colonial (Exclusivo Metropolitano)?",opcoes:["A regra de que a colônia só podia comercializar com Portugal","Um tratado de paz entre indígenas e europeus","Um acordo comercial entre colônias","Uma lei que libertava os escravizados"],correta:0,explicacao:"O Pacto Colonial determinava que a colônia só podia vender e comprar produtos de Portugal."},
-  {pergunta:"A que ideia econômica mais ampla o Pacto Colonial pertence?",opcoes:["Socialismo","Mercantilismo","Feudalismo","Capitalismo industrial"],correta:1,explicacao:"O Pacto Colonial fazia parte do mercantilismo, sistema econômico comum na Europa da época."},
-  {pergunta:"Por que a escravização indígena enfrentou dificuldades para os portugueses?",opcoes:["Não havia necessidade de mão de obra","Fugas mais fáceis, doenças e resistência, inclusive de jesuítas","Os indígenas eram muito poucos","Os indígenas não existiam mais"],correta:1,explicacao:"A escravização indígena enfrentou fugas facilitadas pelo conhecimento do território, doenças e resistência, inclusive de jesuítas."},
-  {pergunta:"O que era o tráfico negreiro?",opcoes:["Uma rota apenas de produtos agrícolas","Um tratado entre países europeus","Um tipo de comércio de especiarias","O comércio forçado de pessoas escravizadas vindas da África"],correta:3,explicacao:"O tráfico negreiro era o comércio violento e desumano de pessoas escravizadas trazidas à força da África."},
-  {pergunta:"Quem estava no topo da pirâmide social colonial?",opcoes:["Os padres apenas","Os escravizados","Os senhores de engenho e grandes proprietários de terra","Os indígenas"],correta:2,explicacao:"No topo da pirâmide social estavam os senhores de engenho e grandes proprietários de terra."},
-  {pergunta:"Quem estava na base da pirâmide social colonial?",opcoes:["O governador-geral","Os senhores de engenho","Os donatários","As pessoas escravizadas"],correta:3,explicacao:"As pessoas escravizadas estavam na base da pirâmide social, sustentando com seu trabalho a riqueza da colônia."},
-  {pergunta:"O que era o mercado interno da colônia?",opcoes:["Produção voltada para abastecer a própria colônia","Um mercado só de escravizados","Apenas o comércio de açúcar para fora","Um tipo de imposto"],correta:0,explicacao:"O mercado interno produzia alimentos e outros produtos para abastecer a própria colônia, e não para exportação."},
-  {pergunta:"Qual atividade foi muito importante no mercado interno, principalmente no interior do Nordeste?",opcoes:["Pesca de baleias","Produção de vidro","Pecuária","Mineração de diamantes"],correta:2,explicacao:"A pecuária (criação de gado) foi muito importante no mercado interno, fornecendo carne, couro e transporte."},
-  {pergunta:"Quem eram os homens livres pobres na sociedade colonial?",opcoes:["Pessoas no meio da pirâmide social, sem grandes oportunidades","Os governadores-gerais","Os donos dos engenhos","Os jesuítas apenas"],correta:0,explicacao:"Os homens livres pobres estavam no meio da pirâmide social, trabalhando em pequenas produções, sem muitas oportunidades."}
-  ],
-  'hist-topico-8': [
-  {pergunta:"Como eram, de modo geral, as colônias ibéricas (Portugal e Espanha)?",opcoes:["Colônias de exploração, focadas em extrair riquezas","Colônias focadas só em comércio de peles","Colônias sem população europeia","Colônias sem nenhum controle da metrópole"],correta:0,explicacao:"As colônias ibéricas eram, de modo geral, colônias de exploração, com o objetivo de extrair riquezas para a metrópole."},
-  {pergunta:"No norte da América do Norte, como eram as colônias inglesas?",opcoes:["Colônias de exploração, iguais às espanholas","Colônias de povoamento, com autogoverno","Colônias sem nenhum colono europeu","Colônias controladas pela França"],correta:1,explicacao:"No norte, as colônias inglesas eram de povoamento, com colonos vindos para morar e com autogoverno."},
-  {pergunta:"No sul da América do Norte, as colônias inglesas se pareciam mais com quais colônias?",opcoes:["Nenhuma outra colônia","As ibéricas, baseadas em plantations com escravidão","As holandesas, baseadas só em comércio","As francesas, baseadas em peles"],correta:1,explicacao:"No sul, as colônias inglesas eram mais parecidas com as ibéricas: plantations com mão de obra escravizada."},
-  {pergunta:"Qual era o foco principal da colonização holandesa?",opcoes:["Comércio","Agricultura de subsistência","Povoamento religioso","Mineração de prata"],correta:0,explicacao:"A colonização holandesa era focada principalmente no comércio, através de companhias comerciais."},
-  {pergunta:"Qual companhia os holandeses criaram para administrar seus negócios coloniais?",opcoes:["Companhia Real Britânica","Companhia do Comércio Livre","Companhia das Índias Orientais apenas","Companhia das Índias Ocidentais"],correta:3,explicacao:"A Companhia das Índias Ocidentais foi criada pelos holandeses para administrar seus negócios coloniais."},
-  {pergunta:"Durante o governo de qual conde os holandeses ocuparam parte do Nordeste do Brasil?",opcoes:["Duque de Caxias","Conde de Linhares","Maurício de Nassau","Marquês de Pombal"],correta:2,explicacao:"Maurício de Nassau governou a parte do Nordeste ocupada pelos holandeses, entre 1630 e 1654."},
-  {pergunta:"No que a colonização francesa era principalmente focada?",opcoes:["Mineração de ouro","Comércio de especiarias asiáticas","Comércio de peles de animais","Plantação de açúcar"],correta:2,explicacao:"A França colonizou principalmente áreas focadas no comércio de peles, como as de castores."},
-  {pergunta:"Por que os franceses costumavam fazer alianças com povos indígenas locais?",opcoes:["Porque precisavam deles para o comércio de peles e conhecer o território","Porque queriam escravizá-los rapidamente","Porque eram obrigados por lei europeia","Porque não tinham nenhum interesse na região"],correta:0,explicacao:"Os franceses faziam alianças com povos indígenas porque precisavam deles para o comércio de peles."},
-  {pergunta:"Quais foram alguns dos impactos da colonização europeia sobre os povos originários?",opcoes:["Apenas benefícios econômicos","Doenças, trabalho forçado e deslocamento de suas terras","Nenhum impacto negativo","Só mudanças na alimentação"],correta:1,explicacao:"Os povos indígenas sofreram doenças trazidas pelos europeus, trabalho forçado e deslocamento de suas terras originais."},
-  {pergunta:"Quais foram algumas formas de resistência dos povos indígenas contra a colonização?",opcoes:["Apenas pedidos formais aos reis europeus","Aceitação total, sem nenhuma reação","Migração em massa para a Europa","Fugas, guerras, alianças estratégicas e manutenção da cultura"],correta:3,explicacao:"Os povos indígenas resistiram através de fugas, guerras e revoltas, alianças estratégicas, e manutenção de línguas e costumes."}
-  ],
   'hist-topico-9': [
   {pergunta:"Por que a Coroa portuguesa apostou no açúcar para colonizar o Brasil?",opcoes:["Não encontrou ouro nem prata no litoral e precisava de uma atividade lucrativa", "Porque os indígenas já vendiam açúcar para a Europa", "Porque o açúcar era barato e fácil de produzir", "Porque a Igreja obrigou Portugal a plantar cana"],correta:0,explicacao:"Sem ouro ou prata no litoral, Portugal precisou de uma atividade lucrativa para ocupar a colônia, e a escolhida foi a cana-de-açúcar."},
   {pergunta:"Por que valia a pena produzir açúcar mesmo com o custo alto?",opcoes:["Porque o açúcar era distribuído de graça", "Porque a produção era muito barata", "Era um produto de luxo, com grande procura e alto preço de revenda na Europa", "Porque não havia concorrência de outros doces"],correta:2,explicacao:"A demanda europeia era grande e o preço de revenda era alto, o que compensava o custo da produção."},
