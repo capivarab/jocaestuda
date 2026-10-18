@@ -553,6 +553,15 @@
     opacity: 0.75;
   }
 
+
+  /* Vídeo só carrega ao tocar (evita travar o Safari do iPhone com muitos players) */
+  .video-carregar {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    border: none; cursor: pointer;
+    background: var(--verde); color: #fff;
+    font-size: 1.3rem; font-weight: 700; font-family: inherit;
+  }
+  .video-wrapper.carregado .video-carregar { display: none; }
   .video-assistir {
     display: inline-flex;
     align-items: center;
@@ -1095,7 +1104,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: a letra é uma "caixinha" que guarda um número escondido.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/j3Kx9firjV0" title="Expressões Algébricas e Valor Numérico" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/j3Kx9firjV0" title="Expressões Algébricas e Valor Numérico" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=j3Kx9firjV0" target="_blank">▶️ Assistir no YouTube</a>
       </div>
@@ -1109,7 +1119,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: o que você faz de um lado da balança, tem que fazer do outro lado também, pra ela continuar equilibrada.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/TLkqE_CWY2E" title="Equação do 1º Grau" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/TLkqE_CWY2E" title="Equação do 1º Grau" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=TLkqE_CWY2E" target="_blank">▶️ Assistir no YouTube</a>
       </div>
@@ -1124,7 +1135,8 @@
         </ul>
         <div class="destaque">💡 Cuidado: se multiplicar ou dividir por número negativo, o sinal da inequação inverte!</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/fAKwRRptIJo" title="Inequação do 1º Grau" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/fAKwRRptIJo" title="Inequação do 1º Grau" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=fAKwRRptIJo" target="_blank">▶️ Assistir no YouTube</a>
       </div>
@@ -1138,7 +1150,8 @@
           <li><strong>Ângulo externo</strong> = o ângulo de fora do triângulo, ao lado do ângulo interno.</li>
         </ul>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/0F77T9jsBfs" title="Classificação dos Triângulos" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/0F77T9jsBfs" title="Classificação dos Triângulos" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=0F77T9jsBfs" target="_blank">▶️ Assistir no YouTube</a>
       </div>
@@ -1153,7 +1166,8 @@
         </ul>
         <div class="destaque">💡 Exemplo: um pentágono (5 lados): (5−2) × 180° = 3 × 180° = 540°.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/3ihvVifG258" title="Ângulos no Triângulo e Polígonos" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/3ihvVifG258" title="Ângulos no Triângulo e Polígonos" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=3ihvVifG258" target="_blank">▶️ Assistir no YouTube</a>
       </div>
@@ -1231,7 +1245,8 @@
           <li><strong>Pronome:</strong> substitui o nome (ele, ela, isso). Ex: "Joaquim estudou. <strong>Ele</strong> é esforçado."</li>
         </ul>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/GM0XRcaW00c" title="Classes Gramaticais" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/GM0XRcaW00c" title="Classes Gramaticais" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=GM0XRcaW00c" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="port-topico-1">✏️ Praticar</button>
@@ -1249,7 +1264,8 @@
         </ul>
         <div class="destaque">💡 Verbo significativo = ação de verdade acontecendo. Verbo de ligação = só mostra uma característica, sem ação.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1irNlnhkCiPdXfofg70qp9ePcAx7PvHwS/preview" title="Verbos - Flexao, Formas Nominais e Predicacao" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1irNlnhkCiPdXfofg70qp9ePcAx7PvHwS/preview" title="Verbos - Flexao, Formas Nominais e Predicacao" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1irNlnhkCiPdXfofg70qp9ePcAx7PvHwS/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="port-topico-2">✏️ Praticar</button>
@@ -1271,7 +1287,8 @@
           <li><strong>Predicado nominal:</strong> o centro é uma característica, ligada por um verbo de ligação. Ex: "O cão <strong>está cansado</strong>."</li>
         </ul>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/vzMPEHFUGSo" title="O que é Sujeito e Predicado" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/vzMPEHFUGSo" title="O que é Sujeito e Predicado" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=vzMPEHFUGSo" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="port-topico-3">✏️ Praticar</button>
@@ -1287,7 +1304,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: coesão é a "cola" que junta as frases de um texto.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/DYCcyb5VAu4" title="O que é Coesão Textual" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/DYCcyb5VAu4" title="O que é Coesão Textual" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=DYCcyb5VAu4" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="port-topico-4">✏️ Praticar</button>
@@ -1368,7 +1386,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: é como organizar uma gaveta de roupas — primeiro por tipo (camisas, calças), depois por cor, depois por tamanho.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/El2Wq79fIZI" title="Taxonomia: Como classificar os seres vivos" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/El2Wq79fIZI" title="Taxonomia: Como classificar os seres vivos" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=El2Wq79fIZI" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="cien-topico-1">✏️ Praticar</button>
@@ -1387,7 +1406,8 @@
         </ul>
         <div class="destaque">💡 Algumas doenças vêm de cada reino: bactérias causam infecções, fungos causam micoses, protozoários causam malária.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/3c2GXWOnFEg" title="Os Cinco Reinos dos Seres Vivos" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/3c2GXWOnFEg" title="Os Cinco Reinos dos Seres Vivos" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=3c2GXWOnFEg" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="cien-topico-2">✏️ Praticar</button>
@@ -1408,7 +1428,8 @@
           <li><strong>Artrópodes:</strong> insetos, aranhas, caranguejos. Têm pernas articuladas.</li>
         </ul>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/BnMtrLlPZ_s" title="Poríferos, Cnidários e Platelmintos" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/BnMtrLlPZ_s" title="Poríferos, Cnidários e Platelmintos" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=BnMtrLlPZ_s" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="cien-topico-3">✏️ Praticar</button>
@@ -1428,7 +1449,8 @@
         </ul>
         <div class="destaque">💡 Prevenção: lavar bem as mãos e os alimentos, cozinhar bem a carne, tratar a água e usar sapatos protege contra esses vermes.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/preview" title="Vermes Parasitas" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/preview" title="Vermes Parasitas" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="cien-topico-4">✏️ Praticar</button>
@@ -1446,7 +1468,8 @@
         </ul>
         <div class="destaque">💡 Peixe vive só na água. Anfíbio vive na água E na terra, em fases diferentes da vida.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/preview" title="Peixes e Anfíbios" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/preview" title="Peixes e Anfíbios" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="cien-topico-5">✏️ Praticar</button>
@@ -1468,7 +1491,8 @@
         </ul>
         <div class="destaque">💡 Réptil tem escama seca. Ave tem pena. Mamífero tem pelo e alimenta o filhote com leite.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1SZjwvuBA8Vl1aOKTNG9wapzP-ypcg_IL/preview" title="Vertebrados II — Répteis, Aves e Mamíferos" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1SZjwvuBA8Vl1aOKTNG9wapzP-ypcg_IL/preview" title="Vertebrados II — Répteis, Aves e Mamíferos" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1SZjwvuBA8Vl1aOKTNG9wapzP-ypcg_IL/view" target="_blank">▶️ Assistir no Google Drive</a>
 
@@ -1490,7 +1514,8 @@
         </ul>
         <div class="destaque">💡 Amazônia é quente e úmida. Mata Atlântica fica no litoral e foi desmatada. Caatinga é seca, no Nordeste.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/preview" title="Biomas Brasileiros - Parte 1" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/preview" title="Biomas Brasileiros - Parte 1" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="cien-topico-8">✏️ Praticar</button>
@@ -1507,7 +1532,8 @@
         </ul>
         <div class="destaque">💡 Cerrado tem seca e chuva bem separadas. Pantanal é alagado. Pampa é feita de campos, no Sul.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/preview" title="Biomas Brasileiros - Parte 2" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/preview" title="Biomas Brasileiros - Parte 2" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="cien-topico-9">✏️ Praticar</button>
@@ -1570,7 +1596,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: antes de existir a roupa que você usa, existiu uma plantação de algodão. A agropecuária é o primeiro passo de muita coisa que a gente usa.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/RuzwM0e1NhU" title="A evolução da agricultura" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/RuzwM0e1NhU" title="A evolução da agricultura" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=RuzwM0e1NhU" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="geo-topico-1">✏️ Praticar</button>
@@ -1601,7 +1628,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: quanto mais tecnologia uma região tem, menos terra ela precisa para produzir muito — por isso o Centro-Sul produz tanto em áreas menores.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/87yYvlP3mps" title="Pecuária e agropecuária no Brasil" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/87yYvlP3mps" title="Pecuária e agropecuária no Brasil" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=87yYvlP3mps" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="geo-topico-3">✏️ Praticar</button>
@@ -1621,7 +1649,8 @@
         <div class="destaque">💡 Dica para lembrar: <strong>LATI</strong>fúndio é <strong>LA</strong>rgo e grande. <strong>MINI</strong>fúndio é <strong>MIN</strong>ininho!</div>
         <div class="gramatica-box">📌 <strong>Reforma agrária:</strong> é uma política para dividir melhor as terras, dando terra para quem não tem. O Incra é o órgão do governo que cuida disso.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/87yYvlP3mps" title="Latifúndios e Minifúndios" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/87yYvlP3mps" title="Latifúndios e Minifúndios" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=87yYvlP3mps" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="geo-topico-4">✏️ Praticar</button>
@@ -1640,7 +1669,8 @@
         </ul>
         <div class="destaque">💡 Extrativismo sustentável = tirar da natureza sem destruir, para que ela continue dando recursos por muito tempo.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/hFbtP6KUNHI" title="O que é Extrativismo?" allowfullscreen></iframe>
+          <iframe data-src="https://www.youtube.com/embed/hFbtP6KUNHI" title="O que é Extrativismo?" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://www.youtube.com/watch?v=hFbtP6KUNHI" target="_blank">▶️ Assistir no YouTube</a>
         <button class="botao-praticar" data-praticar="geo-topico-5">✏️ Praticar</button>
@@ -1662,7 +1692,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: o Brasil era um país do campo até 1960. Em poucas décadas, virou um país de cidades — por isso o espaço urbano cresceu tão rápido.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1sGnAyY5Ne7_pCzJhGMO1Ri9ywcyRQNwS/preview" title="O Espaço Urbano Brasileiro" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1sGnAyY5Ne7_pCzJhGMO1Ri9ywcyRQNwS/preview" title="O Espaço Urbano Brasileiro" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1sGnAyY5Ne7_pCzJhGMO1Ri9ywcyRQNwS/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="geo-topico-6">✏️ Praticar</button>
@@ -1684,7 +1715,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: o setor primário é como coletar os ingredientes, e a indústria é como cozinhar esses ingredientes até virar um prato pronto.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1uH7mpeqZc4wyoZpZvSJKG-3qU6PMdqVq/preview" title="Fabricados no Brasil - Industria e Industrializacao" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1uH7mpeqZc4wyoZpZvSJKG-3qU6PMdqVq/preview" title="Fabricados no Brasil - Industria e Industrializacao" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1uH7mpeqZc4wyoZpZvSJKG-3qU6PMdqVq/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="geo-topico-7">✏️ Praticar</button>
@@ -1778,7 +1810,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: enquanto muitas portas estavam fechadas para as mulheres lá fora, o convento era, para algumas, um dos poucos lugares onde podiam estudar e liderar.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1m3pKQm6wDmdi5tphvp5mNx465xRGuCCT/preview" title="A Encruzilhada Historica - O Papel da Mulher" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1m3pKQm6wDmdi5tphvp5mNx465xRGuCCT/preview" title="A Encruzilhada Historica - O Papel da Mulher" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1m3pKQm6wDmdi5tphvp5mNx465xRGuCCT/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-1">✏️ Praticar</button>
@@ -1798,7 +1831,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: 1 + 1 = 2 / 1 + 2 = 3 / 2 + 3 = 5. Cada número novo "nasce" da soma dos dois números que vieram antes — parecido com o próprio espírito do Renascimento: usar o conhecimento antigo para criar algo novo.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1d_UdjsJDRMDAf-V4-S-DeKzqTlX4XWl4/preview" title="Renascimento Cultural e a Sequência de Fibonacci" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1d_UdjsJDRMDAf-V4-S-DeKzqTlX4XWl4/preview" title="Renascimento Cultural e a Sequência de Fibonacci" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1d_UdjsJDRMDAf-V4-S-DeKzqTlX4XWl4/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-2">✏️ Praticar</button>
@@ -1821,7 +1855,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: Portugal contornou a África para chegar ao Oriente (foi para o leste). Colombo tentou chegar ao Oriente indo para o lado contrário (foi para o oeste) e, sem saber, encontrou um continente novo.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1SgNhy_fK5Lry-Gf-OgbMTLKQcTkzsPI8/preview" title="As Grandes Navegações" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1SgNhy_fK5Lry-Gf-OgbMTLKQcTkzsPI8/preview" title="As Grandes Navegações" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1SgNhy_fK5Lry-Gf-OgbMTLKQcTkzsPI8/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-3">✏️ Praticar</button>
@@ -1843,7 +1878,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: a África tinha reis, cidades, comércio e arte muito antes dos europeus chegarem lá. Não era um continente "vazio" nem "igual em todo lugar" — eram centenas de povos diferentes.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1-PVBwHamYxT7Yc8wg4X87yv0RrQja-tG/preview" title="Reinos e Povos Africanos" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1-PVBwHamYxT7Yc8wg4X87yv0RrQja-tG/preview" title="Reinos e Povos Africanos" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1-PVBwHamYxT7Yc8wg4X87yv0RrQja-tG/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-4">✏️ Praticar</button>
@@ -1866,7 +1902,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: a Espanha colonizou buscando ouro e prata, controlando de perto suas colônias. A Inglaterra não achou riqueza mineral e, por isso, deixou suas colônias se organizarem sozinhas — isso é a negligência salutar.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1QMhCXFn2N3YXz0-boBGgO6lU9wxtMzPr/preview" title="Colonização Espanhola e Inglesa" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1QMhCXFn2N3YXz0-boBGgO6lU9wxtMzPr/preview" title="Colonização Espanhola e Inglesa" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1QMhCXFn2N3YXz0-boBGgO6lU9wxtMzPr/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-5">✏️ Praticar</button>
@@ -1885,7 +1922,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: era como dar uma vila inteira pra um só cuidar sozinho — sem ajuda, é quase impossível defender e organizar tudo. Por isso o Governo-Geral centralizou o controle.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1laE78WaDx5cjRzz8tfY4aHVXpN61DjGG/preview" title="Organizando a Colonia" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1laE78WaDx5cjRzz8tfY4aHVXpN61DjGG/preview" title="Organizando a Colonia" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1laE78WaDx5cjRzz8tfY4aHVXpN61DjGG/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-6">✏️ Praticar</button>
@@ -1905,7 +1943,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: enquanto o açúcar era a "missão principal" enviada para fora, o mercado interno era o que sustentava o dia a dia de quem vivia na colônia.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1CVb59Z_7GM10dlRDZ4YjE3gY2jvSy6Wr/preview" title="Brasil Colonia" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1CVb59Z_7GM10dlRDZ4YjE3gY2jvSy6Wr/preview" title="Brasil Colonia" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1CVb59Z_7GM10dlRDZ4YjE3gY2jvSy6Wr/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-7">✏️ Praticar</button>
@@ -1925,7 +1964,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: mesmo enfrentando um inimigo muito mais armado, os povos indígenas usaram cada estratégia possível para proteger seu território e sua cultura.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1vul0iEAhyc54x5fb0LlTMfrX-rPHSOrt/preview" title="Colonizacao das Americas" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1vul0iEAhyc54x5fb0LlTMfrX-rPHSOrt/preview" title="Colonizacao das Americas" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1vul0iEAhyc54x5fb0LlTMfrX-rPHSOrt/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="hist-topico-8">✏️ Praticar</button>
@@ -1947,7 +1987,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: Portugal escolheu o açúcar porque vendia caro na Europa, o Nordeste era perfeito para plantar e os portugueses já sabiam produzir.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1aWeeSeNEgZ_L5iOuN5QDlFVUBiwT7hS8/preview" title="A Missão: Açúcar Colonial" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1aWeeSeNEgZ_L5iOuN5QDlFVUBiwT7hS8/preview" title="A Missão: Açúcar Colonial" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1aWeeSeNEgZ_L5iOuN5QDlFVUBiwT7hS8/view" target="_blank">▶️ Assistir: A Missão: Açúcar Colonial</a>
         <button class="botao-praticar" data-praticar="hist-topico-9">✏️ Praticar</button>
@@ -1971,7 +2012,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: o engenho era uma "minicidade" do açúcar: casa do senhor, moradia dos escravizados, fábrica e igreja, tudo no mesmo lugar.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1RFN5yAj5kJIry5Y1qVY7zawPryMDOwn1/preview" title="O Engenho Colonial" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1RFN5yAj5kJIry5Y1qVY7zawPryMDOwn1/preview" title="O Engenho Colonial" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1RFN5yAj5kJIry5Y1qVY7zawPryMDOwn1/view" target="_blank">▶️ Assistir: O Engenho Colonial</a>
         <button class="botao-praticar" data-praticar="hist-topico-10">✏️ Praticar</button>
@@ -1992,7 +2034,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: quanto mais terra, escravizados e pele clara, mais poder; e a Igreja ajudava a manter essa ordem.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1Xym10Vzp4UaVAu_JWprAGx49acyA91C5/preview" title="Pirâmide Social Colonial" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1Xym10Vzp4UaVAu_JWprAGx49acyA91C5/preview" title="Pirâmide Social Colonial" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1Xym10Vzp4UaVAu_JWprAGx49acyA91C5/view" target="_blank">▶️ Assistir: Pirâmide Social Colonial</a>
         <button class="botao-praticar" data-praticar="hist-topico-11">✏️ Praticar</button>
@@ -2014,7 +2057,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: o açúcar era o "astro" da exportação, mas sem mandioca, gado e fumo a colônia não funcionaria.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1mtQzjcgdLFj327XI6H0x56T9C25QVvUE/preview" title="Além do Açúcar" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1mtQzjcgdLFj327XI6H0x56T9C25QVvUE/preview" title="Além do Açúcar" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1mtQzjcgdLFj327XI6H0x56T9C25QVvUE/view" target="_blank">▶️ Assistir: Além do Açúcar</a>
         <button class="botao-praticar" data-praticar="hist-topico-12">✏️ Praticar</button>
@@ -2037,11 +2081,13 @@
         </ul>
         <div class="destaque">💡 Pense assim: os indígenas resistiram (fugas, doenças, jesuítas) e o tráfico de africanos dava muito lucro. Por isso a mão de obra mudou.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/193fdUUIY0JukqH7JmnzEXsBf0y70AyEM/preview" title="Os Negros da Terra" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/193fdUUIY0JukqH7JmnzEXsBf0y70AyEM/preview" title="Os Negros da Terra" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/193fdUUIY0JukqH7JmnzEXsBf0y70AyEM/view" target="_blank">▶️ Assistir: Os Negros da Terra</a>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1GZ1NVLMHM9Q2f-yToQF0EiszVPDKChHB/preview" title="Trabalho e Tráfico" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1GZ1NVLMHM9Q2f-yToQF0EiszVPDKChHB/preview" title="Trabalho e Tráfico" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1GZ1NVLMHM9Q2f-yToQF0EiszVPDKChHB/view" target="_blank">▶️ Assistir: Trabalho e Tráfico</a>
         <button class="botao-praticar" data-praticar="hist-topico-13">✏️ Praticar</button>
@@ -2065,7 +2111,8 @@
         </ul>
         <div class="destaque">💡 Pense assim: mesmo sem direitos, os escravizados resistiram de muitas formas, e Palmares é o maior símbolo dessa luta.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1rMxislo5lACYKgXL6l7dpqtTebxDEpZN/preview" title="Jornada da Resistência" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1rMxislo5lACYKgXL6l7dpqtTebxDEpZN/preview" title="Jornada da Resistência" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1rMxislo5lACYKgXL6l7dpqtTebxDEpZN/view" target="_blank">▶️ Assistir: Jornada da Resistência</a>
         <button class="botao-praticar" data-praticar="hist-topico-14">✏️ Praticar</button>
@@ -2145,7 +2192,8 @@
         </ul>
         <div class="destaque">💡 O Rio Amazonas (<span class="en">the Amazon River</span>) carrega mais água do que os 7 maiores rios do mundo somados. Ele é importante para as pessoas (água para beber, cozinhar e pescar), para a vida selvagem (1/3 das espécies do mundo vivem na floresta amazônica) e para o planeta (as árvores bombeiam vapor de água que forma chuva em outras regiões).</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1X0LcjcXumCpUt0dS7IkXS6h6NN7CaOlC/preview" title="Vocabulário e Ecossistemas em Risco" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1X0LcjcXumCpUt0dS7IkXS6h6NN7CaOlC/preview" title="Vocabulário e Ecossistemas em Risco" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1X0LcjcXumCpUt0dS7IkXS6h6NN7CaOlC/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="ing-topico-1">✏️ Praticar</button>
@@ -2174,7 +2222,8 @@
         </div>
         <div class="destaque">💡 Diferença importante: <strong>can't</strong> = impossível ou proibido. <strong>don't have to</strong> = não é obrigatório, mas ainda é possível.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1ZsBnzbOGn8c4oM5xccpkS36a-Vc0xXpF/preview" title="Can, Could, Have to" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1ZsBnzbOGn8c4oM5xccpkS36a-Vc0xXpF/preview" title="Can, Could, Have to" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1ZsBnzbOGn8c4oM5xccpkS36a-Vc0xXpF/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="ing-topico-2">✏️ Praticar</button>
@@ -2197,7 +2246,8 @@
         </ul>
         <div class="destaque">💡 Tubarões e raias ajudam outros animais marinhos a encontrar comida e ajudam o fitoplâncton (que produz metade do oxigênio da Terra) a crescer. Cerca de 30% das espécies de tubarões e raias estão ameaçadas de extinção por causa da pesca excessiva (<span class="en">overfishing</span>).</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1xMHhJnpHUOP4EjzDuxn5FRX5CUaRG6o_/preview" title="Present Simple x Continuous - Tubaroes e Raias" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1xMHhJnpHUOP4EjzDuxn5FRX5CUaRG6o_/preview" title="Present Simple x Continuous - Tubaroes e Raias" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1xMHhJnpHUOP4EjzDuxn5FRX5CUaRG6o_/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="ing-topico-3">✏️ Praticar</button>
@@ -2220,7 +2270,8 @@
         <div class="destaque">💡 Mais de 2 bilhões de pessoas no mundo não têm acesso à água potável segura em casa. Quase metade das pessoas no mundo não tem saneamento. Bactérias de banheiros abertos causam diarreia, que mata 1 milhão de crianças por ano. Por isso existe o <strong>World Toilet Day</strong> (Dia Mundial do Banheiro), em 19 de novembro.</div>
         <div class="destaque">💡 SDG 6 e SDG 14 são metas mundiais: água limpa e saneamento para todos (SDG 6) e proteger a vida no mar (SDG 14).</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1HycZfRm4BGjPcK74TwY-0z7S4d8H-0Bz/preview" title="Agua e Saneamento" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1HycZfRm4BGjPcK74TwY-0z7S4d8H-0Bz/preview" title="Agua e Saneamento" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1HycZfRm4BGjPcK74TwY-0z7S4d8H-0Bz/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="ing-topico-4">✏️ Praticar</button>
@@ -2254,7 +2305,8 @@
         <p style="margin-top:14px;">Esse tempo verbal aparece no diário <strong>"A Day in the Life"</strong>, de Hema Chowduli, uma garota de 12 anos sem acesso fácil à água limpa.</p>
         <div class="destaque">💡 No diário, Hema conta que andou (<span class="en">walked</span>) até um banheiro aberto, ficou em casa para ajudar a mãe em vez de ir à escola, e foi (<span class="en">went</span>) ao vale buscar água à noite porque a água do dia não parecia limpa. A história mostra como a falta de água limpa pode afastar uma criança da escola.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1utsHXVVwg6vKxEH7bRR25no5LXW0eejX/preview" title="Past Simple e o Diario de Hema" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1utsHXVVwg6vKxEH7bRR25no5LXW0eejX/preview" title="Past Simple e o Diario de Hema" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1utsHXVVwg6vKxEH7bRR25no5LXW0eejX/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="ing-topico-5">✏️ Praticar</button>
@@ -2286,7 +2338,8 @@
         </ul>
         <div class="destaque">💡 <strong>SDG 17 — Partnership for the Goals:</strong> parceria para os objetivos. Nenhum país ou pessoa sozinha resolve os grandes problemas do mundo — é preciso trabalho em equipe.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1oBPdhCDdCfZZQ5DHt72LaeJwHr4cK30F/preview" title="Unit 5 - Building a Better World" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1oBPdhCDdCfZZQ5DHt72LaeJwHr4cK30F/preview" title="Unit 5 - Building a Better World" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1oBPdhCDdCfZZQ5DHt72LaeJwHr4cK30F/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="ing-topico-6">✏️ Praticar</button>
@@ -2311,7 +2364,8 @@
         </ul>
         <div class="destaque">💡 Depois de ler, é importante saber trocar ideias sobre o texto: dizer o que entendeu, o que achou, e ouvir a opinião dos outros.</div>
         <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1iqwoqZQCRkwRyE_yPtFJNDuVn94FstBo/preview" title="Dominando Textos em Ingles - Leitura e Interpretacao" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1iqwoqZQCRkwRyE_yPtFJNDuVn94FstBo/preview" title="Dominando Textos em Ingles - Leitura e Interpretacao" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
         <a class="video-assistir" href="https://drive.google.com/file/d/1iqwoqZQCRkwRyE_yPtFJNDuVn94FstBo/view" target="_blank">▶️ Assistir no Google Drive</a>
         <button class="botao-praticar" data-praticar="ing-topico-7">✏️ Praticar</button>
@@ -3404,6 +3458,21 @@ function configurarNavegacaoTopicos(idsNav) {
 }
 
 configurarNavegacaoTopicos(['matematica-linha-tempo', 'portugues-linha-tempo', 'ciencias-linha-tempo', 'geografia-linha-tempo', 'historia-linha-tempo', 'ingles-linha-tempo']);
+
+// Vídeos: carregam só ao tocar; só um player aberto por vez (economiza memória no iPhone)
+document.addEventListener('click', function (ev) {
+  const btn = ev.target.closest('.video-carregar');
+  if (!btn) return;
+  document.querySelectorAll('.video-wrapper.carregado').forEach(function (w) {
+    const f = w.querySelector('iframe');
+    if (f) f.removeAttribute('src');
+    w.classList.remove('carregado');
+  });
+  const wrap = btn.closest('.video-wrapper');
+  const frame = wrap.querySelector('iframe');
+  frame.src = frame.dataset.src;
+  wrap.classList.add('carregado');
+});
 </script>
 
 </body>
