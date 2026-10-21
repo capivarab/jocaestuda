@@ -853,14 +853,13 @@
             <div class="materia-tema">Livro 3, caps. 8 e 9: economia e sociedade colonial (açúcar, engenho); resistência, trabalho e mercadoria</div>
           </div>
         </button>
-        <div class="dia-prova sem-clique em-breve">
+        <button class="dia-prova" data-ir-para="portugues" data-ir-topico="port-topico-1">
           <div class="data-bloco"><span class="dia-numero">21</span><span class="dia-semana">4ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">📝 Língua Portuguesa</div>
             <div class="materia-tema">Conto "Era uma vez Dom Quixote", verbos (modos), concordância, intertextualidade</div>
           </div>
-          <span class="selo-em-breve">em breve</span>
-        </div>
+        </button>
         <div class="dia-prova sem-clique em-breve">
           <div class="data-bloco"><span class="dia-numero">22</span><span class="dia-semana">5ª feira</span></div>
           <div class="info-prova">
@@ -943,7 +942,7 @@
           </div>
         </button>
 
-        <button class="dia-prova" data-ir-para="portugues">
+        <button class="dia-prova sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">26</span><span class="dia-semana">4ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">📝 Língua Portuguesa</div>
@@ -1006,7 +1005,7 @@
           </div>
         </button>
 
-        <button class="dia-prova feito" data-ir-para="portugues">
+        <button class="dia-prova feito sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">17</span><span class="dia-semana">4ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">📝 Língua Portuguesa</div>
@@ -1214,8 +1213,8 @@
 <div class="pagina" id="pagina-portugues">
 
   <header class="header-materia">
-    <h1>📝 Gramática e Interpretação 📝</h1>
-    <p>7º Ano — 2º Trimestre — Parciais e Abrangente — Língua Portuguesa</p>
+    <h1>📝 Português: Dom Quixote e Gramática 🛡️</h1>
+    <p>7º Ano — 3º Trimestre · Conto "Era uma vez Dom Quixote" (Marina Colasanti), modos verbais e concordância — Prova Parcial 21/10 e Abrangentes (18/11 a 01/12)</p>
   </header>
 
   <main class="conteudo-materia">
@@ -1223,116 +1222,227 @@
       <div class="linha-tempo" id="portugues-linha-tempo">
         <button class="linha-tempo-etapa" data-destino="port-topico-1">
           <span class="linha-tempo-bola">1</span>
-          <span class="linha-tempo-label">Classes Gramaticais</span>
+          <span class="linha-tempo-label">O gênero conto</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="port-topico-2">
           <span class="linha-tempo-bola">2</span>
-          <span class="linha-tempo-label">Verbos</span>
+          <span class="linha-tempo-label">Os personagens</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="port-topico-3">
           <span class="linha-tempo-bola">3</span>
-          <span class="linha-tempo-label">Sujeito e Predicado</span>
+          <span class="linha-tempo-label">A história</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="port-topico-4">
           <span class="linha-tempo-bola">4</span>
-          <span class="linha-tempo-label">Coesão Textual</span>
+          <span class="linha-tempo-label">Sonho, valores e contexto</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="port-topico-5">
           <span class="linha-tempo-bola">5</span>
-          <span class="linha-tempo-label">Interpretação</span>
+          <span class="linha-tempo-label">Intertexto</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="port-topico-6">
+          <span class="linha-tempo-bola">6</span>
+          <span class="linha-tempo-label">Indicativo e subjuntivo</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="port-topico-7">
+          <span class="linha-tempo-bola">7</span>
+          <span class="linha-tempo-label">Imperativo</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="port-topico-8">
+          <span class="linha-tempo-bola">8</span>
+          <span class="linha-tempo-label">Concordância</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="port-topico-9">
+          <span class="linha-tempo-bola">9</span>
+          <span class="linha-tempo-label">Classes e efeitos</span>
         </button>
       </div>
 
+      <div class="aviso-prova">📌 Matéria da Prova Parcial (21/10). Ela também cai nas Provas Abrangentes do 3º trimestre (18/11 a 01/12). Tópicos 1 a 5: o livro. Tópicos 6 a 9: gramática.</div>
+
       <div class="cartao" id="port-topico-1">
-        <h2>🔤 Classes Gramaticais</h2>
-        <p>São os "tipos" de palavra. As que mais caem na prova:</p>
+        <h2>📚 O Gênero Conto</h2>
+        <p>A prova é de <strong>leitura e interpretação do gênero conto</strong>. Antes da história, entenda como um conto funciona.</p>
         <ul>
-          <li><strong>Preposição:</strong> liga palavras (a, de, para, com). Ex: "Vou <strong>para</strong> a escola."</li>
-          <li><strong>Conjunção:</strong> liga frases ou ideias (e, mas, porque). Ex: "Estudei, <strong>mas</strong> esqueci."</li>
-          <li><strong>Advérbio:</strong> dá informação sobre o verbo (rápido, hoje, bem). Ex: "Ele correu <strong>rápido</strong>."</li>
-          <li><strong>Pronome:</strong> substitui o nome (ele, ela, isso). Ex: "Joaquim estudou. <strong>Ele</strong> é esforçado."</li>
+          <li><strong>Conto:</strong> narrativa <strong>curta</strong>, com poucos personagens, um <strong>conflito principal</strong>, tempo e espaço reduzidos.</li>
+          <li><strong>Narrador:</strong> quem conta a história. <strong>1ª pessoa</strong> (narrador-personagem: "eu lutei") ou <strong>3ª pessoa</strong> (narrador-observador ou onisciente, que sabe até o que os personagens pensam: "ele lutou").</li>
+          <li><strong>Personagens:</strong> <strong>protagonista</strong> (o principal), <strong>antagonista</strong> (quem se opõe a ele) e <strong>secundários</strong>.</li>
+          <li><strong>Tempo</strong> (quando acontece) e <strong>espaço</strong> (onde acontece).</li>
+          <li><strong>Enredo</strong> (a sequência dos fatos): <strong>situação inicial</strong> → <strong>conflito</strong> (complicação) → <strong>clímax</strong> (momento de maior tensão) → <strong>desfecho</strong> (final).</li>
+          <li><strong>Discurso direto:</strong> a fala do personagem aparece do jeito que ele disse, com travessão ou aspas. <strong>Discurso indireto:</strong> o narrador conta o que o personagem disse ("Ele disse que eram gigantes").</li>
+          <li><strong>"Era uma vez"</strong> é a abertura clássica dos contos de fadas. O título do livro brinca com isso: é uma pista de intertextualidade (veja o tópico 5).</li>
         </ul>
+        <div class="destaque">💡 Pense assim: conto = história curta com um problema principal. Na prova, procure quem conta (narrador), quem vive (personagens), onde e quando, e qual é o conflito.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/GM0XRcaW00c" title="Classes Gramaticais" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1zxf39KoQmaPm_K8ngGL6X8nu1f97RzjX/preview" title="Missão Estudo: Dom Quixote" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=GM0XRcaW00c" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1zxf39KoQmaPm_K8ngGL6X8nu1f97RzjX/view" target="_blank">▶️ Assistir: Missão Estudo: Dom Quixote</a>
         <button class="botao-praticar" data-praticar="port-topico-1">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-port-topico-1" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="port-topico-2">
-        <h2>🍥 Verbos — Flexão, Formas Nominais e Predicação</h2>
-        <p>O verbo indica ação, estado ou fenômeno da natureza. Ele muda de forma dentro da frase — isso se chama <strong>flexão verbal</strong>.</p>
+        <h2>🛡️ Quem é Quem em Dom Quixote</h2>
+        <p>A história original foi escrita por <strong>Miguel de Cervantes</strong> (Espanha). O livro da prova é a versão recontada por <strong>Marina Colasanti</strong>.</p>
         <ul>
-          <li><strong>Modo:</strong> Indicativo (fato certo: "Joaquim <strong>estuda</strong>"), Subjuntivo (dúvida/desejo: "Espero que <strong>estude</strong>"), Imperativo (ordem/pedido: "<strong>Estude</strong>!").</li>
-          <li><strong>Formas nominais:</strong> Infinitivo (estud<strong>ar</strong>), Gerúndio (estud<strong>ando</strong>), Particípio (estud<strong>ado</strong>).</li>
-          <li><strong>Verbo de ligação:</strong> não indica ação, só liga o sujeito a uma característica. Ex: "Joaquim <strong>está</strong> cansado." (ser, estar, ficar, permanecer, continuar, parecer)</li>
-          <li><strong>Verbo significativo:</strong> indica uma ação real. Ex: "Joaquim <strong>estudou</strong> Geografia."</li>
+          <li><strong>Alonso Quijano (Quixano):</strong> um fidalgo (nobre pobre) de cerca de 50 anos, magro, da região de <strong>La Mancha</strong>, na Espanha. Leu tantos <strong>livros de cavalaria</strong>, dia e noite, que perdeu o juízo e passou a acreditar que tudo aquilo era real.</li>
+          <li><strong>Dom Quixote de La Mancha:</strong> o nome que ele mesmo se dá ao virar <strong>cavaleiro andante</strong>. Quer corrigir injustiças, proteger os fracos e ganhar fama. Usa uma armadura velha e enferrujada.</li>
+          <li><strong>Rocinante:</strong> o cavalo de Dom Quixote, velho e magro, mas para ele o melhor cavalo do mundo.</li>
+          <li><strong>Dulcineia del Toboso:</strong> a "dama" a quem ele dedica suas aventuras. Na verdade é uma moça simples da vizinhança (Aldonza Lorenzo), que nem sabe disso. Todo cavaleiro dos livros tinha uma dama.</li>
+          <li><strong>Sancho Pança:</strong> um lavrador vizinho, simples, baixo e gordo, que vira o <strong>escudeiro</strong>. Anda num <strong>burro</strong>. Aceita ir porque Dom Quixote promete que ele vai governar uma <strong>ilha</strong>. É prático, gosta de comer e dormir, e vive avisando que as coisas não são o que o patrão imagina.</li>
+          <li><strong>O padre e o barbeiro:</strong> amigos da aldeia que tentam curar Dom Quixote e trazê-lo de volta para casa. A <strong>sobrinha</strong> e a <strong>ama</strong> (governanta) também se preocupam com ele.</li>
+          <li><strong>Sansão Carrasco:</strong> um estudante (bacharel) da aldeia que se disfarça de cavaleiro para vencer Dom Quixote e obrigá-lo a voltar para casa.</li>
         </ul>
-        <div class="destaque">💡 Verbo significativo = ação de verdade acontecendo. Verbo de ligação = só mostra uma característica, sem ação.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1irNlnhkCiPdXfofg70qp9ePcAx7PvHwS/preview" title="Verbos - Flexao, Formas Nominais e Predicacao" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1irNlnhkCiPdXfofg70qp9ePcAx7PvHwS/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <div class="destaque">💡 Pense assim: Dom Quixote é o sonhador que vê o mundo como nos livros. Sancho é o pé no chão que vê o mundo como ele é. Os dois juntos formam a dupla mais famosa da literatura.</div>
         <button class="botao-praticar" data-praticar="port-topico-2">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-port-topico-2" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="port-topico-3">
-        <h2>🧩 Sujeito e Predicado</h2>
-        <p>Toda frase tem essas duas partes:</p>
+        <h2>🌬️ A História: Principais Aventuras</h2>
+        <p>Este é o resumo da história completa. As versões para jovens, como a de Marina Colasanti, podem contar só parte das aventuras, mas os episódios mais famosos costumam aparecer.</p>
         <ul>
-          <li><strong>Sujeito</strong> = de quem ou do que a frase fala.</li>
-          <li><strong>Predicado</strong> = o que se diz sobre o sujeito (geralmente tem o verbo).</li>
-          <li>Exemplo: "<strong>O Joaquim</strong> (sujeito) <strong>estuda Geografia</strong> (predicado)."</li>
+          <li><strong>1. A primeira saída (sozinho):</strong> Dom Quixote chega a uma <strong>estalagem</strong> (pousada) e acha que é um <strong>castelo</strong>. O dono, achando graça, faz uma cerimônia e o "arma cavaleiro".</li>
+          <li><strong>2. O menino Andrés:</strong> ele vê um patrão batendo num menino e manda parar. O patrão promete pagar o menino, mas quando Dom Quixote vai embora o menino apanha ainda mais. Boa intenção, resultado ruim.</li>
+          <li><strong>3. Volta para casa machucado:</strong> o padre e o barbeiro <strong>queimam os livros de cavalaria</strong> e fecham a biblioteca. Dizem a ele que foi um <strong>mago (encantador)</strong> que a levou.</li>
+          <li><strong>4. A segunda saída:</strong> agora com <strong>Sancho Pança</strong> como escudeiro.</li>
+          <li><strong>5. Os moinhos de vento</strong> (a aventura mais famosa): ele vê moinhos e acha que são <strong>gigantes</strong>. Ataca com a lança, a pá do moinho o derruba. Ele diz que um mago transformou os gigantes em moinhos.</li>
+          <li><strong>6. Outras aventuras:</strong> confunde <strong>rebanhos de ovelhas</strong> com exércitos; acha que uma <strong>bacia de barbeiro</strong> é um elmo mágico (o elmo de Mambrino); liberta prisioneiros acorrentados (os <strong>galeotes</strong>), que depois o atacam com pedras. Sancho o apelida de <strong>"Cavaleiro da Triste Figura"</strong>.</li>
+          <li><strong>7. Com os duques:</strong> um duque e uma duquesa fingem acreditar nele para se divertir. Sancho finalmente "governa" uma ilha (a ilha Baratária) e surpreende todos com <strong>bom senso</strong>.</li>
+          <li><strong>8. A derrota:</strong> Sansão Carrasco, disfarçado de <strong>Cavaleiro da Branca Lua</strong>, vence Dom Quixote num duelo e o obriga a voltar para casa.</li>
+          <li><strong>9. O final:</strong> em casa, ele adoece, <strong>recupera o juízo</strong>, volta a ser Alonso Quijano, "o Bom", e diz que os livros de cavalaria são bobagem. Morre cercado pelos amigos. Sancho chora e pede que ele continue sonhando com novas aventuras.</li>
         </ul>
-        <div class="destaque">💡 Tipos de sujeito: <strong>simples</strong> (1 só núcleo: "O cão correu"), <strong>composto</strong> (2 ou mais: "O cão e o gato correram"), <strong>desinencial/oculto</strong> (não aparece, mas dá pra saber pelo verbo: "Estudamos muito" = nós).</div>
-        <p style="margin-top:14px;">O predicado também tem dois tipos, que dependem do tipo de verbo usado:</p>
-        <ul>
-          <li><strong>Predicado verbal:</strong> o centro é a ação de um verbo significativo. Ex: "O cão <strong>correu</strong>."</li>
-          <li><strong>Predicado nominal:</strong> o centro é uma característica, ligada por um verbo de ligação. Ex: "O cão <strong>está cansado</strong>."</li>
-        </ul>
+        <div class="destaque">💡 Pense assim: em quase toda aventura Dom Quixote vê algo comum (moinho, ovelha, bacia) e imagina algo dos livros (gigante, exército, elmo mágico). Sancho avisa, ele não escuta, e quase sempre acaba machucado.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/vzMPEHFUGSo" title="O que é Sujeito e Predicado" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1TtK6Fz-z8tMYvD1Y9-y74CFApYjVypCI/preview" title="A Última Ilusão de Dom Quixote" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=vzMPEHFUGSo" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1TtK6Fz-z8tMYvD1Y9-y74CFApYjVypCI/view" target="_blank">▶️ Assistir: A Última Ilusão de Dom Quixote</a>
         <button class="botao-praticar" data-praticar="port-topico-3">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-port-topico-3" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="port-topico-4">
-        <h2>🔗 Coesão Textual</h2>
-        <p>Coesão é o que liga as partes de um texto, pra não ficar tudo solto.</p>
+        <h2>💭 Sonho × Realidade: Valores e Visões de Mundo</h2>
+        <p>Esta é a habilidade de interpretação mais provável na prova: reconhecer os <strong>valores</strong> e as <strong>visões de mundo</strong> do texto, considerando o <strong>autor</strong> e a <strong>época</strong> em que foi escrito.</p>
         <ul>
-          <li><strong>Coesão referencial:</strong> usar uma palavra para "lembrar" outra já dita. Ex: "Ana chegou. <strong>Ela</strong> estava cansada." (ela = Ana)</li>
-          <li><strong>Coesão sequencial:</strong> usar conjunções e verbos pra ligar uma ideia na outra. Ex: "Estudei, <strong>portanto</strong> passei."</li>
+          <li><strong>Sonho × realidade:</strong> Dom Quixote vê o mundo como gostaria que ele fosse (idealismo). Sancho vê o mundo como ele é (realismo). O livro mostra as duas visões.</li>
+          <li><strong>Valores de Dom Quixote:</strong> <strong>justiça</strong>, <strong>coragem</strong>, <strong>honra</strong>, proteger os fracos, lealdade à sua dama. São valores bonitos, mas ele age sem olhar a realidade.</li>
+          <li><strong>Valores de Sancho:</strong> <strong>lealdade</strong> e <strong>amizade</strong> (fica com o patrão mesmo apanhando), bom senso e esperteza do povo simples.</li>
+          <li><strong>Múltiplos olhares:</strong> Dom Quixote é louco ou é corajoso por sonhar? O livro deixa as duas leituras possíveis. Ele é engraçado e, ao mesmo tempo, triste.</li>
+          <li><strong>Crítica:</strong> boas intenções sem enxergar a realidade podem causar problemas (o menino Andrés, os galeotes).</li>
+          <li><strong>Autor e época:</strong> <strong>Miguel de Cervantes</strong>, escritor espanhol. Publicou a 1ª parte em <strong>1605</strong> e a 2ª em <strong>1615</strong>, quando os livros de cavalaria eram muito populares na Espanha. Ele escreveu para <strong>rir desses livros</strong> (sátira). Dom Quixote é considerado um dos primeiros <strong>romances modernos</strong>.</li>
+          <li><strong>A adaptação:</strong> <strong>Marina Colasanti</strong>, escritora brasileira, recontou a história para leitores jovens, com linguagem mais simples. A história é a mesma, a forma de contar muda.</li>
+          <li><strong>"Quixotesco":</strong> a palavra entrou na língua para descrever alguém sonhador, idealista, que luta por causas impossíveis.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: coesão é a "cola" que junta as frases de um texto.</div>
+        <div class="destaque">💡 Pense assim: na prova, se perguntarem "qual a visão de mundo de Dom Quixote?", a resposta gira em torno de sonho, idealismo e justiça. A de Sancho, em torno de realidade, bom senso e lealdade.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/DYCcyb5VAu4" title="O que é Coesão Textual" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1m9py8C7zeuPp0-lWJE59Y9y1Ni_Y-X6C/preview" title="Missão 3: Louco ou Herói?" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=DYCcyb5VAu4" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1m9py8C7zeuPp0-lWJE59Y9y1Ni_Y-X6C/view" target="_blank">▶️ Assistir: Missão 3: Louco ou Herói?</a>
         <button class="botao-praticar" data-praticar="port-topico-4">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-port-topico-4" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="port-topico-5">
-        <h2>📖 Interpretação, Conotação e Denotação</h2>
-        <p>Interpretar um texto é entender o que ele realmente quer dizer.</p>
+        <h2>🔗 Intertextualidade</h2>
+        <p><strong>Intertextualidade</strong> é quando um texto <strong>conversa com outro texto</strong>: cita, imita, reconta ou faz referência a ele.</p>
         <ul>
-          <li>Preste atenção em quem fala, sobre o que fala, e qual é a ideia principal.</li>
-          <li><strong>Linguagem figurada</strong> = quando a frase não quer dizer ao pé da letra. Ex: "Choveu canivete" não significa que caíram canivetes do céu, significa que choveu muito forte.</li>
-          <li><strong>Denotação:</strong> a palavra usada no sentido real, literal, do dicionário. Ex: "Comprei uma <strong>pedra</strong> para o jardim."</li>
-          <li><strong>Conotação:</strong> a palavra usada no sentido figurado, diferente do literal. Ex: "Ele tem um coração de <strong>pedra</strong>." (ele é insensível)</li>
-          <li>Verbos no modo Indicativo (fala de fatos certos), Subjuntivo (fala de dúvida/desejo) e Imperativo (dá ordem ou pedido) também ajudam a entender a intenção do texto.</li>
+          <li><strong>Citação:</strong> copia um trecho de outro texto, entre aspas.</li>
+          <li><strong>Alusão (referência):</strong> menciona outro texto ou personagem sem copiar. Ex.: "Ele está lutando contra moinhos de vento."</li>
+          <li><strong>Paródia:</strong> imita outro texto para fazer <strong>humor ou crítica</strong>. Dom Quixote é uma paródia dos <strong>livros de cavalaria</strong>, com cavaleiros, damas, gigantes e magos.</li>
+          <li><strong>Paráfrase:</strong> reescreve outro texto com outras palavras, <strong>mantendo o sentido</strong>.</li>
+          <li><strong>Adaptação (releitura, reconto):</strong> conta de novo uma história já existente, de outro jeito ou para outro público. <strong>"Era uma vez Dom Quixote"</strong> é uma adaptação da obra de Cervantes.</li>
+          <li><strong>No título:</strong> "Era uma vez" retoma a abertura dos <strong>contos de fadas</strong>. Já é intertextualidade.</li>
+          <li><strong>Dom Quixote inspirou muitas outras obras:</strong> filmes, peças, desenhos e expressões populares ("lutar contra moinhos de vento" = lutar contra inimigos imaginários ou causas impossíveis). No Brasil, Candido Portinari fez desenhos de Dom Quixote, e Carlos Drummond de Andrade escreveu poemas sobre esses desenhos.</li>
+          <li><strong>Como reconhecer na prova:</strong> procure um personagem, título, frase ou situação que veio de outro texto conhecido.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: denotação é o sentido "de verdade" da palavra. Conotação é o sentido "escondido", figurado.</div>
+        <div class="destaque">💡 Pense assim: intertextualidade é o "diálogo" entre textos. Paródia = imita para rir ou criticar. Paráfrase = repete o sentido com outras palavras. Adaptação = reconta a história.</div>
         <button class="botao-praticar" data-praticar="port-topico-5">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-port-topico-5" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="port-topico-6">
+        <h2>🎯 Modos Verbais: Indicativo e Subjuntivo</h2>
+        <p>O <strong>modo</strong> do verbo mostra a <strong>atitude de quem fala</strong>: certeza, dúvida ou ordem. Os três modos são indicativo, subjuntivo e imperativo (este no próximo tópico).</p>
+        <ul>
+          <li><strong>Indicativo = certeza, fato real.</strong> Presente: <em>ele luta</em>. Pretérito perfeito: <em>ele lutou</em>. Pretérito imperfeito: <em>ele lutava</em>. Futuro do presente: <em>ele lutará</em>. Futuro do pretérito: <em>ele lutaria</em>.</li>
+          <li><strong>Subjuntivo = dúvida, desejo, hipótese, possibilidade.</strong> Presente: <em>que eu lute</em>. Pretérito imperfeito: <em>se eu lutasse</em>. Futuro: <em>quando eu lutar</em>.</li>
+          <li><strong>Pistas do subjuntivo:</strong> <em>talvez</em>, <em>que</em>, <em>se</em>, <em>quando</em>, <em>espero que</em>, <em>embora</em>, <em>caso</em>. Ex.: "<strong>Talvez</strong> os moinhos <strong>sejam</strong> gigantes."</li>
+          <li><strong>Indicativo:</strong> "Dom Quixote <strong>atacou</strong> os moinhos." (aconteceu de verdade)</li>
+          <li><strong>Subjuntivo:</strong> "Sancho espera que o patrão <strong>volte</strong> a si." (desejo)</li>
+          <li><strong>Combinação comum:</strong> "<strong>Se</strong> eu <strong>fosse</strong> cavaleiro (subjuntivo), <strong>protegeria</strong> os fracos (indicativo, futuro do pretérito)."</li>
+          <li><strong>Cuidado:</strong> o futuro do pretérito (<em>lutaria, faria, seria</em>) parece hipótese, mas é do <strong>indicativo</strong>.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: indicativo = "é" (certeza). Subjuntivo = "talvez seja", "se fosse", "quando for" (dúvida, desejo, condição).</div>
+        <div class="video-wrapper">
+          <iframe data-src="https://drive.google.com/file/d/1XiLU7J-KrFvwC2WUI3rhOzs1K1bH9tUu/preview" title="A Jornada dos Modos Verbais" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1XiLU7J-KrFvwC2WUI3rhOzs1K1bH9tUu/view" target="_blank">▶️ Assistir: A Jornada dos Modos Verbais</a>
+        <button class="botao-praticar" data-praticar="port-topico-6">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-port-topico-6" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="port-topico-7">
+        <h2>📢 Modo Imperativo: Afirmativo e Negativo</h2>
+        <p>O <strong>imperativo</strong> serve para dar <strong>ordem, pedido, conselho ou convite</strong>. Ele não tem a 1ª pessoa do singular (ninguém dá ordem para si mesmo com "eu").</p>
+        <ul>
+          <li><strong>Pessoas do imperativo:</strong> tu, você, nós, vós, vocês.</li>
+          <li><strong>Imperativo afirmativo:</strong> <strong>tu</strong> e <strong>vós</strong> vêm do <strong>presente do indicativo sem o S</strong> (tu lutas → <strong>luta</strong> tu; vós lutais → <strong>lutai</strong> vós). <strong>Você, nós, vocês</strong> vêm do <strong>presente do subjuntivo</strong> (lute você, lutemos nós, lutem vocês).</li>
+          <li><strong>Imperativo negativo:</strong> é todo o <strong>presente do subjuntivo</strong> com <strong>não</strong> na frente: não lutes (tu), não lute (você), não lutemos (nós), não luteis (vós), não lutem (vocês).</li>
+          <li><strong>Verbo LUTAR:</strong> Afirmativo: luta, lute, lutemos, lutai, lutem. Negativo: não lutes, não lute, não lutemos, não luteis, não lutem.</li>
+          <li><strong>Verbo SER:</strong> Afirmativo: sê, seja, sejamos, sede, sejam. Negativo: não sejas, não seja, não sejamos, não sejais, não sejam.</li>
+          <li><strong>Verbo FAZER:</strong> Afirmativo: faze (ou faz), faça, façamos, fazei, façam. Negativo: não faças, não faça, não façamos, não façais, não façam.</li>
+          <li><strong>Exemplos:</strong> "<strong>Ataca</strong> os gigantes, Sancho!" (afirmativo, tu). "<strong>Não ataque</strong> os moinhos, senhor!" (negativo, você).</li>
+          <li><strong>Cuidado:</strong> na norma-padrão não se mistura tu e você na mesma ordem. Errado: "Vem cá e senta aqui" com "você". Certo: "<strong>Venha</strong> cá e <strong>sente</strong>-se" (você) ou "<strong>Vem</strong> cá e <strong>senta</strong>-te" (tu).</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: imperativo negativo = "não" + presente do subjuntivo, sempre. No afirmativo, só tu e vós vêm do indicativo (sem o S). O resto vem do subjuntivo.</div>
+        <button class="botao-praticar" data-praticar="port-topico-7">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-port-topico-7" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="port-topico-8">
+        <h2>🤝 Concordância Nominal e Verbal</h2>
+        <p><strong>Concordância</strong> é a combinação certa entre as palavras da frase. Na <strong>nominal</strong>, os nomes combinam entre si. Na <strong>verbal</strong>, o verbo combina com o sujeito.</p>
+        <ul>
+          <li><strong>Nominal:</strong> artigo, adjetivo, numeral e pronome concordam em <strong>gênero</strong> (masculino/feminino) e <strong>número</strong> (singular/plural) com o substantivo. Ex.: <em>o cavaleiro corajoso</em> / <em>os cavaleiros corajosos</em> / <em>a armadura velha</em> / <em>as armaduras velhas</em>.</li>
+          <li><strong>Adjetivo depois de dois substantivos:</strong> vai para o plural ou concorda com o mais próximo. Se houver masculino e feminino, o plural fica no masculino: <em>a lança e o escudo <strong>velhos</strong></em>.</li>
+          <li><strong>Casos que caem muito:</strong> <em><strong>meio</strong> cansada</em> (meio = um pouco, não muda) × <em><strong>meia</strong> hora</em> (metade, concorda). <em><strong>bastantes</strong> livros</em> (= muitos, concorda) × <em><strong>bastante</strong> cansados</em> (= muito, não muda). Mulher diz "<strong>obrigada</strong>"; homem diz "<strong>obrigado</strong>". <em>Elas <strong>mesmas</strong> fizeram.</em></li>
+          <li><strong>Verbal:</strong> o verbo concorda com o <strong>sujeito</strong> em <strong>número e pessoa</strong>. Ex.: <em>Dom Quixote <strong>luta</strong></em> / <em>Dom Quixote e Sancho <strong>lutam</strong></em>.</li>
+          <li><strong>Sujeito depois do verbo:</strong> o verbo continua concordando com ele. Ex.: <em><strong>Chegaram</strong> os cavaleiros.</em></li>
+          <li><strong>Verbo HAVER no sentido de "existir":</strong> fica sempre no singular. Ex.: <em><strong>Havia</strong> muitos livros</em> (e não "haviam").</li>
+          <li><strong>Verbo FAZER indicando tempo:</strong> singular. Ex.: <em><strong>Faz</strong> dois anos que ele partiu.</em></li>
+          <li><strong>Coletivo no singular:</strong> verbo no singular. Ex.: <em>O <strong>rebanho passou</strong> pela estrada.</em></li>
+        </ul>
+        <div class="destaque">💡 Pense assim: pergunte "quem faz a ação?" para achar o sujeito e combinar o verbo com ele. Para os nomes, olhe o substantivo e combine gênero e número.</div>
+        <div class="video-wrapper">
+          <iframe data-src="https://drive.google.com/file/d/1Y1iwX74XmtGRVyH9zSmpkrWmV4dpt7V_/preview" title="Treinamento Ninja: Gramática" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1Y1iwX74XmtGRVyH9zSmpkrWmV4dpt7V_/view" target="_blank">▶️ Assistir: Treinamento Ninja: Gramática</a>
+        <button class="botao-praticar" data-praticar="port-topico-8">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-port-topico-8" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="port-topico-9">
+        <h2>🧩 Classes de Palavras e Seus Efeitos</h2>
+        <p>A prova pede para <strong>observar o efeito</strong> que cada classe de palavra produz no texto: o que muda no sentido quando o autor escolhe aquela palavra.</p>
+        <ul>
+          <li><strong>Substantivo:</strong> nomeia seres, coisas e ideias (cavaleiro, moinho, coragem).</li>
+          <li><strong>Adjetivo:</strong> caracteriza o substantivo, cria imagens e mostra opinião. "Cavalo <strong>magro</strong>", "<strong>triste</strong> figura". Trocar o adjetivo muda a impressão do leitor.</li>
+          <li><strong>Verbo:</strong> indica ação, estado ou fenômeno. O tempo verbal mostra <strong>quando</strong> (lutou, luta, lutará).</li>
+          <li><strong>Advérbio:</strong> indica modo, tempo, lugar ou intensidade. "Atacou <strong>ferozmente</strong>" (modo), "<strong>muito</strong> cansado" (intensidade). Dá mais força ou detalhe à ação.</li>
+          <li><strong>Pronome:</strong> substitui ou acompanha o substantivo e evita repetição. "Dom Quixote montou em Rocinante. <strong>Ele</strong> partiu."</li>
+          <li><strong>Conjunção:</strong> liga ideias e mostra a relação entre elas. <strong>mas</strong> (oposição), <strong>porque</strong> (causa), <strong>então / por isso</strong> (conclusão), <strong>embora</strong> (concessão), <strong>se</strong> (condição).</li>
+          <li><strong>Interjeição:</strong> expressa emoção. "<strong>Ai!</strong>", "<strong>Oh!</strong>", "<strong>Socorro!</strong>"</li>
+          <li><strong>Diminutivo e aumentativo:</strong> além de tamanho, podem mostrar carinho, ironia ou desprezo. "Que <strong>cavalinho</strong> lindo!" (carinho). "Grande <strong>cavaleirozinho</strong>!" (ironia).</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: na pergunta "qual o efeito da palavra?", diga o que ela acrescenta. Adjetivo descreve e opina. Advérbio intensifica ou detalha. Conjunção mostra a relação entre as ideias.</div>
+        <button class="botao-praticar" data-praticar="port-topico-9">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-port-topico-9" style="display:none;"></div>
       </div>
 
   </main>
@@ -2532,65 +2642,130 @@ function criarQuiz(materia, bancoCompleto, tamanhoRodada = 20, qtdPrioridade = 0
 criarQuiz('matematica', perguntasMatematica);
 window.PRATICA_PORTUGUES = {
   'port-topico-1': [
-  {pergunta:"O que é uma preposição?",opcoes:["Um tipo de verbo","Uma figura geométrica","Um número","Uma palavra que liga outras palavras (a, de, para)"],correta:3,explicacao:"Preposição é a palavra que liga termos da frase, como 'a', 'de', 'para', 'com'."},
-  {pergunta:"O que é uma conjunção?",opcoes:["Indica quantidade","Dá ordem","Substitui um nome","Liga frases ou ideias (e, mas, porque)"],correta:3,explicacao:"Conjunção é a palavra que liga frases ou ideias, como 'e', 'mas', 'porque'."},
-  {pergunta:"O que é um advérbio?",opcoes:["Liga duas frases","É sempre um número","Dá informação sobre o verbo (rápido, hoje, bem)","Substitui um substantivo"],correta:2,explicacao:"Advérbio modifica o sentido do verbo, adjetivo ou outro advérbio, como 'rápido', 'hoje', 'bem'."},
-  {pergunta:"O que é um pronome?",opcoes:["Uma palavra que substitui o nome (ele, ela, isso)","Uma preposição","Um advérbio de tempo","Um tipo de verbo"],correta:0,explicacao:"Pronome é a palavra que substitui ou acompanha um substantivo, como 'ele', 'ela', 'isso'."},
-  {pergunta:"Qual destas é uma conjunção coordenativa que indica adição?",opcoes:["Se","E","Mas","Para"],correta:1,explicacao:"'E' é uma conjunção coordenativa aditiva, que soma ideias na frase."},
-  {pergunta:"Na frase 'O livro está sobre a mesa', qual palavra é a preposição?",opcoes:["Livro","Está","Sobre","Mesa"],correta:2,explicacao:"'Sobre' é a preposição, indicando a relação de lugar entre 'livro' e 'mesa'."},
-  {pergunta:"Na frase 'Estudei, mas não entendi tudo', qual palavra é a conjunção?",opcoes:["Entendi","Mas","Não","Estudei"],correta:1,explicacao:"'Mas' é a conjunção que liga as duas ideias opostas da frase, indicando oposição."},
-  {pergunta:"Na frase 'Ela cantou bem', qual palavra é o advérbio?",opcoes:["Bem","Ela","Cantou","Não tem advérbio"],correta:0,explicacao:"'Bem' é o advérbio, pois indica como a ação de cantar foi feita (advérbio de modo)."},
-  {pergunta:"Na frase 'Joaquim estudou. Ele é esforçado', qual palavra é o pronome?",opcoes:["Ele","Estudou","Esforçado","Joaquim"],correta:0,explicacao:"'Ele' é o pronome que substitui o nome 'Joaquim', evitando repetição."},
-  {pergunta:"Qual destas conjunções indica uma condição?",opcoes:["Mas","Se","E","Porque"],correta:1,explicacao:"'Se' é a conjunção que indica uma condição para que algo aconteça, como em 'Se chover, não saio'."}
+  {pergunta:"O que caracteriza o gênero conto?",opcoes:["Narrativa curta, com poucos personagens e um conflito principal", "Texto que ensina a fazer algo, passo a passo", "Notícia sobre um fato real", "Texto em versos com rimas"],correta:0,explicacao:"O conto é uma narrativa curta, com poucos personagens e um conflito central."},
+  {pergunta:"Qual é a ordem mais comum do enredo?",opcoes:["Desfecho, clímax, conflito e situação inicial", "Clímax, situação inicial, desfecho e conflito", "Situação inicial, conflito, clímax e desfecho", "Conflito, desfecho, situação inicial e clímax"],correta:2,explicacao:"O enredo costuma seguir: situação inicial → conflito → clímax → desfecho."},
+  {pergunta:"O que é o clímax de uma narrativa?",opcoes:["O momento de maior tensão da história", "A apresentação dos personagens", "A lista de palavras difíceis", "O título do conto"],correta:0,explicacao:"Clímax é o ponto de maior tensão, logo antes do desfecho."},
+  {pergunta:"Em \"Eu montei no meu cavalo e parti\", o narrador é:",opcoes:["De 1ª pessoa (narrador-personagem)", "Não há narrador", "Um narrador onisciente de 3ª pessoa", "De 3ª pessoa (observador)"],correta:0,explicacao:"O narrador usa \"eu\": participa da história, é narrador-personagem (1ª pessoa)."},
+  {pergunta:"Em \"Dom Quixote montou em Rocinante e partiu\", o narrador é:",opcoes:["O próprio Rocinante", "Não dá para saber", "De 1ª pessoa", "De 3ª pessoa"],correta:3,explicacao:"O narrador fala \"ele\" (Dom Quixote montou): é narrador de 3ª pessoa."},
+  {pergunta:"O narrador onisciente é aquele que:",opcoes:["Participa da história como personagem principal", "Não aparece no texto", "Sabe tudo, até o que os personagens pensam e sentem", "Só conta o que vê, sem saber pensamentos"],correta:2,explicacao:"Onisciente = sabe tudo, inclusive pensamentos e sentimentos dos personagens."},
+  {pergunta:"Quem é o protagonista de uma história?",opcoes:["O narrador sempre", "O personagem que se opõe ao principal", "O personagem principal", "O autor do livro"],correta:2,explicacao:"Protagonista é o personagem principal."},
+  {pergunta:"O antagonista é:",opcoes:["O lugar onde a história acontece", "O melhor amigo do protagonista", "O personagem ou força que se opõe ao protagonista", "O narrador de 1ª pessoa"],correta:2,explicacao:"Antagonista é quem (ou o que) se opõe ao protagonista."},
+  {pergunta:"Qual frase está em discurso direto?",opcoes:["Dom Quixote gritou que eram gigantes.", "Dom Quixote achava que eram gigantes.", "— São gigantes! — gritou Dom Quixote.", "Sancho não acreditou nos gigantes."],correta:2,explicacao:"No discurso direto a fala aparece como o personagem disse, com travessão."},
+  {pergunta:"Qual frase está em discurso indireto?",opcoes:["Sancho disse que aqueles eram apenas moinhos.", "\"São moinhos!\", gritou Sancho.", "— São moinhos, senhor! — disse Sancho.", "— Senhor, cuidado!"],correta:0,explicacao:"No discurso indireto o narrador conta o que o personagem disse, sem a fala exata."},
+  {pergunta:"O que os elementos \"tempo\" e \"espaço\" indicam?",opcoes:["O começo e o fim do livro", "O autor e o tradutor", "Quando e onde a história acontece", "Quem conta e quem escuta a história"],correta:2,explicacao:"Tempo = quando; espaço = onde."},
+  {pergunta:"A expressão \"Era uma vez\" lembra qual tipo de texto?",opcoes:["Contos de fadas", "Cartas comerciais", "Notícias de jornal", "Receitas"],correta:0,explicacao:"\"Era uma vez\" é a abertura tradicional dos contos de fadas."}
   ],
   'port-topico-2': [
-  {pergunta:"O que é flexão verbal?",opcoes:["Um tipo de substantivo","Um sinal de pontuação","A mudança que o verbo sofre para mostrar modo, tempo, número e pessoa","A ordem das palavras na frase"],correta:2,explicacao:"Flexão verbal é a mudança de forma do verbo, que indica modo, tempo, número e pessoa."},
-  {pergunta:"Na frase 'Espero que Joaquim estude hoje', o verbo 'estude' está em qual modo?",opcoes:["Indicativo","Imperativo","Nenhum modo","Subjuntivo"],correta:3,explicacao:"O modo Subjuntivo expressa dúvida, desejo ou possibilidade, como em 'espero que estude'."},
-  {pergunta:"Na frase 'Estude, Joaquim!', o verbo 'estude' está em qual modo?",opcoes:["Nenhum modo","Imperativo","Subjuntivo","Indicativo"],correta:1,explicacao:"O modo Imperativo dá uma ordem ou faz um pedido, como em 'Estude, Joaquim!'."},
-  {pergunta:"Qual é a forma nominal do verbo que termina em AR, ER ou IR e aparece no dicionário?",opcoes:["Particípio","Infinitivo","Gerúndio","Indicativo"],correta:1,explicacao:"O infinitivo é a forma que aparece no dicionário, terminando em AR, ER ou IR, como 'estudar', 'comer', 'partir'."},
-  {pergunta:"Qual é a forma nominal do verbo que termina em NDO e indica ação em andamento?",opcoes:["Gerúndio","Subjuntivo","Infinitivo","Particípio"],correta:0,explicacao:"O gerúndio termina em NDO e indica uma ação acontecendo naquele momento, como 'estudando'."},
-  {pergunta:"Qual é a forma nominal do verbo que geralmente termina em ADO ou IDO e indica ação já concluída?",opcoes:["Particípio","Infinitivo","Gerúndio","Imperativo"],correta:0,explicacao:"O particípio geralmente termina em ADO ou IDO e indica uma ação já concluída, como 'estudado'."},
-  {pergunta:"O que é um verbo de ligação?",opcoes:["Um verbo que indica uma ação forte","Um verbo que só existe no passado","Um verbo que não indica ação, apenas liga o sujeito a uma característica","Um verbo que sempre está no plural"],correta:2,explicacao:"O verbo de ligação não indica ação; ele liga o sujeito a uma característica ou estado, como em 'Joaquim está cansado'."},
-  {pergunta:"Qual destes verbos costuma ser um verbo de ligação?",opcoes:["Correr","Estudar","Escrever","Ficar"],correta:3,explicacao:"'Ficar' é um verbo de ligação comum, usado para ligar o sujeito a uma característica, como em 'O dia ficou nublado'."},
-  {pergunta:"Na frase 'Joaquim estudou Geografia', o verbo 'estudou' é do tipo:",opcoes:["Verbo no gerúndio","Verbo de ligação","Verbo significativo","Verbo no particípio"],correta:2,explicacao:"'Estudou' é um verbo significativo, pois indica uma ação real que Joaquim fez."},
-  {pergunta:"O modo Indicativo é usado para expressar:",opcoes:["Um fato certo, real","Sempre uma ordem","Apenas o futuro","Uma dúvida ou desejo"],correta:0,explicacao:"O modo Indicativo expressa fatos certos e reais, como em 'Joaquim estuda todo dia'."},
-  {pergunta:"Na frase 'Joaquim tinha estudado antes da prova', a palavra 'estudado' está em qual forma nominal?",opcoes:["Nenhuma","Particípio","Infinitivo","Gerúndio"],correta:1,explicacao:"'Estudado' é o particípio do verbo estudar, usado aqui para formar um tempo composto."}
+  {pergunta:"Por que Alonso Quijano perdeu o juízo?",opcoes:["De tanto ler livros de cavalaria", "Porque Sancho o enganou", "Porque perdeu suas terras", "Porque caiu do cavalo"],correta:0,explicacao:"Ele leu tantos livros de cavalaria que passou a achar que tudo aquilo era real."},
+  {pergunta:"Qual nome Alonso Quijano adota ao virar cavaleiro?",opcoes:["Rocinante", "Dom Quixote de La Mancha", "Cavaleiro da Branca Lua", "Sancho Pança"],correta:1,explicacao:"Ele passa a se chamar Dom Quixote de La Mancha."},
+  {pergunta:"Quem é Rocinante?",opcoes:["O cavalo velho e magro de Dom Quixote", "A dama de Dom Quixote", "O escudeiro de Dom Quixote", "O barbeiro da aldeia"],correta:0,explicacao:"Rocinante é o cavalo de Dom Quixote."},
+  {pergunta:"Quem é Sancho Pança?",opcoes:["Um gigante inimigo", "O dono da estalagem", "O autor do livro", "Um lavrador vizinho que vira escudeiro de Dom Quixote"],correta:3,explicacao:"Sancho é o lavrador simples que acompanha Dom Quixote como escudeiro."},
+  {pergunta:"O que Dom Quixote promete a Sancho para convencê-lo a ir junto?",opcoes:["Casar com Dulcineia", "Que ele vai governar uma ilha", "Um cavalo novo", "Um livro de cavalaria"],correta:1,explicacao:"Ele promete que Sancho vai governar uma ilha."},
+  {pergunta:"Quem é Dulcineia del Toboso?",opcoes:["A mulher de Sancho", "Uma rainha que ele salva", "A dama a quem Dom Quixote dedica suas aventuras", "A sobrinha de Dom Quixote"],correta:2,explicacao:"Dulcineia é a dama idealizada por Dom Quixote; na verdade, uma moça simples da vizinhança."},
+  {pergunta:"Em que animal Sancho Pança anda?",opcoes:["Num burro", "A pé, sempre", "Num camelo", "Num cavalo branco"],correta:0,explicacao:"Sancho anda montado num burro."},
+  {pergunta:"Qual destas características combina com Sancho Pança?",opcoes:["Cavaleiro famoso", "Prático, simples e pé no chão", "Rico e poderoso", "Sonhador e cheio de ilusões"],correta:1,explicacao:"Sancho é prático e realista, o oposto do idealismo de Dom Quixote."},
+  {pergunta:"Quem tenta trazer Dom Quixote de volta para casa e curá-lo?",opcoes:["O padre e o barbeiro, amigos da aldeia", "Os gigantes", "Rocinante", "Os galeotes"],correta:0,explicacao:"O padre e o barbeiro são os amigos que tentam ajudá-lo."},
+  {pergunta:"Quem escreveu a obra original Dom Quixote?",opcoes:["Marina Colasanti", "Miguel de Cervantes", "Monteiro Lobato", "William Shakespeare"],correta:1,explicacao:"O autor original é o espanhol Miguel de Cervantes."},
+  {pergunta:"Quem recontou a história no livro \"Era uma vez Dom Quixote\"?",opcoes:["Machado de Assis", "Marina Colasanti", "Sancho Pança", "Miguel de Cervantes"],correta:1,explicacao:"O livro da prova é a versão de Marina Colasanti."},
+  {pergunta:"Dom Quixote e Sancho Pança formam uma dupla de:",opcoes:["Dois cavaleiros ricos", "Opostos que se completam: sonhador e realista", "Irmãos gêmeos", "Inimigos que lutam o tempo todo"],correta:1,explicacao:"Um é sonhador (Quixote), o outro é realista (Sancho): opostos que se completam."}
   ],
   'port-topico-3': [
-  {pergunta:"Na frase 'Joaquim estudou para a prova', qual é o sujeito?",opcoes:["Joaquim","A prova","Para a prova","Estudou"],correta:0,explicacao:"O sujeito é de quem a frase fala: 'Joaquim'."},
-  {pergunta:"O que é o predicado de uma frase?",opcoes:["O que se diz sobre o sujeito","Sempre um substantivo","De quem a frase fala","Uma preposição"],correta:0,explicacao:"O predicado é a parte da frase que diz algo sobre o sujeito, geralmente contendo o verbo."},
-  {pergunta:"Na frase 'O cão e o gato correram', o sujeito é do tipo:",opcoes:["Oculto","Composto","Simples","Indeterminado"],correta:1,explicacao:"Sujeito composto tem 2 ou mais núcleos: 'o cão' e 'o gato'."},
-  {pergunta:"Na frase 'Estudamos muito ontem', o sujeito é do tipo:",opcoes:["Oculto/desinencial (nós)","Composto","Simples","Indeterminado"],correta:0,explicacao:"O sujeito não aparece escrito, mas pode ser identificado pela conjugação do verbo: 'nós estudamos'."},
-  {pergunta:"O que é o predicado verbal?",opcoes:["O mesmo que sujeito composto","O predicado cujo centro é uma característica, com verbo de ligação","O predicado que não tem verbo","O predicado cujo centro é a ação de um verbo significativo"],correta:3,explicacao:"O predicado verbal tem como centro a ação de um verbo significativo, como em 'O cão correu'."},
-  {pergunta:"O que é o predicado nominal?",opcoes:["O predicado cujo centro é a ação do verbo","O predicado cujo centro é uma característica, ligada por um verbo de ligação","Um tipo de coesão","O mesmo que sujeito simples"],correta:1,explicacao:"O predicado nominal tem como centro uma característica, ligada ao sujeito por um verbo de ligação, como em 'O cão está cansado'."},
-  {pergunta:"Na frase 'O cão está cansado', o predicado é do tipo:",opcoes:["Composto","Verbal","Nominal","Desinencial"],correta:2,explicacao:"O predicado é nominal porque o centro da informação é a característica 'cansado', ligada pelo verbo de ligação 'está'."},
-  {pergunta:"Na frase 'O cão correu', o predicado é do tipo:",opcoes:["Nominal","Simples","Verbal","Desinencial"],correta:2,explicacao:"O predicado é verbal porque o centro da informação é a ação 'correu'."},
-  {pergunta:"Em 'Joaquim e Maria estudaram juntos', qual é o núcleo do sujeito?",opcoes:["Juntos","Joaquim e Maria","Não tem sujeito","Estudaram"],correta:1,explicacao:"O núcleo do sujeito composto são os dois nomes: 'Joaquim' e 'Maria'."},
-  {pergunta:"Qual é a diferença principal entre predicado verbal e predicado nominal?",opcoes:["O verbal nunca tem sujeito","O nominal sempre vem antes do sujeito","Não existe diferença","O verbal tem o verbo como centro; o nominal tem a característica como centro"],correta:3,explicacao:"No predicado verbal, o que importa é a ação do verbo. No predicado nominal, o que importa é a característica ligada ao sujeito."}
+  {pergunta:"Na aventura mais famosa do livro, Dom Quixote confunde moinhos de vento com:",opcoes:["Dragões", "Gigantes", "Castelos", "Navios"],correta:1,explicacao:"Ele ataca os moinhos achando que são gigantes."},
+  {pergunta:"O que acontece quando Dom Quixote ataca os moinhos?",opcoes:["Ele vence os gigantes", "Os moinhos fogem", "Sancho o impede antes do ataque", "A pá do moinho o derruba"],correta:3,explicacao:"A pá do moinho o derruba, junto com Rocinante."},
+  {pergunta:"Como Dom Quixote explica que os gigantes viraram moinhos?",opcoes:["Diz que um mago (encantador) os transformou", "Diz que estava sonhando", "Diz que Sancho estava certo", "Diz que errou o caminho"],correta:0,explicacao:"Ele culpa um mago, sem admitir que eram só moinhos."},
+  {pergunta:"Ao chegar a uma estalagem (pousada), Dom Quixote imagina que é:",opcoes:["Uma prisão", "Um moinho", "Uma igreja", "Um castelo"],correta:3,explicacao:"Ele acha que a estalagem é um castelo."},
+  {pergunta:"O que o padre e o barbeiro fazem com os livros de cavalaria?",opcoes:["Dão os livros para Sancho", "Vendem os livros", "Queimam os livros e fecham a biblioteca", "Leem todos para Dom Quixote"],correta:2,explicacao:"Eles queimam os livros, tentando curar o amigo."},
+  {pergunta:"O episódio do menino Andrés mostra que:",opcoes:["Dom Quixote sempre resolve os problemas", "Sancho é um mau escudeiro", "O patrão era um gigante", "Uma boa intenção, sem olhar a realidade, pode piorar a situação"],correta:3,explicacao:"Depois que Dom Quixote vai embora, o menino apanha ainda mais."},
+  {pergunta:"Dom Quixote confunde rebanhos de ovelhas com:",opcoes:["Exércitos", "Moinhos", "Damas", "Gigantes"],correta:0,explicacao:"Ele acha que as nuvens de poeira dos rebanhos são exércitos em batalha."},
+  {pergunta:"Qual apelido Sancho dá a Dom Quixote?",opcoes:["Cavaleiro da Triste Figura", "Gigante de Toboso", "Rei de La Mancha", "Cavaleiro da Branca Lua"],correta:0,explicacao:"Sancho o chama de Cavaleiro da Triste Figura."},
+  {pergunta:"Quando Sancho finalmente governa uma \"ilha\", ele:",opcoes:["Se torna um tirano", "Foge no primeiro dia", "Surpreende todos com seu bom senso", "Vira cavaleiro andante"],correta:2,explicacao:"Sancho governa com bom senso e justiça, surpreendendo todos."},
+  {pergunta:"Quem vence Dom Quixote e o obriga a voltar para casa?",opcoes:["Um gigante de verdade", "O duque", "Sancho Pança", "Sansão Carrasco, disfarçado de Cavaleiro da Branca Lua"],correta:3,explicacao:"Sansão Carrasco se disfarça de cavaleiro para levá-lo de volta para casa."},
+  {pergunta:"Como termina a história de Dom Quixote?",opcoes:["Ele recupera o juízo, volta a ser Alonso Quijano e morre em casa", "Ele vence todos os gigantes", "Ele casa com Dulcineia", "Ele vira rei de uma ilha"],correta:0,explicacao:"No final, ele recupera o juízo e morre como Alonso Quijano, \"o Bom\"."},
+  {pergunta:"No final, qual é a reação de Sancho?",opcoes:["Chora e pede que Dom Quixote continue sonhando", "Fica feliz por voltar para casa", "Vai embora sem se despedir", "Vira inimigo de Dom Quixote"],correta:0,explicacao:"Sancho, antes tão realista, pede que o amigo continue sonhando: ele também mudou."}
   ],
   'port-topico-4': [
-  {pergunta:"O que é coesão textual?",opcoes:["O que liga as partes de um texto","Um tipo de pontuação","Apenas o título","A introdução do texto"],correta:0,explicacao:"Coesão é o conjunto de recursos que liga as partes de um texto, criando conexão entre as ideias."},
-  {pergunta:"Na frase 'Ana chegou. Ela estava cansada.', o que a palavra 'Ela' faz?",opcoes:["É um advérbio","É uma conjunção","Não tem função","Retoma 'Ana' (coesão referencial)"],correta:3,explicacao:"'Ela' retoma 'Ana', funcionando como um recurso de coesão referencial."},
-  {pergunta:"O que é coesão sequencial?",opcoes:["Não usar pontuação","Usar conjunções e verbos pra ligar uma ideia na outra","Separar o texto em parágrafos sem conexão","Repetir sempre a mesma palavra"],correta:1,explicacao:"Coesão sequencial usa conjunções e flexões verbais para encadear as ideias do texto."},
-  {pergunta:"O que significa 'retomar uma informação' em um texto?",opcoes:["Apagar a informação anterior","Usar uma palavra (como pronome) pra se referir a algo já dito","Repetir a mesma palavra sempre","Começar um novo texto"],correta:1,explicacao:"Retomar uma informação significa se referir a algo já mencionado, geralmente usando pronomes, fazendo a coesão do texto."},
-  {pergunta:"Na frase 'Estudei, portanto passei', qual é o papel da palavra 'portanto'?",opcoes:["Substituir um nome","Indicar lugar","Fazer coesão sequencial, ligando causa e consequência","Não tem função na frase"],correta:2,explicacao:"'Portanto' liga as ideias mostrando uma consequência, funcionando como coesão sequencial."},
-  {pergunta:"Qual destas é uma forma de coesão referencial?",opcoes:["Usar um pronome pra retomar algo já dito","Usar 'e' para somar ideias","Usar 'porque' para indicar causa","Usar ponto final"],correta:0,explicacao:"A coesão referencial acontece quando uma palavra (geralmente um pronome) retoma algo já mencionado no texto."},
-  {pergunta:"Por que a coesão é importante em um texto?",opcoes:["Só é usada em poesias","Não é importante","Só serve para deixar o texto maior","Porque liga as ideias, evitando que o texto fique solto e confuso"],correta:3,explicacao:"A coesão conecta as partes do texto, tornando-o mais claro e organizado para o leitor."},
-  {pergunta:"Na frase 'Comprei pão, leite e ovos', qual conjunção liga o último elemento da lista?",opcoes:["Se","E","Porque","Mas"],correta:1,explicacao:"A conjunção 'e' é usada para ligar o último elemento de uma enumeração, fazendo coesão sequencial."},
-  {pergunta:"Sem os recursos de coesão, como ficaria um texto?",opcoes:["Com as frases soltas, difíceis de conectar","Mais fácil de entender","Exatamente igual","Mais organizado"],correta:0,explicacao:"Sem coesão, as frases do texto ficam desconectadas, dificultando a compreensão do leitor."},
-  {pergunta:"Na frase 'Joaquim estudou bastante; por isso, tirou uma boa nota', o que 'por isso' representa?",opcoes:["Um pronome pessoal","Uma preposição de lugar","Coesão sequencial, indicando consequência","Coesão referencial"],correta:2,explicacao:"'Por isso' liga as duas ideias mostrando uma relação de consequência, o que é coesão sequencial."}
+  {pergunta:"Qual é a principal oposição de ideias no livro?",opcoes:["Riqueza × pobreza", "Cidade × campo", "Guerra × paz", "Sonho (idealismo) × realidade"],correta:3,explicacao:"O livro gira em torno do choque entre sonho (Dom Quixote) e realidade (Sancho)."},
+  {pergunta:"Qual valor Dom Quixote mais defende?",opcoes:["Ficar em casa em segurança", "Justiça e proteção dos fracos", "Ganhar dinheiro", "Enganar as pessoas"],correta:1,explicacao:"Ele quer corrigir injustiças e proteger os fracos, como os cavaleiros dos livros."},
+  {pergunta:"Qual valor Sancho Pança demonstra ao continuar ao lado de Dom Quixote mesmo nas confusões?",opcoes:["Vaidade", "Covardia", "Lealdade e amizade", "Ganância"],correta:2,explicacao:"Sancho permanece fiel ao amigo: lealdade e amizade."},
+  {pergunta:"Por que Cervantes escreveu Dom Quixote?",opcoes:["Para ensinar a construir moinhos", "Para contar a história real de um rei", "Para ensinar a andar a cavalo", "Para fazer uma sátira (rir) dos livros de cavalaria"],correta:3,explicacao:"Cervantes satirizou os livros de cavalaria, muito populares na época."},
+  {pergunta:"Em que época Dom Quixote foi publicado?",opcoes:["Século XXI", "Século XX", "Antiguidade grega", "Início do século XVII (1605 e 1615)"],correta:3,explicacao:"A 1ª parte saiu em 1605 e a 2ª em 1615."},
+  {pergunta:"Em que país se passa a história e viveu o autor?",opcoes:["Brasil", "Espanha", "Japão", "Inglaterra"],correta:1,explicacao:"Cervantes era espanhol, e a história se passa em La Mancha, na Espanha."},
+  {pergunta:"Hoje, chamar alguém de \"quixotesco\" significa dizer que a pessoa é:",opcoes:["Sonhadora e idealista, luta por causas impossíveis", "Muito violenta", "Muito preguiçosa", "Muito rica"],correta:0,explicacao:"Quixotesco = sonhador, idealista, como Dom Quixote."},
+  {pergunta:"O livro permite \"múltiplos olhares\" sobre Dom Quixote porque:",opcoes:["O livro tem muitos autores", "Ele pode ser visto como louco ou como corajoso por sonhar", "Ele tem vários nomes de cavalo", "Cada capítulo tem um protagonista diferente"],correta:1,explicacao:"O leitor pode vê-lo como louco ou como herói sonhador: as duas leituras são possíveis."},
+  {pergunta:"O que muda numa adaptação como a de Marina Colasanti?",opcoes:["Dom Quixote vira um vilão", "A forma de contar, com linguagem para leitores jovens", "O nome de todos os personagens", "O país onde se passa a história"],correta:1,explicacao:"A adaptação reconta a mesma história com linguagem mais acessível."},
+  {pergunta:"A história de Dom Quixote é, ao mesmo tempo:",opcoes:["Só científica", "Engraçada e triste", "Só de terror", "Só policial"],correta:1,explicacao:"As confusões fazem rir, mas o sonho e a derrota do herói também emocionam."},
+  {pergunta:"Qual frase resume uma crítica do livro?",opcoes:["Quem lê muito sempre fica rico", "Nunca se deve ajudar ninguém", "Boas intenções sem olhar a realidade podem causar problemas", "Cavalos velhos são mais rápidos"],correta:2,explicacao:"Episódios como o do menino Andrés mostram que agir sem ver a realidade pode piorar as coisas."}
   ],
   'port-topico-5': [
-  {pergunta:"O que significa interpretar um texto?",opcoes:["Entender o que ele realmente quer dizer","Contar as palavras","Copiar o texto","Decorar o texto"],correta:0,explicacao:"Interpretar é compreender o sentido e a intenção real do texto."},
-  {pergunta:"O que é linguagem figurada?",opcoes:["Um tipo de letra de forma","Quando o texto só tem números","Um tipo de pontuação","Quando a frase não quer dizer ao pé da letra"],correta:3,explicacao:"Linguagem figurada é quando o sentido da frase não é literal. Ex: 'choveu canivete' significa que choveu muito forte."},
-  {pergunta:"Qual destas frases usa linguagem figurada?",opcoes:["O cachorro correu no parque.","Choveu canivete a noite toda.","Maria foi ao mercado.","Hoje está frio."],correta:1,explicacao:"'Choveu canivete' é uma expressão figurada que significa 'choveu muito forte', não que canivetes caíram do céu."},
-  {pergunta:"O que é denotação?",opcoes:["Usar a palavra com um sentido figurado","Usar a palavra com o sentido real, do dicionário","Um tipo de conjunção","Uma forma nominal do verbo"],correta:1,explicacao:"Denotação é o uso da palavra em seu sentido literal, real, como está no dicionário."},
-  {pergunta:"O que é conotação?",opcoes:["Usar a palavra com um sentido figurado, diferente do literal","Um tipo de sujeito","Um sinal de pontuação","Usar a palavra no sentido literal"],correta:0,explicacao:"Conotação é o uso da palavra em sentido figurado, sugerido, diferente do significado literal."},
-  {pergunta:"Na frase 'Ele tem um coração de pedra', a palavra 'pedra' está sendo usada em sentido:",opcoes:["Conotativo (figurado)","Apenas gramatical","Denotativo (literal)","Nenhum dos dois"],correta:0,explicacao:"'Coração de pedra' é uma expressão conotativa, que sugere que a pessoa é insensível, não que o coração seja literalmente feito de pedra."},
-  {pergunta:"Na frase 'Comprei uma pedra para o jardim', a palavra 'pedra' está sendo usada em sentido:",opcoes:["Apenas gramatical","Conotativo (figurado)","Nenhum dos dois","Denotativo (literal)"],correta:3,explicacao:"Aqui 'pedra' está no sentido real, literal: uma pedra de verdade comprada para o jardim."},
-  {pergunta:"A frase 'Está na cara que ele mentiu' usa qual recurso?",opcoes:["Linguagem literal (denotação)","Linguagem figurada (conotação)","Apenas uma preposição","Um pronome"],correta:1,explicacao:"'Está na cara' é uma expressão de linguagem figurada (conotação) que significa 'é muito óbvio'."},
-  {pergunta:"Qual é a importância de interpretar bem um texto numa prova?",opcoes:["Serve só para textos longos","Não tem importância","Ajuda a responder as perguntas corretamente, entendendo o que é pedido","Só é importante em redação"],correta:2,explicacao:"Interpretar bem o texto ajuda a entender exatamente o que está sendo perguntado, facilitando respostas corretas."},
-  {pergunta:"Ao ler um texto, o que é mais importante observar para interpretá-lo bem?",opcoes:["A cor da folha","Só o tamanho do texto","Quem fala, sobre o que fala, e qual é a ideia principal","O número de páginas"],correta:2,explicacao:"Prestar atenção em quem fala, sobre o que fala e qual é a ideia principal ajuda muito na interpretação do texto."}
+  {pergunta:"O que é intertextualidade?",opcoes:["Um erro de concordância", "O diálogo de um texto com outro texto", "A tradução de uma palavra", "O resumo de um livro"],correta:1,explicacao:"Intertextualidade é a relação entre textos: um texto retoma, cita ou faz referência a outro."},
+  {pergunta:"Dom Quixote é uma paródia de qual tipo de texto?",opcoes:["Livros de receita", "Notícias de jornal", "Contos de terror", "Livros de cavalaria"],correta:3,explicacao:"Cervantes imitou os livros de cavalaria para rir deles."},
+  {pergunta:"O que é paródia?",opcoes:["Traduzir para outra língua", "Copiar um trecho entre aspas", "Imitar um texto para fazer humor ou crítica", "Reescrever mantendo o mesmo sentido, sem humor"],correta:2,explicacao:"Paródia imita outro texto com intenção de humor ou crítica."},
+  {pergunta:"O que é paráfrase?",opcoes:["Escrever um poema com rimas", "Inventar uma história nova", "Reescrever outro texto com outras palavras, mantendo o sentido", "Imitar um texto para criticar"],correta:2,explicacao:"A paráfrase mantém o sentido do texto original, com outras palavras."},
+  {pergunta:"\"Era uma vez Dom Quixote\", de Marina Colasanti, em relação à obra de Cervantes, é:",opcoes:["Um texto sem relação com Cervantes", "Uma adaptação (reconto) da obra original", "Uma notícia sobre Cervantes", "Um dicionário"],correta:1,explicacao:"O livro reconta a história de Cervantes para leitores jovens."},
+  {pergunta:"A expressão \"Era uma vez\" no título faz referência a:",opcoes:["Contos de fadas", "Livros de matemática", "Notícias", "Anúncios"],correta:0,explicacao:"É a abertura tradicional dos contos de fadas."},
+  {pergunta:"\"Meu pai vive lutando contra moinhos de vento\" é um exemplo de:",opcoes:["Citação de jornal", "Alusão (referência) a Dom Quixote", "Paráfrase de uma receita", "Erro de concordância"],correta:1,explicacao:"A frase faz referência ao episódio dos moinhos, sem copiar o texto."},
+  {pergunta:"A expressão \"lutar contra moinhos de vento\" significa:",opcoes:["Lutar contra inimigos imaginários ou causas impossíveis", "Ganhar uma batalha fácil", "Fazer exercício ao ar livre", "Trabalhar num moinho"],correta:0,explicacao:"Vem de Dom Quixote: lutar contra algo imaginário ou impossível de vencer."},
+  {pergunta:"Um filme baseado em Dom Quixote é um exemplo de:",opcoes:["Narrador de 1ª pessoa", "Concordância verbal", "Intertextualidade (adaptação)", "Discurso indireto"],correta:2,explicacao:"Ao recontar a história em outra linguagem, o filme dialoga com o texto original."},
+  {pergunta:"Copiar um trecho de outro autor entre aspas é:",opcoes:["Clímax", "Desfecho", "Paródia", "Citação"],correta:3,explicacao:"Citação reproduz o trecho original, entre aspas."},
+  {pergunta:"Qual brasileiro fez desenhos de Dom Quixote?",opcoes:["Candido Portinari", "Pelé", "Santos Dumont", "Tiradentes"],correta:0,explicacao:"O pintor Candido Portinari desenhou Dom Quixote, e Drummond fez poemas sobre os desenhos."}
+  ],
+  'port-topico-6': [
+  {pergunta:"O modo indicativo expressa:",opcoes:["Dúvida ou desejo", "Ordem ou pedido", "Certeza, um fato real", "Apenas o futuro"],correta:2,explicacao:"Indicativo = certeza, fato."},
+  {pergunta:"O modo subjuntivo expressa:",opcoes:["Ordem", "Apenas o passado", "Certeza absoluta", "Dúvida, desejo ou hipótese"],correta:3,explicacao:"Subjuntivo = dúvida, desejo, possibilidade."},
+  {pergunta:"Em \"Dom Quixote atacou os moinhos\", o verbo está no:",opcoes:["Indicativo (pretérito perfeito)", "Imperativo afirmativo", "Subjuntivo (futuro)", "Subjuntivo (presente)"],correta:0,explicacao:"\"Atacou\" indica um fato que aconteceu: indicativo, pretérito perfeito."},
+  {pergunta:"Em \"Talvez os moinhos sejam gigantes\", o verbo destacado está no:",opcoes:["Subjuntivo", "Imperativo", "Indicativo", "Infinitivo"],correta:0,explicacao:"\"Talvez\" indica dúvida, e \"sejam\" está no presente do subjuntivo."},
+  {pergunta:"Em \"Espero que Sancho volte logo\", o verbo \"volte\" está no:",opcoes:["Presente do subjuntivo", "Pretérito perfeito", "Imperativo negativo", "Presente do indicativo"],correta:0,explicacao:"Depois de \"espero que\" (desejo) vem o subjuntivo: volte."},
+  {pergunta:"Em \"Se eu fosse cavaleiro, protegeria os fracos\", \"fosse\" está no:",opcoes:["Pretérito imperfeito do subjuntivo", "Presente do indicativo", "Imperativo", "Futuro do presente"],correta:0,explicacao:"\"Se eu fosse\" é hipótese: pretérito imperfeito do subjuntivo."},
+  {pergunta:"Na mesma frase, \"protegeria\" está no:",opcoes:["Imperativo afirmativo", "Pretérito perfeito", "Futuro do pretérito do indicativo", "Presente do subjuntivo"],correta:2,explicacao:"\"Protegeria\" é futuro do pretérito, que pertence ao modo indicativo."},
+  {pergunta:"Em \"Quando Dom Quixote voltar, a sobrinha ficará feliz\", \"voltar\" está no:",opcoes:["Futuro do subjuntivo", "Presente do indicativo", "Infinitivo", "Imperativo"],correta:0,explicacao:"Depois de \"quando\", indicando condição futura, \"voltar\" é futuro do subjuntivo."},
+  {pergunta:"Qual palavra costuma indicar o uso do subjuntivo?",opcoes:["Agora", "Sempre", "Ontem", "Talvez"],correta:3,explicacao:"\"Talvez\" indica dúvida e pede o subjuntivo."},
+  {pergunta:"Qual frase está no modo indicativo?",opcoes:["Talvez Sancho coma muito.", "Se Sancho comesse muito...", "Sancho come muito.", "Que Sancho coma muito!"],correta:2,explicacao:"\"Sancho come muito\" afirma um fato: indicativo."},
+  {pergunta:"Qual frase tem verbo no subjuntivo?",opcoes:["Dom Quixote estava cansado.", "Dom Quixote seguiu viagem.", "Embora estivesse cansado, Dom Quixote seguiu.", "Rocinante é magro."],correta:2,explicacao:"\"Embora estivesse\" expressa concessão: pretérito imperfeito do subjuntivo."},
+  {pergunta:"Em \"Dom Quixote lutava todos os dias\", o tempo verbal é:",opcoes:["Futuro do presente", "Pretérito perfeito do indicativo", "Presente do subjuntivo", "Pretérito imperfeito do indicativo"],correta:3,explicacao:"\"Lutava\" indica ação repetida no passado: pretérito imperfeito do indicativo."}
+  ],
+  'port-topico-7': [
+  {pergunta:"Para que serve o modo imperativo?",opcoes:["Dar ordem, pedido, conselho ou convite", "Descrever um lugar", "Contar um fato do passado", "Expressar dúvida"],correta:0,explicacao:"O imperativo expressa ordem, pedido, conselho ou convite."},
+  {pergunta:"Qual pessoa NÃO existe no imperativo?",opcoes:["Você", "Eu (1ª pessoa do singular)", "Tu", "Vocês"],correta:1,explicacao:"Não se dá ordem a si mesmo com \"eu\": não existe 1ª pessoa do singular no imperativo."},
+  {pergunta:"De onde vem o imperativo negativo?",opcoes:["Do presente do indicativo sem o S", "Do presente do subjuntivo, com \"não\" na frente", "Do pretérito perfeito", "Do futuro do presente"],correta:1,explicacao:"O imperativo negativo é o presente do subjuntivo precedido de \"não\"."},
+  {pergunta:"No imperativo afirmativo, as formas de TU e VÓS vêm do:",opcoes:["Futuro do subjuntivo", "Presente do indicativo, sem o S", "Presente do subjuntivo", "Pretérito imperfeito"],correta:1,explicacao:"Tu lutas → luta; vós lutais → lutai."},
+  {pergunta:"Qual é o imperativo afirmativo de LUTAR para \"você\"?",opcoes:["Lutai", "Lute", "Luta", "Lutes"],correta:1,explicacao:"Para \"você\", o afirmativo vem do subjuntivo: lute."},
+  {pergunta:"Qual é o imperativo afirmativo de LUTAR para \"tu\"?",opcoes:["Não lutes", "Luta", "Lutes", "Lute"],correta:1,explicacao:"Tu lutas (indicativo) sem o S: luta."},
+  {pergunta:"Complete com o imperativo negativo (tu): \"___ os moinhos, Dom Quixote!\" (atacar)",opcoes:["Não atacai", "Não ataques", "Não atacas", "Não ataca"],correta:1,explicacao:"Negativo de tu = não + presente do subjuntivo (tu ataques): não ataques."},
+  {pergunta:"Complete com o imperativo negativo (você): \"Senhor, ___ medo!\" (ter)",opcoes:["Não tenhas tu", "Não tenha", "Não tende", "Não tem"],correta:1,explicacao:"Para você: não + presente do subjuntivo (que você tenha): não tenha."},
+  {pergunta:"Qual é o imperativo afirmativo de SER para \"você\"?",opcoes:["Sê", "Sede", "És", "Seja"],correta:3,explicacao:"Ser no afirmativo: sê (tu), seja (você), sejamos, sede, sejam."},
+  {pergunta:"Qual frase está no imperativo negativo?",opcoes:["Eles não desistiram.", "Talvez eles desistam.", "Não desistam dos seus sonhos!", "Eles desistirão?"],correta:2,explicacao:"\"Não desistam\" é uma ordem/conselho negativo: imperativo negativo."},
+  {pergunta:"Qual frase está no imperativo afirmativo?",opcoes:["Sancho trará a lança.", "Sancho, traga a lança!", "Sancho trouxe a lança.", "Se Sancho trouxesse a lança..."],correta:1,explicacao:"\"Traga\" é uma ordem: imperativo afirmativo (você)."},
+  {pergunta:"Qual frase segue a norma-padrão, sem misturar tu e você?",opcoes:["Venha cá e sente-se, Sancho.", "Venha cá e senta-te, Sancho.", "Vem cá e sentem-se, Sancho.", "Vem cá e sente-se, Sancho."],correta:0,explicacao:"\"Venha\" e \"sente-se\" estão ambos na pessoa \"você\"."}
+  ],
+  'port-topico-8': [
+  {pergunta:"Qual frase tem a concordância nominal correta?",opcoes:["O cavaleiros corajosos partiram.", "Os cavaleiros corajosos partiram.", "Os cavaleiros corajoso partiram.", "Os cavaleiro corajosos partiram."],correta:1,explicacao:"Artigo, substantivo e adjetivo no plural: os cavaleiros corajosos."},
+  {pergunta:"Complete: \"Dom Quixote usava uma armadura ___.\"",opcoes:["velha", "velho", "velhas", "velhos"],correta:0,explicacao:"\"Armadura\" é feminino singular: armadura velha."},
+  {pergunta:"Qual frase tem a concordância verbal correta?",opcoes:["Dom Quixote e Sancho partiu juntos.", "Dom Quixote e Sancho partimos juntos.", "Dom Quixote e Sancho partiram juntos.", "Dom Quixote e Sancho parte juntos."],correta:2,explicacao:"Sujeito composto (dois núcleos) antes do verbo: verbo no plural (partiram)."},
+  {pergunta:"Complete: \"___ muitos livros de cavalaria na biblioteca.\"",opcoes:["Haviam", "Hão", "Havia", "Houveram"],correta:2,explicacao:"Haver no sentido de existir é impessoal: sempre no singular (havia)."},
+  {pergunta:"Complete: \"___ dois anos que Dom Quixote partiu.\"",opcoes:["Faz", "Façam", "Fizeram", "Fazem"],correta:0,explicacao:"Fazer indicando tempo é impessoal: fica no singular (faz)."},
+  {pergunta:"Qual frase está correta?",opcoes:["Chegou os cavaleiro ao castelo.", "Chegaram o cavaleiro ao castelo.", "Chegaram os cavaleiros ao castelo.", "Chegou os cavaleiros ao castelo."],correta:2,explicacao:"Mesmo depois do verbo, o sujeito \"os cavaleiros\" pede o verbo no plural."},
+  {pergunta:"Dulcineia agradece. Ela deve dizer:",opcoes:["Obrigadas", "Obrigado", "Obrigados", "Obrigada"],correta:3,explicacao:"\"Obrigado\" concorda com quem fala: mulher diz obrigada."},
+  {pergunta:"Complete: \"Sancho ficou ___ preocupado.\"",opcoes:["meias", "meia", "meios", "meio"],correta:3,explicacao:"Meio = um pouco (advérbio): não muda."},
+  {pergunta:"Complete: \"Esperaram ___ hora pelo cavaleiro.\"",opcoes:["meio", "meios", "meia", "meias"],correta:2,explicacao:"Meia = metade (numeral), concorda com \"hora\" (feminino)."},
+  {pergunta:"Complete: \"O rebanho de ovelhas ___ pela estrada.\"",opcoes:["passamos", "passaram", "passou", "passastes"],correta:2,explicacao:"O núcleo do sujeito é \"rebanho\" (singular): passou."},
+  {pergunta:"Complete: \"A lança e o escudo estavam ___.\"",opcoes:["velhas", "velhos", "velho e velha", "velha"],correta:1,explicacao:"Masculino + feminino: o adjetivo vai para o masculino plural (velhos)."},
+  {pergunta:"Complete: \"Dom Quixote leu ___ livros.\" (= muitos)",opcoes:["bastantes", "bastantos", "bastanto", "bastante"],correta:0,explicacao:"Bastante com sentido de \"muitos\" é adjetivo e concorda: bastantes livros."},
+  {pergunta:"Qual frase tem ERRO de concordância?",opcoes:["Os moinhos giravam ao vento.", "Existiam muitos moinhos na estrada.", "Haviam muitos gigantes na estrada.", "Havia muitos moinhos na estrada."],correta:2,explicacao:"\"Haviam\" está errado: haver com sentido de existir fica no singular (havia)."},
+  {pergunta:"Em \"Existiam muitos moinhos\", o verbo está no plural porque:",opcoes:["Existir é sempre impessoal", "Concorda com o sujeito \"muitos moinhos\"", "Está no imperativo", "Concorda com o leitor"],correta:1,explicacao:"Diferente de \"haver\", \"existir\" concorda normalmente com o sujeito."}
+  ],
+  'port-topico-9': [
+  {pergunta:"Em \"Rocinante era um cavalo magro\", a palavra \"magro\" é um:",opcoes:["Pronome", "Verbo, que indica ação", "Adjetivo, que caracteriza o cavalo", "Advérbio de tempo"],correta:2,explicacao:"\"Magro\" caracteriza o substantivo \"cavalo\": é adjetivo."},
+  {pergunta:"Em \"Dom Quixote atacou ferozmente o moinho\", \"ferozmente\" é um advérbio de:",opcoes:["Tempo", "Modo", "Lugar", "Negação"],correta:1,explicacao:"\"Ferozmente\" indica o modo como ele atacou."},
+  {pergunta:"Em \"Sancho estava muito cansado\", a palavra \"muito\" tem o efeito de:",opcoes:["Dar uma ordem", "Indicar o lugar", "Ligar duas frases", "Intensificar o cansaço"],correta:3,explicacao:"\"Muito\" é advérbio de intensidade: reforça o adjetivo."},
+  {pergunta:"Em \"Dom Quixote montou em Rocinante. Ele partiu ao amanhecer\", o pronome \"ele\":",opcoes:["Indica o lugar da ação", "Evita repetir o nome Dom Quixote", "Indica oposição", "Expressa emoção"],correta:1,explicacao:"O pronome substitui o nome e evita repetição."},
+  {pergunta:"Em \"Sancho avisou, mas Dom Quixote atacou\", a conjunção \"mas\" indica:",opcoes:["Oposição", "Conclusão", "Tempo", "Causa"],correta:0,explicacao:"\"Mas\" liga ideias opostas: Sancho avisou × Dom Quixote atacou mesmo assim."},
+  {pergunta:"Em \"Dom Quixote caiu porque a pá o atingiu\", \"porque\" indica:",opcoes:["Oposição", "Causa", "Condição", "Finalidade de lugar"],correta:1,explicacao:"\"Porque\" introduz a causa da queda."},
+  {pergunta:"Em \"— Ai! Que dor! — gritou Sancho\", \"Ai!\" é uma:",opcoes:["Interjeição, que expressa emoção", "Conjunção", "Adjetivo", "Preposição"],correta:0,explicacao:"Interjeições expressam emoções, como dor ou susto."},
+  {pergunta:"Em \"Que cavalinho bonito!\", o diminutivo expressa:",opcoes:["Desprezo obrigatório", "Dúvida", "Ordem", "Carinho"],correta:3,explicacao:"Aqui o diminutivo demonstra carinho, não só tamanho."},
+  {pergunta:"Qual é o efeito de trocar \"cavalo veloz\" por \"cavalo magro\"?",opcoes:["Muda o narrador", "Não muda nada", "Transforma o texto em poesia", "Muda a imagem que o leitor faz do cavalo"],correta:3,explicacao:"Adjetivos diferentes criam imagens e impressões diferentes."},
+  {pergunta:"Em \"Embora estivesse ferido, continuou a viagem\", \"embora\" indica:",opcoes:["Lugar", "Tempo", "Concessão (apesar de algo, a ação acontece)", "Causa"],correta:2,explicacao:"\"Embora\" introduz uma ideia que não impede a ação: concessão."},
+  {pergunta:"Qual palavra é um substantivo?",opcoes:["Coragem", "Corajoso", "Corajosamente", "Encorajar"],correta:0,explicacao:"\"Coragem\" nomeia um sentimento: substantivo."},
+  {pergunta:"Em \"Ele estava cansado, por isso parou\", \"por isso\" indica:",opcoes:["Conclusão", "Condição", "Concessão", "Oposição"],correta:0,explicacao:"\"Por isso\" introduz a conclusão (consequência) da ideia anterior."}
   ]
 };
 window.PRATICA_CIENCIAS = {
