@@ -867,22 +867,20 @@
             <div class="materia-tema">Unit 6 (Old Problems, New World) e Unit 7 (Toward a Fairer World)</div>
           </div>
         </button>
-        <div class="dia-prova sem-clique em-breve">
+        <button class="dia-prova" data-ir-para="ciencias" data-ir-topico="cien-topico-1">
           <div class="data-bloco"><span class="dia-numero">23</span><span class="dia-semana">6ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">🔬 Ciências</div>
             <div class="materia-tema">Água e desenvolvimento sustentável; saúde individual e coletiva</div>
           </div>
-          <span class="selo-em-breve">em breve</span>
-        </div>
-        <div class="dia-prova sem-clique em-breve">
+        </button>
+        <button class="dia-prova" data-ir-para="matematica" data-ir-topico="mat-topico-1">
           <div class="data-bloco"><span class="dia-numero">26</span><span class="dia-semana">2ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">📐 Matemática / Geometria</div>
             <div class="materia-tema">Proporção, regra de três, juros, porcentagem, sistemas de equações, triângulos e polígonos</div>
           </div>
-          <span class="selo-em-breve">em breve</span>
-        </div>
+        </button>
         <button class="dia-prova" data-ir-para="geografia" data-ir-topico="geo-topico-1">
           <div class="data-bloco"><span class="dia-numero">28</span><span class="dia-semana">4ª feira</span></div>
           <div class="info-prova">
@@ -915,7 +913,7 @@
           <span class="selo-em-breve">em breve</span>
         </div>
 
-        <button class="dia-prova" data-ir-para="ciencias">
+        <button class="dia-prova sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">19</span><span class="dia-semana">4ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">🔬 Ciências</div>
@@ -932,7 +930,7 @@
           <span class="selo-em-breve">em breve</span>
         </div>
 
-        <button class="dia-prova" data-ir-para="matematica">
+        <button class="dia-prova sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">24</span><span class="dia-semana">2ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">📐 Matemática / Geometria</div>
@@ -995,7 +993,7 @@
           </div>
         </div>
 
-        <button class="dia-prova feito" data-ir-para="matematica">
+        <button class="dia-prova feito sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">15</span><span class="dia-semana">2ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">📐 Matemática / Geometria</div>
@@ -1011,7 +1009,7 @@
           </div>
         </button>
 
-        <button class="dia-prova feito" data-ir-para="ciencias">
+        <button class="dia-prova feito sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">18</span><span class="dia-semana">5ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">🔬 Ciências</div>
@@ -1063,144 +1061,303 @@
 <div class="pagina" id="pagina-matematica">
 
   <header class="header-materia">
-    <h1>📐 Equações, Triângulos e Polígonos 📐</h1>
-    <p>7º Ano — Prova Parcial — 2º Trimestre — Matemática / Geometria</p>
+    <h1>📐 Proporção, Finanças e Triângulos 💰</h1>
+    <p>7º Ano — 3º Trimestre · Matemática, caps. 7, 8 e 9 — Prova Parcial 26/10 e Abrangentes (18/11 a 01/12)</p>
   </header>
 
-  <nav class="sub-nav">
-    <button class="sub-aba ativo" data-materia="matematica" data-secao="estudar">📖 Estudar</button>
-    <button class="sub-aba" data-materia="matematica" data-secao="quiz">✏️ Praticar</button>
-  </nav>
-
   <main class="conteudo-materia">
-
-    <section class="sub-secao ativa" id="matematica-estudar">
 
       <div class="linha-tempo" id="matematica-linha-tempo">
         <button class="linha-tempo-etapa" data-destino="mat-topico-1">
           <span class="linha-tempo-bola">1</span>
-          <span class="linha-tempo-label">Expressões Algébricas</span>
+          <span class="linha-tempo-label">Razão</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="mat-topico-2">
           <span class="linha-tempo-bola">2</span>
-          <span class="linha-tempo-label">Equação 1º grau</span>
+          <span class="linha-tempo-label">Proporção</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="mat-topico-3">
           <span class="linha-tempo-bola">3</span>
-          <span class="linha-tempo-label">Inequação 1º grau</span>
+          <span class="linha-tempo-label">Diretamente proporcionais</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="mat-topico-4">
           <span class="linha-tempo-bola">4</span>
-          <span class="linha-tempo-label">Triângulos</span>
+          <span class="linha-tempo-label">Inversamente proporcionais</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="mat-topico-5">
           <span class="linha-tempo-bola">5</span>
-          <span class="linha-tempo-label">Polígonos</span>
+          <span class="linha-tempo-label">Regra de três</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-6">
+          <span class="linha-tempo-bola">6</span>
+          <span class="linha-tempo-label">Porcentagem</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-7">
+          <span class="linha-tempo-bola">7</span>
+          <span class="linha-tempo-label">Acréscimos e descontos</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-8">
+          <span class="linha-tempo-bola">8</span>
+          <span class="linha-tempo-label">Juros simples</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-9">
+          <span class="linha-tempo-bola">9</span>
+          <span class="linha-tempo-label">Inflação e investimentos</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-10">
+          <span class="linha-tempo-bola">10</span>
+          <span class="linha-tempo-label">Triângulos: classificação</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-11">
+          <span class="linha-tempo-bola">11</span>
+          <span class="linha-tempo-label">Ângulos e polígonos</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-12">
+          <span class="linha-tempo-bola">12</span>
+          <span class="linha-tempo-label">Área do triângulo</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="mat-topico-13">
+          <span class="linha-tempo-bola">13</span>
+          <span class="linha-tempo-label">Sistemas de equações</span>
         </button>
       </div>
 
+      <div class="aviso-prova">📌 Matéria da Prova Parcial (26/10), que também cai nas Abrangentes. Tópicos 1 a 5: razão, proporção e regra de três (cap. 7). Tópicos 6 a 9: porcentagem e juros (cap. 8). Tópicos 10 a 13: triângulos, polígonos, área e sistemas.</div>
+
       <div class="cartao" id="mat-topico-1">
-        <h2>🔢 Expressões Algébricas</h2>
-        <p>Expressão algébrica é uma conta com números e letras juntos.</p>
+        <h2>➗ Razão</h2>
+        <p>Capítulo 7: <strong>Razão e proporção: a busca por equilíbrio e harmonia</strong>.</p>
         <ul>
-          <li>A letra (como <strong>x</strong> ou <strong>a</strong>) representa um número que não conhecemos.</li>
-          <li><strong>Simplificar</strong> = juntar os termos parecidos. Ex: 3x + 2x = 5x.</li>
-          <li><strong>Valor numérico</strong> = trocar a letra por um número e fazer a conta. Ex: se x=2, então 3x+1 = 3×2+1 = 7.</li>
+          <li><strong>Razão</strong> é a comparação entre dois valores por meio de uma divisão: a/b (lê-se "a para b").</li>
+          <li><strong>Escala</strong> = medida no desenho ÷ medida real (na mesma unidade). Ex.: escala 1 : 800 000 quer dizer que 1 cm no mapa = 800 000 cm = 8 km na realidade.</li>
+          <li><strong>Velocidade média</strong> = distância ÷ tempo. Ex.: 100 m em 9,58 s ≈ 10,4 m/s.</li>
+          <li><strong>Densidade demográfica</strong> = habitantes ÷ área (hab/km²).</li>
+          <li><strong>Consumo de combustível</strong> = distância ÷ litros (km/L).</li>
+          <li>Quanto <strong>menor</strong> o número da escala (1 : 18 em vez de 1 : 64), <strong>maior</strong> o desenho e mais detalhes ele mostra.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: a letra é uma "caixinha" que guarda um número escondido.</div>
+        <div class="destaque">💡 Pense assim: razão é sempre "um dividido pelo outro", na ordem em que aparecem. Na escala, as duas medidas precisam estar na mesma unidade.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/j3Kx9firjV0" title="Expressões Algébricas e Valor Numérico" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1mYwXMzebw11S6J4G7K-aMGKZJy7Mj9wC/preview" title="A Missão do Equilíbrio" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=j3Kx9firjV0" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1mYwXMzebw11S6J4G7K-aMGKZJy7Mj9wC/view" target="_blank">▶️ Assistir: A Missão do Equilíbrio</a>
+        <button class="botao-praticar" data-praticar="mat-topico-1">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-1" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="mat-topico-2">
-        <h2>⚖️ Equação do 1º Grau</h2>
-        <p>Uma equação é como uma balança: os dois lados do <strong>=</strong> têm que ficar iguais.</p>
+        <h2>⚖️ Proporção e Propriedade Fundamental</h2>
+        <p><strong>Proporção</strong> é a igualdade entre duas ou mais razões.</p>
         <ul>
-          <li>Exemplo: <strong>x + 3 = 7</strong>. Qual número, somado com 3, dá 7? É o 4. Então x = 4.</li>
-          <li>Para resolver, isolamos o x: tudo que está somando passa subtraindo pro outro lado (e vice-versa).</li>
+          <li>Ex.: 2/3 = 14/21 (lê-se "2 está para 3 assim como 14 está para 21"). Também se escreve 2 : 3 = 14 : 21.</li>
+          <li><strong>Termos:</strong> em a/b = c/d, <strong>a e d são os extremos</strong>; <strong>b e c são os meios</strong>.</li>
+          <li><strong>Propriedade Fundamental das Proporções:</strong> em toda proporção, o <strong>produto dos extremos é igual ao produto dos meios</strong>: a · d = b · c (é a "multiplicação cruzada").</li>
+          <li>Ex.: 2/3 = 14/21 → 2 · 21 = 3 · 14 → 42 = 42.</li>
+          <li><strong>Achar o valor desconhecido:</strong> 12/40 = 102/x → 12x = 40 · 102 → 12x = 4 080 → x = 340.</li>
+          <li><strong>Cuidado:</strong> só se usa a propriedade quando há uma razão igual a outra razão. Em 1/x = 2/3 + 1/4, primeiro some o lado direito.</li>
+          <li><strong>Proporcionalidade em imagens:</strong> uma figura ampliada ou reduzida é proporcional quando largura e altura mudam na mesma razão. Se só uma muda, a imagem fica deformada.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: o que você faz de um lado da balança, tem que fazer do outro lado também, pra ela continuar equilibrada.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/TLkqE_CWY2E" title="Equação do 1º Grau" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=TLkqE_CWY2E" target="_blank">▶️ Assistir no YouTube</a>
+        <div class="destaque">💡 Pense assim: multiplique em X (cruzado) e resolva a equação.</div>
+        <button class="botao-praticar" data-praticar="mat-topico-2">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-2" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="mat-topico-3">
-        <h2>📏 Inequação do 1º Grau</h2>
-        <p>É parecido com a equação, mas em vez de <strong>=</strong>, usamos sinais de "maior" ou "menor".</p>
+        <h2>📈 Grandezas Diretamente Proporcionais</h2>
+        <p><strong>Grandeza</strong> é tudo o que pode ser medido ou contado (tempo, distância, massa, preço).</p>
         <ul>
-          <li><strong>&gt;</strong> = maior que</li>
-          <li><strong>&lt;</strong> = menor que</li>
-          <li>Exemplo: <strong>x + 2 &gt; 5</strong>. Isso significa: que número, somado com 2, é maior que 5? Resposta: x &gt; 3.</li>
+          <li>Duas grandezas são <strong>diretamente proporcionais (DP)</strong> quando uma <strong>aumenta</strong> e a outra também aumenta <strong>na mesma proporção</strong> (ou as duas diminuem na mesma proporção).</li>
+          <li>Ex.: 1 kg de uva = R$ 15,00; 2 kg = R$ 30,00; 3 kg = R$ 45,00. Dobrou a massa, dobrou o preço.</li>
+          <li>Ex.: carro a 40 km/h: 1 h → 40 km; 2 h → 80 km; 3 h → 120 km.</li>
+          <li><strong>Constante de proporcionalidade (DP):</strong> é a <strong>razão</strong> entre os valores, que é <strong>sempre a mesma</strong>. Ex.: preço/massa = 15/1 = 30/2 = 15.</li>
+          <li>Exemplos DP: quantidade comprada e valor pago; área a pintar e tinta gasta; distância e combustível; tempo de leitura e páginas lidas.</li>
+          <li>Expressão algébrica: uma máquina produz 200 embalagens por hora → y = 200x.</li>
         </ul>
-        <div class="destaque">💡 Cuidado: se multiplicar ou dividir por número negativo, o sinal da inequação inverte!</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/fAKwRRptIJo" title="Inequação do 1º Grau" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=fAKwRRptIJo" target="_blank">▶️ Assistir no YouTube</a>
+        <div class="destaque">💡 Pense assim: DP = "mais com mais" (ou "menos com menos"), na mesma proporção. A divisão entre elas dá sempre o mesmo número.</div>
+        <button class="botao-praticar" data-praticar="mat-topico-3">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-3" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="mat-topico-4">
-        <h2>📐 Triângulos</h2>
-        <p>A soma dos 3 ângulos internos de qualquer triângulo é sempre <strong>180°</strong>.</p>
+        <h2>📉 Grandezas Inversamente Proporcionais</h2>
+        <p>Duas grandezas são <strong>inversamente proporcionais (IP)</strong> quando uma <strong>aumenta</strong> e a outra <strong>diminui na mesma proporção</strong>.</p>
         <ul>
-          <li><strong>Quanto aos lados:</strong> Equilátero (3 lados iguais), Isósceles (2 lados iguais), Escaleno (3 lados diferentes).</li>
-          <li><strong>Quanto aos ângulos:</strong> Acutângulo (todos menores que 90°), Retângulo (um ângulo de 90°), Obtusângulo (um ângulo maior que 90°).</li>
-          <li><strong>Ângulo externo</strong> = o ângulo de fora do triângulo, ao lado do ângulo interno.</li>
+          <li>Ex.: um carro a 60 km/h leva 4 h. A 120 km/h (dobro), leva 2 h (metade). A 30 km/h (metade), leva 8 h (dobro).</li>
+          <li><strong>Constante de proporcionalidade (IP):</strong> é o <strong>produto</strong> entre os valores, sempre o mesmo. Ex.: 60 · 4 = 30 · 8 = 240.</li>
+          <li>Outra forma: a razão entre os valores da 1ª grandeza é igual ao <strong>inverso</strong> da razão da 2ª: 60/30 = 8/4 = 2.</li>
+          <li>Exemplos IP: velocidade e tempo de viagem; número de trabalhadores e tempo para terminar uma obra; número de torneiras e tempo para encher um tanque; número de máquinas e tempo de produção.</li>
+          <li><strong>Cuidado:</strong> "quanto mais uma coisa aumenta, mais a outra diminui" não basta. Precisa diminuir <strong>na mesma proporção</strong> (dobrou → caiu pela metade).</li>
+          <li>Expressão algébrica: se são necessários 2 400 kg de ração para x animais por y dias → xy = 2 400.</li>
         </ul>
-        <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/0F77T9jsBfs" title="Classificação dos Triângulos" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=0F77T9jsBfs" target="_blank">▶️ Assistir no YouTube</a>
+        <div class="destaque">💡 Pense assim: IP = "mais com menos". Multiplicando as duas grandezas, o resultado é sempre o mesmo.</div>
+        <button class="botao-praticar" data-praticar="mat-topico-4">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-4" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="mat-topico-5">
-        <h2>🔷 Polígonos</h2>
-        <p>Polígono é uma figura plana fechada, feita só de linhas retas.</p>
+        <h2>🔢 Regra de Três</h2>
+        <p>A <strong>regra de três</strong> é um processo prático para problemas de proporcionalidade: conhecemos <strong>três valores</strong> e queremos o <strong>quarto</strong>.</p>
         <ul>
-          <li><strong>Nomes:</strong> triângulo (3 lados), quadrilátero (4), pentágono (5), hexágono (6)...</li>
-          <li><strong>Convexo</strong> = não tem "buracos" pra dentro. <strong>Côncavo</strong> = tem parte afundada pra dentro.</li>
-          <li><strong>Soma dos ângulos internos</strong> = (número de lados − 2) × 180°.</li>
+          <li><strong>1º passo:</strong> monte uma tabela, agrupando cada grandeza numa coluna (cada grandeza na mesma unidade).</li>
+          <li><strong>2º passo:</strong> identifique se as grandezas são <strong>diretamente</strong> ou <strong>inversamente</strong> proporcionais.</li>
+          <li><strong>3º passo:</strong> escreva a proporção e resolva com a Propriedade Fundamental. Se for <strong>DP</strong>, as razões ficam na ordem em que aparecem. Se for <strong>IP</strong>, <strong>inverta</strong> uma das razões.</li>
+          <li><strong>Exemplo DP:</strong> 2 latas pintam 3 m². Para 19,5 m²: 2/x = 3/19,5 → 3x = 39 → x = 13 latas.</li>
+          <li><strong>Exemplo IP:</strong> 4 trabalhadores → 15 dias; 6 trabalhadores → x. Invertendo: 4/6 = x/15 → 6x = 60 → x = 10 dias.</li>
+          <li><strong>Regra de três composta</strong> (mais de duas grandezas): compare cada grandeza com a da incógnita, inverta as que forem IP e multiplique as razões. Ex.: 3 máquinas fazem 120 peças em 4 h; 6 máquinas em 2 h fazem x: 120/x = (3/6)·(4/2) = 1 → x = 120 peças. <em>(Este exemplo não estava nas fotos do livro.)</em></li>
         </ul>
-        <div class="destaque">💡 Exemplo: um pentágono (5 lados): (5−2) × 180° = 3 × 180° = 540°.</div>
+        <div class="destaque">💡 Pense assim: tabela → setinhas (mesmo sentido = DP; sentidos opostos = IP) → se IP, inverte → multiplica em X.</div>
+        <button class="botao-praticar" data-praticar="mat-topico-5">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-5" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="mat-topico-6">
+        <h2>💯 Porcentagem</h2>
+        <p>Capítulo 8: <strong>Matemática financeira: vamos falar de investimentos?</strong></p>
+        <ul>
+          <li><strong>Porcentagem</strong> é a representação de quantidades em <strong>frações de denominador 100</strong>. 48% = 48/100 = 0,48.</li>
+          <li><strong>Fração → %:</strong> transforme em denominador 100 (1/4 = 25/100 = 25%) ou divida (17/40 = 0,425 = 42,5%).</li>
+          <li><strong>Decimal → %:</strong> multiplique por 100 (0,38 = 38%; 1,24 = 124%).</li>
+          <li><strong>Porcentagem de um todo:</strong> 70% de 160 = 0,7 · 160 = 112.</li>
+          <li><strong>Cálculo mental:</strong> 50% = metade; 10% = dividir por 10; 25% = dividir por 4; 1% = dividir por 100.</li>
+          <li><strong>Achar o percentual com regra de três:</strong> 84 de 112 pessoas → 112/84 = 100/x → x = 75%.</li>
+          <li><strong>Origem do %:</strong> veio da expressão latina "per centum" (por cento). Escolhemos o 100 porque é fácil dividir e trabalhar com ele.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: "de" em matemática significa multiplicar. 30% de 200 = 0,30 × 200 = 60.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/3ihvVifG258" title="Ângulos no Triângulo e Polígonos" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/19KKwgu_zhekY-f1V7u1gjiR9MXOBz-B4/preview" title="A Missão do Dinheiro" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=3ihvVifG258" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/19KKwgu_zhekY-f1V7u1gjiR9MXOBz-B4/view" target="_blank">▶️ Assistir: A Missão do Dinheiro</a>
+        <button class="botao-praticar" data-praticar="mat-topico-6">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-6" style="display:none;"></div>
       </div>
 
-    </section>
-
-    <section class="sub-secao" id="matematica-quiz">
-
-      <div class="progresso-container" id="matematica-progresso-container">
-        <div class="progresso-texto" id="matematica-progresso-texto">Pergunta 1 de 20</div>
-        <div class="barra-fundo"><div class="barra-preenchida" id="matematica-barra-preenchida" style="width: 5%;"></div></div>
+      <div class="cartao" id="mat-topico-7">
+        <h2>🏷️ Acréscimos e Descontos (Fator)</h2>
+        <p>Usamos <strong>fatores</strong> para calcular aumentos e reduções com uma só multiplicação.</p>
+        <ul>
+          <li><strong>Fator de aumento:</strong> 1 + taxa. Aumento de 15% → 100% + 15% = 115% → fator <strong>1,15</strong>. Ex.: R$ 5,00 · 1,15 = R$ 5,75.</li>
+          <li><strong>Fator de redução:</strong> 1 − taxa. Desconto de 20% → 100% − 20% = 80% → fator <strong>0,8</strong>. Ex.: R$ 6,50 · 0,8 = R$ 5,20.</li>
+          <li>Ex.: aumento de 12% em R$ 230,00 → 1,12 · 230 = R$ 257,60.</li>
+          <li>Ex.: desconto de 25% em R$ 120,00 → 0,75 · 120 = R$ 90,00.</li>
+          <li><strong>Pegadinha:</strong> um aumento de 20% seguido de uma redução de 20% <strong>não</strong> volta ao preço original. Ex.: 100 → 120 → 96 (fator total 1,2 · 0,8 = 0,96).</li>
+          <li><strong>Comparar à vista e a prazo:</strong> 12 × R$ 259,00 = R$ 3 108,00 contra R$ 2 999,00 à vista → acréscimo de cerca de 3,6%.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: aumento de X% → multiplique por (1 + X/100). Desconto de X% → multiplique por (1 − X/100).</div>
+        <button class="botao-praticar" data-praticar="mat-topico-7">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-7" style="display:none;"></div>
       </div>
 
-      <div id="matematica-area-pergunta"></div>
+      <div class="cartao" id="mat-topico-8">
+        <h2>💰 Juros Simples</h2>
+        <p>No regime de juros simples, a taxa incide <strong>sempre sobre o capital inicial</strong>.</p>
+        <ul>
+          <li><strong>Capital (C):</strong> o valor inicial (investido ou emprestado).</li>
+          <li><strong>Juro (J):</strong> a remuneração do capital: o que se recebe a mais (investimento) ou se paga a mais (empréstimo).</li>
+          <li><strong>Taxa de juros (i):</strong> a porcentagem cobrada ou paga em um período, usada na forma <strong>decimal</strong> ou de fração.</li>
+          <li><strong>Tempo (t):</strong> quanto mais tempo, maior o juro.</li>
+          <li><strong>Montante (M):</strong> capital + juro. <strong>M = C + J</strong>.</li>
+          <li><strong>Fórmula:</strong> <strong>J = C · i · t</strong>.</li>
+          <li><strong>MUITO IMPORTANTE:</strong> a taxa e o tempo devem estar na <strong>mesma unidade</strong>. Taxa mensal → tempo em meses; taxa anual → tempo em anos.</li>
+          <li><strong>Convenção:</strong> mês comercial = 30 dias; ano comercial = 360 dias. 12% ao ano = 1% ao mês; 5% ao mês = 60% ao ano.</li>
+          <li><strong>Juros compostos</strong> (a taxa incide sobre o montante a cada período) existem, mas o livro trabalha apenas com juros simples.</li>
+          <li>Ex.: R$ 10 000 a 12% ao mês por 12 meses → J = 10 000 · 0,12 · 12 = R$ 14 400; M = R$ 24 400.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: J = C · i · t ("Juro = Capital vezes taxa vezes tempo"). Depois, M = C + J. E confira se taxa e tempo estão na mesma unidade!</div>
+        <button class="botao-praticar" data-praticar="mat-topico-8">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-8" style="display:none;"></div>
+      </div>
 
-      <div id="matematica-tela-final" class="cartao tela-final" style="display:none;">
-        <div class="emoji-grande">🌟</div>
-        <h2>Você terminou!</h2>
-        <div class="placar" id="matematica-placar-final">0 de 20</div>
-        <p id="matematica-mensagem-final">Muito bem, Joaquim!</p>
-        <div class="botoes-tela-final" id="matematica-botoes-tela-final">
-          <button class="botao-reiniciar" id="matematica-botao-reiniciar">🔁 Mais 20 perguntas</button>
+      <div class="cartao" id="mat-topico-9">
+        <h2>📊 Inflação e Investimentos</h2>
+        <p>O dinheiro perde valor com o tempo, e os investimentos ajudam a protegê-lo.</p>
+        <ul>
+          <li><strong>Inflação:</strong> tendência de <strong>aumento generalizado dos preços</strong>. Com ela, a mesma quantia compra menos coisas: o dinheiro perde <strong>poder de compra</strong>.</li>
+          <li><strong>Causas:</strong> procura maior que a oferta (demanda); aumento dos custos de produção; emissão de mais dinheiro sem aumento da produção (ex.: a ilha "Matemalândia").</li>
+          <li><strong>Índices de inflação:</strong> <strong>IPCA</strong> e <strong>INPC</strong> (do IBGE) e <strong>IGP-M</strong> (da FGV). O IPCA é a inflação oficial; em 2024 foi de <strong>4,83%</strong>.</li>
+          <li><strong>Efeitos da inflação:</strong> redução do poder de compra, aumento do custo de vida e do custo do crédito.</li>
+          <li><strong>Hiperinflação:</strong> na Alemanha, em 1923, os preços subiam tanto que o dinheiro quase não valia nada (crianças brincavam com pilhas de notas).</li>
+          <li><strong>Investir:</strong> abrir mão de algo hoje para ter mais no futuro. Quem investe empresta dinheiro (a banco, empresa ou governo) e recebe juros.</li>
+          <li><strong>Tesouro Direto:</strong> títulos do governo. Ex.: Tesouro IPCA+ (rende a inflação + uma taxa) e Tesouro Prefixado (taxa fixa conhecida).</li>
+          <li><strong>SELIC:</strong> a taxa básica de juros da economia brasileira, usada para controlar a inflação.</li>
+          <li><strong>Poupança:</strong> o investimento mais popular. Vantagens: sacar a qualquer momento, isenção de IR e garantia do FGC. Desvantagens: rendimento baixo (às vezes abaixo da inflação) e juros só a cada 30 dias. Se a SELIC ≤ 8,5% a.a., rende 70% da SELIC + TR; se maior, 0,5% ao mês + TR.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: inflação "come" o dinheiro parado. Para manter o poder de compra, o salário precisa subir pelo menos a inflação: valor × (1 + inflação).</div>
+        <button class="botao-praticar" data-praticar="mat-topico-9">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-9" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="mat-topico-10">
+        <h2>🔺 Triângulos: Classificação e Existência</h2>
+        <p>Capítulo 9: <strong>Triângulos</strong>.</p>
+        <ul>
+          <li><strong>Elementos:</strong> 3 vértices, 3 lados e 3 ângulos internos.</li>
+          <li><strong>Quanto aos lados:</strong> <strong>equilátero</strong> (3 lados iguais), <strong>isósceles</strong> (pelo menos 2 lados iguais) e <strong>escaleno</strong> (3 lados diferentes).</li>
+          <li><strong>Quanto aos ângulos:</strong> <strong>acutângulo</strong> (3 ângulos agudos, menores que 90°), <strong>retângulo</strong> (1 ângulo reto, de 90°) e <strong>obtusângulo</strong> (1 ângulo obtuso, maior que 90°).</li>
+          <li>No <strong>equilátero</strong>, os 3 ângulos são iguais: 60° cada.</li>
+          <li>No <strong>isósceles</strong>, os ângulos da base são iguais.</li>
+          <li><strong>Condição de existência:</strong> um triângulo só existe se <strong>cada lado for menor que a soma dos outros dois</strong>. Dica: basta testar se o <strong>maior lado</strong> é menor que a soma dos outros dois.</li>
+          <li>Ex.: 3, 4 e 5 → 5 < 3 + 4 = 7 ✔ existe. 2, 3 e 6 → 6 < 2 + 3 = 5? Não → não existe.</li>
+          <li>O triângulo é uma figura <strong>rígida</strong> (não deforma), por isso é muito usado em construções, pontes e telhados.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: lados → equi (todos iguais), isós (dois iguais), escaleno (nenhum igual). Ângulos → acut (todos menores que 90°), ret (um de 90°), obtus (um maior que 90°).</div>
+        <div class="video-wrapper">
+          <iframe data-src="https://drive.google.com/file/d/1LMLFSe_Y_gUjQ92l1A9PaWC0R1uF_01x/preview" title="A Missão das Formas" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <p class="placar-sessao" id="matematica-placar-sessao"></p>
-        <div class="lista-revisao" id="matematica-lista-revisao"></div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1LMLFSe_Y_gUjQ92l1A9PaWC0R1uF_01x/view" target="_blank">▶️ Assistir: A Missão das Formas</a>
+        <button class="botao-praticar" data-praticar="mat-topico-10">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-10" style="display:none;"></div>
       </div>
 
-    </section>
+      <div class="cartao" id="mat-topico-11">
+        <h2>📐 Soma dos Ângulos: Triângulo e Polígonos</h2>
+        <p>A soma dos ângulos internos de <strong>qualquer triângulo</strong> é sempre <strong>180°</strong>.</p>
+        <ul>
+          <li><strong>Triângulo:</strong> a + b + c = <strong>180°</strong>. Ex.: se dois ângulos medem 50° e 70°, o terceiro mede 180° − 120° = 60°.</li>
+          <li>Num <strong>triângulo retângulo</strong>, os dois ângulos agudos somam 90°.</li>
+          <li><strong>Ângulo externo:</strong> é igual à <strong>soma dos dois ângulos internos não adjacentes</strong> a ele. Ângulo interno + externo adjacente = 180°.</li>
+          <li><strong>Polígonos:</strong> traçando diagonais a partir de um vértice, um polígono de <strong>n lados</strong> é dividido em <strong>(n − 2) triângulos</strong>.</li>
+          <li><strong>Soma dos ângulos internos de um polígono:</strong> <strong>S = (n − 2) · 180°</strong>.</li>
+          <li>Quadrilátero (n = 4): 360°. Pentágono (n = 5): 540°. Hexágono (n = 6): 720°. Octógono (n = 8): 1 080°.</li>
+          <li><strong>Polígono regular</strong> (lados e ângulos iguais): cada ângulo interno = S ÷ n. Ex.: hexágono regular → 720° ÷ 6 = 120°.</li>
+          <li><em>(A parte de polígonos não estava nas fotos do livro, mas está no cronograma da prova.)</em></li>
+        </ul>
+        <div class="destaque">💡 Pense assim: triângulo = 180°. Polígono = quantos triângulos cabem nele (n − 2) vezes 180°.</div>
+        <button class="botao-praticar" data-praticar="mat-topico-11">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-11" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="mat-topico-12">
+        <h2>📏 Área do Triângulo</h2>
+        <p>A área mede a superfície ocupada pela figura (em cm², m², km²...).</p>
+        <ul>
+          <li><strong>Fórmula:</strong> <strong>A = (b · h) / 2</strong>, em que <strong>b</strong> é a base e <strong>h</strong> é a altura.</li>
+          <li><strong>Por quê?</strong> Todo triângulo é metade de um paralelogramo (ou retângulo) com a mesma base e a mesma altura.</li>
+          <li><strong>Altura:</strong> é o segmento <strong>perpendicular</strong> (que forma 90°) que vai de um vértice até a base (ou até o prolongamento dela).</li>
+          <li>No <strong>triângulo retângulo</strong>, os dois lados que formam o ângulo reto (os catetos) são base e altura.</li>
+          <li>Ex.: base 10 cm e altura 6 cm → A = (10 · 6) / 2 = 30 cm².</li>
+          <li><strong>Cuidado com as unidades:</strong> base e altura precisam estar na mesma unidade; a área sai em unidade ao quadrado.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: área do retângulo = base × altura. O triângulo é a metade disso.</div>
+        <button class="botao-praticar" data-praticar="mat-topico-12">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-12" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="mat-topico-13">
+        <h2>🧮 Sistema de Equações do 1º Grau</h2>
+        <p>Um <strong>sistema</strong> são duas equações com duas incógnitas (x e y) que precisam ser verdadeiras <strong>ao mesmo tempo</strong>. <em>(Este conteúdo não estava nas fotos do livro, mas está no cronograma.)</em></p>
+        <ul>
+          <li>Ex.: { x + y = 10 ; x − y = 2 }. A solução é o par (x, y) que satisfaz as duas: x = 6 e y = 4.</li>
+          <li><strong>Método da adição:</strong> some (ou subtraia) as equações para "sumir" uma incógnita. x + y = 10 e x − y = 2 → somando: 2x = 12 → x = 6 → y = 4.</li>
+          <li><strong>Método da substituição:</strong> isole uma incógnita numa equação e substitua na outra. De x + y = 10, x = 10 − y. Em x − y = 2: 10 − y − y = 2 → y = 4 → x = 6.</li>
+          <li><strong>Sempre confira:</strong> coloque os valores nas duas equações.</li>
+          <li><strong>Problemas:</strong> transforme o texto em equações. Ex.: "Num estacionamento há 20 veículos, entre carros e motos, e 60 rodas" → x + y = 20 e 4x + 2y = 60 → x = 10 carros e y = 10 motos.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: duas pistas, dois mistérios. Use uma pista para eliminar um mistério e descubra o outro.</div>
+        <button class="botao-praticar" data-praticar="mat-topico-13">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-mat-topico-13" style="display:none;"></div>
+      </div>
 
   </main>
 
@@ -1452,8 +1609,8 @@
 <div class="pagina" id="pagina-ciencias">
 
   <header class="header-materia">
-    <h1>🔬 Ciências — Seres Vivos 🦠</h1>
-    <p>7º Ano — 2º Trimestre — Parciais e Abrangente</p>
+    <h1>💧 Água e Saúde 💚</h1>
+    <p>7º Ano — 3º Trimestre · Ciências, Cap. 8 (Vol. 3) e Cap. 10 (Vol. 4) — Prova Parcial 23/10 e Abrangentes (18/11 a 01/12)</p>
   </header>
 
   <main class="conteudo-materia">
@@ -1461,199 +1618,294 @@
       <div class="linha-tempo" id="ciencias-linha-tempo">
         <button class="linha-tempo-etapa" data-destino="cien-topico-1">
           <span class="linha-tempo-bola">1</span>
-          <span class="linha-tempo-label">Taxonomia</span>
+          <span class="linha-tempo-label">A água no planeta</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="cien-topico-2">
           <span class="linha-tempo-bola">2</span>
-          <span class="linha-tempo-label">Os 5 Reinos</span>
+          <span class="linha-tempo-label">Água no Brasil</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="cien-topico-3">
           <span class="linha-tempo-bola">3</span>
-          <span class="linha-tempo-label">Invertebrados</span>
+          <span class="linha-tempo-label">Estados e ciclo da água</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="cien-topico-4">
           <span class="linha-tempo-bola">4</span>
-          <span class="linha-tempo-label">Vermes Parasitas</span>
+          <span class="linha-tempo-label">Água potável e ETA</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="cien-topico-5">
           <span class="linha-tempo-bola">5</span>
-          <span class="linha-tempo-label">Peixes e Anfíbios</span>
+          <span class="linha-tempo-label">Poluição e esgoto</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="cien-topico-6">
           <span class="linha-tempo-bola">6</span>
-          <span class="linha-tempo-label">Répteis, Aves e Mamíferos</span>
+          <span class="linha-tempo-label">Doenças da água e do solo</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-7">
+          <span class="linha-tempo-bola">7</span>
+          <span class="linha-tempo-label">Mosquitos: dengue, zika, chikungunya</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="cien-topico-8">
-          <span class="linha-tempo-bola">7</span>
-          <span class="linha-tempo-label">Biomas — Parte 1</span>
+          <span class="linha-tempo-bola">8</span>
+          <span class="linha-tempo-label">Saúde e hábitos</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="cien-topico-9">
-          <span class="linha-tempo-bola">8</span>
-          <span class="linha-tempo-label">Biomas — Parte 2</span>
+          <span class="linha-tempo-bola">9</span>
+          <span class="linha-tempo-label">Vacinas, exercício e estresse</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-10">
+          <span class="linha-tempo-bola">10</span>
+          <span class="linha-tempo-label">Saúde coletiva e desigualdade</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-11">
+          <span class="linha-tempo-bola">11</span>
+          <span class="linha-tempo-label">Doenças negligenciadas</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="cien-topico-12">
+          <span class="linha-tempo-bola">12</span>
+          <span class="linha-tempo-label">Vacinação e pandemias</span>
         </button>
       </div>
 
+      <div class="aviso-prova">📌 Matéria da Prova Parcial (23/10), que também cai nas Abrangentes. Tópicos 1 a 7: Água (cap. 8). Tópicos 8 a 12: Saúde (cap. 10).</div>
+
       <div class="cartao" id="cien-topico-1">
-        <h2>🗂️ Taxonomia — Organizando a Vida</h2>
-        <p>Taxonomia é a ciência que organiza os seres vivos em grupos, pra ficar mais fácil estudar.</p>
+        <h2>🌍 A Água no Planeta</h2>
+        <p>Capítulo 8 (Volume 3): <strong>Água e desenvolvimento sustentável: caminhos para o futuro</strong>.</p>
         <ul>
-          <li>Os cientistas usam <strong>nome científico</strong> (em latim) pra cada ser vivo, igual em qualquer país.</li>
-          <li>Os grupos vão do maior pro menor: <strong>Reino → Filo → Classe → Ordem → Família → Gênero → Espécie</strong>.</li>
+          <li><strong>Abertura do capítulo:</strong> em 2018, uma seca sem precedentes atingiu <strong>Cape Town</strong> (África do Sul), com a ameaça do <strong>"Dia Zero"</strong>, quando as reservas de água potável acabariam.</li>
+          <li><strong>Importância da água:</strong> é o principal componente do citoplasma das células; é o ambiente das reações químicas; transporta nutrientes no sangue e na seiva; regula a temperatura do corpo (suor). As primeiras civilizações surgiram perto de rios.</li>
+          <li><strong>Hidrosfera</strong> (<em>hydro</em> = água; <em>sphaira</em> = esfera): o conjunto de toda a água do planeta, nos estados sólido, líquido e gasoso.</li>
+          <li><strong>97,5%</strong> da água da Terra é <strong>salgada</strong> (oceanos e mares). Só <strong>2,5%</strong> é <strong>doce</strong>.</li>
+          <li><strong>Da água doce:</strong> <strong>68,9%</strong> está congelada em geleiras e neves eternas; <strong>29,9%</strong> é subterrânea (aquíferos); <strong>0,9%</strong> está no solo, pântanos e geadas; e só <strong>0,3%</strong> está em <strong>rios e lagos</strong>.</li>
+          <li><strong>Salinidade:</strong> cerca de <strong>3,5%</strong> da massa da água do mar são sais (cerca de 35 g por litro). Beber água salgada pode levar à <strong>desidratação</strong>, porque o corpo precisa de mais água para eliminar o excesso de sal.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: é como organizar uma gaveta de roupas — primeiro por tipo (camisas, calças), depois por cor, depois por tamanho.</div>
+        <div class="destaque">💡 Pense assim: de toda a água do mundo, quase tudo é salgado. Da pouca água doce, a maior parte está congelada ou debaixo da terra. Rios e lagos são só 0,3% da água doce.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/El2Wq79fIZI" title="Taxonomia: Como classificar os seres vivos" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1iOAI_plFJxeKVqH14wt5gU2VQr5WZ9nB/preview" title="Missão 1: A Jornada da Água" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=El2Wq79fIZI" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1iOAI_plFJxeKVqH14wt5gU2VQr5WZ9nB/view" target="_blank">▶️ Assistir: Missão 1: A Jornada da Água</a>
         <button class="botao-praticar" data-praticar="cien-topico-1">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-1" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-2">
-        <h2>👑 Os 5 Reinos dos Seres Vivos</h2>
-        <p>Todos os seres vivos são divididos em 5 grandes grupos (reinos):</p>
+        <h2>🇧🇷 Distribuição e Uso da Água no Brasil</h2>
+        <p>O Brasil é privilegiado em água, mas ela é mal distribuída.</p>
         <ul>
-          <li><strong>Monera:</strong> bactérias. Muito pequenas, só 1 célula.</li>
-          <li><strong>Protista (Protoctista):</strong> protozoários e algas.</li>
-          <li><strong>Fungi:</strong> fungos, cogumelos, mofo.</li>
-          <li><strong>Plantae:</strong> todas as plantas.</li>
-          <li><strong>Animalia:</strong> todos os animais.</li>
+          <li>O Brasil tem cerca de <strong>12%</strong> das reservas globais de água doce.</li>
+          <li>Estima-se que <strong>80%</strong> dessa água esteja na <strong>Região Amazônica</strong>, onde vivem apenas cerca de <strong>5%</strong> da população.</li>
+          <li><strong>Uso da água no Brasil:</strong> <strong>50%</strong> é usada para <strong>irrigação</strong> de lavouras; cerca de <strong>23,4%</strong> vai para o abastecimento das áreas urbanas e rurais; <strong>9,2%</strong> para as indústrias; <strong>7,9%</strong> para os animais; e <strong>9,5%</strong> para outras atividades.</li>
+          <li>A <strong>agropecuária</strong> representa cerca de <strong>58,6%</strong> do consumo nacional de água.</li>
+          <li><strong>Recursos não renováveis:</strong> aqueles que a natureza não consegue repor rapidamente. Se usados num ritmo maior que o da reposição natural, tendem a se esgotar. O livro trata a água doce como um recurso que precisa de estratégias de preservação.</li>
+          <li><strong>Estratégias:</strong> tecnologias para reduzir o desperdício (principalmente na agropecuária), reutilização da água e tratamento de esgoto.</li>
+          <li><strong>Afirmativas do Exercitando:</strong> a água potável <strong>não</strong> se distribui igualmente pela Terra; a maior parte da água doce está em geleiras e aquíferos; a água precisa de estratégias de controle do consumo.</li>
         </ul>
-        <div class="destaque">💡 Algumas doenças vêm de cada reino: bactérias causam infecções, fungos causam micoses, protozoários causam malária.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/3c2GXWOnFEg" title="Os Cinco Reinos dos Seres Vivos" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=3c2GXWOnFEg" target="_blank">▶️ Assistir no YouTube</a>
+        <div class="destaque">💡 Pense assim: o Brasil tem muita água, mas ela está onde mora pouca gente (Amazônia). E quem mais gasta água é a agropecuária, não as casas.</div>
         <button class="botao-praticar" data-praticar="cien-topico-2">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-2" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-3">
-        <h2>🐚 Reino Animalia — Invertebrados</h2>
-        <p>Invertebrados são animais que não têm coluna vertebral (osso nas costas).</p>
+        <h2>🔄 Estados Físicos e Ciclo da Água</h2>
+        <p>A água pode existir nos três estados físicos: <strong>sólido, líquido e gasoso</strong>.</p>
         <ul>
-          <li><strong>Poríferos:</strong> esponjas do mar, corpo cheio de furinhos.</li>
-          <li><strong>Cnidários:</strong> água-viva, coral, anêmona. Têm tentáculos que picam.</li>
-          <li><strong>Platelmintos:</strong> vermes "achatados", como a tênia.</li>
-          <li><strong>Nematelmintos:</strong> vermes "redondos", como a lombriga.</li>
-          <li><strong>Anelídeos:</strong> minhoca, sanguessuga. Corpo em "anéis".</li>
-          <li><strong>Moluscos:</strong> caracol, lula, polvo, ostra.</li>
-          <li><strong>Equinodermos:</strong> estrela-do-mar, ouriço-do-mar.</li>
-          <li><strong>Artrópodes:</strong> insetos, aranhas, caranguejos. Têm pernas articuladas.</li>
+          <li><strong>Sólido:</strong> partículas muito juntas e organizadas, com pouca agitação. <strong>Líquido:</strong> partículas mais soltas. <strong>Gasoso:</strong> partículas muito afastadas e agitadas.</li>
+          <li><strong>Fusão:</strong> sólido → líquido (o gelo derrete). <strong>Vaporização:</strong> líquido → gasoso. <strong>Solidificação:</strong> líquido → sólido. <strong>Condensação:</strong> gasoso → líquido (o espelho embaça).</li>
+          <li>Fusão e vaporização acontecem quando <strong>aquecemos</strong> a água (as partículas ganham energia). Solidificação e condensação acontecem quando a água <strong>esfria</strong> (perdem energia).</li>
+          <li><strong>Ebulição:</strong> vaporização rápida, a <strong>100 °C</strong> (ao nível do mar). A <strong>evaporação</strong> é lenta e ocorre em qualquer temperatura.</li>
+          <li><strong>Sublimação:</strong> sólido → gasoso direto. <strong>Ressublimação:</strong> gasoso → sólido direto (como a geada).</li>
+          <li><strong>Ciclo da água (ciclo hidrológico):</strong> processo contínuo em que a água circula pela hidrosfera e muda de estado físico.</li>
+          <li><strong>Etapas:</strong> <strong>evaporação</strong> (oceanos, rios e lagos aquecidos pelo Sol) → <strong>transpiração</strong> (as plantas liberam vapor pelas folhas) → <strong>condensação</strong> (o vapor esfria e forma nuvens) → <strong>precipitação</strong> (chuva, neve ou granizo) → <strong>infiltração</strong> (a água entra no solo e abastece os lençóis freáticos e aquíferos).</li>
+          <li><strong>Rios voadores:</strong> massas de vapor de água da transpiração da Floresta Amazônica que levam chuva ao <strong>Centro-Oeste, Sudeste e Sul</strong>. A cordilheira dos Andes e serras como a do Mar e da Mantiqueira ajudam a formar as chuvas. O desmatamento ameaça esse processo.</li>
         </ul>
-        <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/BnMtrLlPZ_s" title="Poríferos, Cnidários e Platelmintos" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=BnMtrLlPZ_s" target="_blank">▶️ Assistir no YouTube</a>
+        <div class="destaque">💡 Pense assim: esquentando, a água "sobe" de estado (sólido → líquido → gás). Esfriando, ela "desce" (gás → líquido → sólido).</div>
         <button class="botao-praticar" data-praticar="cien-topico-3">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-3" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-4">
-        <h2>🪱 Vermes Parasitas — Platelmintos e Nematelmintos</h2>
-        <p>Alguns vermes vivem dentro do corpo de outros seres vivos e tiram alimento deles. Isso causa doenças. Esses vermes são chamados de <strong>parasitas</strong>.</p>
+        <h2>🚰 Obtenção de Água Potável e a ETA</h2>
+        <p>Água <strong>potável</strong> é a água própria para beber, sem riscos à saúde.</p>
         <ul>
-          <li><strong>Platelmintos:</strong> corpo achatado, como uma fita.</li>
-          <li><strong>Tênia (solitária):</strong> um platelminto que entra no corpo pela carne de porco ou boi crua ou mal cozida.</li>
-          <li><strong>Esquistossomose:</strong> doença causada por um verme (esquistossomo) que vive em caramujos de água doce; a larva entra pela pele quando a pessoa entra na água contaminada.</li>
-          <li><strong>Nematelmintos:</strong> corpo redondo (cilíndrico), como um fio.</li>
-          <li><strong>Lombriga (Ascaris):</strong> um nematelminto que causa a ascaridíase; entra pela ingestão de água, alimentos ou mãos contaminadas com ovos.</li>
-          <li><strong>Ancilóstomo:</strong> causa a ancilostomíase (amarelão); a larva entra pela pele, geralmente pelos pés descalços em solo contaminado.</li>
+          <li>Segundo a ONU, cerca de <strong>2,1 bilhões</strong> de pessoas (3 em cada 10) não têm água potável em casa, e cerca de <strong>4,5 bilhões</strong> não têm saneamento básico seguro.</li>
+          <li>A falta de água e saneamento causa doenças como <strong>cólera e hepatite</strong>. Cerca de <strong>361 mil crianças</strong> com menos de 5 anos morrem por ano devido à <strong>diarreia</strong>.</li>
+          <li><strong>ETA (Estação de Tratamento de Água):</strong> torna a água de rios e lagos própria para o consumo. As 8 etapas: <strong>1. Captação</strong> (a água é coletada de rios, lagos ou reservas subterrâneas) → <strong>2. Adução</strong> (a água é levada por bombas até a ETA) → <strong>3. Coagulação</strong> (adiciona-se sulfato de alumínio para juntar as impurezas) → <strong>4. Floculação</strong> (a água é agitada e as impurezas formam flocos) → <strong>5. Decantação</strong> (os flocos, mais pesados, vão para o fundo) → <strong>6. Filtração</strong> (filtros de areia, cascalho e carvão retiram as impurezas menores) → <strong>7. Desinfecção</strong> (cloro para matar micro-organismos; o flúor protege os dentes) → <strong>8. Reservação</strong> (a água fica em reservatórios até ser distribuída).</li>
+          <li><strong>Sem ETA:</strong> captação de água da chuva (cisternas); poços e furos artesianos; <strong>filtros caseiros</strong>; e <strong>fervura</strong> (a 100 °C por cerca de 5 minutos, elimina bactérias, vírus e parasitas).</li>
+          <li><strong>Filtro de barro:</strong> desenvolvido no Brasil nos anos 1920. É considerado um dos melhores do mundo para retirar impurezas, e o barro mantém a água fresca.</li>
+          <li><strong>Dessalinização:</strong> remoção do sal da água do mar para torná-la própria para o consumo.</li>
         </ul>
-        <div class="destaque">💡 Prevenção: lavar bem as mãos e os alimentos, cozinhar bem a carne, tratar a água e usar sapatos protege contra esses vermes.</div>
+        <div class="destaque">💡 Pense assim, para a ordem da ETA: Capta, Aduz, Coagula, Flocula, Decanta, Filtra, Desinfeta, Reserva. A sujeira gruda (coagula), vira bolinha (flocula), afunda (decanta) e é filtrada.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/preview" title="Vermes Parasitas" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/14rufGjkHG8lBR-db3SueSEdL0A4tTYFp/preview" title="Missão 2: Vilões da Água" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1I1mVV7jCrDJVqYIztR4nx--hoz5P5x17/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/14rufGjkHG8lBR-db3SueSEdL0A4tTYFp/view" target="_blank">▶️ Assistir: Missão 2: Vilões da Água</a>
         <button class="botao-praticar" data-praticar="cien-topico-4">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-4" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-5">
-        <h2>🐟🐸 Peixes e Anfíbios</h2>
-        <p>Peixes e anfíbios são animais <strong>vertebrados</strong> — têm coluna vertebral (osso nas costas).</p>
+        <h2>🏭 Poluição da Água, Esgoto e ETE</h2>
+        <p>O crescimento das cidades e das indústrias está ligado à geração de esgoto. Sem tratamento, ele polui os recursos hídricos.</p>
         <ul>
-          <li><strong>Peixes:</strong> vivem só na água, respiram por <strong>brânquias</strong>, têm o corpo coberto de escamas e nadam com nadadeiras.</li>
-          <li>Podem ser <strong>ósseos</strong> (esqueleto de osso, maioria dos peixes) ou <strong>cartilaginosos</strong> (esqueleto de cartilagem, como tubarões e raias).</li>
-          <li><strong>Anfíbios:</strong> vivem parte da vida na água e parte na terra. Pele fina e úmida, usada também para respirar (respiração cutânea).</li>
-          <li><strong>Metamorfose:</strong> o sapo nasce de um ovo, vira girino (parece um peixinho) e depois se transforma em adulto, ganhando pernas e perdendo a cauda.</li>
+          <li>Cerca de <strong>45%</strong> do esgoto produzido no Brasil não recebe tratamento: são cerca de <strong>5,5 mil toneladas</strong> despejadas por dia.</li>
+          <li><strong>Atendimento de esgoto no Brasil:</strong> só <strong>43%</strong> da população tem coleta e tratamento; <strong>12%</strong> usam fossa séptica; <strong>18%</strong> têm o esgoto coletado, mas sem tratamento; e <strong>27%</strong> não têm nem coleta.</li>
+          <li><strong>Agrotóxicos e fertilizantes</strong> usados nas lavouras são arrastados pela chuva e contaminam rios e aquíferos.</li>
+          <li>Em <strong>1970</strong>, só cerca de 10% das residências tinham rede de esgoto. Em 2020, em algumas regiões, já passava de 80%. O <strong>Trata Brasil</strong> estima que a falta de saneamento cause gastos de cerca de <strong>22 bilhões de reais</strong> por ano com saúde.</li>
+          <li><strong>Eutrofização:</strong> o esgoto e os fertilizantes levam muitos nutrientes (fosfatos e nitratos) para a água. As algas crescem demais, bloqueiam a luz e consomem o oxigênio, e peixes e outros seres morrem.</li>
+          <li><strong>ETE (Estação de Tratamento de Esgoto):</strong> remove os poluentes para devolver a água à natureza sem causar impactos. As 6 etapas: <strong>1. Gradeamento</strong> (retém o lixo grosso, como fraldas e papel) → <strong>2. Caixas de areia (desarenador)</strong> → <strong>3. Decantação primária</strong> → <strong>4. Lodo ativado ou filtro biológico aerado</strong> (injeção de oxigênio; bactérias aeróbicas decompõem a matéria orgânica) → <strong>5. Decantação secundária</strong> → <strong>6. Descarte</strong> (o esgoto tratado é devolvido ao ambiente).</li>
+          <li>O lodo da ETE pode virar <strong>fertilizante</strong>.</li>
+          <li><strong>Fossa séptica:</strong> usada onde não há rede de esgoto, principalmente em áreas rurais. Tem tanques subterrâneos: fossa séptica → filtro anaeróbico → sumidouro.</li>
+          <li><strong>Biodigestor:</strong> bactérias <strong>anaeróbicas</strong> (que vivem sem oxigênio) decompõem fezes e restos orgânicos e produzem <strong>biogás</strong> (principalmente <strong>metano</strong>), usado para gerar energia, e biofertilizante.</li>
         </ul>
-        <div class="destaque">💡 Peixe vive só na água. Anfíbio vive na água E na terra, em fases diferentes da vida.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/preview" title="Peixes e Anfíbios" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1yeJzT0t0KKYWmGXqo-vtHE0GTsp4HGBt/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <div class="destaque">💡 Pense assim: ETA limpa a água ANTES de usarmos (para beber). ETE limpa o esgoto DEPOIS de usarmos (para devolver à natureza).</div>
         <button class="botao-praticar" data-praticar="cien-topico-5">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-5" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-6">
-        <h2>🦎🦅🐾 Vertebrados II — Répteis, Aves e Mamíferos</h2>
-        <p>Répteis, aves e mamíferos são vertebrados terrestres, cada um com características bem próprias.</p>
+        <h2>🦠 Doenças Transmitidas pela Água e pelo Solo</h2>
+        <p><strong>Saneamento básico</strong>: abastecimento de água potável, tratamento de esgoto, gestão de resíduos sólidos e drenagem. É garantido por lei pela Constituição Federal.</p>
         <ul>
-          <li><strong>Répteis:</strong> pele <strong>seca</strong>, coberta de <strong>escamas</strong>. São <strong>ectotérmicos</strong> (não controlam sozinhos a própria temperatura) e respiram pelos pulmões.</li>
-          <li><strong>Quelônios:</strong> têm casco (carapaça + plastrão). Ex: tartaruga, cágado, jabuti.</li>
-          <li><strong>Ofídios:</strong> são as cobras, sem patas. Algumas são peçonhentas (têm veneno), como a cascavel.</li>
-          <li><strong>Lacertílios:</strong> são os lagartos, com patas. A cauda pode se soltar para escapar de predadores (autotomia).</li>
-          <li><strong>Crocodilianos:</strong> jacaré, crocodilo e gavial. Vivem bastante tempo na água.</li>
-          <li><strong>Aves:</strong> a característica principal é ter <strong>penas</strong>. Ossos <strong>pneumáticos</strong> (leves), <strong>sacos aéreos</strong> e <strong>quilha</strong> ajudam a voar. Não têm dentes, têm <strong>bico córneo</strong>. Nascem de ovo chocado.</li>
-          <li><strong>Mamíferos:</strong> a característica principal é ter <strong>pelos</strong>. As fêmeas têm <strong>glândulas mamárias</strong>, que produzem leite para o filhote.</li>
-          <li>3 grupos de mamíferos: <strong>Placentários</strong> (maioria, nasce da barriga da mãe, ex: cachorro, humano), <strong>Marsupiais</strong> (nasce incompleto e cresce numa bolsa, ex: canguru, gambá), <strong>Monotremados</strong> (nascem de ovo! ex: ornitorrinco).</li>
+          <li><strong>Cólera:</strong> bactéria <em>Vibrio cholerae</em>. Diarreia intensa e desidratação grave. Transmissão: água ou alimentos contaminados por fezes. Prevenção: saneamento básico e água tratada.</li>
+          <li><strong>Leptospirose:</strong> bactérias do gênero <em>Leptospira</em>. Dor de cabeça, febre acima de 39 °C, calafrios. Transmissão: contato com água ou superfícies contaminadas pela <strong>urina de animais</strong> (como ratos), comum em <strong>enchentes</strong>. Prevenção: evitar áreas alagadas, higienizar superfícies e utensílios.</li>
+          <li><strong>Amebíase:</strong> protozoário <em>Entamoeba histolytica</em>. Fortes dores abdominais, diarreia e vômitos. Transmissão: ingestão de água contaminada por fezes. Prevenção: saneamento básico e água tratada.</li>
+          <li><strong>Giardíase:</strong> protozoário <em>Giardia lamblia</em>. Dores abdominais, diarreia e vômitos. Transmissão: água contaminada por fezes. Prevenção: saneamento básico e água tratada.</li>
+          <li><strong>Esquistossomose ("barriga-d'água"):</strong> platelminto <em>Schistosoma mansoni</em>. Coceira no local da entrada da larva, dor abdominal, aumento do fígado e da cavidade abdominal. Transmissão: a larva (<strong>cercária</strong>) penetra na pele em águas com <strong>caramujos</strong> do gênero <em>Biomphalaria</em>. Prevenção: saneamento e evitar contato com água suspeita.</li>
+          <li><strong>Ascaridíase (lombriga):</strong> nematelminto <em>Ascaris lumbricoides</em>. Tosse, desnutrição e obstrução intestinal (em casos graves). Transmissão: ingestão de <strong>ovos</strong> em água ou alimentos. Mais comum em <strong>crianças</strong>. Prevenção: lavar as mãos e os alimentos.</li>
+          <li><strong>Teníase ("solitária"):</strong> platelmintos <em>Taenia solium</em> (porco) e <em>Taenia saginata</em> (boi). O verme vive no intestino. Transmissão: comer carne de porco ou de boi <strong>crua ou malcozida</strong> com larvas (cisticercos). Sintomas: dor abdominal, náuseas, perda de peso. Prevenção: fiscalização das carnes e cozimento adequado.</li>
+          <li><strong>Cisticercose:</strong> causada pela <em>Taenia solium</em>, ao ingerir os <strong>ovos</strong> (em água ou alimentos contaminados por fezes). As larvas vão para músculos, olhos e cérebro. No cérebro: <strong>neurocisticercose</strong> (convulsões, problemas de visão).</li>
+          <li><strong>Ancilostomose ("amarelão"):</strong> nematelmintos <em>Necator americanus</em> e <em>Ancylostoma duodenale</em>. A larva <strong>penetra pela pele</strong> (pés descalços em solo contaminado). Sintomas: cansaço intenso, diarreia e <strong>anemia</strong> (que deixa a pele amarelada). Prevenção: usar calçados e saneamento.</li>
         </ul>
-        <div class="destaque">💡 Réptil tem escama seca. Ave tem pena. Mamífero tem pelo e alimenta o filhote com leite.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1SZjwvuBA8Vl1aOKTNG9wapzP-ypcg_IL/preview" title="Vertebrados II — Répteis, Aves e Mamíferos" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1SZjwvuBA8Vl1aOKTNG9wapzP-ypcg_IL/view" target="_blank">▶️ Assistir no Google Drive</a>
-
-        <div class="destaque" style="margin-top:18px;">🎬 <strong>Vídeos extras</strong> — se quiser assistir só uma parte de novo, separada:</div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1OSWE9A-Lvl9INrYx3MAlWu8TRhCRogq9/view" target="_blank" style="display:inline-flex;margin-top:10px;">▶️ Extra: só Répteis</a>
-        <br>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1nDFxsK39ALZZEPlFBjfEAjzJQoyq_Y5S/view" target="_blank" style="display:inline-flex;margin-top:10px;">▶️ Extra: só Aves e Mamíferos</a>
-        <button class="botao-praticar" data-praticar="cien-topico-6" style="margin-top:14px;">✏️ Praticar</button>
+        <div class="destaque">💡 Pense assim: quase todas se previnem com saneamento básico, água tratada e higiene. Atenção às exceções: leptospirose = urina de rato em enchente; amarelão = pé descalço; esquistossomose = caramujo; teníase = carne crua.</div>
+        <button class="botao-praticar" data-praticar="cien-topico-6">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-6" style="display:none;"></div>
       </div>
 
-      <div class="cartao" id="cien-topico-8">
-        <h2>🌳 Biomas Brasileiros — Amazônia, Mata Atlântica e Caatinga</h2>
-        <p>Um <strong>bioma</strong> é uma grande área com clima parecido, plantas parecidas e animais parecidos.</p>
+      <div class="cartao" id="cien-topico-7">
+        <h2>🦟 Doenças Transmitidas por Mosquitos</h2>
+        <p>Os mosquitos são <strong>artrópodes</strong> e atuam como <strong>vetores</strong> de várias doenças.</p>
         <ul>
-          <li><strong>Amazônia:</strong> a maior floresta tropical do mundo. Clima quente e úmido, maior biodiversidade do Brasil, tem o Rio Amazonas.</li>
-          <li><strong>Mata Atlântica:</strong> fica no litoral do Brasil. Foi muito desmatada — restou pouco da cobertura original. Animal símbolo: mico-leão-dourado.</li>
-          <li><strong>Caatinga:</strong> fica no Nordeste. Clima <strong>semiárido</strong> (seco). As plantas têm espinhos e perdem as folhas na seca (como o xique-xique). O nome, em tupi-guarani, significa "mata branca".</li>
+          <li><strong>Vetor:</strong> ser vivo capaz de transportar um agente infeccioso (vírus, bactéria, protozoário) de um hospedeiro para outro.</li>
+          <li><strong>Hospedeiro:</strong> ser que abriga dentro de si outro organismo, geralmente numa relação parasitária.</li>
+          <li>Os mosquitos precisam de <strong>água parada</strong> para colocar os ovos. Por isso, eliminar criadouros é a medida mais importante.</li>
+          <li><strong>Dengue, zika e chikungunya</strong> são causadas por <strong>vírus</strong> e transmitidas pelo mosquito <strong><em>Aedes aegypti</em></strong>. Só a <strong>fêmea</strong> é <strong>hematófaga</strong> (se alimenta de sangue), porque precisa do sangue para produzir os ovos.</li>
+          <li><strong>Dengue:</strong> febre alta (39 a 40 °C), manchas avermelhadas, <strong>dor atrás dos olhos</strong>, dores musculares e fraqueza. Pode evoluir para a <strong>dengue grave</strong>, com risco de morte.</li>
+          <li><strong>Chikungunya:</strong> febre alta, mal-estar, manchas, <strong>dor aguda e inchaço nas articulações</strong>. Pode deixar <strong>dores articulares crônicas</strong>.</li>
+          <li><strong>Zika:</strong> febre moderada (37 a 38 °C), placas avermelhadas com coceira, olhos vermelhos e dor leve nas articulações. <strong>80% das pessoas não sentem sintomas</strong>. Associada à <strong>síndrome de Guillain-Barré</strong> e à <strong>microcefalia</strong> em bebês, quando a gestante é infectada.</li>
+          <li>Essas doenças <strong>não são contagiosas</strong> de pessoa para pessoa: é preciso o mosquito.</li>
+          <li><strong>Vacina da dengue:</strong> incluída no SUS em dezembro de 2023, aplicada desde 2024 em crianças e adolescentes de <strong>10 a 14 anos</strong>. São <strong>2 doses</strong>, com intervalo de <strong>3 meses</strong>. Em 2024, o Instituto Butantan pediu à Anvisa o registro da <strong>Butantan-DV</strong>, de <strong>dose única</strong>.</li>
+          <li><strong>Método Wolbachia:</strong> mosquitos <em>Aedes</em> com a bactéria <em>Wolbachia</em> têm capacidade reduzida de transmitir os vírus. <strong>Niterói (RJ)</strong> foi a primeira cidade do país 100% protegida pelo método.</li>
+          <li><strong>Repelente</strong> e telas também ajudam na prevenção.</li>
         </ul>
-        <div class="destaque">💡 Amazônia é quente e úmida. Mata Atlântica fica no litoral e foi desmatada. Caatinga é seca, no Nordeste.</div>
+        <div class="destaque">💡 Pense assim: dengue = dor atrás dos olhos. Chikungunya = dor nas juntas. Zika = coceira, olho vermelho e risco de microcefalia. Todas pelo Aedes aegypti fêmea.</div>
+        <button class="botao-praticar" data-praticar="cien-topico-7">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-7" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="cien-topico-8">
+        <h2>💚 O Que é Saúde e Hábitos Saudáveis</h2>
+        <p>Capítulo 10 (Volume 4): <strong>Saúde individual e coletiva: prevenção e qualidade de vida</strong>.</p>
+        <ul>
+          <li><strong>Antiga concepção:</strong> saúde era apenas a <strong>ausência de doença</strong>. A pessoa era considerada saudável se não tivesse sintomas visíveis.</li>
+          <li><strong>OMS, 1948:</strong> <em>"Saúde é o estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças ou enfermidades."</em> É um direito de <strong>todo ser humano</strong>, sem distinção de raça, religião, crença política ou condição econômica e social.</li>
+          <li><strong>OMS, 1986:</strong> lista as condições para um bom estado de saúde: <strong>paz, habitação, educação, alimentação, renda, ecossistema estável, recursos sustentáveis, justiça social e equidade</strong>.</li>
+          <li><strong>Hoje:</strong> uma pessoa sadia vive em condições que permitem uma vida digna, mesmo convivendo com alguma doença, e se sente bem no físico, no mental e no social.</li>
+          <li><strong>Sono:</strong> adolescentes precisam, em média, de <strong>8 a 10 horas</strong> por noite. Dicas: rotina regular, quarto escuro e silencioso, evitar telas (TV, celular, tablet) na cama, evitar alimentação pesada perto de dormir. Dormir mal causa problemas de memória, de humor e de concentração.</li>
+          <li><strong>Alimentação: quanto menos processado, melhor.</strong> Prefira alimentos <strong>in natura</strong> ou <strong>minimamente processados</strong> (milho, carne, laranja) aos <strong>ultraprocessados</strong> (salgadinho, hambúrguer industrializado, refresco em pó).</li>
+          <li><strong>Ultraprocessados:</strong> têm muito sal, açúcar e/ou gordura e aditivos químicos (corantes, conservantes, adoçantes, realçadores de sabor). O consumo frequente aumenta o risco de doenças.</li>
+          <li><strong>Desrotulando:</strong> aplicativo gratuito que avalia a qualidade nutricional dos alimentos pelo código de barras.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: saúde = corpo + mente + vida social, não só "não estar doente". E na comida: quanto mais natural, melhor.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/preview" title="Biomas Brasileiros - Parte 1" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1XiN__4Jmp1lIb6umvCL4cr_BF8lgWo3R/preview" title="Missão 3: Check-up Ninja" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1wlHhYWReoWSZJP1vc_kG__Vr7YVwbNso/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1XiN__4Jmp1lIb6umvCL4cr_BF8lgWo3R/view" target="_blank">▶️ Assistir: Missão 3: Check-up Ninja</a>
         <button class="botao-praticar" data-praticar="cien-topico-8">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-8" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="cien-topico-9">
-        <h2>🌾 Biomas Brasileiros — Cerrado, Pantanal e Pampa</h2>
-        <p>Vamos conhecer mais 3 biomas do Brasil.</p>
+        <h2>💉 Vacinas, Atividade Física e Resiliência</h2>
+        <p>A saúde individual é uma construção diária: vacinação, movimento e equilíbrio emocional.</p>
         <ul>
-          <li><strong>Cerrado:</strong> fica no Centro-Oeste. Tem uma estação bem chuvosa e outra bem seca. Árvores de tronco torto e casca grossa (protege do fogo). Chamado de "berço das águas", pois muitos rios nascem lá.</li>
-          <li><strong>Pantanal:</strong> a maior área alagada do mundo. Muito rico em animais, como a capivara e a arara-azul.</li>
-          <li><strong>Pampa:</strong> fica no Sul (Rio Grande do Sul). Formada principalmente por campos (pouca árvore). Muito usada para a pecuária (criação de bois e ovelhas).</li>
+          <li><strong>Como as vacinas funcionam:</strong> 1. colocam o corpo em contato com uma parte do agente causador (ou ele enfraquecido); 2. isso dispara uma <strong>resposta imunológica</strong> e cria uma <strong>memória</strong>; 3. quando o verdadeiro agente aparece, o corpo já sabe se defender.</li>
+          <li>A vacina pode não impedir que você fique doente, mas evita as formas mais graves da doença, a internação, as sequelas e a morte.</li>
+          <li><strong>Etapas de desenvolvimento das vacinas:</strong> <strong>fase exploratória</strong> (pesquisa e identificação do agente) → <strong>fase pré-clínica</strong> (testes em animais) → <strong>fase clínica</strong>: Fase 1 (20 a 80 voluntários adultos), Fase 2 (centenas, de 100 a 300) e Fase 3 (milhares a dezenas de milhares de pessoas).</li>
+          <li><strong>Caderneta de vacinação:</strong> deve ser mantida em dia, seguindo o calendário do <strong>Programa Nacional de Vacinação</strong>.</li>
+          <li><strong>Atividade física:</strong> nossos ancestrais caçadores-coletores (como o povo <strong>Hadza</strong>, da Tanzânia) se movimentavam muito. Hoje, somos muito sedentários.</li>
+          <li>A <strong>OMS</strong> recomenda que adolescentes pratiquem atividade física <strong>moderada</strong> (que permite conversar com dificuldade) por pelo menos <strong>60 minutos diariamente</strong>.</li>
+          <li><strong>Benefícios:</strong> ajuda no controle do peso; melhora a saúde mental e o humor; melhora a resistência óssea; reduz o risco de doenças cardiovasculares e a pressão arterial; aumenta a força muscular; reduz distúrbios metabólicos (como o <strong>diabetes tipo 2</strong>); favorece a memória e o aprendizado.</li>
+          <li><strong>Resiliência:</strong> capacidade de enfrentar dificuldades, lidar com elas e superá-las. O estresse do adolescente vem das mudanças da idade, do celular, das redes sociais e das notícias.</li>
+          <li><strong>Dicas contra o estresse:</strong> alimentação saudável, atividade física ao ar livre, diminuir o tempo de tela antes de dormir, participar de grupos, fortalecer laços afetivos, buscar arte e cultura, refletir sobre as próprias escolhas e procurar ajuda de um profissional se necessário.</li>
         </ul>
-        <div class="destaque">💡 Cerrado tem seca e chuva bem separadas. Pantanal é alagado. Pampa é feita de campos, no Sul.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/preview" title="Biomas Brasileiros - Parte 2" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1XkEcWRooTvjh0DsNfWyYt1__wJpA3S7c/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <div class="destaque">💡 Pense assim: vacina = "treino" do sistema imune. Exercício = 60 minutos por dia. Resiliência = cair e saber levantar.</div>
         <button class="botao-praticar" data-praticar="cien-topico-9">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-cien-topico-9" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="cien-topico-10">
+        <h2>⚖️ Saúde Coletiva e Desigualdades</h2>
+        <p><strong>Constituição Federal de 1988, Art. 196:</strong> <em>"A saúde é direito de todos e dever do Estado"</em>, com acesso universal e igualitário às ações e aos serviços de saúde.</p>
+        <ul>
+          <li>O Brasil é um dos países <strong>mais desiguais</strong> do mundo. Os <strong>0,01%</strong> mais ricos detêm <strong>27%</strong> dos ativos financeiros; os 50% mais pobres têm só <strong>2%</strong>.</li>
+          <li>Segundo o IBGE, o rendimento dos <strong>brancos</strong> é mais de <strong>70% superior</strong> ao das pessoas <strong>negras</strong>. Essa desigualdade tem raízes históricas, econômicas e estruturais.</li>
+          <li><strong>As desigualdades socioeconômicas se refletem na saúde</strong> e são agravadas para grupos como <strong>indígenas</strong> e <strong>negros</strong>.</li>
+          <li><strong>Saúde da população indígena:</strong> a mortalidade de crianças menores de 5 anos é muito maior entre filhos de mães indígenas (por diarreia, gripe, pneumonia, desnutrição). Atividades ilegais como o <strong>garimpo</strong> trazem doenças, contaminação da água por <strong>mercúrio</strong> e violência. Ex.: aumento da <strong>malária</strong> no território <strong>Yanomami</strong>.</li>
+          <li><strong>Saúde da população negra</strong> (pretos e pardos): maior incidência de algumas doenças, por fatores genéticos, condições de vida e acesso aos serviços.</li>
+          <li><strong>Hipertensão arterial:</strong> pressão elevada do sangue nos vasos. Gestantes pretas são as principais vítimas de morte por hipertensão.</li>
+          <li><strong>Diabetes tipo 2:</strong> níveis elevados de glicose no sangue; atinge mais homens negros (9% a mais) e mulheres negras (50% a mais).</li>
+          <li><strong>Anemia falciforme:</strong> doença <strong>hereditária</strong> (passa de pais para filhos), de origem em populações africanas. As hemácias ficam em forma de <strong>foice</strong>, se rompem e obstruem pequenos vasos, causando anemia e dor.</li>
+          <li>A <strong>violência</strong> também afeta mais a população negra: a taxa de homicídios de negros é muito maior que a de não negros.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: saúde coletiva = saúde de todos. Quem tem menos renda, água, saneamento e acesso a médicos adoece e morre mais. Por isso desigualdade também é um problema de saúde.</div>
+        <div class="video-wrapper">
+          <iframe data-src="https://drive.google.com/file/d/1tDB8yV20h80ir7TqjtGvzWk-nHqDVhi4/preview" title="Missão 4: Saúde Coletiva" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1tDB8yV20h80ir7TqjtGvzWk-nHqDVhi4/view" target="_blank">▶️ Assistir: Missão 4: Saúde Coletiva</a>
+        <button class="botao-praticar" data-praticar="cien-topico-10">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-10" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="cien-topico-11">
+        <h2>🪳 Doenças Tropicais Negligenciadas</h2>
+        <p>São doenças conhecidas há muito tempo que afetam mais de <strong>1 bilhão</strong> de pessoas e causam cerca de <strong>200 mil mortes</strong> por ano. A <strong>OMS</strong> classifica mais de <strong>20</strong> delas.</p>
+        <ul>
+          <li><strong>Por que "negligenciadas"?</strong> Afetam principalmente <strong>populações pobres e vulneráveis</strong>. Há pouca informação e pouco investimento em pesquisa (o retorno financeiro esperado é baixo), os profissionais têm dificuldade de diagnóstico, os doentes às vezes nem sabem que estão doentes e há <strong>estigma</strong> (vergonha) que faz abandonar o tratamento. No Brasil, cerca de 10 mil mortes por ano, mais nas regiões <strong>Norte e Nordeste</strong>.</li>
+          <li><strong>Doença de Chagas:</strong> protozoário <em>Trypanosoma cruzi</em>. Transmissão: ingestão de alimentos contaminados (como <strong>caldo de cana</strong> e <strong>açaí</strong> com restos do barbeiro) ou picada do <strong>barbeiro</strong> (inseto <em>Triatoma</em>), que defeca perto da lesão. Afeta coração, esôfago e intestino. O nome homenageia o cientista brasileiro <strong>Carlos Chagas</strong>.</li>
+          <li><strong>Leishmanioses:</strong> protozoários do gênero <em>Leishmania</em>. Transmissão: picada de mosquitos do gênero <em>Lutzomyia</em> (flebotomíneos). O <strong>cão</strong> é um importante reservatório. Podem afetar pele, mucosas e órgãos como fígado e baço. Prevenção: inseticidas, coleiras repelentes nos cães.</li>
+          <li><strong>Tuberculose:</strong> bactéria <em>Mycobacterium tuberculosis</em>. Transmissão: gotículas da fala, tosse e espirros. Ataca principalmente os <strong>pulmões</strong>. Tratamento de <strong>6 meses</strong>, gratuito pelo SUS. A vacina <strong>BCG</strong>, aplicada em crianças, protege contra as formas graves.</li>
+          <li><strong>Hanseníase:</strong> bactéria <em>Mycobacterium leprae</em>. Transmissão: secreções nasais, gotículas, tosse e espirros (contato próximo e prolongado). Antes chamada "lepra", o que gerava preconceito. <strong>Todas as formas são curáveis</strong>, com tratamento de 6 a 12 meses pelo SUS.</li>
+          <li><strong>Tracoma:</strong> bactéria <em>Chlamydia trachomatis</em>. Transmissão: <strong>moscas</strong> e objetos contaminados com secreções. É a principal causa infecciosa de <strong>cegueira</strong> no mundo. Prevenção: higiene, água tratada, saneamento e controle de moscas.</li>
+          <li><strong>Raiva:</strong> vírus do gênero <em>Lyssavirus</em>. Transmissão: saliva de animal contaminado, por <strong>mordedura, arranhadura ou lambedura</strong> (cães, gatos, morcegos). Ataca o sistema nervoso e é <strong>fatal</strong>. Prevenção: vacinar cães e gatos. Após uma mordida, lavar com água e sabão e procurar o serviço de saúde.</li>
+          <li><strong>Oswaldo Cruz</strong> e <strong>Carlos Chagas</strong> são grandes cientistas brasileiros da saúde.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim, ligando doença e transmissão: Chagas = barbeiro/açaí/caldo de cana. Leishmaniose = mosquito-palha e cão. Tuberculose e hanseníase = gotículas. Tracoma = moscas. Raiva = mordida.</div>
+        <button class="botao-praticar" data-praticar="cien-topico-11">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-11" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="cien-topico-12">
+        <h2>🌐 Vacinação Coletiva, Soros e Pandemias</h2>
+        <p><strong>Vacinar-se é uma decisão individual</strong> que protege a pessoa, mas também é um exercício de <strong>responsabilidade com a sociedade</strong>.</p>
+        <ul>
+          <li><strong>Imunidade coletiva ou de rebanho:</strong> quando grande parte da população está vacinada, os agentes causadores circulam menos, e até quem <strong>não pode se vacinar</strong> (alergias, tratamentos como quimioterapia, faixa etária) fica protegido. Mensagem: <strong>"Tem vacina, tô dentro!"</strong></li>
+          <li><strong>Ex.: covid-19:</strong> com a vacinação (iniciada em janeiro de 2021), os casos semanais caíram de 14,61 milhões (2021) para 1,83 milhão (2023).</li>
+          <li><strong>Vacina:</strong> o próprio corpo produz os anticorpos. É a <strong>imunidade ativa</strong> e serve para <strong>prevenir</strong>.</li>
+          <li><strong>Soro:</strong> contém <strong>anticorpos prontos</strong> e age imediatamente. É a <strong>imunidade passiva</strong> e serve para <strong>tratar</strong> (ex.: soro antiofídico, contra veneno de cobra, produzido com <strong>cavalos</strong>). O <strong>plasma convalescente</strong> (de pessoas recuperadas da covid-19) também gera imunidade passiva.</li>
+          <li><strong>Surto:</strong> aumento inesperado de casos numa região específica (ex.: sarampo em São Paulo, 2019).</li>
+          <li><strong>Endemia:</strong> doença que é recorrente numa região, mas sem aumento significativo de casos (ex.: esquistossomose no Nordeste).</li>
+          <li><strong>Epidemia:</strong> aumento do número de casos em diversas regiões, mas sem atingir o nível global (ex.: varíola no Brasil, no início do século XX).</li>
+          <li><strong>Pandemia:</strong> doença que atinge nível <strong>mundial</strong>, se espalha por diversos países e afeta muitas pessoas. A <strong>OMS</strong> declara a pandemia (ex.: covid-19).</li>
+          <li><strong>Pandemias da história:</strong> <strong>gripe espanhola (1918)</strong>, cerca de 50 milhões de mortes; gripe asiática (1957); gripe de Hong Kong (1968); HIV (1981); covid-19 (até dezembro de 2023, mais de <strong>7 milhões</strong> de mortes registradas).</li>
+          <li><strong>Desmatamento e novas doenças:</strong> ao derrubar florestas tropicais, entramos em contato com vírus que circulavam entre animais silvestres (<strong>zoonoses</strong>). A OMS criou o termo <strong>"Doença X"</strong> para uma possível nova pandemia causada por um agente ainda desconhecido.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim, do menor para o maior: surto (um lugar) → endemia (sempre ali) → epidemia (várias regiões) → pandemia (o mundo todo). Vacina previne (ativa); soro trata (passiva).</div>
+        <button class="botao-praticar" data-praticar="cien-topico-12">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-cien-topico-12" style="display:none;"></div>
       </div>
 
   </main>
@@ -2785,7 +3037,7 @@ function criarQuiz(materia, bancoCompleto, tamanhoRodada = 20, qtdPrioridade = 0
   renderizarPergunta();
 }
 
-criarQuiz('matematica', perguntasMatematica);
+// quiz antigo de matemática desativado (3º trimestre usa PRATICA_MATEMATICA)
 window.PRATICA_PORTUGUES = {
   'port-topico-1': [
   {pergunta:"O que caracteriza o gênero conto?",opcoes:["Narrativa curta, com poucos personagens e um conflito principal", "Texto que ensina a fazer algo, passo a passo", "Notícia sobre um fato real", "Texto em versos com rimas"],correta:0,explicacao:"O conto é uma narrativa curta, com poucos personagens e um conflito central."},
@@ -2914,150 +3166,316 @@ window.PRATICA_PORTUGUES = {
   {pergunta:"Em \"Ele estava cansado, por isso parou\", \"por isso\" indica:",opcoes:["Conclusão", "Condição", "Concessão", "Oposição"],correta:0,explicacao:"\"Por isso\" introduz a conclusão (consequência) da ideia anterior."}
   ]
 };
+window.PRATICA_MATEMATICA = {
+  'mat-topico-1': [
+  {pergunta:"O que é uma razão?",opcoes:["A comparação entre dois valores por meio de uma divisão", "A soma de dois números", "Uma porcentagem sempre", "Um tipo de triângulo"],correta:0,explicacao:"Razão = a ÷ b."},
+  {pergunta:"Num mapa de escala 1 : 800 000, 21 cm representam quantos km?",opcoes:["168 km", "1 680 km", "80 km", "21 km"],correta:0,explicacao:"21 × 800 000 = 16 800 000 cm = 168 km."},
+  {pergunta:"Num mapa, 4 cm representam 120 km. Qual é a escala?",opcoes:["1 : 3 000 000", "1 : 30", "1 : 300 000", "1 : 120"],correta:0,explicacao:"120 km = 12 000 000 cm; 12 000 000 ÷ 4 = 3 000 000."},
+  {pergunta:"Um carro percorre 240 km em 3 horas. Qual a velocidade média?",opcoes:["80 km/h", "243 km/h", "720 km/h", "60 km/h"],correta:0,explicacao:"240 ÷ 3 = 80 km/h."},
+  {pergunta:"Uma cidade tem 20 000 habitantes e 100 km². Qual a densidade demográfica?",opcoes:["200 hab/km²", "100 hab/km²", "2 000 hab/km²", "20 hab/km²"],correta:0,explicacao:"20 000 ÷ 100 = 200 hab/km²."},
+  {pergunta:"Um carro anda 504 km com 42 L. Quantos km ele faz por litro?",opcoes:["21 km/L", "42 km/L", "10 km/L", "12 km/L"],correta:3,explicacao:"504 ÷ 42 = 12 km/L."},
+  {pergunta:"Qual escala mostra o objeto MAIOR e com mais detalhes?",opcoes:["1 : 43", "1 : 64", "1 : 24", "1 : 18"],correta:3,explicacao:"Quanto menor o número da escala, maior o desenho."},
+  {pergunta:"Num time, há 3 vezes mais destros que canhotos. Se há 36 jogadores, quantos são canhotos?",opcoes:["27", "9", "3", "12"],correta:1,explicacao:"Canhotos = x, destros = 3x; 4x = 36, x = 9."}
+  ],
+  'mat-topico-2': [
+  {pergunta:"O que é uma proporção?",opcoes:["Uma porcentagem", "A soma de duas frações", "A igualdade entre duas razões", "Uma razão maior que 1"],correta:2,explicacao:"Proporção = razão = razão."},
+  {pergunta:"Na proporção a/b = c/d, quais são os extremos?",opcoes:["a e b", "a e d", "c e d", "b e c"],correta:1,explicacao:"Extremos: a e d. Meios: b e c."},
+  {pergunta:"Qual é a Propriedade Fundamental das Proporções?",opcoes:["A soma dos extremos é igual à soma dos meios", "O produto dos extremos é igual ao produto dos meios", "Os meios são sempre maiores", "Os extremos são sempre iguais"],correta:1,explicacao:"a · d = b · c."},
+  {pergunta:"Calcule x: 3/x = 9/12",opcoes:["3", "4", "6", "36"],correta:1,explicacao:"9x = 36 → x = 4."},
+  {pergunta:"Calcule y: y/7 = 9/21",opcoes:["9", "27", "7", "3"],correta:3,explicacao:"21y = 63 → y = 3."},
+  {pergunta:"Calcule x: 7/21 = x/45",opcoes:["35", "15", "7", "21"],correta:1,explicacao:"21x = 315 → x = 15."},
+  {pergunta:"As frações 8/2 e 50/25 formam uma proporção?",opcoes:["Sim, sempre", "Não dá para saber", "Sim, pois 8 + 25 = 2 + 50", "Não, pois 8·25 ≠ 2·50"],correta:3,explicacao:"8 · 25 = 200 e 2 · 50 = 100. Diferentes, não é proporção."},
+  {pergunta:"As frações 12/3 e 24/6 formam uma proporção?",opcoes:["Não", "Só se somarmos", "Só se forem iguais a 1", "Sim, pois 12·6 = 3·24"],correta:3,explicacao:"12 · 6 = 72 e 3 · 24 = 72."},
+  {pergunta:"Uma escola usa 1 professor para cada 20 crianças. Para 600 crianças, quantos professores?",opcoes:["300", "30", "60", "20"],correta:1,explicacao:"1/20 = x/600 → 20x = 600 → x = 30."},
+  {pergunta:"Se uma imagem é reduzida só na largura, ela:",opcoes:["Fica maior", "Não muda", "Continua proporcional", "Não fica proporcional (fica deformada)"],correta:3,explicacao:"Proporcional só se largura e altura mudam na mesma razão."}
+  ],
+  'mat-topico-3': [
+  {pergunta:"Quando duas grandezas são diretamente proporcionais?",opcoes:["Quando não têm relação", "Quando são iguais", "Quando uma aumenta e a outra aumenta na mesma proporção", "Quando uma aumenta e a outra diminui"],correta:2,explicacao:"DP: as duas variam no mesmo sentido, na mesma proporção."},
+  {pergunta:"Qual é a constante de proporcionalidade de grandezas DP?",opcoes:["A razão entre os valores", "A soma entre os valores", "A diferença entre os valores", "O produto entre os valores"],correta:0,explicacao:"Em DP, a razão é constante."},
+  {pergunta:"Qual par é diretamente proporcional?",opcoes:["Torneiras abertas e tempo para encher o tanque", "Quantidade comprada e valor pago", "Número de trabalhadores e tempo para terminar", "Velocidade e tempo de viagem"],correta:1,explicacao:"Comprando mais, paga-se mais."},
+  {pergunta:"Se 1 kg de uva custa R$ 15,00, quanto custam 12 kg?",opcoes:["R$ 27,00", "R$ 120,00", "R$ 150,00", "R$ 180,00"],correta:3,explicacao:"12 × 15 = 180."},
+  {pergunta:"Para fazer 2 bolos usam-se 8 ovos. Qual a constante (ovos por bolo)?",opcoes:["8", "2", "16", "4"],correta:3,explicacao:"8 ÷ 2 = 4 ovos por bolo."},
+  {pergunta:"Um carro a 40 km/h por 5 horas percorre:",opcoes:["45 km", "200 km", "8 km", "400 km"],correta:1,explicacao:"40 × 5 = 200 km."},
+  {pergunta:"Uma máquina produz 200 embalagens por hora. Qual expressão dá a produção y em x horas?",opcoes:["y = 200/x", "y = 200 + x", "xy = 200", "y = 200x"],correta:3,explicacao:"Produção = 200 vezes o tempo."},
+  {pergunta:"150 km gastam 10 L. Quantos litros para 30 km?",opcoes:["2 L", "5 L", "3 L", "20 L"],correta:0,explicacao:"150/10 = 30/x → 150x = 300 → x = 2."}
+  ],
+  'mat-topico-4': [
+  {pergunta:"Quando duas grandezas são inversamente proporcionais?",opcoes:["Quando uma aumenta e a outra diminui na mesma proporção", "Quando as duas aumentam juntas", "Quando não mudam", "Quando somam sempre o mesmo valor"],correta:0,explicacao:"IP: dobra uma, a outra cai pela metade."},
+  {pergunta:"Qual é a constante de proporcionalidade de grandezas IP?",opcoes:["A razão entre os valores", "A soma entre os valores", "A diferença entre os valores", "O produto entre os valores"],correta:3,explicacao:"Em IP, o produto é constante."},
+  {pergunta:"Qual par é inversamente proporcional?",opcoes:["Massa de uva e preço", "Distância e combustível", "Velocidade e tempo para percorrer a mesma distância", "Quantidade de tinta e área pintada"],correta:2,explicacao:"Mais velocidade, menos tempo."},
+  {pergunta:"Um carro a 60 km/h leva 4 h. A 120 km/h, leva:",opcoes:["1 h", "8 h", "2 h", "4 h"],correta:2,explicacao:"Dobrou a velocidade, o tempo cai pela metade."},
+  {pergunta:"Um carro a 60 km/h leva 4 h. A 30 km/h, leva:",opcoes:["4 h", "2 h", "6 h", "8 h"],correta:3,explicacao:"Metade da velocidade, dobro do tempo."},
+  {pergunta:"4 trabalhadores pintam uma casa em 15 dias. Quantos dias levam 6 trabalhadores?",opcoes:["22,5 dias", "10 dias", "9 dias", "15 dias"],correta:1,explicacao:"4 · 15 = 6 · x → x = 10."},
+  {pergunta:"Uma torneira enche um tanque em 18 h. Com 3 torneiras iguais, em quanto tempo?",opcoes:["18 h", "9 h", "6 h", "54 h"],correta:2,explicacao:"18 ÷ 3 = 6 h."},
+  {pergunta:"x animais comem 2 400 kg de ração em y dias. Qual expressão representa isso?",opcoes:["x + y = 2 400", "y = 2 400x", "y = x/2 400", "xy = 2 400"],correta:3,explicacao:"É inversamente proporcional: produto constante."},
+  {pergunta:"Oito alunos levam 2 horas num projeto. Cinco alunos (mesma produtividade) levam:",opcoes:["1,25 hora", "2 horas", "3,2 horas", "5 horas"],correta:2,explicacao:"8 · 2 = 5 · x → x = 16/5 = 3,2 h."}
+  ],
+  'mat-topico-5': [
+  {pergunta:"Quantos valores conhecemos numa regra de três simples?",opcoes:["Três", "Quatro", "Um", "Dois"],correta:0,explicacao:"Conhecemos três e descobrimos o quarto."},
+  {pergunta:"Na regra de três com grandezas inversamente proporcionais, devemos:",opcoes:["Inverter uma das razões antes de multiplicar em cruz", "Inverter as duas razões", "Somar as razões", "Nunca inverter"],correta:0,explicacao:"Em IP, uma das razões é invertida."},
+  {pergunta:"2 latas de tinta pintam 3 m². Quantas latas para 19,5 m²?",opcoes:["13", "10", "6,5", "9,75"],correta:0,explicacao:"2/x = 3/19,5 → 3x = 39 → x = 13."},
+  {pergunta:"Um ônibus a 90 km/h faz um percurso em 4 h. A 120 km/h, faz em:",opcoes:["2 h", "4 h", "5,3 h", "3 h"],correta:3,explicacao:"IP: 90 · 4 = 120 · x → x = 3 h."},
+  {pergunta:"Um caminhão de 3 t faz 15 viagens. Um de 5 t fará quantas viagens?",opcoes:["5", "25", "15", "9"],correta:3,explicacao:"IP: 3 · 15 = 5 · x → x = 9."},
+  {pergunta:"Uma torneira despeja 50 L em 20 min. Quantas horas para 600 L?",opcoes:["240 h", "2 h", "4 h", "12 h"],correta:2,explicacao:"DP: 50/600 = 20/x → x = 240 min = 4 h."},
+  {pergunta:"15 homens fazem um trabalho em 10 dias. Para fazer em 6 dias, quantos homens?",opcoes:["30", "16", "9", "25"],correta:3,explicacao:"IP: 15 · 10 = x · 6 → x = 25."},
+  {pergunta:"Uma fábrica produz 515 pares de tênis por mês (30 dias). Em 18 dias produz:",opcoes:["280 pares", "858 pares", "309 pares", "515 pares"],correta:2,explicacao:"DP: 515/30 = x/18 → x = 309."},
+  {pergunta:"Quais são os 3 passos da regra de três?",opcoes:["Organizar os dados, identificar DP ou IP, escrever e resolver a proporção", "Somar, dividir e arredondar", "Desenhar, medir e calcular a área", "Multiplicar tudo por 100"],correta:0,explicacao:"São os passos do livro."},
+  {pergunta:"Um artesão trabalha 6 h por dia e faz 120 peças. Para 160 peças por dia, quantas horas?",opcoes:["7 h", "10 h", "4,5 h", "8 h"],correta:3,explicacao:"DP: 6/x = 120/160 → 120x = 960 → x = 8."}
+  ],
+  'mat-topico-6': [
+  {pergunta:"O que é porcentagem?",opcoes:["A representação de uma quantidade numa fração de denominador 100", "Um tipo de juro", "Uma divisão por 10", "Um número sempre menor que 1"],correta:0,explicacao:"% = por cento = /100."},
+  {pergunta:"Quanto é 10% de 800?",opcoes:["800", "80", "8", "180"],correta:1,explicacao:"800 ÷ 10 = 80."},
+  {pergunta:"Quanto é 73% de 60?",opcoes:["43,8", "4,38", "60", "73"],correta:0,explicacao:"0,73 × 60 = 43,8."},
+  {pergunta:"Quanto é 120% de 200?",opcoes:["24", "240", "120", "200"],correta:1,explicacao:"1,2 × 200 = 240."},
+  {pergunta:"Quanto é 25% de 48?",opcoes:["24", "25", "4,8", "12"],correta:3,explicacao:"48 ÷ 4 = 12."},
+  {pergunta:"Como se escreve 0,38 em porcentagem?",opcoes:["380%", "0,38%", "38%", "3,8%"],correta:2,explicacao:"0,38 × 100 = 38%."},
+  {pergunta:"Como se escreve 1,24 em porcentagem?",opcoes:["24%", "124%", "1,24%", "12,4%"],correta:1,explicacao:"1,24 × 100 = 124%."},
+  {pergunta:"A fração 14/25 corresponde a:",opcoes:["14%", "25%", "39%", "56%"],correta:3,explicacao:"14/25 = 56/100 = 56%."},
+  {pergunta:"A fração 3/8 corresponde a:",opcoes:["30%", "38%", "3,8%", "37,5%"],correta:3,explicacao:"3 ÷ 8 = 0,375 = 37,5%."},
+  {pergunta:"Numa sala de 250 alunos, 18% são canhotos. Quantos?",opcoes:["4,5", "18", "25", "45"],correta:3,explicacao:"0,18 × 250 = 45."},
+  {pergunta:"De 160 pessoas, 112 trabalham na colheita. Que porcentagem?",opcoes:["112%", "75%", "70%", "60%"],correta:2,explicacao:"112/160 = 0,7 = 70%."}
+  ],
+  'mat-topico-7': [
+  {pergunta:"Qual é o fator de aumento para um acréscimo de 15%?",opcoes:["0,15", "1,15", "0,85", "15"],correta:1,explicacao:"100% + 15% = 115% = 1,15."},
+  {pergunta:"Qual é o fator de redução para um desconto de 20%?",opcoes:["0,2", "0,8", "1,2", "20"],correta:1,explicacao:"100% − 20% = 80% = 0,8."},
+  {pergunta:"Uma bicicleta de R$ 800,00 teve aumento de 8%. Novo preço:",opcoes:["R$ 880,00", "R$ 864,00", "R$ 808,00", "R$ 736,00"],correta:1,explicacao:"800 · 1,08 = 864."},
+  {pergunta:"Um streaming de R$ 40,00 teve desconto de 15%. Novo preço:",opcoes:["R$ 25,00", "R$ 34,00", "R$ 38,50", "R$ 46,00"],correta:1,explicacao:"40 · 0,85 = 34."},
+  {pergunta:"Um tênis de R$ 280,00 com desconto de 4% custa:",opcoes:["R$ 291,20", "R$ 240,00", "R$ 276,00", "R$ 268,80"],correta:3,explicacao:"280 · 0,96 = 268,80."},
+  {pergunta:"Panelas de R$ 420,00 com desconto de 40% custam:",opcoes:["R$ 168,00", "R$ 380,00", "R$ 588,00", "R$ 252,00"],correta:3,explicacao:"420 · 0,6 = 252."},
+  {pergunta:"Um produto de R$ 230,00 sofre aumento de 12%. Novo preço:",opcoes:["R$ 257,60", "R$ 230,12", "R$ 242,00", "R$ 276,00"],correta:0,explicacao:"230 · 1,12 = 257,60."},
+  {pergunta:"Um preço sobe 20% e depois cai 20%. O preço final:",opcoes:["Fica menor que o original", "Fica maior que o original", "Volta ao original", "Fica zero"],correta:0,explicacao:"1,2 · 0,8 = 0,96: fica 4% menor."},
+  {pergunta:"Ana Maria ganha R$ 2 700,00. Eduardo ganha 20% a mais. Quanto ganha Eduardo?",opcoes:["R$ 2 720,00", "R$ 3 240,00", "R$ 3 000,00", "R$ 2 160,00"],correta:1,explicacao:"2 700 · 1,2 = 3 240."},
+  {pergunta:"Marcos ganha 28% a menos que Ana Maria (R$ 2 700,00). Quanto ganha?",opcoes:["R$ 3 456,00", "R$ 1 944,00", "R$ 2 672,00", "R$ 756,00"],correta:1,explicacao:"2 700 · 0,72 = 1 944."}
+  ],
+  'mat-topico-8': [
+  {pergunta:"Qual é a fórmula dos juros simples?",opcoes:["M = C · J", "J = C · i · t", "J = C + i + t", "J = C / t"],correta:1,explicacao:"Juro = capital × taxa × tempo."},
+  {pergunta:"O que é o montante?",opcoes:["O tempo do empréstimo", "A taxa de juros", "Só os juros", "A soma do capital com os juros"],correta:3,explicacao:"M = C + J."},
+  {pergunta:"No regime de juros simples, a taxa incide sobre:",opcoes:["Os juros anteriores", "O montante a cada período", "Só o último mês", "O capital inicial, sempre"],correta:3,explicacao:"Juros simples: sempre sobre o capital inicial."},
+  {pergunta:"Juros de um empréstimo de R$ 5 000,00 por 3 anos a 8% ao ano:",opcoes:["R$ 1 200,00", "R$ 400,00", "R$ 6 200,00", "R$ 120,00"],correta:0,explicacao:"5 000 · 0,08 · 3 = 1 200."},
+  {pergunta:"Montante de R$ 2 500,00 por 8 meses a 5% ao mês:",opcoes:["R$ 3 000,00", "R$ 1 000,00", "R$ 2 625,00", "R$ 3 500,00"],correta:3,explicacao:"J = 2 500 · 0,05 · 8 = 1 000; M = 3 500."},
+  {pergunta:"Marina investiu R$ 60 000,00 a 2% ao mês por 8 meses. Juros:",opcoes:["R$ 1 200,00", "R$ 9 600,00", "R$ 960,00", "R$ 69 600,00"],correta:1,explicacao:"60 000 · 0,02 · 8 = 9 600."},
+  {pergunta:"Larissa pegou R$ 4 000,00 a 3% ao mês. Juros após 2 meses:",opcoes:["R$ 120,00", "R$ 24,00", "R$ 240,00", "R$ 4 240,00"],correta:2,explicacao:"4 000 · 0,03 · 2 = 240."},
+  {pergunta:"Um empréstimo de R$ 6 000,00 virou R$ 8 160,00 em 2 anos. Taxa mensal:",opcoes:["3% ao mês", "18% ao mês", "0,5% ao mês", "1,5% ao mês"],correta:3,explicacao:"J = 2 160; 2 160 = 6 000 · i · 24 → i = 0,015."},
+  {pergunta:"Se a taxa é ao mês, o tempo deve estar em:",opcoes:["Meses", "Anos", "Qualquer unidade", "Dias"],correta:0,explicacao:"Taxa e tempo na mesma unidade."},
+  {pergunta:"12% ao ano corresponde a quantos % ao mês (juros simples)?",opcoes:["1% ao mês", "0,12% ao mês", "144% ao mês", "12% ao mês"],correta:0,explicacao:"12 ÷ 12 = 1."},
+  {pergunta:"R$ 3 000,00 renderam montante de R$ 3 090,00 em 3 meses. Taxa mensal:",opcoes:["1% ao mês", "3% ao mês", "9% ao mês", "0,3% ao mês"],correta:0,explicacao:"J = 90; 90 = 3 000 · i · 3 → i = 0,01."},
+  {pergunta:"Um capital é aplicado a 3% ao mês. Em quantos meses o montante dobra?",opcoes:["12 meses", "Cerca de 34 meses (33,3)", "100 meses", "3 meses"],correta:1,explicacao:"Para dobrar, J = C: C · 0,03 · t = C → t ≈ 33,3 meses."}
+  ],
+  'mat-topico-9': [
+  {pergunta:"O que é inflação?",opcoes:["Queda dos preços", "Aumento do salário", "Aumento generalizado dos preços", "Um tipo de investimento"],correta:2,explicacao:"A inflação reduz o poder de compra."},
+  {pergunta:"Qual é o índice oficial de inflação no Brasil?",opcoes:["FGC", "PIB", "IPCA", "SELIC"],correta:2,explicacao:"O IPCA, calculado pelo IBGE."},
+  {pergunta:"A inflação de 2024 (IPCA) foi de 4,83%. Um salário de R$ 4 500,00 deveria ir para:",opcoes:["Cerca de R$ 4 717,35", "R$ 5 000,00", "R$ 4 504,83", "R$ 4 983,00"],correta:0,explicacao:"4 500 · 1,0483 = 4 717,35."},
+  {pergunta:"Uma cesta custa R$ 600,00 e a inflação prevista é 3%. Valor previsto:",opcoes:["R$ 580,00", "R$ 603,00", "R$ 630,00", "R$ 618,00"],correta:3,explicacao:"600 · 1,03 = 618."},
+  {pergunta:"O que acontece se o governo imprimir mais dinheiro sem aumentar a produção?",opcoes:["Nada muda", "Todos ficam mais ricos", "Os preços caem", "Os preços sobem (inflação)"],correta:3,explicacao:"Mais dinheiro para os mesmos produtos = preços maiores."},
+  {pergunta:"O que é a SELIC?",opcoes:["Um imposto", "Um índice de inflação", "Um banco", "A taxa básica de juros da economia brasileira"],correta:3,explicacao:"A SELIC é usada para controlar a inflação."},
+  {pergunta:"Qual é uma vantagem da poupança?",opcoes:["Rende juros todos os dias", "Pode-se sacar o dinheiro a qualquer momento", "Não tem nenhuma garantia", "Rende sempre mais que a inflação"],correta:1,explicacao:"Também é isenta de IR e garantida pelo FGC."},
+  {pergunta:"Qual é uma desvantagem da poupança?",opcoes:["Não pode sacar nunca", "Cobra imposto de renda alto", "Não tem garantia", "Remuneração baixa, às vezes menor que a inflação"],correta:3,explicacao:"O rendimento é baixo."},
+  {pergunta:"No Tesouro Prefixado, o investidor:",opcoes:["Sabe exatamente quanto vai ganhar (taxa fixa)", "Ganha só a inflação", "Não sabe quanto vai ganhar", "Perde sempre"],correta:0,explicacao:"A taxa é fixa."},
+  {pergunta:"Um título prefixado de 9,8% ao ano com R$ 12 000,00 por 1 ano rende montante de:",opcoes:["R$ 1 176,00", "R$ 13 176,00", "R$ 12 098,00", "R$ 13 000,00"],correta:1,explicacao:"12 000 · 1,098 = 13 176."}
+  ],
+  'mat-topico-10': [
+  {pergunta:"Um triângulo com 3 lados iguais é:",opcoes:["Equilátero", "Retângulo", "Isósceles", "Escaleno"],correta:0,explicacao:"Equilátero = lados iguais."},
+  {pergunta:"Um triângulo com exatamente 2 lados iguais é:",opcoes:["Equilátero", "Escaleno", "Obtusângulo", "Isósceles"],correta:3,explicacao:"Isósceles = pelo menos dois lados iguais."},
+  {pergunta:"Um triângulo com 3 lados diferentes é:",opcoes:["Equilátero", "Escaleno", "Acutângulo", "Isósceles"],correta:1,explicacao:"Escaleno = todos os lados diferentes."},
+  {pergunta:"Um triângulo com um ângulo de 90° é:",opcoes:["Retângulo", "Obtusângulo", "Equilátero", "Acutângulo"],correta:0,explicacao:"Ângulo reto = 90°."},
+  {pergunta:"Um triângulo com um ângulo de 120° é:",opcoes:["Retângulo", "Obtusângulo", "Acutângulo", "Equilátero"],correta:1,explicacao:"Obtuso: maior que 90°."},
+  {pergunta:"Um triângulo com ângulos 50°, 60° e 70° é:",opcoes:["Acutângulo", "Impossível", "Retângulo", "Obtusângulo"],correta:0,explicacao:"Todos menores que 90°."},
+  {pergunta:"Quanto mede cada ângulo de um triângulo equilátero?",opcoes:["45°", "90°", "60°", "180°"],correta:2,explicacao:"180° ÷ 3 = 60°."},
+  {pergunta:"Existe triângulo com lados 3 cm, 4 cm e 5 cm?",opcoes:["Sim", "Não"],correta:0,explicacao:"5 < 3 + 4 = 7. Existe."},
+  {pergunta:"Existe triângulo com lados 2 cm, 3 cm e 6 cm?",opcoes:["Não", "Sim"],correta:0,explicacao:"6 não é menor que 2 + 3 = 5."},
+  {pergunta:"Existe triângulo com lados 5 cm, 5 cm e 10 cm?",opcoes:["Não", "Sim"],correta:0,explicacao:"10 não é menor que 5 + 5 = 10 (é igual)."},
+  {pergunta:"Qual é a condição de existência de um triângulo?",opcoes:["Os lados devem ser iguais", "Um lado deve ser maior que a soma dos outros", "Os lados devem somar 180", "Cada lado deve ser menor que a soma dos outros dois"],correta:3,explicacao:"Basta testar o maior lado."}
+  ],
+  'mat-topico-11': [
+  {pergunta:"Quanto vale a soma dos ângulos internos de um triângulo?",opcoes:["90°", "270°", "360°", "180°"],correta:3,explicacao:"Sempre 180°."},
+  {pergunta:"Num triângulo, dois ângulos medem 50° e 70°. O terceiro mede:",opcoes:["80°", "180°", "60°", "120°"],correta:2,explicacao:"180 − 50 − 70 = 60."},
+  {pergunta:"Num triângulo retângulo, um ângulo agudo mede 35°. O outro mede:",opcoes:["55°", "35°", "145°", "65°"],correta:0,explicacao:"90 − 35 = 55."},
+  {pergunta:"Num triângulo isósceles, o ângulo do vértice mede 40°. Cada ângulo da base mede:",opcoes:["50°", "140°", "70°", "40°"],correta:2,explicacao:"(180 − 40) ÷ 2 = 70."},
+  {pergunta:"O ângulo externo de um triângulo é igual:",opcoes:["Ao ângulo interno vizinho", "A 360°", "À soma dos dois ângulos internos não adjacentes", "A 90° sempre"],correta:2,explicacao:"Propriedade do ângulo externo."},
+  {pergunta:"Qual é a fórmula da soma dos ângulos internos de um polígono de n lados?",opcoes:["S = 360° · n", "S = n · 180°", "S = (n + 2) · 90°", "S = (n − 2) · 180°"],correta:3,explicacao:"O polígono se divide em n − 2 triângulos."},
+  {pergunta:"A soma dos ângulos internos de um quadrilátero é:",opcoes:["540°", "720°", "180°", "360°"],correta:3,explicacao:"(4 − 2) · 180 = 360."},
+  {pergunta:"A soma dos ângulos internos de um pentágono é:",opcoes:["900°", "720°", "540°", "360°"],correta:2,explicacao:"(5 − 2) · 180 = 540."},
+  {pergunta:"A soma dos ângulos internos de um hexágono é:",opcoes:["540°", "1 080°", "720°", "360°"],correta:2,explicacao:"(6 − 2) · 180 = 720."},
+  {pergunta:"Cada ângulo interno de um hexágono regular mede:",opcoes:["720°", "60°", "108°", "120°"],correta:3,explicacao:"720 ÷ 6 = 120."},
+  {pergunta:"Um polígono de 8 lados tem soma dos ângulos internos igual a:",opcoes:["900°", "1 080°", "720°", "1 440°"],correta:1,explicacao:"(8 − 2) · 180 = 1 080."}
+  ],
+  'mat-topico-12': [
+  {pergunta:"Qual é a fórmula da área do triângulo?",opcoes:["A = b + h", "A = 2 · b · h", "A = b · h", "A = (b · h) / 2"],correta:3,explicacao:"Base vezes altura dividido por 2."},
+  {pergunta:"Área de um triângulo com base 10 cm e altura 6 cm:",opcoes:["30 cm²", "15 cm²", "60 cm²", "16 cm²"],correta:0,explicacao:"(10 · 6) / 2 = 30."},
+  {pergunta:"Área de um triângulo com base 8 m e altura 5 m:",opcoes:["40 m²", "13 m²", "20 m²", "80 m²"],correta:2,explicacao:"(8 · 5) / 2 = 20."},
+  {pergunta:"Um triângulo retângulo tem catetos 6 cm e 8 cm. Sua área é:",opcoes:["28 cm²", "14 cm²", "24 cm²", "48 cm²"],correta:2,explicacao:"(6 · 8) / 2 = 24."},
+  {pergunta:"Por que dividimos por 2 na área do triângulo?",opcoes:["Porque tem 3 ângulos", "Porque é uma regra sem motivo", "Porque tem 2 lados iguais", "Porque o triângulo é metade de um paralelogramo de mesma base e altura"],correta:3,explicacao:"É metade do paralelogramo."},
+  {pergunta:"A altura de um triângulo é:",opcoes:["O lado oposto ao ângulo reto", "O maior lado", "A soma dos lados", "O segmento perpendicular do vértice até a base"],correta:3,explicacao:"Perpendicular = forma 90° com a base."},
+  {pergunta:"Um triângulo tem área 30 cm² e base 12 cm. Qual é a altura?",opcoes:["10 cm", "18 cm", "2,5 cm", "5 cm"],correta:3,explicacao:"30 = (12 · h)/2 → h = 5."},
+  {pergunta:"Em que unidade sai a área se base e altura estão em metros?",opcoes:["m", "km", "m²", "m³"],correta:2,explicacao:"Área = unidade ao quadrado."}
+  ],
+  'mat-topico-13': [
+  {pergunta:"Resolva: x + y = 10 e x − y = 2",opcoes:["x = 4 e y = 6", "x = 5 e y = 5", "x = 8 e y = 2", "x = 6 e y = 4"],correta:3,explicacao:"Somando: 2x = 12 → x = 6; y = 4."},
+  {pergunta:"Resolva: x + y = 7 e x − y = 1",opcoes:["x = 4 e y = 3", "x = 5 e y = 2", "x = 7 e y = 0", "x = 3 e y = 4"],correta:0,explicacao:"2x = 8 → x = 4; y = 3."},
+  {pergunta:"Resolva: x + y = 15 e x = 2y",opcoes:["x = 10 e y = 5", "x = 7 e y = 8", "x = 5 e y = 10", "x = 12 e y = 3"],correta:0,explicacao:"2y + y = 15 → y = 5; x = 10."},
+  {pergunta:"O que é a solução de um sistema?",opcoes:["A soma das equações", "Qualquer valor de x", "Só o valor de y", "O par de valores que satisfaz as duas equações ao mesmo tempo"],correta:3,explicacao:"Precisa servir nas duas."},
+  {pergunta:"Qual método consiste em isolar uma incógnita e trocar na outra equação?",opcoes:["Adição", "Regra de três", "Substituição", "Fatoração"],correta:2,explicacao:"Substituição."},
+  {pergunta:"Há 20 veículos (carros e motos) e 60 rodas. Quantos carros?",opcoes:["15", "5", "20", "10"],correta:3,explicacao:"x + y = 20 e 4x + 2y = 60 → x = 10."},
+  {pergunta:"A soma de dois números é 30 e a diferença é 6. O maior é:",opcoes:["15", "24", "18", "12"],correta:2,explicacao:"2x = 36 → x = 18."},
+  {pergunta:"Resolva: 2x + y = 11 e x + y = 7",opcoes:["x = 2 e y = 5", "x = 5 e y = 1", "x = 4 e y = 3", "x = 3 e y = 4"],correta:2,explicacao:"Subtraindo: x = 4; y = 3."}
+  ]
+};
 window.PRATICA_CIENCIAS = {
   'cien-topico-1': [
-  {pergunta:"O que é taxonomia?",opcoes:["A ciência que organiza os seres vivos em grupos","Um tipo de planta","Uma doença","Um tipo de rocha"],correta:0,explicacao:"Taxonomia é a ciência que classifica e organiza os seres vivos em grupos."},
-  {pergunta:"Como é escrito o nome científico de um ser vivo?",opcoes:["Em português, com letra maiúscula","Em latim, com duas palavras","Apenas com números","Em qualquer idioma, sem regra"],correta:1,explicacao:"O nome científico é escrito em latim, com duas palavras (nomenclatura binominal)."},
-  {pergunta:"Qual é a ordem correta dos grupos taxonômicos, do maior para o menor?",opcoes:["Reino, Filo, Classe, Ordem, Família, Gênero, Espécie","Espécie, Gênero, Reino, Filo","Filo, Reino, Classe, Espécie","Gênero, Espécie, Reino, Filo"],correta:0,explicacao:"A ordem correta, do maior grupo para o menor, é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie."},
-  {pergunta:"Por que é importante classificar os seres vivos em grupos?",opcoes:["Para deixar mais difícil de estudar","Para facilitar o estudo, agrupando os que são parecidos","Não tem importância nenhuma","Só para decorar nomes"],correta:1,explicacao:"Classificar facilita o estudo, organizando os seres vivos por características semelhantes."},
-  {pergunta:"O grupo taxonômico 'Espécie' representa:",opcoes:["O maior grupo de todos","O menor e mais específico grupo","Um grupo apenas de plantas","Um grupo apenas de bactérias"],correta:1,explicacao:"Espécie é o menor e mais específico nível da classificação taxonômica."},
-  {pergunta:"O grupo taxonômico 'Reino' representa:",opcoes:["O menor grupo de todos","Um dos maiores e mais amplos grupos","Apenas animais marinhos","Um tipo de doença"],correta:1,explicacao:"Reino é um dos grupos mais amplos da classificação, reunindo seres vivos com características bem gerais em comum."},
-  {pergunta:"Por que o nome científico é escrito em latim?",opcoes:["Porque é mais bonito","Para ser igual em qualquer país do mundo, evitando confusão","Porque é mais fácil de pronunciar","Não há motivo especial"],correta:1,explicacao:"O latim é usado para que o nome científico seja reconhecido da mesma forma em qualquer lugar do mundo, evitando confusão entre idiomas."},
-  {pergunta:"O grupo taxonômico 'Filo' vem depois de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Gênero","Reino","Família"],correta:2,explicacao:"A ordem do maior para o menor é: Reino, Filo, Classe, Ordem, Família, Gênero, Espécie. Filo vem logo depois de Reino."},
-  {pergunta:"O grupo taxonômico 'Gênero' vem antes de qual grupo, na ordem do maior para o menor?",opcoes:["Espécie","Família","Reino","Filo"],correta:0,explicacao:"Gênero vem antes de Espécie, que é o último e mais específico nível da classificação."},
-  {pergunta:"A classificação taxonômica ajuda os cientistas a:",opcoes:["Confundir os nomes dos seres vivos","Organizar e comunicar informações sobre os seres vivos de forma padronizada","Aumentar a quantidade de espécies","Tornar a ciência mais difícil"],correta:1,explicacao:"A taxonomia padroniza a forma de organizar e comunicar informações sobre os seres vivos entre cientistas do mundo todo."}
+  {pergunta:"O que é a hidrosfera?",opcoes:["Só a água dos rios", "A camada de ar da Terra", "O conjunto de toda a água do planeta", "A parte sólida da Terra"],correta:2,explicacao:"Hidrosfera = toda a água da Terra, em todos os estados físicos."},
+  {pergunta:"Qual porcentagem da água da Terra é salgada?",opcoes:["97,5%", "2,5%", "68,9%", "50%"],correta:0,explicacao:"Quase toda a água do planeta (97,5%) é salgada."},
+  {pergunta:"Qual porcentagem da água da Terra é doce?",opcoes:["30%", "2,5%", "97,5%", "0,3%"],correta:1,explicacao:"Só 2,5% da água do planeta é doce."},
+  {pergunta:"Onde está a maior parte da água doce do planeta?",opcoes:["Em geleiras e neves eternas (68,9%)", "Nos rios e lagos", "Nas nuvens", "Nos oceanos"],correta:0,explicacao:"68,9% da água doce está congelada."},
+  {pergunta:"Quanto da água doce está em rios e lagos?",opcoes:["Cerca de 29,9%", "Cerca de 97,5%", "Cerca de 0,3%", "Cerca de 50%"],correta:2,explicacao:"Os rios e lagos guardam só 0,3% da água doce."},
+  {pergunta:"Por que beber água do mar pode desidratar uma pessoa?",opcoes:["Porque a água do mar é fria", "O corpo precisa de mais água para eliminar o excesso de sal", "Porque tem pouco oxigênio", "Porque não tem sal"],correta:1,explicacao:"O excesso de sal obriga o corpo a gastar mais água para eliminá-lo."},
+  {pergunta:"Qual é uma função da água no nosso corpo?",opcoes:["Fazer fotossíntese", "Produzir ossos sozinha", "Substituir o oxigênio", "Regular a temperatura corporal pelo suor"],correta:3,explicacao:"O suor ajuda a manter a temperatura adequada."},
+  {pergunta:"O que era o \"Dia Zero\" em Cape Town?",opcoes:["Um feriado nacional", "O dia mais frio do ano", "O primeiro dia de chuva", "O dia em que as reservas de água potável acabariam"],correta:3,explicacao:"Foi a ameaça de falta total de água na seca de 2018."},
+  {pergunta:"Qual porcentagem da água doce é subterrânea?",opcoes:["97,5%", "0,3%", "2,5%", "29,9%"],correta:3,explicacao:"Cerca de 29,9% da água doce está em aquíferos."}
   ],
   'cien-topico-2': [
-  {pergunta:"Quantos são os reinos dos seres vivos, na classificação clássica?",opcoes:["3","4","5","7"],correta:2,explicacao:"São 5 reinos: Monera, Protista, Fungi, Plantae e Animalia."},
-  {pergunta:"O Reino Monera é formado por quais seres vivos?",opcoes:["Plantas","Bactérias","Animais","Fungos"],correta:1,explicacao:"O Reino Monera é formado pelas bactérias, seres de uma só célula."},
-  {pergunta:"O Reino Fungi é formado por quais seres vivos?",opcoes:["Bactérias","Fungos, cogumelos, mofo","Plantas","Animais marinhos"],correta:1,explicacao:"O Reino Fungi inclui fungos, cogumelos e mofos."},
-  {pergunta:"O Reino Plantae é formado por:",opcoes:["Todas as plantas","Todos os animais","Bactérias","Vírus"],correta:0,explicacao:"O Reino Plantae é formado por todas as plantas."},
-  {pergunta:"O Reino Animalia é formado por:",opcoes:["Todas as plantas","Todos os animais","Apenas bactérias","Apenas fungos"],correta:1,explicacao:"O Reino Animalia é formado por todos os animais."},
-  {pergunta:"Qual critério NÃO é usado para classificar os seres vivos em reinos?",opcoes:["Modo de nutrição","Modo de reprodução","Cor predominante","Tipo de sustentação do corpo"],correta:2,explicacao:"A cor não é um critério científico de classificação; usa-se nutrição, reprodução, obtenção de oxigênio e sustentação do corpo."},
-  {pergunta:"Doenças causadas por fungos são chamadas de:",opcoes:["Viroses","Bacterioses","Micoses","Protozooses"],correta:2,explicacao:"Doenças causadas por fungos são chamadas de micoses."},
-  {pergunta:"Bactérias fazem parte de qual reino?",opcoes:["Plantae","Animalia","Monera","Fungi"],correta:2,explicacao:"Bactérias pertencem ao Reino Monera, formado por seres unicelulares simples."},
-  {pergunta:"Cogumelos fazem parte de qual reino?",opcoes:["Monera","Fungi","Plantae","Protista"],correta:1,explicacao:"Cogumelos fazem parte do Reino Fungi."},
-  {pergunta:"Protozoários e algas fazem parte de qual reino?",opcoes:["Monera","Fungi","Protista","Animalia"],correta:2,explicacao:"Protozoários e algas pertencem ao Reino Protista (também chamado Protoctista)."},
-  {pergunta:"Uma doença causada por bactérias é chamada de:",opcoes:["Micose","Bacteriose","Virose","Protozoose"],correta:1,explicacao:"Doenças causadas por bactérias são chamadas de bacterioses."},
-  {pergunta:"Uma doença causada por vírus é chamada de:",opcoes:["Virose","Micose","Bacteriose","Helmintose"],correta:0,explicacao:"Doenças causadas por vírus são chamadas de viroses."},
-  {pergunta:"Uma doença causada por vermes é chamada de:",opcoes:["Virose","Micose","Helmintose","Bacteriose"],correta:2,explicacao:"Doenças causadas por vermes (helmintos) são chamadas de helmintoses."},
-  {pergunta:"Vírus são considerados seres vivos pelos critérios tradicionais de classificação?",opcoes:["Sim, sem nenhuma dúvida","Não se encaixam bem nos 5 reinos clássicos, sendo tratados separadamente","Pertencem ao Reino Animalia","Pertencem ao Reino Plantae"],correta:1,explicacao:"Vírus não se encaixam perfeitamente na classificação dos 5 reinos, sendo geralmente estudados separadamente."},
-  {pergunta:"Qual destes é um critério usado para classificar os seres vivos?",opcoes:["Modo de nutrição","Cor da pele","Local de nascimento","Tamanho dos pés"],correta:0,explicacao:"O modo de nutrição é um dos critérios científicos usados para agrupar seres vivos."},
-  {pergunta:"Qual destes é outro critério usado para classificar os seres vivos?",opcoes:["Modo de reprodução","Nome da família humana","Cor da roupa","Local onde foi comprado"],correta:0,explicacao:"O modo de reprodução é um critério científico usado na classificação dos seres vivos."},
-  {pergunta:"O que significa 'sustentação do corpo', como critério de classificação?",opcoes:["Como o ser vivo se equilibra ou se apoia (esqueleto, tronco, etc.)","A cor da pele do ser vivo","O peso do ser vivo","O nome popular do animal"],correta:0,explicacao:"Sustentação do corpo se refere à estrutura que dá suporte ao ser vivo, como esqueleto interno, externo, ou outras formas de sustentação."},
-  {pergunta:"Os fungos se alimentam principalmente:",opcoes:["Fazendo fotossíntese como as plantas","Absorvendo nutrientes de matéria orgânica","Caçando outros animais","Fazendo fotossíntese aquática"],correta:1,explicacao:"Fungos não fazem fotossíntese; eles absorvem nutrientes de matéria orgânica em decomposição ou de outros organismos."},
-  {pergunta:"As plantas se destacam por realizar qual processo para obter energia?",opcoes:["Fotossíntese","Fermentação apenas","Caça","Decomposição"],correta:0,explicacao:"As plantas realizam fotossíntese, processo que usa luz solar para produzir energia."},
-  {pergunta:"Os animais, de modo geral, obtêm alimento:",opcoes:["Fazendo fotossíntese","Se alimentando de outros seres vivos ou partes deles","Absorvendo luz do sol diretamente","Não precisam se alimentar"],correta:1,explicacao:"Animais obtêm energia se alimentando de outros seres vivos (plantas, outros animais, etc.), pois não fazem fotossíntese."},
-  {pergunta:"Qual é a diferença entre o Reino Plantae e o Reino Fungi quanto à nutrição?",opcoes:["Não existe diferença","Plantas fazem fotossíntese; fungos absorvem nutrientes de matéria orgânica","Fungos fazem fotossíntese; plantas não","Os dois caçam outros seres vivos"],correta:1,explicacao:"Plantas produzem seu próprio alimento por fotossíntese, enquanto fungos absorvem nutrientes já existentes na matéria orgânica."},
-  {pergunta:"O Reino Protista inclui organismos que podem ser:",opcoes:["Apenas multicelulares grandes","Geralmente unicelulares, como protozoários e algumas algas","Apenas vertebrados","Apenas fungos"],correta:1,explicacao:"O Reino Protista é formado principalmente por organismos unicelulares, como protozoários e certas algas."},
-  {pergunta:"As bactérias têm quantas células?",opcoes:["Uma só (unicelulares)","Milhares","Exatamente duas","Não têm células"],correta:0,explicacao:"Bactérias são organismos unicelulares, formados por apenas uma célula."},
-  {pergunta:"Qual destes seres vivos NÃO pertence ao Reino Animalia?",opcoes:["Cachorro","Minhoca","Cogumelo","Borboleta"],correta:2,explicacao:"O cogumelo pertence ao Reino Fungi, não ao Reino Animalia."},
-  {pergunta:"Qual destes seres vivos pertence ao Reino Plantae?",opcoes:["Bactéria","Samambaia","Fungo","Água-viva"],correta:1,explicacao:"A samambaia é uma planta, pertencendo ao Reino Plantae."},
-  {pergunta:"O mofo que aparece em pão velho pertence a qual reino?",opcoes:["Monera","Fungi","Plantae","Animalia"],correta:1,explicacao:"O mofo é um tipo de fungo, pertencendo ao Reino Fungi."},
-  {pergunta:"Qual destes é um exemplo de Reino Monera?",opcoes:["Bactéria causadora de uma infecção","Cogumelo","Samambaia","Estrela-do-mar"],correta:0,explicacao:"Bactérias pertencem ao Reino Monera."},
-  {pergunta:"A malária é causada por um organismo de qual reino?",opcoes:["Monera","Protista","Fungi","Animalia"],correta:1,explicacao:"A malária é causada por um protozoário, organismo do Reino Protista."}
+  {pergunta:"Quanto da água doce do mundo está no Brasil?",opcoes:["Cerca de 1%", "Cerca de 80%", "Cerca de 12%", "Cerca de 50%"],correta:2,explicacao:"O Brasil tem cerca de 12% das reservas globais de água doce."},
+  {pergunta:"Onde está a maior parte da água doce do Brasil?",opcoes:["Na Região Amazônica (cerca de 80%)", "No Sul", "No Nordeste", "Em São Paulo"],correta:0,explicacao:"Cerca de 80% está na Amazônia, onde vive só 5% da população."},
+  {pergunta:"Qual é o principal uso da água no Brasil?",opcoes:["Irrigação de lavouras (50%)", "Banho", "Indústrias", "Piscinas"],correta:0,explicacao:"Metade da água é usada na irrigação."},
+  {pergunta:"Qual setor consome cerca de 58,6% da água no Brasil?",opcoes:["Abastecimento das casas", "Turismo", "Agropecuária", "Indústria"],correta:2,explicacao:"A agropecuária é a maior consumidora."},
+  {pergunta:"Por que dizemos que a água no Brasil é mal distribuída?",opcoes:["Porque não chove no Brasil", "Porque toda a água é salgada", "Há muita água onde vive pouca gente e pouca água onde vive muita gente", "Porque só existe água no Sul"],correta:2,explicacao:"A Amazônia tem 80% da água e só 5% da população."},
+  {pergunta:"O que são recursos não renováveis?",opcoes:["Recursos que vêm do espaço", "Recursos que a natureza não consegue repor rapidamente", "Recursos que nunca acabam", "Recursos feitos em fábricas"],correta:1,explicacao:"Se usados mais rápido que a reposição, tendem a se esgotar."},
+  {pergunta:"Qual é uma estratégia para preservar a água?",opcoes:["Reutilizar a água e tratar o esgoto", "Desmatar as nascentes", "Poluir os rios", "Aumentar o desperdício"],correta:0,explicacao:"Reúso e tratamento de esgoto ajudam a preservar a água."},
+  {pergunta:"A afirmativa \"A água potável se distribui igualmente pela superfície da Terra\" é:",opcoes:["Falsa", "Verdadeira"],correta:0,explicacao:"A água potável é mal distribuída pelo planeta."}
   ],
   'cien-topico-3': [
-  {pergunta:"O que são invertebrados?",opcoes:["Animais sem coluna vertebral","Animais sem boca","Plantas sem raiz","Fungos sem esporos"],correta:0,explicacao:"Invertebrados são animais que não possuem coluna vertebral (esqueleto de ossos nas costas)."},
-  {pergunta:"As esponjas do mar pertencem a qual grupo de invertebrados?",opcoes:["Cnidários","Poríferos","Moluscos","Artrópodes"],correta:1,explicacao:"As esponjas são Poríferos, animais com o corpo cheio de poros (furinhos)."},
-  {pergunta:"Água-viva e coral pertencem a qual grupo?",opcoes:["Poríferos","Cnidários","Anelídeos","Equinodermos"],correta:1,explicacao:"Água-viva e coral são Cnidários, animais com tentáculos que podem picar."},
-  {pergunta:"A minhoca pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Artrópodes","Cnidários"],correta:0,explicacao:"A minhoca é um Anelídeo, animal com o corpo dividido em anéis."},
-  {pergunta:"O caracol e o polvo pertencem a qual grupo?",opcoes:["Artrópodes","Moluscos","Equinodermos","Poríferos"],correta:1,explicacao:"Caracol e polvo são Moluscos."},
-  {pergunta:"A estrela-do-mar pertence a qual grupo?",opcoes:["Equinodermos","Cnidários","Anelídeos","Artrópodes"],correta:0,explicacao:"A estrela-do-mar é um Equinodermo."},
-  {pergunta:"Insetos e aranhas pertencem a qual grupo de invertebrados?",opcoes:["Moluscos","Anelídeos","Artrópodes","Poríferos"],correta:2,explicacao:"Insetos e aranhas são Artrópodes, animais com pernas articuladas."},
-  {pergunta:"A tênia é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Moluscos","Cnidários"],correta:0,explicacao:"A tênia é um Platelminto, verme de corpo achatado."},
-  {pergunta:"A lombriga é um exemplo de qual grupo?",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Equinodermos"],correta:1,explicacao:"A lombriga é um Nematelminto, verme de corpo redondo (cilíndrico)."},
-  {pergunta:"O que diferencia um invertebrado de um vertebrado?",opcoes:["O tamanho do corpo","A presença ou ausência de coluna vertebral","A cor da pele","O local onde vive"],correta:1,explicacao:"Vertebrados possuem coluna vertebral; invertebrados não possuem essa estrutura."},
-  {pergunta:"Os Poríferos têm o corpo:",opcoes:["Cheio de poros (furinhos)","Coberto de penas","Com casca dura","Com pelos longos"],correta:0,explicacao:"Poríferos (esponjas) têm o corpo cheio de pequenos poros, por onde a água circula."},
-  {pergunta:"Os Cnidários têm como característica:",opcoes:["Tentáculos que podem picar","Asas para voar","Pernas articuladas","Concha protetora"],correta:0,explicacao:"Cnidários (água-viva, coral, anêmona) têm tentáculos com células urticantes que podem picar."},
-  {pergunta:"O corpo achatado é uma característica de qual grupo?",opcoes:["Platelmintos","Anelídeos","Artrópodes","Equinodermos"],correta:0,explicacao:"Platelmintos têm o corpo achatado, como a tênia."},
-  {pergunta:"O corpo dividido em anéis é uma característica de qual grupo?",opcoes:["Moluscos","Anelídeos","Cnidários","Poríferos"],correta:1,explicacao:"Anelídeos (como a minhoca) têm o corpo dividido em segmentos parecidos com anéis."},
-  {pergunta:"Pernas articuladas são uma característica de qual grupo?",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes (insetos, aranhas, caranguejos) têm pernas articuladas (com 'juntas')."},
-  {pergunta:"A concha é uma característica comum em qual grupo de invertebrados?",opcoes:["Moluscos","Cnidários","Artrópodes","Platelmintos"],correta:0,explicacao:"Muitos Moluscos (como caracol e ostra) possuem concha, uma estrutura dura de proteção."},
-  {pergunta:"O ouriço-do-mar pertence a qual grupo?",opcoes:["Cnidários","Moluscos","Equinodermos","Artrópodes"],correta:2,explicacao:"O ouriço-do-mar é um Equinodermo, grupo que inclui também a estrela-do-mar."},
-  {pergunta:"O caranguejo pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Cnidários","Poríferos"],correta:1,explicacao:"O caranguejo é um Artrópode, animal com pernas articuladas e exoesqueleto."},
-  {pergunta:"A lula pertence a qual grupo de invertebrados?",opcoes:["Moluscos","Artrópodes","Anelídeos","Cnidários"],correta:0,explicacao:"A lula é um Molusco, assim como o polvo e o caracol."},
-  {pergunta:"A sanguessuga pertence a qual grupo de invertebrados?",opcoes:["Anelídeos","Moluscos","Cnidários","Equinodermos"],correta:0,explicacao:"A sanguessuga é um Anelídeo, com corpo dividido em anéis, assim como a minhoca."},
-  {pergunta:"Animais com corpo redondo (cilíndrico), como a lombriga, são chamados de:",opcoes:["Platelmintos","Nematelmintos","Anelídeos","Cnidários"],correta:1,explicacao:"Nematelmintos têm o corpo em formato cilíndrico (redondo), diferente dos Platelmintos, que são achatados."},
-  {pergunta:"Animais que têm o corpo coberto por exoesqueleto (esqueleto externo duro) geralmente são:",opcoes:["Moluscos","Cnidários","Artrópodes","Poríferos"],correta:2,explicacao:"Artrópodes possuem exoesqueleto, uma estrutura dura externa que protege e sustenta o corpo."}
+  {pergunta:"Como se chama a passagem do estado sólido para o líquido?",opcoes:["Fusão", "Vaporização", "Solidificação", "Condensação"],correta:0,explicacao:"Fusão: o gelo derrete."},
+  {pergunta:"Como se chama a passagem do estado gasoso para o líquido?",opcoes:["Sublimação", "Fusão", "Ebulição", "Condensação"],correta:3,explicacao:"Condensação: o vapor vira gotinhas, como no espelho embaçado."},
+  {pergunta:"Como se chama a passagem do estado líquido para o sólido?",opcoes:["Vaporização", "Fusão", "Solidificação", "Condensação"],correta:2,explicacao:"Solidificação: a água vira gelo."},
+  {pergunta:"O espelho embaçado após o banho quente é um exemplo de:",opcoes:["Sublimação", "Condensação", "Fusão", "Solidificação"],correta:1,explicacao:"O vapor esfria no espelho e volta a ser líquido."},
+  {pergunta:"A que temperatura a água entra em ebulição ao nível do mar?",opcoes:["50 °C", "0 °C", "37 °C", "100 °C"],correta:3,explicacao:"A ebulição da água ocorre a 100 °C."},
+  {pergunta:"O que é sublimação?",opcoes:["Derretimento do gelo", "Passagem do gasoso para o líquido", "Passagem direta do sólido para o gasoso", "Passagem do líquido para o sólido"],correta:2,explicacao:"Na sublimação não há passagem pela fase líquida."},
+  {pergunta:"Quais mudanças de estado ocorrem quando aquecemos a água?",opcoes:["Solidificação e condensação", "Só condensação", "Fusão e vaporização", "Ressublimação"],correta:2,explicacao:"Com calor, as partículas ganham energia."},
+  {pergunta:"No ciclo da água, como se formam as nuvens?",opcoes:["Pela infiltração", "Pela condensação do vapor de água", "Pela fusão do gelo", "Pela solidificação"],correta:1,explicacao:"O vapor sobe, esfria e condensa em gotinhas."},
+  {pergunta:"O que é transpiração no ciclo da água?",opcoes:["A liberação de vapor de água pelas plantas", "A chuva", "A água que entra no solo", "O gelo derretendo"],correta:0,explicacao:"As plantas liberam vapor pelas folhas."},
+  {pergunta:"O que é infiltração?",opcoes:["A água fervendo", "A formação de nuvens", "A água da chuva penetrando no solo e abastecendo os aquíferos", "A água virando gelo"],correta:2,explicacao:"A água infiltrada abastece lençóis freáticos e aquíferos."},
+  {pergunta:"O que são os rios voadores?",opcoes:["Rios subterrâneos", "Massas de vapor de água vindas da Amazônia que levam chuva a outras regiões", "Rios que passam por cima de pontes", "Aviões que levam água"],correta:1,explicacao:"Levam chuva ao Centro-Oeste, Sudeste e Sul."},
+  {pergunta:"Qual atividade ameaça os rios voadores?",opcoes:["O desmatamento da Amazônia", "A chuva", "O vento", "A transpiração das plantas"],correta:0,explicacao:"Sem floresta, há menos transpiração e menos umidade."}
   ],
   'cien-topico-4': [
-  {pergunta:"O que é um verme parasita?",opcoes:["Um verme que vive livre no solo","Um verme que vive dentro do corpo de outro ser vivo e se alimenta dele","Um verme que só existe no mar","Um verme que não se alimenta"],correta:1,explicacao:"Parasita é o organismo que vive às custas de um hospedeiro, tirando alimento dele e causando prejuízo."},
-  {pergunta:"A tênia (solitária) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Anelídeo","Molusco"],correta:0,explicacao:"A tênia é um platelminto, verme de corpo achatado."},
-  {pergunta:"Como uma pessoa geralmente se contamina com a tênia?",opcoes:["Comendo carne de porco ou boi crua ou mal cozida","Respirando ar poluído","Tomando sol em excesso","Bebendo leite fervido"],correta:0,explicacao:"A tênia é transmitida principalmente pela ingestão de carne mal cozida contendo larvas do parasita."},
-  {pergunta:"A esquistossomose é causada por um verme que, em parte do seu ciclo, vive dentro de:",opcoes:["Um caramujo de água doce","Um mosquito","Um porco","Um peixe"],correta:0,explicacao:"O esquistossomo tem um caramujo de água doce como hospedeiro intermediário em seu ciclo de vida."},
-  {pergunta:"Como a larva do esquistossomo entra no corpo da pessoa?",opcoes:["Pela picada de um inseto","Penetrando na pele durante o contato com água contaminada","Só pela ingestão de água","Pelo ar respirado"],correta:1,explicacao:"A larva do esquistossomo penetra ativamente na pele da pessoa que entra em contato com água doce contaminada."},
-  {pergunta:"A lombriga (Ascaris) é um exemplo de:",opcoes:["Platelminto","Nematelminto","Cnidário","Anelídeo"],correta:1,explicacao:"A lombriga é um nematelminto, verme de corpo redondo (cilíndrico)."},
-  {pergunta:"Qual doença é causada pela lombriga?",opcoes:["Ascaridíase","Esquistossomose","Teníase","Malária"],correta:0,explicacao:"A infecção pela lombriga (Ascaris lumbricoides) é chamada de ascaridíase."},
-  {pergunta:"O ancilóstomo (causador do 'amarelão') geralmente entra no corpo humano:",opcoes:["Pela pele, principalmente pelos pés descalços em solo contaminado","Somente pela respiração","Somente pelo leite","Não infecta seres humanos"],correta:0,explicacao:"A larva do ancilóstomo penetra pela pele, sendo comum a infecção por andar descalço em solo contaminado."},
-  {pergunta:"Qual atitude ajuda a prevenir vermes parasitas como a lombriga e o ancilóstomo?",opcoes:["Lavar bem as mãos e os alimentos, e usar sapatos","Comer carne crua","Beber água de qualquer fonte","Andar descalço no solo"],correta:0,explicacao:"Higiene das mãos e alimentos, além do uso de calçados, ajuda a evitar a contaminação por esses parasitas."},
-  {pergunta:"O que diferencia o corpo de um platelminto do corpo de um nematelminto?",opcoes:["Platelminto é achatado; nematelminto é redondo (cilíndrico)","Não existe diferença","Platelminto vive só na água; nematelminto só na terra","Nematelminto é sempre maior"],correta:0,explicacao:"Platelmintos têm corpo achatado (como uma fita); nematelmintos têm corpo redondo, em formato de fio."},
-  {pergunta:"Além da higiene pessoal, o que mais ajuda a reduzir a contaminação por vermes parasitas numa comunidade?",opcoes:["Saneamento básico (tratamento de água e esgoto)","Evitar tomar banho","Comer mais doces","Não usar remédios nunca"],correta:0,explicacao:"O saneamento básico, com tratamento de água e esgoto, reduz muito a circulação de ovos e larvas desses parasitas no ambiente."},
-  {pergunta:"Por que é importante cozinhar bem a carne de porco e de boi antes de comer?",opcoes:["Só para melhorar o sabor","Para eliminar larvas de parasitas como a tênia, que podem estar na carne crua","Não tem nenhum motivo de saúde","Para deixar a carne mais dura"],correta:1,explicacao:"O cozimento adequado elimina larvas de parasitas, como as da tênia, que podem estar presentes na carne crua ou mal passada."}
+  {pergunta:"O que é água potável?",opcoes:["Água do mar", "Água da chuva sem tratamento", "Qualquer água de rio", "Água própria para beber, sem riscos à saúde"],correta:3,explicacao:"Potável = própria para o consumo humano."},
+  {pergunta:"O que faz uma ETA?",opcoes:["Trata o esgoto", "Fabrica gelo", "Produz energia", "Trata a água de rios e lagos para torná-la potável"],correta:3,explicacao:"ETA = Estação de Tratamento de Água."},
+  {pergunta:"Qual é a primeira etapa de uma ETA?",opcoes:["Reservação", "Desinfecção", "Captação", "Filtração"],correta:2,explicacao:"A água é captada de rios, lagos ou reservas subterrâneas."},
+  {pergunta:"Na coagulação, o que é adicionado à água?",opcoes:["Sal de cozinha", "Açúcar", "Óleo", "Sulfato de alumínio, para juntar as impurezas"],correta:3,explicacao:"O sulfato de alumínio faz as partículas se juntarem."},
+  {pergunta:"O que acontece na floculação?",opcoes:["A água é fervida", "A água é distribuída", "A água vira gelo", "As impurezas se juntam e formam flocos"],correta:3,explicacao:"A agitação faz as partículas formarem flocos."},
+  {pergunta:"O que acontece na decantação?",opcoes:["A água evapora", "Os flocos, mais pesados, se depositam no fundo", "A água é bombeada", "A água é clorada"],correta:1,explicacao:"Os flocos afundam e são retirados."},
+  {pergunta:"Para que serve o cloro na etapa de desinfecção?",opcoes:["Esfriar a água", "Deixar a água salgada", "Eliminar micro-organismos como bactérias e vírus", "Dar cor à água"],correta:2,explicacao:"O cloro mata micro-organismos."},
+  {pergunta:"Qual substância é adicionada à água para proteger os dentes contra cáries?",opcoes:["Flúor", "Ferro", "Cloro", "Sal"],correta:0,explicacao:"O flúor previne cáries."},
+  {pergunta:"Em um local sem ETA, qual é uma forma segura de tratar a água?",opcoes:["Bebê-la direto do rio", "Colocar sal", "Deixá-la ao sol por um minuto", "Fervê-la a 100 °C por cerca de 5 minutos"],correta:3,explicacao:"A fervura elimina bactérias, vírus e parasitas."},
+  {pergunta:"O filtro de barro foi desenvolvido em qual país?",opcoes:["França", "Japão", "Brasil", "Estados Unidos"],correta:2,explicacao:"Foi criado no interior de São Paulo, nos anos 1920."},
+  {pergunta:"Quantas crianças menores de 5 anos morrem por ano devido à diarreia, segundo o livro?",opcoes:["Nenhuma", "Cerca de 10", "Cerca de 361 mil", "Cerca de 5 bilhões"],correta:2,explicacao:"A falta de saneamento causa muitas mortes por diarreia."},
+  {pergunta:"O que é dessalinização?",opcoes:["Congelar a água", "Remover o sal da água do mar para consumo", "Adicionar sal à água", "Tratar o esgoto"],correta:1,explicacao:"Torna a água do mar potável."}
   ],
   'cien-topico-5': [
-  {pergunta:"Peixes respiram através de qual estrutura?",opcoes:["Pulmões","Brânquias","Pele apenas","Traqueias"],correta:1,explicacao:"Peixes retiram o oxigênio dissolvido na água usando as brânquias."},
-  {pergunta:"O corpo dos peixes é geralmente coberto por:",opcoes:["Pelos","Penas","Escamas","Placas ósseas apenas"],correta:2,explicacao:"A maioria dos peixes tem o corpo coberto por escamas."},
-  {pergunta:"Tubarões e raias são exemplos de peixes:",opcoes:["Ósseos","Cartilaginosos","Sem esqueleto","Anfíbios"],correta:1,explicacao:"Tubarões e raias têm esqueleto formado por cartilagem, sendo peixes cartilaginosos."},
-  {pergunta:"O que caracteriza um anfíbio?",opcoes:["Vive só na água durante toda a vida","Vive parte da vida na água e parte na terra","Vive só em ambientes secos","Tem o corpo coberto de penas"],correta:1,explicacao:"Os anfíbios vivem parte da vida na água (fase larval) e parte na terra (fase adulta, na maioria das espécies)."},
-  {pergunta:"O girino é a fase jovem de qual animal?",opcoes:["Peixe","Sapo (anfíbio)","Lagarto","Ave"],correta:1,explicacao:"O girino é a fase larval do sapo, que vive na água antes de se transformar em adulto."},
-  {pergunta:"A transformação do girino em sapo adulto é chamada de:",opcoes:["Metamorfose","Fotossíntese","Fecundação","Taxonomia"],correta:0,explicacao:"Metamorfose é o conjunto de transformações que o corpo do anfíbio sofre durante seu desenvolvimento."},
-  {pergunta:"A pele dos anfíbios é geralmente:",opcoes:["Grossa e seca, coberta de escamas","Fina e úmida, usada também para respirar","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"A pele dos anfíbios é fina e úmida, permitindo também a respiração cutânea (pela pele)."},
-  {pergunta:"As nadadeiras dos peixes servem principalmente para:",opcoes:["Respirar","Se locomover (nadar) na água","Digerir o alimento","Produzir som"],correta:1,explicacao:"As nadadeiras ajudam o peixe a se impulsionar e se equilibrar enquanto nada."},
-  {pergunta:"Durante a metamorfose do sapo, o que acontece com a cauda do girino?",opcoes:["Ela cresce ainda mais","Ela é reabsorvida (desaparece) enquanto as pernas se desenvolvem","Ela vira uma nadadeira","Nada acontece com a cauda"],correta:1,explicacao:"Durante a metamorfose, a cauda do girino é gradualmente reabsorvida enquanto o animal desenvolve pernas e se prepara para a vida terrestre."},
-  {pergunta:"Uma característica que peixes e anfíbios têm em comum é:",opcoes:["Os dois são vertebrados","Os dois têm penas","Os dois vivem só na terra","Os dois têm pelos"],correta:0,explicacao:"Tanto peixes quanto anfíbios são vertebrados, ou seja, possuem coluna vertebral."},
-  {pergunta:"Os peixes cartilaginosos, como o tubarão, têm o esqueleto formado por:",opcoes:["Osso","Cartilagem","Quitina","Escamas apenas"],correta:1,explicacao:"Peixes cartilaginosos, como tubarões e raias, possuem esqueleto formado por cartilagem, mais flexível que o osso."},
-  {pergunta:"Qual é a principal diferença entre a fase de girino e a fase adulta de um sapo?",opcoes:["Não existe diferença nenhuma","O girino vive na água e respira por guelras; o adulto vive na terra e respira por pulmões e pele","O girino é maior que o adulto","O adulto vive só na água"],correta:1,explicacao:"O girino é aquático e respira por guelras (brânquias); após a metamorfose, o sapo adulto passa a respirar principalmente pelos pulmões e pela pele."}
+  {pergunta:"Quanto do esgoto produzido no Brasil não recebe tratamento?",opcoes:["Cerca de 100%", "Cerca de 1%", "Cerca de 5%", "Cerca de 45%"],correta:3,explicacao:"São cerca de 5,5 mil toneladas por dia sem tratamento."},
+  {pergunta:"Que porcentagem da população brasileira tem coleta e tratamento de esgoto?",opcoes:["Cerca de 99%", "Cerca de 80%", "Cerca de 12%", "Cerca de 43%"],correta:3,explicacao:"Só 43% tem coleta e tratamento."},
+  {pergunta:"Qual é a diferença entre ETA e ETE?",opcoes:["A ETA trata água para consumo; a ETE trata o esgoto", "As duas tratam só esgoto", "A ETE produz água para beber", "Não há diferença"],correta:0,explicacao:"ETA = água; ETE = esgoto."},
+  {pergunta:"O que é eutrofização?",opcoes:["Aumento de peixes num lago", "Excesso de nutrientes na água que faz as algas crescerem demais e consumirem o oxigênio", "Tratamento do esgoto", "Congelamento de um rio"],correta:1,explicacao:"Causa a morte de peixes e outros seres."},
+  {pergunta:"Na ETE, para que serve o gradeamento?",opcoes:["Aquecer a água", "Clorar a água", "Reter o lixo grosso, como fraldas e papel", "Produzir biogás"],correta:2,explicacao:"É a primeira etapa da ETE."},
+  {pergunta:"Na etapa de lodo ativado, quem decompõe a matéria orgânica?",opcoes:["Bactérias aeróbicas, com a injeção de oxigênio", "Peixes", "Plantas aquáticas", "O cloro"],correta:0,explicacao:"As bactérias precisam de oxigênio para decompor a matéria."},
+  {pergunta:"O que é uma fossa séptica?",opcoes:["Um reservatório de água potável", "Tanques subterrâneos que recebem o esgoto onde não há rede", "Uma estação de tratamento de água", "Um tipo de rio"],correta:1,explicacao:"Muito usada em áreas rurais."},
+  {pergunta:"O que o biodigestor produz?",opcoes:["Biogás (metano) e biofertilizante", "Água potável", "Petróleo", "Gelo"],correta:0,explicacao:"Bactérias anaeróbicas decompõem a matéria orgânica."},
+  {pergunta:"As bactérias do biodigestor são anaeróbicas, ou seja:",opcoes:["Precisam de muita luz", "Vivem sem oxigênio", "Vivem só no gelo", "São plantas"],correta:1,explicacao:"Anaeróbicas = sem oxigênio."},
+  {pergunta:"Como os agrotóxicos chegam aos rios e aquíferos?",opcoes:["Pelo vento", "Pelos peixes", "São arrastados pela água da chuva", "Não chegam"],correta:2,explicacao:"A chuva carrega os produtos das lavouras."},
+  {pergunta:"Quanto a falta de saneamento custa por ano em saúde, segundo o Instituto Trata Brasil?",opcoes:["Cerca de 22 reais", "Cerca de 22 bilhões de reais", "Nada", "Cerca de 1 trilhão de dólares"],correta:1,explicacao:"A falta de saneamento gera gastos enormes com saúde."},
+  {pergunta:"O que pode ser feito com o lodo retirado na ETE?",opcoes:["Ser usado como fertilizante", "Ser jogado no rio sem tratamento", "Ser bebido", "Ser usado como combustível de avião"],correta:0,explicacao:"O lodo é rico em nutrientes."}
   ],
   'cien-topico-6': [
-  {pergunta:"A pele dos répteis é caracterizada por ser:",opcoes:["Fina e úmida","Seca e coberta de escamas","Coberta de penas","Coberta de pelos"],correta:1,explicacao:"Répteis têm pele seca e coberta de escamas, o que ajuda a evitar a perda de água do corpo."},
-  {pergunta:"Répteis são chamados de ectotérmicos porque:",opcoes:["Produzem calor próprio como os mamíferos","Não controlam sozinhos a própria temperatura corporal","Vivem só na água","Não respiram"],correta:1,explicacao:"Ectotérmicos dependem de fontes externas de calor (como o sol) para regular a temperatura do corpo."},
-  {pergunta:"A tartaruga, o cágado e o jabuti pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:2,explicacao:"Esses animais pertencem ao grupo dos Quelônios, caracterizados por possuírem um casco (carapaça e plastrão)."},
-  {pergunta:"As cobras pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:0,explicacao:"As cobras pertencem ao grupo dos Ofídios, répteis sem patas."},
-  {pergunta:"Os lagartos pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:1,explicacao:"Os lagartos pertencem ao grupo dos Lacertílios, répteis que possuem patas."},
-  {pergunta:"O jacaré, o crocodilo e o gavial pertencem a qual grupo de répteis?",opcoes:["Ofídios","Lacertílios","Quelônios","Crocodilianos"],correta:3,explicacao:"Esses animais pertencem ao grupo dos Crocodilianos, répteis que passam bastante tempo na água."},
-  {pergunta:"A capacidade de alguns lagartos soltarem a cauda para escapar de um predador é chamada de:",opcoes:["Metamorfose","Autotomia","Fotossíntese","Fecundação"],correta:1,explicacao:"Autotomia é a capacidade de alguns lagartos soltarem a própria cauda quando ameaçados, escapando do predador."},
-  {pergunta:"A característica mais marcante das aves é possuir:",opcoes:["Pelos","Penas","Escamas","Brânquias"],correta:1,explicacao:"A presença de penas é a característica que define e diferencia as aves dos demais vertebrados."},
-  {pergunta:"Os ossos das aves são chamados de pneumáticos porque:",opcoes:["São muito pesados","Possuem espaços ocos preenchidos com ar, tornando-os leves","São feitos de cartilagem","Não existem nas aves"],correta:1,explicacao:"Ossos pneumáticos têm cavidades com ar, o que reduz o peso do corpo da ave e facilita o voo."},
-  {pergunta:"No lugar de dentes, as aves possuem:",opcoes:["Um bico córneo","Escamas na boca","Uma língua áspera","Nada no lugar dos dentes"],correta:0,explicacao:"As aves não têm dentes; no lugar, possuem um bico córneo, estrutura dura usada para se alimentar."},
-  {pergunta:"A quilha é uma estrutura óssea das aves que serve para:",opcoes:["Prender os músculos usados no voo","Filtrar o ar respirado","Produzir o som do canto","Proteger os ovos"],correta:0,explicacao:"A quilha é um osso do peito das aves onde ficam presos os fortes músculos responsáveis pelo batimento das asas."},
-  {pergunta:"A característica mais marcante dos mamíferos é possuir:",opcoes:["Penas","Pelos","Escamas","Casco"],correta:1,explicacao:"A presença de pelos é a característica que define os mamíferos."},
-  {pergunta:"As glândulas mamárias das fêmeas dos mamíferos produzem:",opcoes:["Veneno","Leite, para alimentar os filhotes","Muco","Cera"],correta:1,explicacao:"As glândulas mamárias produzem leite, usado para alimentar os filhotes nos primeiros meses de vida."},
-  {pergunta:"A maioria dos mamíferos, como o cachorro e o ser humano, pertence a qual grupo?",opcoes:["Monotremados","Marsupiais","Placentários","Anfíbios"],correta:2,explicacao:"Os placentários são a maioria dos mamíferos; o filhote se desenvolve completamente na barriga da mãe antes de nascer."},
-  {pergunta:"O canguru e o gambá são exemplos de mamíferos:",opcoes:["Placentários","Marsupiais","Monotremados","Ovíparos apenas"],correta:1,explicacao:"Marsupiais nascem ainda incompletos e terminam de se desenvolver dentro de uma bolsa (marsúpio) da mãe."},
-  {pergunta:"O ornitorrinco é um exemplo de mamífero:",opcoes:["Placentário","Marsupial","Monotremado","Réptil"],correta:2,explicacao:"O ornitorrinco é um monotremado, grupo raro de mamíferos que nascem de ovos."},
-  {pergunta:"Os répteis respiram através de qual estrutura, mesmo os que vivem na água, como o jacaré?",opcoes:["Brânquias","Pulmões","Pele apenas","Guelras"],correta:1,explicacao:"Todos os répteis, mesmo os aquáticos como o jacaré, respiram pelos pulmões."},
-  {pergunta:"O diafragma é um músculo que, nos mamíferos, auxilia principalmente na:",opcoes:["Digestão","Respiração","Visão","Reprodução"],correta:1,explicacao:"O diafragma é um músculo importante que auxilia os mamíferos na respiração."},
-  {pergunta:"A maioria das aves cuida dos ovos até o nascimento do filhote por meio de qual comportamento?",opcoes:["Enterrando o ovo no solo","Chocando o ovo (ficando sobre ele para esquentá-lo)","Deixando o ovo à própria sorte, sempre","Congelando o ovo"],correta:1,explicacao:"A maioria das aves choca os ovos, ficando sobre eles para mantê-los aquecidos até o nascimento do filhote."},
-  {pergunta:"Quantos grupos de mamíferos existem, considerando a forma como o filhote nasce?",opcoes:["1","2","3","5"],correta:2,explicacao:"Existem 3 grupos: placentários, marsupiais e monotremados, que se diferenciam pela forma como o filhote se desenvolve e nasce."}
+  {pergunta:"Qual é o agente causador da cólera?",opcoes:["A bactéria Vibrio cholerae", "Um verme", "Um vírus", "Um caramujo"],correta:0,explicacao:"A cólera é causada pela bactéria Vibrio cholerae."},
+  {pergunta:"Como se pega leptospirose?",opcoes:["Pela picada de mosquito", "Pelo contato com água contaminada pela urina de animais, como ratos", "Pelo ar", "Comendo carne crua"],correta:1,explicacao:"É comum em enchentes."},
+  {pergunta:"A esquistossomose é conhecida popularmente como:",opcoes:["Lombriga", "Solitária", "Barriga-d'água", "Amarelão"],correta:2,explicacao:"Causa aumento do fígado e da cavidade abdominal."},
+  {pergunta:"Qual animal participa do ciclo da esquistossomose?",opcoes:["Barbeiro", "Caramujo do gênero Biomphalaria", "Morcego", "Mosquito Aedes aegypti"],correta:1,explicacao:"A larva sai do caramujo e penetra na pele humana."},
+  {pergunta:"Como ocorre a ancilostomose (amarelão)?",opcoes:["Bebendo água do mar", "Pelo ar", "Pela picada de mosquito", "A larva penetra pela pele, geralmente nos pés descalços"],correta:3,explicacao:"Usar calçados previne o amarelão."},
+  {pergunta:"Por que a ancilostomose é chamada de amarelão?",opcoes:["Porque dá em quem come banana", "Porque causa anemia, deixando a pele amarelada", "Porque o verme é amarelo", "Porque só ocorre no verão"],correta:1,explicacao:"A anemia deixa a pele com tom amarelado."},
+  {pergunta:"Como se pega a teníase (solitária)?",opcoes:["Pelo contato com urina de rato", "Comendo carne de porco ou de boi crua ou malcozida com larvas", "Pela picada de mosquito", "Andando descalço"],correta:1,explicacao:"As larvas da carne crua viram vermes no intestino."},
+  {pergunta:"A cisticercose ocorre quando a pessoa:",opcoes:["Toma vacina", "É picada por um mosquito", "Ingere ovos da Taenia solium em água ou alimentos contaminados", "Come carne bem passada"],correta:2,explicacao:"As larvas se espalham pelo corpo, inclusive o cérebro."},
+  {pergunta:"O que é a neurocisticercose?",opcoes:["Cisticercose em que as larvas se alojam no sistema nervoso (cérebro)", "Uma doença da pele", "Uma doença dos pulmões", "Um tipo de vacina"],correta:0,explicacao:"Pode causar convulsões e problemas de visão."},
+  {pergunta:"A ascaridíase (lombriga) é mais comum em:",opcoes:["Plantas", "Peixes", "Crianças", "Idosos apenas"],correta:2,explicacao:"Crianças levam mais as mãos sujas à boca."},
+  {pergunta:"Qual destas doenças é causada por um protozoário?",opcoes:["Amebíase", "Leptospirose", "Cólera", "Teníase"],correta:0,explicacao:"A amebíase é causada pela Entamoeba histolytica."},
+  {pergunta:"Qual é a principal forma de prevenir as doenças transmitidas pela água?",opcoes:["Andar descalço", "Comer mais doces", "Saneamento básico e água tratada", "Beber água de rio"],correta:2,explicacao:"O saneamento básico interrompe a transmissão."},
+  {pergunta:"O que faz parte do saneamento básico?",opcoes:["Só a construção de praças", "Apenas a coleta de lixo", "Água potável, tratamento de esgoto, gestão do lixo e drenagem", "A venda de remédios"],correta:2,explicacao:"São os serviços essenciais definidos em lei."}
+  ],
+  'cien-topico-7': [
+  {pergunta:"Qual mosquito transmite dengue, zika e chikungunya?",opcoes:["Mosquito-palha", "Barbeiro", "Anopheles", "Aedes aegypti"],correta:3,explicacao:"As três são transmitidas pelo Aedes aegypti."},
+  {pergunta:"Por que só a fêmea do Aedes aegypti pica?",opcoes:["Ela precisa de sangue para produzir os ovos", "O macho não tem asas", "Para se defender", "Porque ela é maior"],correta:0,explicacao:"A fêmea é hematófaga."},
+  {pergunta:"O que é um vetor?",opcoes:["Um remédio", "Um tipo de vacina", "Um ser vivo que transporta um agente infeccioso de um hospedeiro para outro", "Uma bactéria"],correta:2,explicacao:"O mosquito é o vetor dos vírus."},
+  {pergunta:"O que é um hospedeiro?",opcoes:["Um mosquito macho", "Um tipo de vírus", "Um ser que abriga dentro de si outro organismo", "Um hospital"],correta:2,explicacao:"Ex.: o ser humano infectado."},
+  {pergunta:"Qual é a medida mais importante contra o Aedes aegypti?",opcoes:["Abrir as janelas à noite", "Deixar pneus com água", "Eliminar a água parada (criadouros)", "Regar as plantas em excesso"],correta:2,explicacao:"O mosquito põe os ovos em água parada."},
+  {pergunta:"Qual sintoma é típico da dengue?",opcoes:["Tosse com catarro", "Dor atrás dos olhos e febre alta", "Perda de cabelo", "Coceira nos pés"],correta:1,explicacao:"A dengue causa febre alta e dor atrás dos olhos."},
+  {pergunta:"Qual doença causa dor intensa e inchaço nas articulações, que podem se tornar crônicos?",opcoes:["Cólera", "Teníase", "Chikungunya", "Zika"],correta:2,explicacao:"A chikungunya ataca as articulações."},
+  {pergunta:"Qual doença está associada à microcefalia em bebês?",opcoes:["Leptospirose", "Zika", "Amarelão", "Dengue"],correta:1,explicacao:"A infecção na gestação pode causar microcefalia."},
+  {pergunta:"Qual porcentagem das pessoas com zika não sente sintomas?",opcoes:["10%", "80%", "100%", "0%"],correta:1,explicacao:"A maioria não percebe a infecção."},
+  {pergunta:"Dengue, zika e chikungunya são contagiosas de pessoa para pessoa?",opcoes:["Sim, pelo ar", "Sim, pelo aperto de mão", "Não, é necessário o mosquito vetor", "Só pela água"],correta:2,explicacao:"A transmissão depende do mosquito."},
+  {pergunta:"Para qual faixa etária a vacina da dengue foi aplicada no SUS a partir de 2024?",opcoes:["10 a 14 anos", "Recém-nascidos", "Só adultos de 30 anos", "Acima de 80 anos"],correta:0,explicacao:"São 2 doses, com intervalo de 3 meses."},
+  {pergunta:"O que é o método Wolbachia?",opcoes:["Um inseticida", "Uma vacina para mosquitos", "Uma armadilha de luz", "Uso de mosquitos com uma bactéria que reduz a transmissão dos vírus"],correta:3,explicacao:"Niterói foi a primeira cidade 100% protegida."},
+  {pergunta:"O que significa dizer que o mosquito é hematófago?",opcoes:["Que come plantas", "Que não come", "Que se alimenta de sangue", "Que vive na água salgada"],correta:2,explicacao:"Hemato = sangue; fago = que come."}
   ],
   'cien-topico-8': [
-  {pergunta:"O que é um bioma?",opcoes:["Um tipo de rocha","Uma grande área com clima, vegetação e fauna parecidos","Um tipo de doença","Um instrumento de laboratório"],correta:1,explicacao:"Bioma é um conjunto de ecossistemas com clima, vegetação e fauna semelhantes, numa grande área geográfica."},
-  {pergunta:"Qual é o maior bioma tropical do mundo, localizado no Brasil?",opcoes:["Caatinga","Cerrado","Amazônia","Pampa"],correta:2,explicacao:"A Floresta Amazônica é a maior floresta tropical do mundo."},
-  {pergunta:"Qual bioma brasileiro fica no litoral e foi muito desmatado ao longo da história?",opcoes:["Amazônia","Mata Atlântica","Pantanal","Pampa"],correta:1,explicacao:"A Mata Atlântica, localizada no litoral, teve grande parte de sua cobertura original destruída pela ocupação humana."},
-  {pergunta:"O mico-leão-dourado é um animal símbolo de qual bioma?",opcoes:["Cerrado","Caatinga","Mata Atlântica","Pantanal"],correta:2,explicacao:"O mico-leão-dourado é um animal símbolo da Mata Atlântica."},
-  {pergunta:"Qual bioma brasileiro tem clima semiárido, com pouca chuva, localizado no Nordeste?",opcoes:["Amazônia","Caatinga","Pantanal","Pampa"],correta:1,explicacao:"A Caatinga tem clima semiárido, com baixa quantidade de chuva, e fica na região Nordeste."},
-  {pergunta:"Por que muitas plantas da Caatinga têm espinhos no lugar de folhas grandes?",opcoes:["Para atrair mais água da chuva","Para reduzir a perda de água em um clima seco","Para produzir mais oxigênio","Não tem relação com o clima"],correta:1,explicacao:"Espinhos, no lugar de folhas grandes, ajudam a planta a perder menos água por transpiração, uma adaptação ao clima seco."},
-  {pergunta:"A Amazônia é considerada o bioma brasileiro com maior:",opcoes:["Escassez de água","Biodiversidade (variedade de seres vivos)","Área desertificada","Altitude"],correta:1,explicacao:"A Amazônia possui a maior biodiversidade entre os biomas brasileiros, devido ao seu clima quente e úmido."},
-  {pergunta:"Qual é o clima predominante na Floresta Amazônica?",opcoes:["Semiárido","Tropical quente e úmido","Frio e seco","Temperado"],correta:1,explicacao:"O clima da Amazônia é tropical, caracterizado por altas temperaturas e grande quantidade de chuvas."},
-  {pergunta:"O que aconteceu com grande parte da cobertura original da Mata Atlântica ao longo da história?",opcoes:["Ela cresceu ainda mais","Foi destruída pelo crescimento das cidades e outras atividades humanas","Ela virou deserto naturalmente","Nada mudou"],correta:1,explicacao:"A expansão urbana e outras atividades humanas destruíram grande parte da cobertura original da Mata Atlântica ao longo dos séculos."},
-  {pergunta:"O nome 'Caatinga', em tupi-guarani, significa:",opcoes:["Floresta verde","Mata branca","Terra molhada","Campo aberto"],correta:1,explicacao:"Caatinga significa 'mata branca' em tupi-guarani, referência ao aspecto esbranquiçado da vegetação durante a seca."},
-  {pergunta:"Em qual desses biomas encontramos o Rio Amazonas, um dos maiores rios do mundo?",opcoes:["Caatinga","Cerrado","Amazônia","Pampa"],correta:2,explicacao:"O Rio Amazonas percorre o bioma Amazônia, sendo um dos rios mais extensos e caudalosos do mundo."},
-  {pergunta:"Dos três biomas estudados (Amazônia, Mata Atlântica e Caatinga), qual tem o clima mais seco?",opcoes:["Amazônia","Mata Atlântica","Caatinga","Os três têm o mesmo clima"],correta:2,explicacao:"A Caatinga tem clima semiárido, sendo o mais seco entre os três biomas estudados nesse grupo."}
+  {pergunta:"Como a OMS definiu saúde em 1948?",opcoes:["Ter muito dinheiro", "Estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças", "Apenas a ausência de doenças", "Fazer exercícios todos os dias"],correta:1,explicacao:"Saúde envolve corpo, mente e vida social."},
+  {pergunta:"Antigamente, como a saúde era entendida?",opcoes:["Como riqueza", "Como felicidade", "Como bem-estar completo", "Como a simples ausência de doença"],correta:3,explicacao:"Bastava não ter sintomas visíveis."},
+  {pergunta:"Segundo a OMS, quem tem direito à saúde?",opcoes:["Só os atletas", "Só quem pode pagar", "Só os adultos", "Todo ser humano, sem distinção"],correta:3,explicacao:"É um direito fundamental de todos."},
+  {pergunta:"Qual destas é uma condição para a saúde, segundo a OMS (1986)?",opcoes:["Ter um celular moderno", "Ter um carro novo", "Usar roupas de marca", "Paz, habitação, educação e alimentação"],correta:3,explicacao:"Também: renda, ecossistema estável, justiça social e equidade."},
+  {pergunta:"Quantas horas de sono, em média, os adolescentes precisam por noite?",opcoes:["3 a 4 horas", "8 a 10 horas", "Não precisam dormir", "12 a 14 horas"],correta:1,explicacao:"O sono adequado é essencial para a saúde."},
+  {pergunta:"Qual destes hábitos ajuda a dormir melhor?",opcoes:["Deixar a luz acesa", "Comer muito antes de dormir", "Evitar usar o celular na cama", "Jogar videogame até tarde"],correta:2,explicacao:"As telas atrapalham o sono."},
+  {pergunta:"Qual alimento é ultraprocessado?",opcoes:["Carne assada", "Laranja", "Salgadinho industrializado", "Milho"],correta:2,explicacao:"Ultraprocessados têm muitos aditivos."},
+  {pergunta:"Em vez de refresco em pó, o melhor é escolher:",opcoes:["Refrigerante", "Mais refresco em pó", "Suco natural ou a própria fruta", "Energético"],correta:2,explicacao:"Quanto menos processado, melhor."},
+  {pergunta:"Por que evitar ultraprocessados?",opcoes:["Têm muito sal, açúcar, gordura e aditivos que aumentam o risco de doenças", "Porque são muito caros", "Porque têm muitas vitaminas", "Porque são naturais"],correta:0,explicacao:"O consumo frequente prejudica a saúde."},
+  {pergunta:"O que faz o aplicativo Desrotulando?",opcoes:["Marca consultas", "Avalia a qualidade nutricional dos alimentos pelo código de barras", "Conta passos", "Vende comida"],correta:1,explicacao:"Ajuda a fazer escolhas alimentares melhores."}
   ],
   'cien-topico-9': [
-  {pergunta:"O Cerrado é conhecido como 'berço das águas' porque:",opcoes:["Tem o maior rio do Brasil","Muitos rios importantes do Brasil nascem lá","É o único bioma com água","Fica embaixo do mar"],correta:1,explicacao:"O Cerrado abriga as nascentes de diversas bacias hidrográficas importantes do Brasil."},
-  {pergunta:"Uma característica das árvores do Cerrado é ter:",opcoes:["Tronco reto e fino","Tronco torto e casca grossa","Nenhuma casca","Raízes muito curtas"],correta:1,explicacao:"As árvores do Cerrado costumam ter tronco torto e casca grossa, o que ajuda a proteger contra o fogo, comum na região."},
-  {pergunta:"Qual bioma brasileiro é conhecido como a maior área alagada do mundo?",opcoes:["Amazônia","Pantanal","Pampa","Cerrado"],correta:1,explicacao:"O Pantanal é considerado a maior planície alagável (área alagada) do mundo."},
-  {pergunta:"A capivara e a arara-azul são animais bem conhecidos de qual bioma?",opcoes:["Pampa","Caatinga","Pantanal","Mata Atlântica"],correta:2,explicacao:"Capivara e arara-azul são animais bem representativos da fauna do Pantanal."},
-  {pergunta:"Qual bioma brasileiro fica no Sul do país e é formado principalmente por campos?",opcoes:["Pampa","Cerrado","Caatinga","Amazônia"],correta:0,explicacao:"A Pampa fica no Rio Grande do Sul e é formada principalmente por campos, com poucas árvores."},
-  {pergunta:"Por que a Pampa é muito usada para a pecuária (criação de bois e ovelhas)?",opcoes:["Porque tem floresta densa","Porque é formada por campos, ideais para o pasto dos animais","Porque não tem nenhuma vegetação","Porque fica no litoral"],correta:1,explicacao:"A vegetação de campos da Pampa, com pastagens naturais, favorece a criação de gado e ovelhas."},
-  {pergunta:"O Cerrado apresenta, ao longo do ano, duas estações bem diferentes, que são:",opcoes:["Uma de frio intenso e outra de calor intenso","Uma bem chuvosa e outra bem seca","Duas estações igualmente chuvosas","O Cerrado não tem estações diferentes"],correta:1,explicacao:"O Cerrado tem clima com duas estações bem marcadas: uma chuvosa e outra seca."},
-  {pergunta:"Em qual região do Brasil está localizado o Cerrado?",opcoes:["Norte","Nordeste","Centro-Oeste, principalmente","Sul"],correta:2,explicacao:"O Cerrado está localizado principalmente na região Centro-Oeste do Brasil."},
-  {pergunta:"O que acontece com os rios do Pantanal durante o período de chuva?",opcoes:["Eles secam completamente","Eles enchem e a água invada a terra ao redor, alagando a região","Não muda nada nos rios","Eles mudam de curso definitivamente"],correta:1,explicacao:"Durante o período de chuvas, os rios do Pantanal enchem e transbordam, alagando a área ao redor — o que dá origem à paisagem característica do bioma."},
-  {pergunta:"Em qual região do Brasil está localizada a Pampa?",opcoes:["Norte","Nordeste","Sudeste","Sul (Rio Grande do Sul)"],correta:3,explicacao:"A Pampa está localizada no Sul do Brasil, principalmente no estado do Rio Grande do Sul."},
-  {pergunta:"O que é pecuária?",opcoes:["O cultivo de plantas","A criação de animais, como bois e ovelhas","A pesca em rios","A extração de minérios"],correta:1,explicacao:"Pecuária é a atividade de criação de animais, como bois e ovelhas, muito praticada na Pampa."},
-  {pergunta:"Dos três biomas estudados nesse grupo (Cerrado, Pantanal e Pampa), qual é conhecido por ser alagado durante boa parte do ano?",opcoes:["Cerrado","Pantanal","Pampa","Nenhum deles"],correta:1,explicacao:"O Pantanal é o bioma conhecido por ficar alagado durante boa parte do ano, sendo a maior área alagada do mundo."}
+  {pergunta:"Como uma vacina protege o corpo?",opcoes:["Substitui a alimentação", "Mata todos os vírus do mundo", "Estimula uma resposta imunológica e cria memória contra o agente", "Funciona como antibiótico"],correta:2,explicacao:"O corpo aprende a se defender antes de encontrar o agente real."},
+  {pergunta:"A vacina impede totalmente que a pessoa fique doente?",opcoes:["Não serve para nada", "Só funciona em animais", "Sim, sempre", "Nem sempre, mas evita as formas graves, a internação e a morte"],correta:3,explicacao:"Seu grande benefício é evitar casos graves."},
+  {pergunta:"Em que fase do desenvolvimento de vacinas ocorrem os testes em animais?",opcoes:["Fase 1", "Fase 3", "Exploratória", "Pré-clínica"],correta:3,explicacao:"A fase pré-clínica vem antes dos testes em humanos."},
+  {pergunta:"Quantos voluntários participam da Fase 1 dos testes clínicos?",opcoes:["Nenhum", "Apenas 1", "Entre 20 e 80 adultos", "Milhões"],correta:2,explicacao:"A Fase 1 é a primeira avaliação em humanos."},
+  {pergunta:"Qual fase dos testes clínicos envolve milhares de pessoas?",opcoes:["Fase pré-clínica", "Fase 3", "Fase exploratória", "Fase 1"],correta:1,explicacao:"A Fase 3 é a avaliação definitiva da eficácia."},
+  {pergunta:"Quanto tempo de atividade física diária a OMS recomenda para adolescentes?",opcoes:["Pelo menos 60 minutos", "8 horas", "Nenhum", "5 minutos"],correta:0,explicacao:"Atividade moderada por pelo menos 60 minutos por dia."},
+  {pergunta:"Qual é um benefício da atividade física?",opcoes:["Aumenta a pressão arterial", "Enfraquece os ossos", "Piora o humor", "Reduz o risco de doenças cardiovasculares"],correta:3,explicacao:"Também melhora o humor, os ossos e a memória."},
+  {pergunta:"O que é resiliência?",opcoes:["Um tipo de vacina", "Um esporte", "A capacidade de enfrentar dificuldades e superá-las", "Uma doença"],correta:2,explicacao:"É lidar com o estresse sem sucumbir a ele."},
+  {pergunta:"Qual destas atitudes ajuda a combater o estresse?",opcoes:["Dormir pouco", "Ficar no celular a noite toda", "Praticar atividades ao ar livre e fortalecer laços afetivos", "Isolar-se de todos"],correta:2,explicacao:"Movimento, amizades e cultura ajudam."},
+  {pergunta:"O povo Hadza, da Tanzânia, é citado no livro porque:",opcoes:["Inventou a vacina", "Não faz atividade física", "Vive como caçador-coletor, de forma parecida com nossos ancestrais", "Vive em grandes cidades"],correta:2,explicacao:"Mostra o estilo de vida ativo para o qual nosso corpo está adaptado."}
+  ],
+  'cien-topico-10': [
+  {pergunta:"O que diz o Art. 196 da Constituição de 1988?",opcoes:["A saúde é direito de todos e dever do Estado", "A saúde não é um direito", "Só quem paga tem direito à saúde", "A saúde é responsabilidade só de cada pessoa"],correta:0,explicacao:"O acesso deve ser universal e igualitário."},
+  {pergunta:"Segundo o IBGE, o rendimento dos brancos é superior ao dos negros em mais de:",opcoes:["200%", "5%", "1%", "70%"],correta:3,explicacao:"Essa desigualdade tem raízes históricas."},
+  {pergunta:"Por que a mortalidade infantil é maior entre crianças indígenas?",opcoes:["Porque comem demais", "Porque não existem doenças nas aldeias", "Porque são mais altas", "Maior vulnerabilidade a doenças evitáveis e menor acesso aos serviços de saúde"],correta:3,explicacao:"Diarreia, gripe, pneumonia e desnutrição são causas importantes."},
+  {pergunta:"Qual atividade ilegal aumentou os casos de malária no território Yanomami?",opcoes:["A agricultura familiar", "O turismo", "O garimpo", "A pesca artesanal"],correta:2,explicacao:"O garimpo traz doenças e contamina a água com mercúrio."},
+  {pergunta:"O que é a anemia falciforme?",opcoes:["Uma infecção por bactéria", "Doença hereditária em que as hemácias ficam em forma de foice", "Um tipo de gripe", "Uma doença causada por mosquito"],correta:1,explicacao:"É mais comum entre a população negra."},
+  {pergunta:"A anemia falciforme é transmitida:",opcoes:["Pelo ar", "Pela picada de mosquito", "De pais para filhos (hereditária)", "Pela água contaminada"],correta:2,explicacao:"É uma doença genética."},
+  {pergunta:"O que é hipertensão arterial?",opcoes:["Falta de açúcar no sangue", "Uma infecção de pele", "Pressão do sangue elevada nos vasos sanguíneos", "Uma doença dos dentes"],correta:2,explicacao:"Gestantes pretas são as principais vítimas de morte por hipertensão."},
+  {pergunta:"O diabetes tipo 2 se caracteriza por:",opcoes:["Falta de água no corpo", "Níveis elevados de glicose (açúcar) no sangue", "Febre alta", "Perda de cabelo"],correta:1,explicacao:"Atinge mais a população negra."},
+  {pergunta:"No Brasil, os 0,01% mais ricos detêm qual parte dos ativos financeiros?",opcoes:["90%", "27%", "50%", "1%"],correta:1,explicacao:"Isso mostra a enorme desigualdade do país."}
+  ],
+  'cien-topico-11': [
+  {pergunta:"Por que algumas doenças são chamadas de negligenciadas?",opcoes:["Porque só atingem pessoas ricas", "Porque têm cura fácil e barata em todo lugar", "Afetam populações pobres e recebem pouco investimento em pesquisa", "Porque não existem mais"],correta:2,explicacao:"O retorno financeiro esperado para pesquisa é baixo."},
+  {pergunta:"Qual é o agente causador da doença de Chagas?",opcoes:["Um verme", "O protozoário Trypanosoma cruzi", "A bactéria Vibrio cholerae", "Um vírus"],correta:1,explicacao:"O nome homenageia Carlos Chagas."},
+  {pergunta:"Qual inseto está ligado à doença de Chagas?",opcoes:["Barbeiro", "Mosca doméstica", "Abelha", "Aedes aegypti"],correta:0,explicacao:"O barbeiro pode contaminar alimentos ou a pele."},
+  {pergunta:"Qual destes alimentos pode transmitir a doença de Chagas, se contaminado?",opcoes:["Leite fervido", "Pão assado", "Açaí ou caldo de cana", "Arroz cozido"],correta:2,explicacao:"Restos do barbeiro podem contaminá-los durante o preparo."},
+  {pergunta:"Qual animal é um importante reservatório das leishmanioses?",opcoes:["A galinha", "O cavalo", "O cão", "O peixe"],correta:2,explicacao:"Por isso são recomendadas coleiras repelentes nos cães."},
+  {pergunta:"Como a tuberculose é transmitida?",opcoes:["Por gotículas da fala, tosse e espirros", "Por picada de mosquito", "Andando descalço", "Comendo carne crua"],correta:0,explicacao:"Ataca principalmente os pulmões."},
+  {pergunta:"Qual vacina protege as crianças contra as formas graves da tuberculose?",opcoes:["Antirrábica", "Vacina da dengue", "Vacina da gripe", "BCG"],correta:3,explicacao:"A BCG é aplicada em crianças."},
+  {pergunta:"A hanseníase tem cura?",opcoes:["Não, nunca", "Sim, todas as formas são curáveis", "Só em adultos", "Só com cirurgia"],correta:1,explicacao:"O tratamento dura de 6 a 12 meses e é gratuito."},
+  {pergunta:"O tracoma é a principal causa infecciosa de:",opcoes:["Queda de cabelo", "Dor de dente", "Cegueira", "Surdez"],correta:2,explicacao:"É transmitido por moscas e objetos contaminados."},
+  {pergunta:"Como a raiva é transmitida?",opcoes:["Pela água", "Pelo solo", "Por mosquitos", "Pela saliva de animal contaminado, em mordidas, arranhões ou lambeduras"],correta:3,explicacao:"A raiva é fatal. Por isso se vacinam cães e gatos."},
+  {pergunta:"O que fazer logo após ser mordido por um animal?",opcoes:["Não fazer nada", "Esperar sintomas aparecerem", "Lavar com água e sabão e procurar o serviço de saúde", "Passar manteiga"],correta:2,explicacao:"A orientação rápida é fundamental."},
+  {pergunta:"Quantas doenças a OMS classifica como tropicais negligenciadas?",opcoes:["Nenhuma", "Apenas 1", "Mais de 20", "Mais de 1.000"],correta:2,explicacao:"No Brasil, duas delas não ocorrem."}
+  ],
+  'cien-topico-12': [
+  {pergunta:"O que é imunidade de rebanho (coletiva)?",opcoes:["Vacina feita só para animais", "Quando muitos vacinados reduzem a circulação do agente e protegem até quem não pode se vacinar", "Um remédio para bois", "Quando ninguém se vacina"],correta:1,explicacao:"Protege também quem não pode tomar vacina."},
+  {pergunta:"Qual é a diferença entre vacina e soro?",opcoes:["Não há diferença", "O soro previne e a vacina trata", "Os dois são antibióticos", "A vacina faz o corpo produzir anticorpos (prevenção); o soro já traz os anticorpos prontos (tratamento)"],correta:3,explicacao:"Vacina = imunidade ativa; soro = imunidade passiva."},
+  {pergunta:"O soro antiofídico, contra veneno de cobra, é produzido com a ajuda de qual animal?",opcoes:["Cachorro", "Peixe", "Cavalo", "Galinha"],correta:2,explicacao:"O cavalo produz os anticorpos que formam o soro."},
+  {pergunta:"A imunidade conferida pelo soro é chamada de:",opcoes:["Natural", "Passiva", "Ativa", "Permanente"],correta:1,explicacao:"Os anticorpos já vêm prontos."},
+  {pergunta:"O que é uma pandemia?",opcoes:["Uma doença que só ocorre numa cidade", "Um tipo de vacina", "Uma doença sem casos", "Uma doença que se espalha pelo mundo, atingindo vários países"],correta:3,explicacao:"A covid-19 foi uma pandemia."},
+  {pergunta:"O que é uma endemia?",opcoes:["Doença recorrente numa região, sem aumento significativo de casos", "Doença que atinge o mundo todo", "Uma doença extinta", "Um aumento repentino de casos"],correta:0,explicacao:"Ex.: esquistossomose no Nordeste."},
+  {pergunta:"O que é um surto?",opcoes:["Aumento inesperado de casos de uma doença numa região específica", "Um tipo de soro", "Doença presente no mundo todo", "Uma vacina nova"],correta:0,explicacao:"Ex.: o surto de sarampo em São Paulo, em 2019."},
+  {pergunta:"O que é uma epidemia?",opcoes:["Aumento de casos em diversas regiões, sem atingir o nível global", "Uma doença que atinge o mundo inteiro", "Uma doença sempre presente num lugar", "A cura de uma doença"],correta:0,explicacao:"Ex.: a varíola no Brasil, no início do século XX."},
+  {pergunta:"Qual pandemia de 1918 causou cerca de 50 milhões de mortes?",opcoes:["Covid-19", "Gripe espanhola", "Dengue", "Zika"],correta:1,explicacao:"Foi uma das maiores pandemias da história."},
+  {pergunta:"Como o desmatamento pode causar novas doenças?",opcoes:["Diminui os mosquitos", "Aumenta as vacinas", "Coloca os humanos em contato com vírus de animais silvestres", "Não tem relação"],correta:2,explicacao:"Essas doenças são chamadas de zoonoses."},
+  {pergunta:"O que é a \"Doença X\"?",opcoes:["Uma doença dos computadores", "O nome da covid-19", "Termo da OMS para uma possível nova pandemia por agente desconhecido", "Uma vacina"],correta:2,explicacao:"Serve para incentivar a preparação dos sistemas de saúde."},
+  {pergunta:"Quem declara oficialmente uma pandemia?",opcoes:["A escola", "A Organização Mundial da Saúde (OMS)", "O hospital", "O prefeito da cidade"],correta:1,explicacao:"A OMS acompanha a saúde mundial."}
   ]
 };
 
@@ -3074,7 +3492,7 @@ function abrirOuFecharPratica(topicoId) {
   }
   container.style.display = 'block';
   if (!estadoPratica[topicoId]) {
-    const banco = window.PRATICA_CIENCIAS[topicoId] || window.PRATICA_PORTUGUES[topicoId] || window.PRATICA_INGLES[topicoId] || window.PRATICA_HISTORIA[topicoId] || window.PRATICA_GEOGRAFIA[topicoId] || [];
+    const banco = (window.PRATICA_MATEMATICA||{})[topicoId] || window.PRATICA_CIENCIAS[topicoId] || window.PRATICA_PORTUGUES[topicoId] || window.PRATICA_INGLES[topicoId] || window.PRATICA_HISTORIA[topicoId] || window.PRATICA_GEOGRAFIA[topicoId] || [];
     estadoPratica[topicoId] = {
       indicesDisponiveis: embaralhar(banco.map((_, i) => i)),
       perguntas: [],
@@ -3087,7 +3505,7 @@ function abrirOuFecharPratica(topicoId) {
 }
 
 function sortearRodadaPratica(topicoId) {
-  const banco = window.PRATICA_CIENCIAS[topicoId] || window.PRATICA_PORTUGUES[topicoId] || window.PRATICA_INGLES[topicoId] || window.PRATICA_HISTORIA[topicoId] || window.PRATICA_GEOGRAFIA[topicoId] || [];
+  const banco = (window.PRATICA_MATEMATICA||{})[topicoId] || window.PRATICA_CIENCIAS[topicoId] || window.PRATICA_PORTUGUES[topicoId] || window.PRATICA_INGLES[topicoId] || window.PRATICA_HISTORIA[topicoId] || window.PRATICA_GEOGRAFIA[topicoId] || [];
   const st = estadoPratica[topicoId];
   const TAMANHO = Math.min(10, banco.length);
 
