@@ -883,14 +883,13 @@
           </div>
           <span class="selo-em-breve">em breve</span>
         </div>
-        <div class="dia-prova sem-clique em-breve">
+        <button class="dia-prova" data-ir-para="geografia" data-ir-topico="geo-topico-1">
           <div class="data-bloco"><span class="dia-numero">28</span><span class="dia-semana">4ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">🌾 Geografia</div>
             <div class="materia-tema">Região Norte e Região Nordeste</div>
           </div>
-          <span class="selo-em-breve">em breve</span>
-        </div>
+        </button>
       </div>
       <p class="prova-periodo">Sábado letivo 24/10: Avaliação Multidisciplinar (Humanas) · Abrangentes: 18/11 a 01/12</p>
     </div>
@@ -974,7 +973,7 @@
           </div>
         </button>
 
-        <button class="dia-prova" data-ir-para="geografia">
+        <button class="dia-prova sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">01</span><span class="dia-semana">3ª feira (SET)</span></div>
           <div class="info-prova">
             <div class="materia-nome">🌾 Geografia</div>
@@ -1020,7 +1019,7 @@
           </div>
         </button>
 
-        <button class="dia-prova feito" data-ir-para="geografia">
+        <button class="dia-prova feito sem-clique" disabled>
           <div class="data-bloco"><span class="dia-numero">22</span><span class="dia-semana">2ª feira</span></div>
           <div class="info-prova">
             <div class="materia-nome">🌾 Geografia</div>
@@ -1666,8 +1665,8 @@
 <div class="pagina" id="pagina-geografia">
 
   <header class="header-materia">
-    <h1>🌾 Espaço Rural, Urbano e Industrial 🏭</h1>
-    <p>7º Ano — 2º Trimestre — Parciais e Abrangente — Geografia</p>
+    <h1>🌳 Região Norte e Região Nordeste 🌵</h1>
+    <p>7º Ano — 3º Trimestre · Geografia, Volume 3, caps. 7 e 8 — Prova Parcial 28/10 e Abrangentes (18/11 a 01/12)</p>
   </header>
 
   <main class="conteudo-materia">
@@ -1675,169 +1674,288 @@
       <div class="linha-tempo" id="geografia-linha-tempo">
         <button class="linha-tempo-etapa" data-destino="geo-topico-1">
           <span class="linha-tempo-bola">1</span>
-          <span class="linha-tempo-label">Agropecuária</span>
+          <span class="linha-tempo-label">Norte: aspectos gerais</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="geo-topico-2">
           <span class="linha-tempo-bola">2</span>
-          <span class="linha-tempo-label">Sistema Extensivo x Intensivo</span>
+          <span class="linha-tempo-label">Norte: clima</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="geo-topico-3">
           <span class="linha-tempo-bola">3</span>
-          <span class="linha-tempo-label">Agropecuária no Brasil</span>
+          <span class="linha-tempo-label">Norte: vegetação</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="geo-topico-4">
           <span class="linha-tempo-bola">4</span>
-          <span class="linha-tempo-label">Estrutura Fundiária</span>
+          <span class="linha-tempo-label">Norte: rios e chuvas</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="geo-topico-5">
           <span class="linha-tempo-bola">5</span>
-          <span class="linha-tempo-label">Extrativismo</span>
+          <span class="linha-tempo-label">Norte: ocupação</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="geo-topico-6">
           <span class="linha-tempo-bola">6</span>
-          <span class="linha-tempo-label">Espaço Urbano</span>
+          <span class="linha-tempo-label">Norte: economia</span>
         </button>
         <button class="linha-tempo-etapa" data-destino="geo-topico-7">
           <span class="linha-tempo-bola">7</span>
-          <span class="linha-tempo-label">Fabricados no Brasil</span>
+          <span class="linha-tempo-label">Nordeste: aspectos gerais</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-8">
+          <span class="linha-tempo-bola">8</span>
+          <span class="linha-tempo-label">Nordeste: migrações</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-9">
+          <span class="linha-tempo-bola">9</span>
+          <span class="linha-tempo-label">Nordeste: relevo e rios</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-10">
+          <span class="linha-tempo-bola">10</span>
+          <span class="linha-tempo-label">Nordeste: clima e vegetação</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-11">
+          <span class="linha-tempo-bola">11</span>
+          <span class="linha-tempo-label">Sub-regiões: Mata e Agreste</span>
+        </button>
+        <button class="linha-tempo-etapa" data-destino="geo-topico-12">
+          <span class="linha-tempo-bola">12</span>
+          <span class="linha-tempo-label">Sub-regiões: Sertão e Meio-Norte</span>
         </button>
       </div>
 
+      <div class="aviso-prova">📌 Matéria da Prova Parcial (28/10), que também cai nas Abrangentes. Tópicos 1 a 6: Região Norte (cap. 7). Tópicos 7 a 12: Região Nordeste (cap. 8).</div>
+
       <div class="cartao" id="geo-topico-1">
-        <h2>🚜 Agropecuária Brasileira</h2>
-        <p>Agropecuária = agricultura (plantar) + pecuária (criar animais).</p>
+        <h2>🗺️ Região Norte: Aspectos Gerais</h2>
+        <p>Capítulo 7 (Volume 3): <strong>Região Norte do Brasil: Amazônia viva</strong>.</p>
         <ul>
-          <li>O ser humano plantava e criava animais desde muito tempo atrás. Isso ajudou as pessoas a morar em um só lugar, sem precisar se mudar toda hora.</li>
-          <li>Hoje a agropecuária fornece <strong>matéria-prima</strong> (a base) para muitos produtos: a soja vira ração e óleo, o algodão vira roupa, a cana vira açúcar e combustível.</li>
-          <li>A agropecuária é uma <strong>atividade do setor primário</strong> (junto com o extrativismo) — ou seja, ela tira ou produz a matéria-prima que depois as fábricas vão usar.</li>
+          <li><strong>Maior região do Brasil:</strong> cerca de <strong>3,85 milhões de km²</strong>, aproximadamente <strong>45%</strong> do território nacional.</li>
+          <li><strong>7 estados:</strong> Acre (AC), Amazonas (AM), Roraima (RR), Rondônia (RO), Pará (PA), Amapá (AP) e Tocantins (TO). <strong>Amazonas e Pará</strong> são os mais extensos.</li>
+          <li><strong>Acre:</strong> só foi anexado ao Brasil em <strong>1903</strong>, pelo <strong>Tratado de Petrópolis</strong> (antes pertencia à Bolívia).</li>
+          <li><strong>Tocantins:</strong> criado em <strong>1988</strong>, separado de Goiás, e passou a fazer parte da região Norte.</li>
+          <li><strong>Tratado de Tordesilhas:</strong> deixava quase toda a região para a Espanha. Por isso a exploração portuguesa só começou no <strong>século XVII</strong>.</li>
+          <li><strong>População (Censo 2022):</strong> cerca de <strong>17,3 milhões</strong> de habitantes.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: antes de existir a roupa que você usa, existiu uma plantação de algodão. A agropecuária é o primeiro passo de muita coisa que a gente usa.</div>
+        <div class="destaque">💡 Pense assim: Norte = a maior região, com a menor densidade de pessoas. Lembre das datas: Acre 1903, Tocantins 1988.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/RuzwM0e1NhU" title="A evolução da agricultura" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1jd8-L0m2PoXHoKXat0RZdPHF-1XvuW9b/preview" title="Missão 1: Expedição Amazônia" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=RuzwM0e1NhU" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1jd8-L0m2PoXHoKXat0RZdPHF-1XvuW9b/view" target="_blank">▶️ Assistir: Missão 1: Expedição Amazônia</a>
         <button class="botao-praticar" data-praticar="geo-topico-1">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-geo-topico-1" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="geo-topico-2">
-        <h2>⚙️ Sistema Extensivo x Sistema Intensivo</h2>
-        <p>Existem duas formas principais de produzir na agropecuária:</p>
+        <h2>☀️ Clima da Região Norte e Massas de Ar</h2>
+        <p>A região é cortada pela <strong>Linha do Equador</strong> e recebe muita radiação solar.</p>
         <ul>
-          <li><strong>Sistema extensivo:</strong> usa pouca máquina e pouca tecnologia. Para produzir muito, precisa de uma <strong>área de terra muito grande</strong>. É mais comum em fazendas de família, com produção tradicional.</li>
-          <li><strong>Sistema intensivo:</strong> usa muita máquina, adubo químico e tecnologia. Por isso, produz muito em uma área <strong>pequena</strong>. É a chamada agropecuária moderna.</li>
+          <li><strong>Clima equatorial:</strong> médias térmicas <strong>acima de 25 °C</strong>, <strong>baixa amplitude térmica</strong> (pouca diferença entre a maior e a menor temperatura) e chuvas <strong>acima de 2.000 mm por ano</strong>. É quente e úmido.</li>
+          <li><strong>Equatorial superúmido:</strong> na porção oeste, sem estação seca.</li>
+          <li><strong>Equatorial úmido:</strong> na maior parte, com uma <strong>curta estação seca</strong>.</li>
+          <li><strong>Tropical semiúmido:</strong> no leste de Roraima e em grande parte do Tocantins, com <strong>verão chuvoso e inverno seco</strong>.</li>
+          <li><strong>mEc (massa Equatorial continental):</strong> quente e úmida, formada sobre a própria Floresta Amazônica, que fornece umidade pela <strong>evapotranspiração</strong>.</li>
+          <li><strong>mEa (massa Equatorial atlântica):</strong> quente e úmida, de origem oceânica.</li>
+          <li><strong>mPa (massa Polar atlântica):</strong> no inverno pode chegar à Amazônia e causar uma queda brusca de temperatura chamada <strong>friagem</strong>.</li>
+          <li><strong>Climograma:</strong> gráfico que mostra a temperatura (linha) e as chuvas (barras) ao longo do ano.</li>
         </ul>
-        <div class="destaque">💡 Exemplo para lembrar: o fazendeiro Fernando tem 3 vacas, cada uma produz 10 litros de leite (total: 30 litros) — ele precisa de mais espaço para as 3 vacas. O fazendeiro Carlos tem só 1 vaca, mas ela produz 30 litros — essa vaca tem produtividade maior, e ele usa menos terra para o mesmo resultado.</div>
-        <div class="gramatica-box">📌 <strong>Revolução Verde:</strong> entre 1960 e 1970, o mundo passou a usar muito mais máquinas, adubos químicos e sementes melhoradas na agricultura. Isso fez a produção aumentar bastante, e por isso esse período ganhou esse nome.</div>
-        <div class="gramatica-box">📌 <strong>Complexo agroindustrial:</strong> é a ligação entre a fazenda e a fábrica. Por exemplo: produzir insumos → plantar/criar → transportar → processar na fábrica → guardar → vender. Cada etapa é feita por uma parte diferente da economia.</div>
+        <div class="destaque">💡 Pense assim: Linha do Equador = muito sol = calor o ano todo. Floresta + calor = muita evaporação = muita chuva.</div>
         <button class="botao-praticar" data-praticar="geo-topico-2">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-geo-topico-2" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="geo-topico-3">
-        <h2>🗺️ A Agropecuária no Brasil</h2>
-        <p>No Brasil, as duas formas de produzir (extensiva e intensiva) acontecem em lugares diferentes:</p>
+        <h2>🌳 Vegetação: Floresta Amazônica</h2>
+        <p>No Norte há uma grande interdependência entre <strong>clima e vegetação</strong>.</p>
         <ul>
-          <li><strong>Norte e Nordeste (interior, Amazônia, Sertão, Pantanal):</strong> mais comum o sistema <strong>extensivo</strong>. Exemplo: a pecuária no Sertão Nordestino e no Pantanal, feita há muito tempo pelos vaqueiros.</li>
-          <li><strong>Centro-Sul (Sul, Sudeste e parte do Centro-Oeste):</strong> mais comum o sistema <strong>intensivo</strong>, com a agropecuária moderna. Tem fábricas perto, mais dinheiro investido e mais tecnologia.</li>
-          <li>O Brasil é um dos maiores produtores de <strong>soja</strong> do mundo. A soja é usada para fazer ração de animais (farelo) e óleo, e boa parte é vendida para outros países, principalmente a China.</li>
+          <li><strong>4 tipos de vegetação:</strong> <strong>Floresta Amazônica</strong> (a maior parte), <strong>Cerrado</strong>, <strong>Campos de hileia</strong> (vegetação rasteira em áreas alagadiças) e <strong>vegetação litorânea</strong>.</li>
+          <li><strong>Floresta Amazônica:</strong> a <strong>maior floresta tropical do planeta</strong>. As copas formam um "telhado" (alta densidade vegetal) que deixa o chão escuro e úmido.</li>
+          <li><strong>Latifoliada:</strong> folhas largas. <strong>Perenifólia:</strong> sempre verde, não perde as folhas.</li>
+          <li><strong>Biomassa:</strong> matéria orgânica de origem vegetal ou animal. A Floresta Amazônica tem a maior biomassa terrestre do planeta.</li>
+          <li><strong>Serrapilheira:</strong> camada de matéria orgânica sobre o solo (folhas, caules, frutos, flores, fezes). Funções: banco de sementes, isolamento térmico, retém a umidade e é a principal forma de <strong>reciclagem de nutrientes</strong>.</li>
+          <li><strong>Mata de terra firme:</strong> cerca de <strong>80%</strong> da floresta, em áreas que não alagam. Árvores mais altas, como a castanheira, o mogno e a sumaúma.</li>
+          <li><strong>Mata de várzea:</strong> alagada só nas cheias dos rios. Os sedimentos deixam o solo rico, bom para agricultura.</li>
+          <li><strong>Mata de igapó:</strong> alagada quase o ano todo, perto dos rios. Plantas aquáticas como a <strong>vitória-régia</strong>.</li>
+          <li><strong>Solos:</strong> muito lixiviados (pobres em nutrientes). A floresta vive da reciclagem da serrapilheira.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: quanto mais tecnologia uma região tem, menos terra ela precisa para produzir muito — por isso o Centro-Sul produz tanto em áreas menores.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/87yYvlP3mps" title="Pecuária e agropecuária no Brasil" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=87yYvlP3mps" target="_blank">▶️ Assistir no YouTube</a>
+        <div class="destaque">💡 Pense assim, do mais seco ao mais alagado: terra firme (nunca alaga) → várzea (alaga às vezes) → igapó (alagado quase sempre).</div>
         <button class="botao-praticar" data-praticar="geo-topico-3">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-geo-topico-3" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="geo-topico-4">
-        <h2>📐 Estrutura Fundiária</h2>
-        <p>Estrutura fundiária é como as terras do Brasil são divididas entre as pessoas.</p>
+        <h2>💧 Relevo, Hidrografia e Chuvas na Amazônia</h2>
+        <p>Relevo, rios e floresta formam um ciclo da água que influencia o clima de todo o Brasil.</p>
         <ul>
-          <li><strong>Latifúndio</strong> = propriedade rural muito grande.</li>
-          <li><strong>Minifúndio</strong> = propriedade rural pequena, normalmente de família.</li>
-          <li>No Brasil, a estrutura fundiária é <strong>concentrada</strong>: poucas pessoas têm muita terra, e muitas pessoas têm pouca ou nenhuma terra.</li>
-          <li>Isso vem de muito tempo atrás: no Brasil Colônia, Portugal dava terras enormes (chamadas <strong>sesmarias</strong>) só para algumas famílias.</li>
-          <li>Quando um latifúndio não é usado para produzir nada, ele é chamado de <strong>latifúndio improdutivo</strong>.</li>
+          <li><strong>Relevo:</strong> <strong>planaltos, depressões e planícies</strong>, com altitudes modestas. Exceções: o <strong>Pico da Neblina</strong> e o Pico 31 de Março, no Amazonas, perto de 3.000 m. Ao longo do Rio Amazonas há planícies sedimentares.</li>
+          <li><strong>Rios de planalto:</strong> têm desníveis e servem para <strong>usinas hidrelétricas</strong>. <strong>Rios de planície:</strong> servem para a <strong>navegação</strong>. Os rios são as "estradas" da Amazônia: muitas comunidades só são acessadas por barco.</li>
+          <li><strong>Bacia Amazônica:</strong> a <strong>maior bacia hidrográfica do mundo</strong>, com cerca de 3,9 milhões de km² no Brasil (5,8 milhões no total).</li>
+          <li><strong>Rio Amazonas:</strong> nasce nos <strong>Andes peruanos</strong>. Ganha o nome de Amazonas depois do encontro do Rio Negro com o Rio Solimões. Recebe água do derretimento da neve e das chuvas.</li>
+          <li><strong>Bacia Tocantins-Araguaia:</strong> cerca de 10% do território brasileiro.</li>
+          <li><strong>SAGA (Sistema Aquífero Grande Amazônia):</strong> o <strong>maior reservatório de água subterrânea do planeta</strong>. <strong>Rio Hamza:</strong> rio subterrâneo, a cerca de 4.000 m de profundidade.</li>
+          <li><strong>Chuvas convectivas:</strong> o calor provoca a <strong>evaporação</strong> dos rios e a <strong>transpiração</strong> das plantas (juntas: <strong>evapotranspiração</strong>). O vapor forma nuvens carregadas e, no fim da tarde, caem chuvas rápidas e intensas.</li>
+          <li><strong>Rios voadores:</strong> a umidade da floresta é levada pelo vento e gera chuvas no Centro-Oeste, no Sudeste e no Sul.</li>
+          <li><strong>Sequestro de carbono:</strong> a floresta absorve CO₂ na fotossíntese e ajuda a reduzir o efeito estufa.</li>
+          <li><strong>Seca de 2024:</strong> a pior já registrada, causada pelo <strong>El Niño</strong> (aquecimento do Oceano Pacífico) e agravada pelo <strong>desmatamento</strong>.</li>
         </ul>
-        <div class="destaque">💡 Dica para lembrar: <strong>LATI</strong>fúndio é <strong>LA</strong>rgo e grande. <strong>MINI</strong>fúndio é <strong>MIN</strong>ininho!</div>
-        <div class="gramatica-box">📌 <strong>Reforma agrária:</strong> é uma política para dividir melhor as terras, dando terra para quem não tem. O Incra é o órgão do governo que cuida disso.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/87yYvlP3mps" title="Latifúndios e Minifúndios" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=87yYvlP3mps" target="_blank">▶️ Assistir no YouTube</a>
+        <div class="destaque">💡 Pense assim: floresta transpira → forma nuvens → chove → os rios enchem → o ciclo recomeça. Sem floresta, chove menos até em outras regiões.</div>
         <button class="botao-praticar" data-praticar="geo-topico-4">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-geo-topico-4" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="geo-topico-5">
-        <h2>🌳 Extrativismo</h2>
-        <p>É tirar recursos direto da natureza, sem plantar e sem criar.</p>
+        <h2>🛶 Norte: População e Ocupação</h2>
+        <p>A ocupação do Norte passou por várias fases, dos povos indígenas aos projetos do governo militar.</p>
         <ul>
-          <li><strong>Vegetal:</strong> coleta de madeira, látex (borracha), castanha-do-pará, açaí, babaçu.</li>
-          <li><strong>Mineral:</strong> extração de ferro, ouro.</li>
-          <li><strong>Animal:</strong> pesca, caça e coleta de caranguejo.</li>
-          <li>Muito praticado na <strong>Amazônia</strong>, por ser a floresta com mais variedade de plantas e animais do mundo.</li>
-          <li>Quem faz a coleta do babaçu (uma palmeira) são as <strong>quebradeiras de coco babaçu</strong>, muitas mulheres do Maranhão e Piauí.</li>
+          <li><strong>População diversa:</strong> a região tem a maior proporção de <strong>indígenas</strong> do país, que vivem ali há milênios, em harmonia com a natureza.</li>
+          <li><strong>Séculos XVI a XVIII:</strong> ocupação portuguesa lenta, com <strong>fortificações</strong> e <strong>missões religiosas</strong> às margens dos rios. <strong>Belém (PA)</strong> virou o principal núcleo. Exportavam as <strong>drogas do sertão</strong> (cravo, baunilha, cacau, guaraná, urucum).</li>
+          <li><strong>Ciclo da borracha (fim do séc. XIX e início do XX):</strong> grande extração do látex nos <strong>seringais</strong>, com forte migração de <strong>nordestinos</strong>. A borracha atendia à <strong>indústria automobilística</strong> e à Primeira Guerra Mundial. A riqueza fez crescer <strong>Belém e Manaus</strong>.</li>
+          <li><strong>Estrada de Ferro Madeira-Mamoré (1912)</strong> e a compra do Acre (1903) marcaram a ocupação.</li>
+          <li><strong>Amazônia Legal:</strong> criada nas décadas de <strong>1960 e 1970</strong> pelos <strong>governos militares</strong> como região de planejamento (SUDAM). Inclui toda a região Norte, Mato Grosso e parte do Maranhão.</li>
+          <li><strong>Amazônia Internacional:</strong> a floresta e a bacia em outros países: Bolívia, Peru, Equador, Colômbia, Venezuela, Guiana, Suriname e Guiana Francesa.</li>
+          <li><strong>Estratégias de integração:</strong> rodovias como a <strong>Transamazônica (BR-230)</strong>; a <strong>Zona Franca de Manaus (1967)</strong>, com redução de impostos para atrair indústrias; a mineração do <strong>Programa Grande Carajás (PA)</strong>; e usinas hidrelétricas como <strong>Tucuruí</strong> (Rio Tocantins) e Balbina.</li>
+          <li><strong>Demografia:</strong> a <strong>menor densidade demográfica</strong> do país (cerca de 4,5 hab/km²). O <strong>Pará</strong> é o estado mais populoso. <strong>Roraima</strong> teve a maior taxa de crescimento (2000-2022). Há grande chegada de refugiados <strong>venezuelanos</strong> (Pacaraima, Boa Vista, Manaus).</li>
         </ul>
-        <div class="destaque">💡 Extrativismo sustentável = tirar da natureza sem destruir, para que ela continue dando recursos por muito tempo.</div>
+        <div class="destaque">💡 Pense assim, na linha do tempo: indígenas → fortes e missões → ciclo da borracha → governo militar (Amazônia Legal, Transamazônica, Zona Franca).</div>
         <div class="video-wrapper">
-          <iframe data-src="https://www.youtube.com/embed/hFbtP6KUNHI" title="O que é Extrativismo?" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/143D5sSw-j1H60btjVl8xn_fMdeHP2Wpz/preview" title="Missão 2: A Amazônia" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://www.youtube.com/watch?v=hFbtP6KUNHI" target="_blank">▶️ Assistir no YouTube</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/143D5sSw-j1H60btjVl8xn_fMdeHP2Wpz/view" target="_blank">▶️ Assistir: Missão 2: A Amazônia</a>
         <button class="botao-praticar" data-praticar="geo-topico-5">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-geo-topico-5" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="geo-topico-6">
-        <h2>🏙️ Espaço Urbano Brasileiro</h2>
-        <p>É onde ficam as cidades. Hoje a maioria das pessoas no Brasil mora em cidades.</p>
+        <h2>⛏️ Norte: Economia e Sustentabilidade</h2>
+        <p>A economia do Norte se baseia no <strong>extrativismo</strong> e, principalmente, na <strong>indústria</strong>.</p>
         <ul>
-          <li><strong>Urbanização</strong> = quando as cidades crescem e mais gente passa a morar nelas em vez de morar no campo.</li>
-          <li><strong>Êxodo rural</strong> = pessoas saindo do campo para morar nas cidades. No Brasil, isso aconteceu muito a partir de 1930 (começo das fábricas) e principalmente a partir de 1960 (o campo passou a usar mais máquinas, e isso deixou menos gente trabalhando lá).</li>
-          <li>Até a década de 1960, a maioria dos brasileiros morava no campo. A partir de 1970, isso mudou: a maioria passou a morar nas cidades. Hoje, mais de 87% dos brasileiros moram em área urbana.</li>
-          <li><strong>Rede urbana</strong> = cidades grandes, médias e pequenas, conectadas por estradas e comunicação. As cidades muito grandes e importantes se chamam <strong>metrópoles</strong> (exemplos: São Paulo, Rio de Janeiro).</li>
-          <li><strong>Região metropolitana</strong> = quando uma metrópole cresce tanto que as cidades vizinhas passam a depender dela e a trabalhar junto com ela (ex: Região Metropolitana de São Paulo).</li>
-          <li><strong>Conurbação</strong> = quando duas cidades crescem tanto que se juntam, sem espaço vazio entre elas.</li>
-          <li><strong>Problemas urbanos:</strong> trânsito, falta de moradia (favelas), enchentes.</li>
-          <li><strong>Transportes:</strong> rodoviário (estradas, o mais usado no Brasil), ferroviário (trens).</li>
+          <li><strong>Agricultura:</strong> mandioca, arroz, feijão e milho em pequenas propriedades; café e cacau em Rondônia; pimenta-do-reino e laranja no Pará. Em Rondônia, no Pará e no Tocantins: soja (grãos) e pecuária, em grandes propriedades mecanizadas.</li>
+          <li><strong>Indústria:</strong> concentrada na <strong>Zona Franca de Manaus (AM)</strong>, com eletrônicos e motos. Há também polos em Belém e Barcarena (PA).</li>
+          <li><strong>Mineração:</strong> a <strong>Serra dos Carajás (PA)</strong> é um dos maiores complexos de minério de <strong>ferro</strong> do mundo. Há também manganês, alumínio (bauxita), cobre e ouro.</li>
+          <li><strong>Ameaças:</strong> desmatamento e <strong>queimadas</strong> (muitas criminosas) liberam CO₂, agravam o aquecimento global e destroem a biodiversidade. A preservação usa monitoramento por <strong>satélite</strong>.</li>
+          <li><strong>Bertha Becker</strong> (geógrafa): <em>"A floresta precisa ter valor em pé"</em>. Criou a ideia de <strong>"floresta urbanizada"</strong>: a maior parte da população vive em cidades conectadas ao mundo, mesmo cercadas pela floresta.</li>
+          <li><strong>Atividades produtivas sustentáveis:</strong> conciliam desenvolvimento econômico, conservação ambiental e inclusão social. Exemplos: cadeia do <strong>açaí</strong>, do <strong>pirarucu</strong> e da <strong>castanha-do-pará</strong>, sistemas agroflorestais, pesca artesanal, turismo sustentável e energia renovável.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: o Brasil era um país do campo até 1960. Em poucas décadas, virou um país de cidades — por isso o espaço urbano cresceu tão rápido.</div>
-        <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1sGnAyY5Ne7_pCzJhGMO1Ri9ywcyRQNwS/preview" title="O Espaço Urbano Brasileiro" allowfullscreen></iframe>
-          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
-        </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1sGnAyY5Ne7_pCzJhGMO1Ri9ywcyRQNwS/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <div class="destaque">💡 Pense assim: floresta em pé (açaí, castanha, turismo) gera renda sem destruir. Floresta derrubada dá lucro uma vez e perde tudo.</div>
         <button class="botao-praticar" data-praticar="geo-topico-6">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-geo-topico-6" style="display:none;"></div>
       </div>
 
       <div class="cartao" id="geo-topico-7">
-        <h2>🏭 Fabricados no Brasil — Indústria e Industrialização</h2>
-        <p>Indústria é a atividade de transformar matéria-prima em produtos, fazendo parte do setor secundário.</p>
+        <h2>🌵 Nordeste: Aspectos Gerais e Povoamento</h2>
+        <p>Capítulo 8 (Volume 3): <strong>Um retrato do Nordeste do Brasil</strong>.</p>
         <ul>
-          <li><strong>Indústria de base:</strong> produz matéria-prima mais processada para outras indústrias (aço, produtos químicos).</li>
-          <li><strong>Indústria de bens de capital:</strong> produz máquinas e equipamentos que outras indústrias usam pra produzir (tratores, máquinas de fábrica).</li>
-          <li><strong>Indústria de bens de consumo:</strong> produz o que vai direto pro consumidor. Se divide em <strong>duráveis</strong> (geladeiras, carros) e <strong>não duráveis</strong> (alimentos, roupas).</li>
-          <li><strong>Substituição de importações:</strong> em vez de comprar produtos de fora, o Brasil passou a fabricar aqui — com força a partir de 1930, no governo de <strong>Getúlio Vargas</strong>.</li>
-          <li>A indústria brasileira se concentrou primeiro no <strong>Sudeste</strong> (principalmente São Paulo), por causa do dinheiro do café, mão de obra e proximidade com portos.</li>
-          <li><strong>Desconcentração industrial:</strong> com o tempo, indústrias passaram a se espalhar para outras regiões, buscando custos menores.</li>
-          <li><strong>Redes de transporte e comunicação</strong> são essenciais: levam matéria-prima até a fábrica e produto pronto até quem compra.</li>
-          <li>A <strong>inovação tecnológica</strong> muda o tipo de emprego nas cidades, mas produção, transporte e consumo também geram <strong>impactos ambientais</strong> (poluição, lixo) e afetam a distribuição de riquezas.</li>
+          <li><strong>9 estados:</strong> Maranhão, Piauí, Ceará, Rio Grande do Norte, Paraíba, Pernambuco, Alagoas, Sergipe e Bahia. Tem a <strong>maior faixa litorânea</strong> do país.</li>
+          <li><strong>Terceira maior região</strong>, com cerca de <strong>18%</strong> do território. <strong>Segunda mais populosa</strong>: cerca de <strong>54,6 milhões</strong> de habitantes (Censo 2022), quase 27% dos brasileiros.</li>
+          <li><strong>4 sub-regiões:</strong> Zona da Mata, Agreste, Sertão e Meio-Norte.</li>
+          <li><strong>Povoamento:</strong> os portugueses chegaram em 22 de abril de <strong>1500</strong>, em Porto Seguro (BA). No <strong>século XVI</strong>, exploraram o <strong>pau-brasil</strong>; depois, a <strong>cana-de-açúcar</strong> no litoral, em <strong>plantations</strong> com mão de obra escravizada.</li>
+          <li><strong>Interiorização (século XVII):</strong> pela <strong>pecuária extensiva</strong>, que seguiu o Vale do <strong>Rio São Francisco</strong>. O gado fornecia alimento, transporte e força para os engenhos.</li>
+          <li><strong>Holandeses:</strong> invadiram Olinda e Recife em <strong>1630</strong>; <strong>Maurício de Nassau</strong> administrou e modernizou a região.</li>
+          <li><strong>Formação do povo:</strong> indígenas, africanos (escravizados) e europeus (portugueses e holandeses). O Nordeste tem a <strong>maior população quilombola</strong> do país e a segunda maior indígena.</li>
+          <li><strong>Densidade:</strong> a população se concentra no <strong>litoral</strong>, por causa da colonização, da industrialização e do turismo. O interior tem menos gente por causa da seca.</li>
         </ul>
-        <div class="destaque">💡 Pense assim: o setor primário é como coletar os ingredientes, e a indústria é como cozinhar esses ingredientes até virar um prato pronto.</div>
+        <div class="destaque">💡 Pense assim: o Nordeste foi ocupado do litoral (açúcar) para o interior (gado, pelo Rio São Francisco). Por isso o litoral é mais povoado até hoje.</div>
         <div class="video-wrapper">
-          <iframe data-src="https://drive.google.com/file/d/1uH7mpeqZc4wyoZpZvSJKG-3qU6PMdqVq/preview" title="Fabricados no Brasil - Industria e Industrializacao" allowfullscreen></iframe>
+          <iframe data-src="https://drive.google.com/file/d/1ruOLbSY6Fwx9-SpK2bYawRb6jG-4I_az/preview" title="Missão 3: Do Mar ao Sertão" allowfullscreen></iframe>
           <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
         </div>
-        <a class="video-assistir" href="https://drive.google.com/file/d/1uH7mpeqZc4wyoZpZvSJKG-3qU6PMdqVq/view" target="_blank">▶️ Assistir no Google Drive</a>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1ruOLbSY6Fwx9-SpK2bYawRb6jG-4I_az/view" target="_blank">▶️ Assistir: Missão 3: Do Mar ao Sertão</a>
         <button class="botao-praticar" data-praticar="geo-topico-7">✏️ Praticar</button>
         <div class="pratica-inline" id="pratica-geo-topico-7" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="geo-topico-8">
+        <h2>🚌 Nordeste: Migrações e População</h2>
+        <p>Durante muito tempo, os nordestinos migraram para outras regiões em busca de emprego e de melhores condições de vida.</p>
+        <ul>
+          <li><strong>Para o Sudeste, a partir de 1930:</strong> por causa da <strong>industrialização de São Paulo</strong>, da <strong>seca</strong> e da falta de emprego no Nordeste.</li>
+          <li><strong>Para o Centro-Oeste, a partir de 1950:</strong> para a <strong>construção de Brasília</strong>.</li>
+          <li><strong>Para o Norte, a partir de 1950:</strong> pela política de <strong>colonização da Amazônia</strong> (e antes, no ciclo da borracha).</li>
+          <li><strong>Migração de retorno:</strong> a partir da década de <strong>1990</strong>, muitos nordestinos voltaram, atraídos pelo crescimento econômico da região e pelo aumento do custo de vida no Sudeste. Ajudou também a <strong>guerra fiscal</strong> (estados oferecendo isenção de impostos para atrair indústrias).</li>
+          <li><strong>Programas sociais</strong> de transferência de renda, a partir de 1990, também melhoraram as condições de vida.</li>
+          <li><strong>Pirâmide etária:</strong> a base está ficando mais estreita (queda da natalidade) e o topo mais largo (mais idosos). A população está envelhecendo.</li>
+          <li><strong>Pobreza:</strong> o Nordeste ainda concentra quase metade da pobreza do Brasil (47,9%).</li>
+        </ul>
+        <div class="destaque">💡 Pense assim, com datas: 1930 → Sudeste (São Paulo). 1950 → Centro-Oeste (Brasília) e Norte. 1990 → retorno ao Nordeste.</div>
+        <button class="botao-praticar" data-praticar="geo-topico-8">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-geo-topico-8" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="geo-topico-9">
+        <h2>⛰️ Nordeste: Relevo e Hidrografia</h2>
+        <p>O relevo do Nordeste é formado por planaltos, depressões e planícies, e explica a diferença de chuva entre o litoral e o interior.</p>
+        <ul>
+          <li><strong>Planícies e tabuleiros litorâneos:</strong> no litoral, formados por <strong>bacias sedimentares</strong>.</li>
+          <li><strong>Planalto da Borborema:</strong> no leste (PB, PE, RN, AL), chega a cerca de 1.200 m. Funciona como uma "barreira": <strong>impede que a umidade do Oceano Atlântico chegue ao interior</strong>. Do lado do mar chove; do outro lado, o ar chega seco.</li>
+          <li><strong>Depressão sertaneja:</strong> área mais baixa no interior, onde fica o Sertão e passa o Rio São Francisco. É seca porque fica "atrás" da Borborema.</li>
+          <li><strong>Planaltos e chapadas da Bacia do Parnaíba</strong> (oeste) e a <strong>Chapada Diamantina</strong> (BA).</li>
+          <li><strong>Escudos cristalinos:</strong> rochas muito antigas (como o Planalto da Borborema). <strong>Bacias sedimentares:</strong> formadas por sedimentos acumulados.</li>
+          <li><strong>Vulcões extintos:</strong> há milhões de anos o Nordeste teve atividade vulcânica. Exemplo: <strong>Pico do Cabugi (RN)</strong>.</li>
+          <li><strong>Hidrografia:</strong> o Nordeste tem só cerca de <strong>3% da água doce</strong> do Brasil. Muitos rios são <strong>intermitentes (temporários)</strong>: secam na estiagem. Os <strong>perenes</strong> têm água o ano todo.</li>
+          <li><strong>Rio São Francisco, o "Velho Chico":</strong> o principal rio perene. Atravessa o Sertão, é usado para navegação, abastecimento, <strong>usinas hidrelétricas</strong> e <strong>irrigação</strong>. É o "rio da integração nacional".</li>
+          <li><strong>Regiões hidrográficas:</strong> Atlântico Nordeste Oriental (Rio Jaguaribe, Açude de Orós, no CE), Parnaíba, Atlântico Nordeste Ocidental (Mearim e Itapecuru, no MA), Tocantins-Araguaia, São Francisco e Atlântico Leste (Paraguaçu).</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: o vento úmido vem do mar, bate na Borborema e despeja a chuva no litoral. Do outro lado (o Sertão), o ar chega seco.</div>
+        <button class="botao-praticar" data-praticar="geo-topico-9">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-geo-topico-9" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="geo-topico-10">
+        <h2>🌤️ Nordeste: Clima e Vegetação</h2>
+        <p>O Nordeste não é só seca: tem <strong>quatro climas</strong> e várias vegetações.</p>
+        <ul>
+          <li><strong>Semiárido:</strong> no Sertão. Temperaturas altas o ano todo, <strong>chuvas escassas e irregulares</strong> (menos de 800 mm/ano) e longos períodos de seca. Ex.: Petrolina (PE).</li>
+          <li><strong>Tropical úmido:</strong> no <strong>litoral</strong> leste. Quente e úmido, por causa da umidade do oceano. Ex.: Maceió (AL).</li>
+          <li><strong>Tropical semiúmido:</strong> no interior (Bahia, Piauí, Maranhão). Um período chuvoso (7 a 8 meses) e um seco (4 a 5 meses). Ex.: Bom Jesus (PI).</li>
+          <li><strong>Equatorial:</strong> no oeste do Maranhão. Temperaturas altas e chuvas abundantes, sem estação seca.</li>
+          <li><strong>Caatinga:</strong> vegetação do semiárido, <strong>xerófila</strong> (adaptada à seca): plantas com espinhos e folhas pequenas, cactos (mandacaru), raízes profundas. Na seca, perde as folhas; com a chuva, fica verde. É exclusiva do Brasil.</li>
+          <li><strong>Mata Atlântica:</strong> no litoral, latifoliada (folhas largas), densa, com grande biodiversidade. Foi muito devastada pela cana-de-açúcar.</li>
+          <li><strong>Mata dos Cocais:</strong> vegetação de <strong>transição</strong> entre a Caatinga e a Floresta Amazônica, no Meio-Norte. Tem as palmeiras <strong>babaçu e carnaúba</strong>.</li>
+          <li><strong>Cerrado:</strong> árvores baixas, de galhos retorcidos e espaçadas. <strong>Vegetação litorânea:</strong> mangues e restingas.</li>
+          <li><strong>El Niño e La Niña:</strong> fenômenos do Oceano Pacífico. O El Niño costuma agravar a seca no Sertão.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim, de leste para oeste: litoral (úmido, Mata Atlântica) → Agreste (transição) → Sertão (semiárido, Caatinga) → Meio-Norte (Cocais) → Maranhão (equatorial, Amazônia).</div>
+        <button class="botao-praticar" data-praticar="geo-topico-10">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-geo-topico-10" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="geo-topico-11">
+        <h2>🍬 Sub-regiões: Zona da Mata e Agreste</h2>
+        <p><strong>Regionalizar</strong> é dividir em regiões áreas com características semelhantes (naturais, sociais, econômicas, históricas e culturais).</p>
+        <ul>
+          <li><strong>Zona da Mata:</strong> faixa litorânea do Rio Grande do Norte ao sul da Bahia. Recebe esse nome pela antiga <strong>Mata Atlântica</strong>. Clima tropical úmido. É a área <strong>mais populosa e urbanizada</strong>, com as capitais e o maior dinamismo econômico. Também tem manguezais e restingas.</li>
+          <li><strong>Zona da Mata Açucareira:</strong> do RN até Salvador. <strong>Grandes propriedades monocultoras</strong> (latifúndios) de <strong>cana-de-açúcar</strong>, com usinas de açúcar e etanol.</li>
+          <li><strong>Zona do Cacau:</strong> sul da Bahia (<strong>Ilhéus e Itabuna</strong>). Produção de cacau em pequenas e grandes propriedades.</li>
+          <li><strong>Recôncavo Baiano:</strong> em torno de Salvador. Polo industrial, com destaque para o <strong>petróleo</strong>, a <strong>petroquímica</strong> (Camaçari) e a indústria automobilística.</li>
+          <li><strong>Indústria e turismo:</strong> as indústrias ficam perto dos portos, o que facilita a exportação. O <strong>turismo</strong> (praias, clima) movimenta comércio e serviços. Há um fluxo migratório de outras sub-regiões para a Zona da Mata.</li>
+          <li><strong>Agreste:</strong> faixa de <strong>transição</strong> entre a Zona da Mata e o Sertão. É um <strong>ecótono</strong> (encontro de Mata Atlântica e Caatinga). Clima semiárido, relevo com o <strong>Planalto da Borborema</strong>, rios temporários.</li>
+          <li><strong>Economia do Agreste:</strong> <strong>agropecuária</strong>, com <strong>pecuária extensiva</strong> (gado solto, para carne e leite), <strong>frutas tropicais</strong> (banana, melancia, maçã) e <strong>sisal</strong> (para chapéus, bolsas e cordas), em pequenas e médias propriedades. Abastece o litoral com seus produtos. Ex.: <strong>Campina Grande (PB)</strong>, polo tecnológico.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: Zona da Mata = litoral, cana, cacau, petróleo, capitais e turismo. Agreste = transição, gado, frutas e sisal.</div>
+        <div class="video-wrapper">
+          <iframe data-src="https://drive.google.com/file/d/1dGdHTaQosQo5aWDa77axRVxsYghovDsb/preview" title="Missão 4: Os Quatro Territórios" allowfullscreen></iframe>
+          <button type="button" class="video-carregar">▶️ Tocar vídeo</button>
+        </div>
+        <a class="video-assistir" href="https://drive.google.com/file/d/1dGdHTaQosQo5aWDa77axRVxsYghovDsb/view" target="_blank">▶️ Assistir: Missão 4: Os Quatro Territórios</a>
+        <button class="botao-praticar" data-praticar="geo-topico-11">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-geo-topico-11" style="display:none;"></div>
+      </div>
+
+      <div class="cartao" id="geo-topico-12">
+        <h2>🐐 Sub-regiões: Sertão e Meio-Norte</h2>
+        <p>O <strong>Sertão</strong> é a maior sub-região; o <strong>Meio-Norte</strong> é a transição para a Amazônia.</p>
+        <ul>
+          <li><strong>Sertão:</strong> clima <strong>semiárido</strong> (quente, chuvas escassas e irregulares), vegetação de <strong>Caatinga</strong>, relevo de depressões e planaltos, rios <strong>intermitentes</strong>. O São Francisco é perene.</li>
+          <li><strong>Semiárido brasileiro:</strong> 1.262 municípios, cerca de 27,8 milhões de habitantes, chuva anual abaixo de 800 mm. Antes era chamado de <strong>"polígono das secas"</strong>.</li>
+          <li><strong>Economia do Sertão:</strong> <strong>pecuária extensiva</strong> (bovinos, caprinos, ovinos), <strong>agricultura de subsistência</strong> e o comércio. Produtos: milho, feijão, mandioca, umbu, babaçu. Destaque para a <strong>fruticultura irrigada</strong> no Vale do São Francisco (Petrolina-PE e Juazeiro-BA).</li>
+          <li><strong>Seca:</strong> fenômeno natural (falta de chuva por um período). Não dá para mudar o clima, mas dá para <strong>conviver com a seca</strong>: irrigação eficiente, <strong>cisternas</strong>, <strong>açudes</strong> e a <strong>transposição do Rio São Francisco</strong> (levar água às áreas mais secas). São <strong>políticas públicas</strong>.</li>
+          <li><strong>Desertificação:</strong> a Caatinga perde a vegetação pela retirada da cobertura vegetal e pelo uso inadequado do solo (agricultura, pecuária), e o solo perde nutrientes e água. É causada pela ação humana somada ao clima.</li>
+          <li><strong>Meio-Norte:</strong> do <strong>Maranhão ao oeste do Piauí</strong>. Transição entre a Amazônia e o Sertão. Áreas de clima tropical (com Cerrado) e equatorial (com a <strong>Mata dos Cocais</strong>).</li>
+          <li><strong>Economia do Meio-Norte:</strong> <strong>extrativismo vegetal</strong> do <strong>babaçu</strong> e da <strong>carnaúba</strong> (usados em cosméticos), cultivo de <strong>soja</strong> em latifúndios mecanizados para exportação, e o <strong>Porto de Itaqui</strong>, em São Luís (MA), ligado a rodovias e ferrovias.</li>
+        </ul>
+        <div class="destaque">💡 Pense assim: Sertão = seca, Caatinga, gado, cisternas e São Francisco. Meio-Norte = Cocais, babaçu, carnaúba, soja e Porto de Itaqui.</div>
+        <button class="botao-praticar" data-praticar="geo-topico-12">✏️ Praticar</button>
+        <div class="pratica-inline" id="pratica-geo-topico-12" style="display:none;"></div>
       </div>
 
   </main>
@@ -3078,88 +3196,144 @@ document.querySelectorAll('.botao-praticar[data-praticar]').forEach(botao => {
 
 window.PRATICA_GEOGRAFIA = {
   'geo-topico-1': [
-  {pergunta:"O que é agropecuária?",opcoes:["Só a criação de animais","Só o plantio de árvores","Um tipo de cidade","A junção da agricultura com a pecuária"],correta:3,explicacao:"Agropecuária é a junção da agricultura (plantar) com a pecuária (criar animais)."},
-  {pergunta:"A agropecuária faz parte de qual setor da economia?",opcoes:["Setor terciário","Nenhum setor","Setor secundário","Setor primário"],correta:3,explicacao:"A agropecuária e o extrativismo fazem parte do setor primário, que produz a matéria-prima usada pelas fábricas."},
-  {pergunta:"O que a agropecuária fornece para muitos produtos industrializados?",opcoes:["Apenas mão de obra","Nada, são atividades separadas","Matéria-prima","Apenas dinheiro"],correta:2,explicacao:"A agropecuária fornece matéria-prima: a soja vira ração e óleo, o algodão vira roupa, a cana vira açúcar e combustível."},
-  {pergunta:"Desde quando o ser humano pratica agropecuária, de forma geral?",opcoes:["Desde muito tempo atrás, o que ajudou a fixar moradia num só lugar","Só depois da industrialização","Nunca praticou antes das cidades","Só a partir do século 20"],correta:0,explicacao:"A agropecuária existe há muito tempo e ajudou o ser humano a morar em um só lugar, sem precisar se mudar toda hora."},
-  {pergunta:"O que a cana-de-açúcar pode virar, como produto industrializado?",opcoes:["Apenas ração animal","Açúcar e combustível","Apenas roupa","Apenas remédio"],correta:1,explicacao:"A cana-de-açúcar é usada para produzir açúcar e também combustível (etanol)."},
-  {pergunta:"O algodão, como matéria-prima, geralmente vira:",opcoes:["Combustível","Ração animal","Roupa","Remédio"],correta:2,explicacao:"O algodão é a matéria-prima usada para fazer tecido e roupas."},
-  {pergunta:"Qual outra atividade faz parte do setor primário, junto com a agropecuária?",opcoes:["Bancos","Extrativismo","Comércio","Indústria automobilística"],correta:1,explicacao:"O extrativismo, junto com a agropecuária, faz parte do setor primário da economia."},
-  {pergunta:"O setor primário é responsável principalmente por:",opcoes:["Produzir ou tirar a matéria-prima da natureza","Vender produtos prontos ao consumidor","Prestar serviços bancários","Transformar matéria-prima em produto final"],correta:0,explicacao:"O setor primário produz ou extrai a matéria-prima que depois será usada pela indústria."},
-  {pergunta:"Antes de existir a roupa que usamos, o que precisou existir primeiro, segundo o exemplo do tópico?",opcoes:["Uma plantação de algodão","Um shopping center","Um banco","Uma fábrica de roupas apenas"],correta:0,explicacao:"A agropecuária é o primeiro passo de muitos produtos que usamos, como no exemplo da plantação de algodão antes da roupa."},
-  {pergunta:"A agropecuária é considerada um dos pilares de qual aspecto da história humana?",opcoes:["Apenas o comércio internacional moderno","A fixação das pessoas em um lugar e o desenvolvimento das sociedades","Apenas as guerras","Apenas a tecnologia digital"],correta:1,explicacao:"A agropecuária foi um dos pilares que permitiu ao ser humano se fixar em um lugar e desenvolver sociedades mais complexas."}
+  {pergunta:"Qual é a maior região do Brasil em extensão?",opcoes:["Norte", "Nordeste", "Centro-Oeste", "Sudeste"],correta:0,explicacao:"A região Norte ocupa cerca de 45% do território."},
+  {pergunta:"Aproximadamente quanto do território brasileiro a região Norte ocupa?",opcoes:["Cerca de 10%", "Cerca de 45%", "Cerca de 18%", "Cerca de 80%"],correta:1,explicacao:"São cerca de 3,85 milhões de km², quase metade do país."},
+  {pergunta:"Quantos estados formam a região Norte?",opcoes:["9", "5", "7", "4"],correta:2,explicacao:"AC, AM, RR, RO, PA, AP e TO."},
+  {pergunta:"Qual destes estados NÃO é da região Norte?",opcoes:["Amapá", "Rondônia", "Maranhão", "Tocantins"],correta:2,explicacao:"O Maranhão faz parte da região Nordeste."},
+  {pergunta:"O Acre foi anexado ao Brasil em 1903 por meio do:",opcoes:["Tratado de Tordesilhas", "Plano Real", "Tratado de Petrópolis", "Tratado de Madri"],correta:2,explicacao:"O Tratado de Petrópolis incorporou o Acre, que era da Bolívia."},
+  {pergunta:"O estado do Tocantins foi criado em 1988, a partir do desmembramento de:",opcoes:["Goiás", "Pará", "Bahia", "Mato Grosso"],correta:0,explicacao:"Tocantins era o norte de Goiás."},
+  {pergunta:"Por que a exploração portuguesa do Norte só começou no século XVII?",opcoes:["Porque a região era um deserto", "Porque não havia rios", "Porque pelo Tratado de Tordesilhas a área pertencia à Espanha", "Porque os portugueses não sabiam navegar"],correta:2,explicacao:"Pelo Tratado de Tordesilhas, a maior parte da região era espanhola."},
+  {pergunta:"Quais são os dois maiores estados da região Norte?",opcoes:["Acre e Amapá", "Roraima e Rondônia", "Tocantins e Acre", "Amazonas e Pará"],correta:3,explicacao:"Amazonas e Pará são os mais extensos territorialmente."}
   ],
   'geo-topico-2': [
-  {pergunta:"O sistema extensivo de produção é marcado por:",opcoes:["Muita tecnologia e pouca área de terra","Pouca tecnologia e necessidade de uma área de terra muito grande","Não usar nenhuma terra","Produção só dentro das cidades"],correta:1,explicacao:"O sistema extensivo usa pouca máquina e pouco adubo químico, por isso precisa de uma área grande para produzir bastante."},
-  {pergunta:"O sistema intensivo de produção é marcado por:",opcoes:["Pouca tecnologia e área enorme","Não usar máquinas","Ser praticado só na cidade","Muita tecnologia, máquinas e adubos, em área menor"],correta:3,explicacao:"O sistema intensivo usa muita tecnologia, máquinas e adubos químicos, o que permite produzir muito em uma área menor."},
-  {pergunta:"No exemplo dos fazendeiros: Fernando tem 3 vacas que dão 10 litros cada. Carlos tem 1 vaca que dá 30 litros. Quem tem a vaca com maior produtividade?",opcoes:["Nenhum dos dois produz leite","Os dois têm a mesma produtividade","Carlos","Fernando"],correta:2,explicacao:"A vaca de Carlos produz 30 litros sozinha, enquanto Fernando precisa de 3 vacas para o mesmo total, então a vaca de Carlos tem maior produtividade."},
-  {pergunta:"O que foi a Revolução Verde?",opcoes:["Um período (1960-1970) em que a agricultura passou a usar muito mais máquinas, adubos e sementes melhoradas","Uma revolução que aconteceu só no Brasil","Uma lei que proibiu o uso de máquinas no campo","Um movimento para plantar só árvores"],correta:0,explicacao:"A Revolução Verde foi o período de modernização da agricultura, entre as décadas de 1960 e 1970."},
-  {pergunta:"O que é um complexo agroindustrial?",opcoes:["A ligação entre a produção agropecuária e as atividades industriais","Uma lei sobre terras","Um tipo de fazenda muito pequena","Um prédio onde só se planta"],correta:0,explicacao:"O complexo agroindustrial integra produção de insumos, produção agropecuária, transporte, processamento, armazenagem e comercialização."},
-  {pergunta:"O sistema intensivo é também chamado de:",opcoes:["Agropecuária tradicional","Agropecuária de subsistência","Agropecuária colonial","Agropecuária moderna"],correta:3,explicacao:"O sistema intensivo, com muita tecnologia, é conhecido como agropecuária moderna."},
-  {pergunta:"Qual sistema é mais comum em fazendas de família, com produção tradicional?",opcoes:["Sistema intensivo","Sistema extensivo","Nenhum dos dois","Só sistema industrial"],correta:1,explicacao:"O sistema extensivo, com pouca tecnologia, é mais comum em fazendas de família com produção tradicional."},
-  {pergunta:"O complexo agroindustrial inclui qual etapa após a produção agropecuária?",opcoes:["Nenhuma etapa após a colheita","Apenas descanso da terra","Transporte, processamento e comercialização","Apenas exportação sem processamento"],correta:2,explicacao:"Após a produção, o complexo agroindustrial envolve transporte, processamento, armazenagem e comercialização."},
-  {pergunta:"Por que o sistema intensivo produz mais em áreas menores?",opcoes:["Por causa da tecnologia, máquinas e adubos usados","Porque não usa nenhum insumo","Porque tem mais espaço disponível","Por acaso, sem explicação"],correta:0,explicacao:"A tecnologia, as máquinas e os adubos usados no sistema intensivo permitem produzir mais em áreas menores."},
-  {pergunta:"A Revolução Verde teve como consequência principal:",opcoes:["Fim da agricultura tradicional em todo o mundo","Aumento da produção agrícola mundial","Proibição de máquinas agrícolas","Diminuição da produção agrícola"],correta:1,explicacao:"A Revolução Verde aumentou bastante a produção agrícola mundial, com novas tecnologias e sementes melhoradas."}
+  {pergunta:"Qual é o clima predominante na região Norte?",opcoes:["Subtropical", "Equatorial", "Semiárido", "Temperado"],correta:1,explicacao:"O Norte é marcado pelo clima equatorial, quente e úmido."},
+  {pergunta:"Qual linha imaginária corta a região Norte?",opcoes:["Círculo Polar", "Meridiano de Greenwich", "Trópico de Capricórnio", "Linha do Equador"],correta:3,explicacao:"A Linha do Equador passa pela região."},
+  {pergunta:"O clima equatorial tem amplitude térmica:",opcoes:["Baixa", "Igual à do deserto", "Negativa", "Muito alta"],correta:0,explicacao:"As temperaturas variam pouco ao longo do ano."},
+  {pergunta:"O índice de chuvas da região Norte é superior a:",opcoes:["200 mm anuais", "2.000 mm anuais", "500 mm anuais", "50 mm anuais"],correta:1,explicacao:"Chove mais de 2.000 mm por ano."},
+  {pergunta:"O que é a friagem?",opcoes:["Uma chuva de granizo", "Uma enchente anual", "A seca dos rios", "Queda brusca de temperatura causada pela massa Polar atlântica"],correta:3,explicacao:"No inverno, a mPa pode alcançar a Amazônia e esfriar o tempo."},
+  {pergunta:"A massa Equatorial continental (mEc) é:",opcoes:["Fria e úmida, vinda do oceano", "Quente e úmida, formada sobre a Floresta Amazônica", "Quente e seca, vinda do deserto", "Fria e seca, vinda do polo"],correta:1,explicacao:"A mEc se forma sobre a floresta e absorve sua umidade."},
+  {pergunta:"Onde predomina o clima tropical semiúmido no Norte?",opcoes:["Em nenhum lugar", "Só no Acre", "Em todo o Amazonas", "No leste de Roraima e em grande parte do Tocantins"],correta:3,explicacao:"Ali há verão chuvoso e inverno seco."},
+  {pergunta:"Num climograma, a linha e as barras representam:",opcoes:["Temperatura e chuva", "Altitude e relevo", "População e área", "Rios e lagos"],correta:0,explicacao:"A linha mostra a temperatura e as barras, a precipitação."}
   ],
   'geo-topico-3': [
-  {pergunta:"No Brasil, em quais regiões o sistema extensivo é mais comum?",opcoes:["Em nenhuma região","No interior do Nordeste, na Amazônia e no Pantanal","Apenas no Sudeste","Apenas nas grandes cidades"],correta:1,explicacao:"O sistema extensivo é mais comum no interior do Nordeste, na Amazônia e no Pantanal."},
-  {pergunta:"No Brasil, em quais regiões a agropecuária moderna está mais concentrada?",opcoes:["Em nenhuma região específica","Sul, Sudeste e parte do Centro-Oeste","Apenas no Norte","Apenas no Nordeste"],correta:1,explicacao:"A agropecuária moderna está mais concentrada nas regiões Sul, Sudeste e em algumas áreas do Centro-Oeste."},
-  {pergunta:"A pecuária extensiva do Sertão Nordestino e do Pantanal é praticada há muito tempo por quem?",opcoes:["Pelos vaqueiros","Pelos pescadores","Pelos mineradores","Pelos engenheiros"],correta:0,explicacao:"Os vaqueiros desenvolveram, há séculos, habilidades para cuidar do gado nessas regiões."},
-  {pergunta:"O Brasil é um dos maiores produtores mundiais de qual grão?",opcoes:["Arroz apenas","Trigo","Soja","Centeio"],correta:2,explicacao:"O Brasil é um dos maiores produtores de soja do mundo."},
-  {pergunta:"Para que a soja brasileira é usada, principalmente?",opcoes:["Apenas combustível de carros","Apenas roupa","Apenas remédios","Ração de animais e óleo"],correta:3,explicacao:"A soja é usada para fazer ração de animais (farelo) e óleo, sendo boa parte exportada."},
-  {pergunta:"O que é agronegócio?",opcoes:["Sistema moderno de produção agrícola em grande escala, com tecnologia","Um tipo de cidade pequena","Pequena horta de quintal","Uma lei sobre terras"],correta:0,explicacao:"Agronegócio é a produção agrícola moderna, em grande escala, com tecnologia."},
-  {pergunta:"Por que o Centro-Sul do Brasil produz tanto em áreas menores?",opcoes:["Porque não exporta nada","Porque não usa nenhuma máquina","Porque tem mais tecnologia investida","Porque tem menos terra disponível apenas por acaso"],correta:2,explicacao:"Quanto mais tecnologia uma região tem, menos terra precisa para produzir muito — por isso o Centro-Sul produz tanto em áreas menores."},
-  {pergunta:"Para qual país o Brasil exporta boa parte da sua produção de soja?",opcoes:["Rússia","Austrália","Canadá","China"],correta:3,explicacao:"Boa parte da soja brasileira é vendida para a China, um dos maiores importadores do produto."},
-  {pergunta:"Quais fatores favorecem o sistema intensivo no Centro-Sul do Brasil?",opcoes:["Apenas a proximidade com o mar","Proximidade de fábricas, mais dinheiro investido e mais tecnologia","Apenas o clima quente","Nenhum fator especial"],correta:1,explicacao:"O Centro-Sul tem fábricas próximas, mais investimento e mais tecnologia, favorecendo o sistema intensivo."},
-  {pergunta:"A pecuária no Pantanal e no Sertão Nordestino é geralmente do tipo:",opcoes:["Extensiva","Intensiva","Não existe pecuária nessas regiões","Apenas industrial"],correta:0,explicacao:"A pecuária dessas regiões costuma ser extensiva, praticada há muito tempo pelos vaqueiros."}
+  {pergunta:"Qual é a maior floresta tropical do planeta?",opcoes:["Mata Atlântica", "Caatinga", "Cerrado", "Floresta Amazônica"],correta:3,explicacao:"A Floresta Amazônica é a maior floresta tropical do mundo."},
+  {pergunta:"O que é a serrapilheira?",opcoes:["Uma massa de ar", "Um tipo de rio", "Uma serra na Amazônia", "Camada de matéria orgânica (folhas, galhos, frutos) sobre o solo"],correta:3,explicacao:"A serrapilheira se forma pela queda de folhas, caules e frutos."},
+  {pergunta:"Qual é a principal função da serrapilheira?",opcoes:["Secar o solo", "Aumentar a erosão", "Reciclar nutrientes para o solo", "Bloquear a chuva"],correta:2,explicacao:"Ela devolve nutrientes ao solo e retém umidade."},
+  {pergunta:"A mata de terra firme ocupa cerca de:",opcoes:["5% da floresta", "80% da floresta", "30% da floresta", "100% da floresta"],correta:1,explicacao:"Cerca de 80% da floresta está em áreas que não alagam."},
+  {pergunta:"Qual mata fica alagada quase o ano todo, com plantas como a vitória-régia?",opcoes:["Terra firme", "Igapó", "Cerrado", "Várzea"],correta:1,explicacao:"O igapó permanece alagado."},
+  {pergunta:"Qual mata é inundada apenas nos períodos de cheia e tem solo fértil?",opcoes:["Campos de hileia", "Igapó", "Terra firme", "Várzea"],correta:3,explicacao:"As várzeas recebem sedimentos nas cheias."},
+  {pergunta:"A Floresta Amazônica é perenifólia, ou seja:",opcoes:["Fica sempre verde, sem perder todas as folhas", "Só tem cactos", "Não tem folhas", "Perde todas as folhas no inverno"],correta:0,explicacao:"Perenifólia = sempre verde."},
+  {pergunta:"O que significa \"latifoliada\"?",opcoes:["Que é baixa", "Que tem espinhos", "Que vive na água", "Que tem folhas largas"],correta:3,explicacao:"Lati = largo; foliada = folhas."},
+  {pergunta:"Os solos da Amazônia são, em geral:",opcoes:["Os mais férteis do mundo", "Pobres em nutrientes (lixiviados)", "Congelados", "Desérticos"],correta:1,explicacao:"Os nutrientes vêm principalmente da serrapilheira."},
+  {pergunta:"Quais destas árvores são típicas da mata de terra firme?",opcoes:["Pinheiro e araucária", "Coqueiro e mangue", "Castanheira, mogno e sumaúma", "Cacto e mandacaru"],correta:2,explicacao:"São árvores altas de terra firme."}
   ],
   'geo-topico-4': [
-  {pergunta:"O que é estrutura fundiária?",opcoes:["O clima do Brasil","A forma como as terras são divididas entre as pessoas","O tipo de solo","Um rio do Brasil"],correta:1,explicacao:"Estrutura fundiária é como as terras rurais são distribuídas entre as pessoas."},
-  {pergunta:"No Brasil, a estrutura fundiária é chamada de:",opcoes:["Concentrada (poucos têm muita terra, muitos têm pouca)","Pública apenas","Inexistente","Equilibrada"],correta:0,explicacao:"A estrutura fundiária brasileira é concentrada: poucas pessoas têm a maior parte das terras."},
-  {pergunta:"O que significa 'latifúndio'?",opcoes:["Uma propriedade rural pequena","Um rio","Uma cidade grande","Uma propriedade rural muito grande"],correta:3,explicacao:"Latifúndio é uma propriedade rural de grande extensão."},
-  {pergunta:"O que significa 'minifúndio'?",opcoes:["Um tipo de animal","Uma propriedade rural pequena, normalmente de família","Uma fábrica","Uma propriedade rural enorme"],correta:1,explicacao:"Minifúndio é uma propriedade rural pequena, com mão de obra geralmente familiar."},
-  {pergunta:"No período do Brasil Colônia, como as terras eram distribuídas pelos portugueses?",opcoes:["Em grandes extensões chamadas sesmarias, doadas para poucas famílias","Não havia distribuição de terras","As terras eram só do rei, sem doação","Em pedaços pequenos e iguais para cada pessoa"],correta:0,explicacao:"Portugal doava grandes extensões de terra (sesmarias) para uma elite, criando o latifúndio como base da propriedade rural."},
-  {pergunta:"O que caracteriza um latifúndio improdutivo?",opcoes:["Uma terra pequena muito produtiva","Uma fazenda só de gado","Uma terra grande que não é usada para nenhuma produção","Uma plantação de frutas"],correta:2,explicacao:"Latifúndio improdutivo é uma propriedade muito grande que não está sendo usada para produção."},
-  {pergunta:"O que é reforma agrária?",opcoes:["Construir mais fazendas grandes","Proibir o plantio no Brasil","Redistribuir terras de forma mais justa entre a população","Transformar todo o campo em cidade"],correta:2,explicacao:"Reforma agrária busca redistribuir terras, reduzindo a concentração nas mãos de poucos."},
-  {pergunta:"Qual órgão do governo brasileiro cuida da reforma agrária?",opcoes:["IBGE","Incra","FAO","ONU"],correta:1,explicacao:"O Incra (Instituto Nacional de Colonização e Reforma Agrária) é responsável pela distribuição de terras no Brasil."},
-  {pergunta:"Qual é um exemplo de problema causado pela concentração de terras no Brasil?",opcoes:["Fim da pobreza","Mais empregos para todos automaticamente","Menos produção agrícola sempre","Conflitos no campo e desigualdade social"],correta:3,explicacao:"A concentração de terras gera desigualdade social e é uma das causas de conflitos no campo."},
-  {pergunta:"Como se pode lembrar a diferença entre latifúndio e minifúndio?",opcoes:["LATIfúndio é LArgo; MINIfúndio é mininho","Minifúndio é sempre do governo","Latifúndio é sempre urbano","Os dois significam a mesma coisa"],correta:0,explicacao:"Uma forma de lembrar: LATIfúndio é LArgo e grande, MINIfúndio é mininho."}
+  {pergunta:"Qual é a maior bacia hidrográfica do mundo?",opcoes:["Bacia do Paraná", "Bacia do Nilo", "Bacia Amazônica", "Bacia do São Francisco"],correta:2,explicacao:"A Bacia Amazônica é a maior do planeta."},
+  {pergunta:"Onde nasce o Rio Amazonas?",opcoes:["No Planalto Central", "No Oceano Atlântico", "Nos Andes peruanos", "Na Serra do Mar"],correta:2,explicacao:"Ele nasce nos Andes, no Peru."},
+  {pergunta:"O Rio Amazonas recebe esse nome após o encontro de quais rios?",opcoes:["Rio Tocantins e Rio Araguaia", "Rio Xingu e Rio Tapajós", "Rio Negro e Rio Solimões", "Rio São Francisco e Rio Parnaíba"],correta:2,explicacao:"O encontro do Negro com o Solimões forma o Amazonas."},
+  {pergunta:"O que é o SAGA?",opcoes:["Uma rodovia", "Uma usina hidrelétrica", "Uma massa de ar", "O maior aquífero (reservatório subterrâneo de água) do planeta"],correta:3,explicacao:"Sistema Aquífero Grande Amazônia."},
+  {pergunta:"O que é evapotranspiração?",opcoes:["A queda de folhas", "A soma da evaporação da água com a transpiração das plantas", "O degelo dos Andes", "A erosão do solo"],correta:1,explicacao:"É a transferência de água para a atmosfera pela evaporação e pela transpiração."},
+  {pergunta:"Como se formam as chuvas convectivas na Amazônia?",opcoes:["Pela poluição das cidades", "O calor evapora a água, formam-se nuvens e chove forte no fim da tarde", "Pelo encontro com o gelo polar", "Pela neve dos Andes"],correta:1,explicacao:"Calor + evapotranspiração = nuvens carregadas = chuva rápida e intensa."},
+  {pergunta:"O que são os \"rios voadores\"?",opcoes:["Massas de vapor de água que levam umidade da Amazônia para outras regiões", "Aviões que transportam água", "Rios subterrâneos", "Rios que correm sobre pontes"],correta:0,explicacao:"Eles levam chuva ao Centro-Oeste, Sudeste e Sul."},
+  {pergunta:"Para que servem principalmente os rios de planície da Amazônia?",opcoes:["Esqui", "Navegação e transporte", "Nada", "Produção de sal"],correta:1,explicacao:"Os rios são as principais vias de transporte."},
+  {pergunta:"Qual é o ponto mais alto do Brasil, no Amazonas?",opcoes:["Pico da Neblina", "Pão de Açúcar", "Monte Roraima", "Pico do Cabugi"],correta:0,explicacao:"O Pico da Neblina tem quase 3.000 m."},
+  {pergunta:"Quais fatores explicam a grande seca de 2024 na Amazônia?",opcoes:["Excesso de chuva", "Terremotos", "El Niño e desmatamento", "Neve nos Andes"],correta:2,explicacao:"O El Niño aqueceu o Pacífico e o desmatamento agravou a seca."},
+  {pergunta:"Como a Floresta Amazônica ajuda a reduzir o efeito estufa?",opcoes:["Absorvendo CO₂ na fotossíntese (sequestro de carbono)", "Produzindo petróleo", "Esfriando os oceanos", "Aumentando a poluição"],correta:0,explicacao:"As plantas absorvem dióxido de carbono e o armazenam."}
   ],
   'geo-topico-5': [
-  {pergunta:"O que é extrativismo?",opcoes:["Tirar recursos direto da natureza, sem plantar e sem criar","Plantar alimentos em fazendas","Criar gado","Construir cidades"],correta:0,explicacao:"Extrativismo é retirar recursos que a natureza já oferece, sem cultivo nem criação."},
-  {pergunta:"Quais são os três tipos de extrativismo?",opcoes:["Vegetal, animal e mineral","Urbano, rural e industrial","Norte, sul e centro","Grande, médio e pequeno"],correta:0,explicacao:"Os três tipos de extrativismo são: vegetal, animal e mineral."},
-  {pergunta:"Qual região do Brasil é muito conhecida pelo extrativismo, por ter grande biodiversidade?",opcoes:["Sul","Litoral de São Paulo","Amazônia","Centro de Brasília"],correta:2,explicacao:"A Amazônia é muito conhecida pelo extrativismo, por ter a maior biodiversidade do planeta."},
-  {pergunta:"Quem faz a coleta do babaçu, uma palmeira do Maranhão e Piauí?",opcoes:["Máquinas automáticas","Apenas os homens da região","Empresas estrangeiras","As quebradeiras de coco babaçu"],correta:3,explicacao:"As quebradeiras de coco babaçu, muitas mulheres do Maranhão e Piauí, fazem a coleta do babaçu."},
-  {pergunta:"O que é extrativismo vegetal?",opcoes:["Pesca e caça","Extração de minérios","Coleta de produtos de plantas, como madeira e látex","Criação de animais"],correta:2,explicacao:"O extrativismo vegetal envolve a coleta de produtos de plantas, como látex (borracha) e madeira."},
-  {pergunta:"O extrativismo mineral envolve a extração de quais recursos?",opcoes:["Madeira e látex","Ferro e ouro","Peixes e crustáceos","Frutas e sementes"],correta:1,explicacao:"O extrativismo mineral envolve a extração de minérios, como ferro e ouro."},
-  {pergunta:"O que é extrativismo animal?",opcoes:["Plantio de árvores","Extração de minérios","Criação de gado em fazendas","Pesca, caça e coleta de caranguejo"],correta:3,explicacao:"O extrativismo animal inclui pesca, caça e coleta de animais como o caranguejo, direto da natureza."},
-  {pergunta:"O que significa extrativismo sustentável?",opcoes:["Só extrair minérios","Tirar da natureza sem destruir, para que ela continue dando recursos","Não tirar nada da natureza","Tirar o máximo possível rapidamente, sem se importar com o futuro"],correta:1,explicacao:"Extrativismo sustentável significa retirar recursos sem destruir a natureza, permitindo que ela continue produzindo por muito tempo."},
-  {pergunta:"Qual é uma vantagem do extrativismo sustentável para as comunidades locais?",opcoes:["Gera renda preservando a floresta","Obriga as pessoas a saírem da região","Destrói toda a vegetação rapidamente","Não gera nenhuma renda"],correta:0,explicacao:"O extrativismo sustentável permite que comunidades obtenham renda da floresta sem destruí-la."},
-  {pergunta:"O que pode acontecer se o extrativismo for feito sem controle ambiental?",opcoes:["Não tem nenhum efeito","Pode causar esgotamento dos recursos naturais","Sempre melhora o meio ambiente","Aumenta automaticamente a biodiversidade"],correta:1,explicacao:"Sem controle, o extrativismo pode esgotar os recursos naturais, prejudicando o meio ambiente a longo prazo."}
+  {pergunta:"Qual região brasileira tem a maior proporção de população indígena?",opcoes:["Norte", "Centro-Oeste", "Sudeste", "Sul"],correta:0,explicacao:"O Norte abriga a maior parcela da população indígena."},
+  {pergunta:"O que eram as \"drogas do sertão\"?",opcoes:["Remédios proibidos", "Produtos da floresta como cravo, cacau, guaraná e baunilha", "Gado", "Minérios de ouro"],correta:1,explicacao:"Eram especiarias e produtos extraídos da floresta."},
+  {pergunta:"O ciclo da borracha atraiu principalmente migrantes de qual região?",opcoes:["Europa", "Centro-Oeste", "Nordeste", "Sul"],correta:2,explicacao:"Muitos nordestinos foram trabalhar nos seringais."},
+  {pergunta:"Quais cidades cresceram com a riqueza da borracha?",opcoes:["São Paulo e Rio", "Belém e Manaus", "Curitiba e Porto Alegre", "Recife e Salvador"],correta:1,explicacao:"A borracha urbanizou Belém e Manaus."},
+  {pergunta:"Quem criou a Amazônia Legal e quando?",opcoes:["Os holandeses, em 1630", "Cabral, em 1500", "Os governos militares, nas décadas de 1960 e 1970", "Dom Pedro II, em 1850"],correta:2,explicacao:"Foi criada como região de planejamento no período militar."},
+  {pergunta:"A Amazônia Legal inclui:",opcoes:["Todo o Nordeste", "Só o Amazonas", "Toda a região Norte, Mato Grosso e parte do Maranhão", "Bolívia e Peru"],correta:2,explicacao:"É uma região de planejamento maior que a região Norte."},
+  {pergunta:"A Amazônia Internacional inclui países como:",opcoes:["México e EUA", "Peru, Colômbia, Venezuela e Bolívia", "Portugal e Espanha", "Argentina e Chile"],correta:1,explicacao:"A floresta se estende por outros países sul-americanos."},
+  {pergunta:"A Zona Franca de Manaus (1967) atraiu indústrias por meio de:",opcoes:["Fechamento dos portos", "Aumento de impostos", "Redução de impostos (incentivos fiscais)", "Proibição de fábricas"],correta:2,explicacao:"Os incentivos fiscais atraíram empresas, principalmente de eletrônicos."},
+  {pergunta:"Qual destas é uma rodovia criada para integrar o Norte?",opcoes:["Transamazônica (BR-230)", "Linha Vermelha", "Via Dutra", "Rodovia dos Bandeirantes"],correta:0,explicacao:"A Transamazônica foi construída no período militar."},
+  {pergunta:"Qual estado do Norte é o mais populoso?",opcoes:["Pará", "Amapá", "Acre", "Roraima"],correta:0,explicacao:"O Pará tem mais de 8 milhões de habitantes."},
+  {pergunta:"Qual estado teve a maior taxa de crescimento populacional entre 2000 e 2022?",opcoes:["Tocantins", "Roraima", "Amazonas", "Pará"],correta:1,explicacao:"Roraima cresceu cerca de 96%."},
+  {pergunta:"Como é a densidade demográfica da região Norte?",opcoes:["Igual à do Sudeste", "Maior que a de São Paulo", "A menor do Brasil", "A maior do Brasil"],correta:2,explicacao:"Cerca de 4,5 habitantes por km²."}
   ],
   'geo-topico-6': [
-  {pergunta:"O que é urbanização?",opcoes:["Um tipo de agricultura","Uma lei sobre terras","Quando as cidades crescem e mais gente passa a morar nelas","Quando o campo cresce e as cidades diminuem"],correta:2,explicacao:"Urbanização é o processo de crescimento das cidades e aumento da população urbana."},
-  {pergunta:"O que é êxodo rural?",opcoes:["Pessoas saindo das cidades para o campo","Um tipo de festa rural","Uma lei sobre agricultura","Pessoas saindo do campo para morar nas cidades"],correta:3,explicacao:"Êxodo rural é o movimento de pessoas saindo do campo para morar nas cidades."},
-  {pergunta:"A partir de qual década a maioria dos brasileiros passou a morar em áreas urbanas?",opcoes:["2000","1970","1930","1500"],correta:1,explicacao:"A partir da década de 1970, a maioria dos brasileiros passou a morar nas cidades, em vez do campo."},
-  {pergunta:"O que é rede urbana?",opcoes:["Um tipo de rio","Cidades grandes, médias e pequenas, conectadas entre si","Apenas as ruas de uma cidade","Um tipo de internet"],correta:1,explicacao:"Rede urbana é a organização de cidades de diferentes tamanhos, conectadas por estradas e comunicação."},
-  {pergunta:"Como se chamam as cidades muito grandes e importantes, como São Paulo?",opcoes:["Aldeias","Vilas","Povoados","Metrópoles"],correta:3,explicacao:"Metrópoles são cidades muito grandes e importantes, como São Paulo e Rio de Janeiro."},
-  {pergunta:"O que é conurbação?",opcoes:["Quando duas cidades crescem tanto que se juntam, sem espaço vazio entre elas","Uma lei sobre terras urbanas","Um tipo de rio","Um tipo de transporte"],correta:0,explicacao:"Conurbação é quando duas cidades crescem e se unem fisicamente, sem espaço vazio entre elas."},
-  {pergunta:"O que é região metropolitana?",opcoes:["Uma lei sobre o campo","Quando cidades vizinhas passam a depender e trabalhar junto com uma metrópole","Um tipo de fazenda","Um tipo de extrativismo"],correta:1,explicacao:"Região metropolitana é quando cidades vizinhas de uma metrópole passam a depender e trabalhar junto com ela."},
-  {pergunta:"Quais são exemplos comuns de problemas urbanos no Brasil?",opcoes:["Excesso de áreas verdes","Falta de carros","Trânsito, falta de moradia e enchentes","Excesso de espaço vazio"],correta:2,explicacao:"Problemas urbanos comuns no Brasil incluem trânsito, falta de moradia (favelas) e enchentes."},
-  {pergunta:"Qual tipo de transporte é o mais usado no Brasil?",opcoes:["Rodoviário","Fluvial apenas","Aéreo apenas","Ferroviário"],correta:0,explicacao:"O transporte rodoviário (por estradas) é o mais usado no Brasil."},
-  {pergunta:"Por que o Brasil passou de país rural para país urbano tão rapidamente?",opcoes:["Por causa da industrialização e do êxodo rural a partir de 1930 e 1960","Não houve mudança","Porque o campo desapareceu","Porque as cidades sempre foram maiores que o campo"],correta:0,explicacao:"A industrialização a partir de 1930, e a mecanização do campo a partir de 1960, impulsionaram o êxodo rural e a urbanização rápida do Brasil."}
+  {pergunta:"Onde fica o maior polo industrial do Norte?",opcoes:["Em Rio Branco", "Na Zona Franca de Manaus", "Em Palmas", "Em Macapá"],correta:1,explicacao:"A Zona Franca de Manaus concentra a indústria."},
+  {pergunta:"A Serra dos Carajás, no Pará, é famosa pela extração de:",opcoes:["Petróleo", "Minério de ferro", "Carvão vegetal", "Sal"],correta:1,explicacao:"Carajás tem uma das maiores reservas de ferro do mundo."},
+  {pergunta:"O que são atividades produtivas sustentáveis?",opcoes:["Atividades que geram renda conservando o meio ambiente", "Atividades que só desmatam", "A mineração ilegal", "Queimadas para pasto"],correta:0,explicacao:"Elas conciliam economia, conservação e inclusão social."},
+  {pergunta:"Qual é um exemplo de atividade sustentável na Amazônia?",opcoes:["Queimada criminosa", "Desmatamento para soja", "Garimpo ilegal", "Coleta de castanha-do-pará e açaí"],correta:3,explicacao:"São produtos extraídos sem derrubar a floresta."},
+  {pergunta:"Quem disse que \"a floresta precisa ter valor em pé\"?",opcoes:["Chico Buarque", "Pedro Álvares Cabral", "Bertha Becker", "Maurício de Nassau"],correta:2,explicacao:"A geógrafa Bertha Becker defendeu essa ideia."},
+  {pergunta:"O que Bertha Becker chamou de \"floresta urbanizada\"?",opcoes:["Uma floresta sem árvores", "A Amazônia com grande parte da população vivendo em cidades", "Uma floresta plantada dentro da cidade", "Um parque de São Paulo"],correta:1,explicacao:"Mesmo cercada de floresta, a maioria vive em cidades."},
+  {pergunta:"Qual é uma consequência das queimadas na Amazônia?",opcoes:["Solo mais fértil para sempre", "Aumento das chuvas", "Liberação de CO₂ e perda de biodiversidade", "Mais espécies"],correta:2,explicacao:"Queimadas agravam o aquecimento global e destroem espécies."},
+  {pergunta:"Como se monitoram as queimadas na Amazônia?",opcoes:["Não há monitoramento", "Por cartas", "Só com binóculos", "Por imagens de satélite"],correta:3,explicacao:"Satélites ajudam a controlar as queimadas."}
   ],
   'geo-topico-7': [
-  {pergunta:"O que é indústria?",opcoes:["A atividade de extrair recursos da natureza","A atividade de transformar matéria-prima em produtos","A atividade de vender produtos ao consumidor final apenas","A atividade de plantar alimentos"],correta:1,explicacao:"Indústria é a atividade de transformar matéria-prima em produtos, fazendo parte do setor secundário."},
-  {pergunta:"A indústria faz parte de qual setor da economia?",opcoes:["Setor secundário","Setor primário","Nenhum setor","Setor terciário"],correta:0,explicacao:"A indústria faz parte do setor secundário, que transforma matéria-prima em produtos."},
-  {pergunta:"O que produz a indústria de bens de capital?",opcoes:["Produtos que vão direto para o consumidor final","Máquinas e equipamentos que outras indústrias vão usar para produzir","Apenas alimentos","Apenas matéria-prima bruta"],correta:1,explicacao:"A indústria de bens de capital produz máquinas e equipamentos usados por outras indústrias, como tratores."},
-  {pergunta:"O que são bens de consumo duráveis?",opcoes:["Máquinas para outras fábricas","Produtos que duram mais tempo, como geladeiras e carros","Matéria-prima bruta","Produtos que se gastam rápido, como alimentos"],correta:1,explicacao:"Bens de consumo duráveis são produtos que duram mais tempo, como geladeiras e carros."},
-  {pergunta:"O que são bens de consumo não duráveis?",opcoes:["Máquinas industriais","Matéria-prima bruta","Produtos que duram muitos anos","Produtos que se gastam rápido, como alimentos e roupas"],correta:3,explicacao:"Bens de consumo não duráveis se gastam rápido, como alimentos e roupas."},
-  {pergunta:"O que foi a substituição de importações no Brasil?",opcoes:["Proibir a exportação de produtos brasileiros","Parar de fabricar qualquer produto no Brasil","Passar a fabricar no Brasil produtos que antes eram comprados de fora","Aumentar a compra de produtos estrangeiros"],correta:2,explicacao:"A substituição de importações foi o processo de passar a fabricar no Brasil produtos que antes eram importados."},
-  {pergunta:"Durante qual governo a industrialização brasileira ganhou mais força, a partir de 1930?",opcoes:["Tomé de Sousa","Dom Pedro II","Dom João VI","Getúlio Vargas"],correta:3,explicacao:"A industrialização brasileira ganhou força principalmente durante o governo de Getúlio Vargas."},
-  {pergunta:"Em qual região a indústria brasileira se concentrou primeiro?",opcoes:["Sudeste","Nordeste","Norte","Centro-Oeste"],correta:0,explicacao:"A indústria brasileira se concentrou primeiro no Sudeste, principalmente em São Paulo."},
-  {pergunta:"O que é desconcentração industrial?",opcoes:["A concentração ainda maior no Sudeste","Um tipo de imposto","O processo de indústrias se espalharem para outras regiões do país","O fechamento total das indústrias"],correta:2,explicacao:"Desconcentração industrial é quando as indústrias passam a se instalar em outras regiões, além do Sudeste."},
-  {pergunta:"Por que as redes de transporte e comunicação são importantes para a indústria?",opcoes:["Ajudam a transportar matéria-prima e produtos, e conectam fábricas e consumidores","Servem apenas para o turismo","Não têm nenhuma importância para a indústria","Só são usadas pelo governo"],correta:0,explicacao:"As redes de transporte e comunicação são essenciais para levar matéria-prima às fábricas e produtos aos consumidores."}
+  {pergunta:"Quantos estados formam o Nordeste?",opcoes:["9", "7", "5", "4"],correta:0,explicacao:"MA, PI, CE, RN, PB, PE, AL, SE e BA."},
+  {pergunta:"O Nordeste é a segunda região mais:",opcoes:["Populosa", "Fria", "Extensa", "Industrializada"],correta:0,explicacao:"Tem cerca de 54,6 milhões de habitantes, atrás só do Sudeste."},
+  {pergunta:"Quais são as 4 sub-regiões do Nordeste?",opcoes:["Amazônia, Cerrado, Caatinga e Pampa", "Norte, Sul, Leste e Oeste", "Litoral, Serra, Pantanal e Pampa", "Zona da Mata, Agreste, Sertão e Meio-Norte"],correta:3,explicacao:"São as quatro sub-regiões estudadas."},
+  {pergunta:"Qual foi a primeira atividade econômica explorada no Nordeste, no século XVI?",opcoes:["Extração do pau-brasil", "Turismo", "Petróleo", "Soja"],correta:0,explicacao:"Os portugueses exploraram primeiro o pau-brasil."},
+  {pergunta:"Qual atividade foi responsável pela interiorização do Nordeste no século XVII?",opcoes:["Indústria", "Cultivo de cana no litoral", "Fruticultura irrigada", "Pecuária extensiva"],correta:3,explicacao:"O gado avançou pelo Vale do São Francisco."},
+  {pergunta:"Por que a maior parte da população nordestina vive no litoral?",opcoes:["Porque não há praias", "Colonização, industrialização e turismo no litoral, e seca no interior", "Porque é proibido morar no interior", "Porque no litoral neva"],correta:1,explicacao:"A ocupação começou no litoral, onde estão as indústrias e o turismo."},
+  {pergunta:"Quem administrou o Nordeste holandês a partir de 1630?",opcoes:["Tiradentes", "Maurício de Nassau", "Zumbi", "Dom Pedro I"],correta:1,explicacao:"Nassau governou a colônia holandesa."},
+  {pergunta:"O cultivo de cana-de-açúcar no litoral usava o sistema de:",opcoes:["Cooperativas modernas", "Agricultura mecanizada", "Plantation, com mão de obra escravizada", "Pequenas propriedades familiares"],correta:2,explicacao:"Latifúndio, monocultura, escravizados e exportação."}
+  ],
+  'geo-topico-8': [
+  {pergunta:"Por que os nordestinos migraram para o Sudeste a partir de 1930?",opcoes:["Para trabalhar na borracha", "Para construir Brasília", "Industrialização de São Paulo, seca e falta de emprego no Nordeste", "Para fugir do frio"],correta:2,explicacao:"As fábricas de SP atraíram trabalhadores."},
+  {pergunta:"A migração para o Centro-Oeste a partir de 1950 ocorreu principalmente pela:",opcoes:["Construção de Brasília", "Invasão holandesa", "Descoberta de petróleo", "Seca no Centro-Oeste"],correta:0,explicacao:"Muitos nordestinos trabalharam na construção da capital."},
+  {pergunta:"O que é migração de retorno?",opcoes:["Quando migrantes voltam para sua região de origem", "Uma viagem de férias", "Ir do campo para a cidade só uma vez", "Migração para outro país"],correta:0,explicacao:"A partir de 1990, muitos voltaram para o Nordeste."},
+  {pergunta:"O que é \"guerra fiscal\"?",opcoes:["Disputa entre estados oferecendo isenção de impostos para atrair indústrias", "Uma guerra militar", "Um imposto sobre guerras", "Uma briga entre bancos"],correta:0,explicacao:"Os estados competem com incentivos fiscais."},
+  {pergunta:"O que a pirâmide etária do Nordeste mostra hoje?",opcoes:["Só há crianças", "A natalidade está aumentando muito", "A população está envelhecendo", "Não há idosos"],correta:2,explicacao:"A base estreita e o topo largo indicam envelhecimento."},
+  {pergunta:"Qual região concentra quase metade da pobreza do Brasil?",opcoes:["Sul", "Sudeste", "Centro-Oeste", "Nordeste"],correta:3,explicacao:"Segundo o IBGE, cerca de 47,9%."},
+  {pergunta:"Para o Norte, os nordestinos migraram a partir de 1950 por causa:",opcoes:["Da seca no Norte", "Do turismo", "Da construção de Brasília", "Da política de colonização da Amazônia"],correta:3,explicacao:"O governo incentivou a ocupação da Amazônia."}
+  ],
+  'geo-topico-9': [
+  {pergunta:"Qual é a função do Planalto da Borborema no clima do Nordeste?",opcoes:["Produz neve", "Não influencia o clima", "Aumenta as chuvas no Sertão", "Impede a entrada da umidade do oceano no interior"],correta:3,explicacao:"A Borborema barra a umidade, deixando o interior seco."},
+  {pergunta:"O que é a depressão sertaneja?",opcoes:["Uma montanha muito alta", "Uma praia", "Área mais baixa no interior, onde fica o Sertão", "Um problema de saúde"],correta:2,explicacao:"É a área rebaixada e seca do interior nordestino."},
+  {pergunta:"O que é um rio intermitente?",opcoes:["Um rio subterrâneo", "Um rio congelado", "Um rio que seca em alguns períodos do ano", "Um rio com água o ano todo"],correta:2,explicacao:"Intermitente = temporário."},
+  {pergunta:"O que é um rio perene?",opcoes:["Um rio artificial", "Um rio que seca na estiagem", "Um rio salgado", "Um rio que tem água o ano todo"],correta:3,explicacao:"Perene = permanente."},
+  {pergunta:"Qual é o principal rio perene do Nordeste?",opcoes:["Rio Amazonas", "Rio Tietê", "Rio São Francisco", "Rio Paraná"],correta:2,explicacao:"O \"Velho Chico\" atravessa o Sertão."},
+  {pergunta:"Qual o apelido do Rio São Francisco?",opcoes:["Rio Mar", "Rio Doce", "Rio das Amazonas", "Velho Chico"],correta:3,explicacao:"É chamado de Velho Chico."},
+  {pergunta:"Para que é usado o Rio São Francisco?",opcoes:["Só para turismo", "Não é usado", "Apenas pesca esportiva", "Navegação, irrigação, abastecimento e hidrelétricas"],correta:3,explicacao:"É essencial para o Sertão."},
+  {pergunta:"Quanto da água doce do Brasil o Nordeste tem?",opcoes:["Cerca de 70%", "Cerca de 90%", "Cerca de 3%", "Cerca de 50%"],correta:2,explicacao:"Por isso a água é tão valiosa na região."},
+  {pergunta:"O Pico do Cabugi (RN) é um exemplo de:",opcoes:["Floresta", "Praia", "Vulcão extinto", "Rio intermitente"],correta:2,explicacao:"O Nordeste teve vulcões há milhões de anos."},
+  {pergunta:"Os escudos cristalinos são formados por:",opcoes:["Sedimentos recentes", "Gelo", "Areia da praia", "Rochas muito antigas"],correta:3,explicacao:"São estruturas geológicas antigas, como a Borborema."}
+  ],
+  'geo-topico-10': [
+  {pergunta:"Qual é o clima do Sertão nordestino?",opcoes:["Subtropical", "Equatorial", "Tropical úmido", "Semiárido"],correta:3,explicacao:"Chuvas escassas e irregulares, temperaturas altas."},
+  {pergunta:"Qual é o clima do litoral leste do Nordeste?",opcoes:["Tropical úmido", "Temperado", "Polar", "Semiárido"],correta:0,explicacao:"A umidade do oceano traz chuvas ao litoral."},
+  {pergunta:"Quantos tipos de clima há no Nordeste?",opcoes:["4", "10", "1", "2"],correta:0,explicacao:"Semiárido, tropical úmido, tropical semiúmido e equatorial."},
+  {pergunta:"Qual é a vegetação típica do semiárido?",opcoes:["Mata de Araucárias", "Pampa", "Caatinga", "Floresta Amazônica"],correta:2,explicacao:"A Caatinga é adaptada à seca."},
+  {pergunta:"O que significa dizer que a Caatinga é xerófila?",opcoes:["Que só cresce na neve", "Que é adaptada à falta de água", "Que tem folhas enormes", "Que vive dentro da água"],correta:1,explicacao:"Plantas com espinhos, folhas pequenas e raízes profundas."},
+  {pergunta:"A Mata dos Cocais é uma vegetação de transição entre:",opcoes:["Mangue e Restinga", "Caatinga e Floresta Amazônica", "Cerrado e Pantanal", "Mata Atlântica e Pampa"],correta:1,explicacao:"Fica no Meio-Norte."},
+  {pergunta:"Quais palmeiras são típicas da Mata dos Cocais?",opcoes:["Babaçu e carnaúba", "Coqueiro e dendezeiro só", "Mandacaru e xique-xique", "Pinheiro e araucária"],correta:0,explicacao:"Babaçu e carnaúba são muito usados pela indústria."},
+  {pergunta:"Onde há clima equatorial no Nordeste?",opcoes:["Em Sergipe", "No Sertão da Paraíba", "No litoral de Pernambuco", "No oeste do Maranhão"],correta:3,explicacao:"É a área mais próxima da Amazônia."},
+  {pergunta:"Qual vegetação foi muito devastada pelo cultivo da cana no litoral?",opcoes:["Mata Atlântica", "Floresta Amazônica", "Caatinga", "Mata dos Cocais"],correta:0,explicacao:"A Mata Atlântica deu lugar aos canaviais."},
+  {pergunta:"O clima tropical semiúmido apresenta:",opcoes:["Neve no inverno", "Seca o ano inteiro", "Chuva o ano todo, sem seca", "Uma estação chuvosa e uma estação seca"],correta:3,explicacao:"Cerca de 7 a 8 meses de chuva e 4 a 5 de seca."},
+  {pergunta:"Qual fenômeno do Oceano Pacífico costuma agravar a seca no Sertão?",opcoes:["Rios voadores", "Friagem", "El Niño", "Maré alta"],correta:2,explicacao:"O El Niño reduz as chuvas no semiárido."}
+  ],
+  'geo-topico-11': [
+  {pergunta:"O que é regionalizar?",opcoes:["Criar um país", "Dividir um território em regiões com características semelhantes", "Construir uma rodovia", "Medir a chuva"],correta:1,explicacao:"Agrupa áreas por critérios naturais, sociais, econômicos etc."},
+  {pergunta:"Por que a Zona da Mata tem esse nome?",opcoes:["Porque tem muitos cactos", "Pela antiga presença da Mata Atlântica", "Porque é um deserto", "Por causa da Floresta Amazônica"],correta:1,explicacao:"A região era coberta pela Mata Atlântica."},
+  {pergunta:"Qual é a sub-região mais populosa e urbanizada do Nordeste?",opcoes:["Sertão", "Zona da Mata", "Meio-Norte", "Agreste"],correta:1,explicacao:"Ali estão as capitais e as indústrias."},
+  {pergunta:"A Zona da Mata Açucareira se caracteriza por:",opcoes:["Extrativismo de babaçu", "Plantações de soja mecanizada", "Grandes propriedades monocultoras de cana-de-açúcar", "Criação de camelos"],correta:2,explicacao:"Latifúndios de cana, herança colonial."},
+  {pergunta:"Onde fica a Zona do Cacau?",opcoes:["No Maranhão", "No Piauí", "No sul da Bahia (Ilhéus e Itabuna)", "No Ceará"],correta:2,explicacao:"O cacau é cultivado no sul baiano."},
+  {pergunta:"O Recôncavo Baiano se destaca pela:",opcoes:["Produção de petróleo e polo petroquímico", "Produção de sisal", "Plantação de maçã", "Extração de babaçu"],correta:0,explicacao:"O polo de Camaçari é petroquímico."},
+  {pergunta:"O Agreste é uma área de transição entre:",opcoes:["Sertão e Meio-Norte", "Litoral e oceano", "Amazônia e Pantanal", "Zona da Mata e Sertão"],correta:3,explicacao:"Por isso é chamado de ecótono."},
+  {pergunta:"O que é um ecótono?",opcoes:["Área de transição entre dois biomas", "Uma cidade grande", "Um tipo de vulcão", "Um rio perene"],correta:0,explicacao:"No Agreste, encontram-se Mata Atlântica e Caatinga."},
+  {pergunta:"Qual produto do Agreste é usado para fazer chapéus, bolsas e cordas?",opcoes:["Petróleo", "Sisal", "Cacau", "Babaçu"],correta:1,explicacao:"O sisal é uma fibra vegetal."},
+  {pergunta:"Qual é a principal atividade econômica do Agreste?",opcoes:["Extração de petróleo", "Mineração de ferro", "Agropecuária (gado, frutas e sisal)", "Indústria automobilística"],correta:2,explicacao:"A pecuária extensiva e a fruticultura se destacam."},
+  {pergunta:"Por que as indústrias nordestinas ficam perto do litoral?",opcoes:["Porque no litoral não chove", "Por causa da neve", "Porque é proibido no interior", "Pela proximidade dos portos, que facilita a exportação"],correta:3,explicacao:"Os portos facilitam o transporte dos produtos."}
+  ],
+  'geo-topico-12': [
+  {pergunta:"Qual é o clima do Sertão?",opcoes:["Semiárido", "Temperado", "Tropical úmido", "Equatorial"],correta:0,explicacao:"Quente e com chuvas escassas e irregulares."},
+  {pergunta:"O Semiárido brasileiro tem chuva anual inferior a:",opcoes:["3.000 mm", "5.000 mm", "2.000 mm", "800 mm"],correta:3,explicacao:"Por isso é tão seco."},
+  {pergunta:"Como era chamada antigamente a área do semiárido?",opcoes:["Zona Franca", "Recôncavo", "Polígono das secas", "Amazônia Legal"],correta:2,explicacao:"Hoje se chama Semiárido brasileiro."},
+  {pergunta:"Qual é a principal atividade econômica tradicional do Sertão?",opcoes:["Pecuária extensiva e agricultura de subsistência", "Indústria petroquímica", "Extração de cacau", "Turismo de neve"],correta:0,explicacao:"Gado solto e plantações para o próprio sustento."},
+  {pergunta:"Onde se destaca a fruticultura irrigada no Sertão?",opcoes:["Em Fernando de Noronha", "Em Manaus", "Em Ilhéus", "No Vale do São Francisco (Petrolina e Juazeiro)"],correta:3,explicacao:"A irrigação com água do São Francisco permite produzir frutas."},
+  {pergunta:"Qual é o objetivo da transposição do Rio São Francisco?",opcoes:["Secar o rio", "Construir uma praia", "Levar água para as áreas mais secas do Nordeste", "Mudar o rio para o Sul"],correta:2,explicacao:"Leva água ao semiárido."},
+  {pergunta:"Qual destas é uma forma de conviver com a seca?",opcoes:["Desmatar a Caatinga", "Construção de cisternas e açudes", "Proibir a irrigação", "Fazer queimadas"],correta:1,explicacao:"Armazenar a água da chuva ajuda na estiagem."},
+  {pergunta:"O que é desertificação?",opcoes:["O aumento da chuva", "A degradação do solo e da vegetação, que fica parecida com um deserto", "A formação de rios", "A criação de um deserto artificial para turismo"],correta:1,explicacao:"Causada pelo uso inadequado do solo e pelo clima."},
+  {pergunta:"O Meio-Norte se estende do:",opcoes:["Maranhão ao oeste do Piauí", "Amazonas ao Pará", "Rio Grande do Norte à Bahia", "Ceará a Pernambuco"],correta:0,explicacao:"É a transição entre Amazônia e Sertão."},
+  {pergunta:"Qual é a vegetação típica do Meio-Norte?",opcoes:["Mata de Araucárias", "Pampa", "Mata dos Cocais", "Caatinga"],correta:2,explicacao:"Tem as palmeiras babaçu e carnaúba."},
+  {pergunta:"Qual porto do Meio-Norte é importante para a exportação?",opcoes:["Porto de Santos", "Porto de Paranaguá", "Porto de Itaqui (São Luís)", "Porto de Manaus"],correta:2,explicacao:"É ligado a rodovias e ferrovias."},
+  {pergunta:"A seca no Sertão é:",opcoes:["Algo que nunca acontece", "Causada só pelos turistas", "Causada pela neve", "Um fenômeno natural causado pela falta de chuva"],correta:3,explicacao:"É natural, mas seus efeitos podem ser reduzidos com políticas públicas."}
   ]
 };
 window.PRATICA_HISTORIA = {
