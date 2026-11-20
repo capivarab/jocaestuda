@@ -16,6 +16,8 @@ small{display:block;color:#625a51;margin:12px 0}a{color:#275a86}
 <section>
 <video id="video" controls playsinline preload="auto" aria-label="Teste de vídeo com figuras em movimento" src="video/teste_controle_12s.mp4"></video>
 <button id="iniciar">▶ Reproduzir e verificar automaticamente</button>
+<button id="memoria" style="background:#275a86">🔧 Baixar completo e reproduzir da memória</button>
+<a id="baixar-memoria" hidden download="teste_controle_12s_verificado.mp4" style="font-weight:bold;color:#275a86">Baixar MP4 recebido integralmente</a>
 <p id="resultado" aria-live="polite">Aguardando seu clique.</p>
 <small>O teste observa o vídeo durante 8 segundos. Se não funcionar, copie o resultado exibido acima.</small>
 <p><a href="video/teste_controle_12s.mp4" download>Baixar este vídeo de 12 segundos para testar no QuickTime</a></p>
@@ -27,6 +29,10 @@ small{display:block;color:#625a51;margin:12px 0}a{color:#275a86}
 const v=document.getElementById('video');
 const output=document.getElementById('resultado');
 const button=document.getElementById('iniciar');
+const memoryButton=document.getElementById('memoria');
+const memoryLink=document.getElementById('baixar-memoria');
+let memoryObjectUrl=null;
+
 let t=null,steps=0,start=0,playFailure='';
 let headers='Verificando servidor...';
 fetch('video/teste_controle_12s.mp4',{method:'HEAD',cache:'no-store'})
@@ -43,6 +49,56 @@ function status(prefix){
  '\nServidor: '+headers+(playFailure?'\nPlay: '+playFailure:'');
 }
 v.addEventListener('error',()=>{output.textContent=status('Não foi possível reproduzir.');});
+
+memoryButton.addEventListener('click',async function(){
+ if(t){clearInterval(t);t=null;}
+ memoryButton.disabled=true;
+ let downloadedBytes=0, format='desconhecido', digest='indisponível';
+ try{
+  output.textContent='Baixando arquivo completo para verificar os bytes...';
+  const res=await fetch('video/teste_controle_12s.mp4?download='+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw new Error('Resposta HTTP '+res.status);
+  const buf=await res.arrayBuffer();
+  downloadedBytes=buf.byteLength;
+  const bytes=new Uint8Array(buf);
+  const head=new TextDecoder('ascii').decode(bytes.subarray(4,8));
+  format=head==='ftyp'?'MP4 válido no cabeçalho (ftyp)':'Cabeçalho não corresponde a MP4 ('+head+')';
+  if(!res.headers.get('content-length') || Number(res.headers.get('content-length'))===downloadedBytes){
+   if(window.crypto && crypto.subtle){
+    const sha=new Uint8Array(await crypto.subtle.digest('SHA-256',buf));
+    digest=Array.from(sha).map(x=>x.toString(16).padStart(2,'0')).join('');
+   }
+  }
+  if(memoryObjectUrl)URL.revokeObjectURL(memoryObjectUrl);
+  memoryObjectUrl=URL.createObjectURL(new Blob([buf],{type:'video/mp4'}));
+  memoryLink.href=memoryObjectUrl;
+  memoryLink.hidden=false;
+  output.textContent='Recebidos '+downloadedBytes+' bytes; '+format+
+    '\nSHA-256: '+digest+'\nAbrindo vídeo diretamente da memória...';
+  v.pause();
+  v.src=memoryObjectUrl;
+  v.load();
+  const ok=await Promise.race([
+   new Promise(resolve=>v.addEventListener('loadeddata',()=>resolve(true),{once:true})),
+   new Promise(resolve=>setTimeout(()=>resolve(false),5000))
+  ]);
+  if(!ok){output.textContent='⚠️ Arquivo recebido ('+downloadedBytes+' bytes), mas nenhum quadro foi carregado da memória em 5 segundos.\n'+status(format);return;}
+  try{await v.play();}catch(e){output.textContent='⚠️ O arquivo foi carregado, mas o Play foi recusado: '+e.message+'\n'+status(format);return;}
+  output.textContent='Testando reprodução da memória durante 5 segundos...';
+  const t0=v.currentTime;
+  await new Promise(resolve=>setTimeout(resolve,5000));
+  const delta=v.currentTime-t0;
+  output.textContent=(delta>2?'✅ REPRODUÇÃO DA MEMÓRIA FUNCIONOU':'⚠️ REPRODUÇÃO DA MEMÓRIA TAMBÉM FALHOU')+
+    '\nBytes recebidos: '+downloadedBytes+
+    '\nFormato: '+format+
+    '\nSHA-256: '+digest+
+    '\nAvanço em 5 s: '+delta.toFixed(1)+' segundos.\n'+status('Resultado');
+ }catch(e){
+  output.textContent='Erro ao baixar ou verificar arquivo: '+e.message+
+    '\nBytes recebidos: '+downloadedBytes;
+ }finally{memoryButton.disabled=false;}
+});
+
 button.addEventListener('click',function(){
  if(t){clearInterval(t);t=null;}
  steps=0;playFailure='';
