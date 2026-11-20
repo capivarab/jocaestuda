@@ -94,13 +94,13 @@ h1 {font-size:clamp(1.6rem,4vw,2.25rem);margin:8px 0 6px}
 <p class="subtitulo">Matemática · 7º ano · Probabilidade · Joruto e Sensei Capivara</p>
 <section class="video-piloto" aria-label="Vídeo piloto de Probabilidade">
   <h2>▶️ Missão 2 — Vídeo da Chance Ninja</h2>
-  <p>Primeiro MP4 produzido automaticamente, com cenas ilustradas e voz sintética de demonstração. Enquanto hospedamos o vídeo, você pode reproduzir aqui o arquivo baixado no ChatGPT. <strong>O arquivo permanece no seu aparelho.</strong></p>
-  <label for="arquivo-mp4">Selecionar o arquivo missao2_chance_ninja.mp4</label>
+  <p>Vídeo gerado automaticamente, com cenas ilustradas e voz sintética provisória. Aperte ▶ no player abaixo. Se a publicação do vídeo ainda não terminou ou o vídeo não abrir, selecione um MP4 baixado no seu computador.</p>
+  <label for="arquivo-mp4">Alternativa: selecionar arquivo MP4 do computador</label>
   <input id="arquivo-mp4" type="file" accept="video/mp4,.mp4" aria-describedby="video-ajuda">
   <label for="arquivo-legenda">Legendas opcionais (arquivo .vtt)</label>
   <input id="arquivo-legenda" type="file" accept=".vtt,text/vtt">
-  <p id="video-ajuda">O vídeo será mostrado neste espaço após a seleção. O navegador não envia seu arquivo ao site.</p>
-  <video id="video-local" controls preload="none" playsinline aria-label="Vídeo educativo da Chance Ninja"></video>
+  <p id="video-ajuda">A gravação é carregada automaticamente do site, quando disponível. Um arquivo selecionado no computador não é enviado pela internet.</p>
+  <video id="video-local" controls preload="metadata" playsinline src="video/missao2_chance_ninja.mp4" aria-label="Vídeo educativo da Chance Ninja"><track kind="captions" src="video/missao2_chance_ninja.vtt" srclang="pt-BR" label="Português" default></video>
 </section>
 <nav id="passos" class="progresso" aria-label="Etapas da missão"></nav>
 <div class="grade">
@@ -314,6 +314,9 @@ byId('proximo').addEventListener('click',function(){if(indice===aula.etapas.leng
 byId('questao-proxima').addEventListener('click',avancarQuiz);
 byId('reiniciar').addEventListener('click',iniciarQuiz);
 var videoLocal = document.getElementById('video-local');
+videoLocal.addEventListener('error',function(){
+ document.getElementById('video-ajuda').textContent='Não foi possível carregar o vídeo do site. A publicação pode ainda estar em andamento. Alternativa: selecione o arquivo MP4 baixado.';
+});
 var videoObjectUrl = null, legendaObjectUrl = null;
 document.getElementById('arquivo-mp4').addEventListener('change',function(){
   if(videoObjectUrl){URL.revokeObjectURL(videoObjectUrl);videoObjectUrl=null;}
