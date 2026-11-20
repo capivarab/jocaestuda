@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joca Estuda — teste mínimo de vídeo</title>
+<style>
+body{font:17px/1.5 Verdana,Arial,sans-serif;background:#faf6ee;color:#3e2f22;padding:20px;margin:0}
+main{max-width:760px;margin:auto}h1{font-size:1.6rem}section{background:white;border:2px solid #8fae8c;border-radius:16px;padding:18px}
+video{width:100%;display:block;background:#222;aspect-ratio:16/9;border-radius:12px}
+button{font:inherit;font-weight:bold;cursor:pointer;padding:13px 17px;margin:14px 0;background:#4a6b4d;color:white;border:0;border-radius:11px}
+button:focus-visible{outline:4px solid #1673b8}
+#resultado{background:#f0f3e8;border-radius:9px;padding:13px;white-space:pre-wrap;overflow-wrap:anywhere}
+small{display:block;color:#625a51;margin:12px 0}a{color:#275a86}
+</style></head><body><main>
+<h1>🎬 Joca Estuda — Teste simples de vídeo</h1>
+<p>Este não é o vídeo do Joruto. É um vídeo de <strong>12 segundos, com figuras em movimento e um som baixo</strong>, produzido de outra forma. Ele serve para descobrir por que a aula não reproduz.</p>
+<section>
+<video id="video" controls playsinline preload="auto" aria-label="Teste de vídeo com figuras em movimento" src="video/teste_controle_12s.mp4"></video>
+<button id="iniciar">▶ Reproduzir e verificar automaticamente</button>
+<p id="resultado" aria-live="polite">Aguardando seu clique.</p>
+<small>O teste observa o vídeo durante 8 segundos. Se não funcionar, copie o resultado exibido acima.</small>
+<p><a href="video/teste_controle_12s.mp4" download>Baixar este vídeo de 12 segundos para testar no QuickTime</a></p>
+<p><a href="teste_video.html">Ver diagnóstico detalhado</a></p>
+</section>
+<script>
+(function(){
+'use strict';
+const v=document.getElementById('video');
+const output=document.getElementById('resultado');
+const button=document.getElementById('iniciar');
+let t=null,steps=0,start=0,playFailure='';
+let headers='Verificando servidor...';
+fetch('video/teste_controle_12s.mp4',{method:'HEAD',cache:'no-store'})
+ .then(r=>{headers='HTTP '+r.status+', tipo '+r.headers.get('content-type')+', tamanho '+r.headers.get('content-length')+' bytes';})
+ .catch(e=>{headers='Falha de acesso ao servidor: '+e.message;});
+function status(prefix){
+ let e=v.error;
+ return prefix+'\nArquivo: '+(v.currentSrc||'não carregado')+
+ '\nReprodução: '+(v.paused?'pausado':'ativo')+
+ '\nTempo: '+v.currentTime.toFixed(2)+' segundos'+
+ '\nPronto: '+v.readyState+' (4 = pronto), Rede: '+v.networkState+
+ '\nDimensões: '+v.videoWidth+' × '+v.videoHeight+
+ '\nErro: '+(e ? e.code+' — '+e.message : 'nenhum')+
+ '\nServidor: '+headers+(playFailure?'\nPlay: '+playFailure:'');
+}
+v.addEventListener('error',()=>{output.textContent=status('Não foi possível reproduzir.');});
+button.addEventListener('click',function(){
+ if(t){clearInterval(t);t=null;}
+ steps=0;playFailure='';
+ v.pause();v.currentTime=0;start=0;
+ output.textContent=status('Iniciando teste...');
+ const p=v.play();
+ if(p&&p.catch)p.catch(err=>{playFailure=err.message;output.textContent=status('Navegador recusou o comando Play.');});
+ t=setInterval(function(){
+  steps++;const advanced=v.currentTime-start;
+  output.textContent=status('Verificando... '+steps+'/8 segundos.');
+  if(steps>=8){
+    clearInterval(t);t=null;
+    const ok=advanced>3;
+    output.textContent=status(ok?
+      '✅ FUNCIONOU — o vídeo avançou '+advanced.toFixed(1)+' segundos.':
+      '⚠️ NÃO FUNCIONOU — o vídeo avançou apenas '+advanced.toFixed(1)+' segundo(s) em 8 segundos.');
+  }
+ },1000);
+});
+})();
+</script></main></body></html>
