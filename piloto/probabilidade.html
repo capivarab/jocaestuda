@@ -122,7 +122,7 @@ var indice = 0, questao = 0, acertos = 0, respondida = false, tocando = false, f
 var byId = function (id) {return document.getElementById(id);};
 // Hotfix: o SpeechSynthesis do Microsoft Edge pode congelar o navegador.
  // Nao chamar speak() nem cancel() no Edge; manter os textos acessiveis.
-var navegadorEdge = /(?:Edg|Edge|EdgA|EdgiOS)\\//.test(navigator.userAgent);
+var navegadorEdge = /(?:Edg|Edge|EdgA|EdgiOS)\//.test(navigator.userAgent);
 var falaDisponivel = !navegadorEdge &&
   ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
 var audioSessao = 0;
