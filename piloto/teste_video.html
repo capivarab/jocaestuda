@@ -17,7 +17,7 @@ small{color:#5b5750}h3{margin-bottom:4px}
 <source src="video/missao2_chance_ninja.mp4" type="video/mp4">
 O navegador não suporta vídeo.</video>
 <p><button type="button" id="webm">▶ Testar WebM (Edge)</button><button type="button" id="mp4">▶ Testar MP4</button></p>
-<h3>Estado do player</h3><pre id="player">Verificando...</pre>
+<p><button type="button" id="medir">⏱ Verificar reprodução por 10 segundos</button></p><p id="resultado" role="status" aria-live="polite" style="font-weight:bold;color:#345b42">Pressione ▶ e depois execute o teste de 10 segundos.</p><h3>Estado do player</h3><pre id="player">Verificando...</pre>
 <h3>Estado dos arquivos no servidor</h3><pre id="server">Consultando...</pre>
 </section>
 <section class="card"><h2>2. Testar no QuickTime do iMac</h2>
@@ -36,7 +36,12 @@ O navegador não suporta vídeo.</video>
 const v=document.getElementById('v');
 const pp=document.getElementById('player');
 const srv=document.getElementById('server');
+const outcome=document.getElementById('resultado');
+let lastEvent='Inicial';
+let testTimer=null;
+let eventHistory=[];
 function info(evento){
+ lastEvent=evento;
  const e=v.error;const txt=[
  'Evento: '+evento,
  'Arquivo: '+(v.currentSrc||'nenhum'),
@@ -44,15 +49,47 @@ function info(evento){
  'Rede: '+v.networkState+' (3=sem origem)',
  'Resolução: '+v.videoWidth+' × '+v.videoHeight,
  'Duração: '+(Number.isFinite(v.duration)?Math.round(v.duration)+' segundos':'desconhecida'),
- 'Tempo atual: '+Math.round(v.currentTime)+' segundos',
+ 'Tempo atual: '+v.currentTime.toFixed(1)+' segundos',
+ 'Reproduzindo: '+(!v.paused&&!v.ended?'sim':'não'),
+ 'Volume: '+(v.muted?'mudo':(Math.round(v.volume*100)+'%')),
+ 'Intervalos carregados: '+(v.buffered.length ? Array.from({length:v.buffered.length},(_,i)=>v.buffered.start(i).toFixed(1)+'–'+v.buffered.end(i).toFixed(1)).join(' | ') : 'nenhum'),
  'Erro: '+(e ? e.code+' — '+e.message:'nenhum'),
  'Suporte WebM: '+(v.canPlayType('video/webm; codecs="vp9, opus"')||'não'),
  'Suporte MP4: '+(v.canPlayType('video/mp4; codecs="avc1.42E01F, mp4a.40.2"')||'não')
  ];
  pp.textContent=txt.join('\n');
 }
-['loadedmetadata','canplay','playing','pause','waiting','stalled','error','ended'].forEach(x=>v.addEventListener(x,()=>info(x)));
-function choose(path) {v.pause();v.src=path;v.load();info('Solicitado: '+path);v.play().catch(err=>info('Não iniciou: '+err.message));}
+['loadedmetadata','loadeddata','canplay','play','playing','timeupdate','progress','pause','waiting','stalled','error','ended','suspend'].forEach(x=>v.addEventListener(x,()=>{
+ if(x!=='timeupdate'&&x!=='progress') eventHistory.push(x);
+ if(eventHistory.length>15)eventHistory.shift();
+ info(x);
+}));
+function choose(path) {
+ if(testTimer){clearInterval(testTimer);testTimer=null;}
+ outcome.textContent='Carregando '+(path.endsWith('webm')?'WebM':'MP4')+'...';
+ eventHistory=[];
+ v.pause();v.src=path;v.load();info('Solicitado: '+path);
+ v.play().then(()=>{outcome.textContent='O navegador aceitou o comando Play. Execute o teste de 10 segundos para verificar avanço real.';}).catch(err=>{outcome.textContent='A reprodução foi recusada: '+err.message;info('Play recusado');});
+}
+document.getElementById('medir').addEventListener('click',function(){
+ if(testTimer){clearInterval(testTimer);testTimer=null;}
+ const beginning=v.currentTime;let ticks=0;
+ v.play().catch(e=>{outcome.textContent='Falha ao executar Play: '+e.message;});
+ outcome.textContent='Testando... 0/10 segundos. Tempo do vídeo: '+beginning.toFixed(1)+' s';
+ testTimer=setInterval(function(){
+   ticks++;
+   const advanced=v.currentTime-beginning;
+   info('medição: '+ticks+'/10 s');
+   outcome.textContent='Testando... '+ticks+'/10 s. Vídeo avançou '+advanced.toFixed(1)+' s.';
+   if(ticks>=10){
+     clearInterval(testTimer);testTimer=null;
+     outcome.textContent=(advanced>=5?'✅ REPRODUÇÃO CONFIRMADA':'⚠️ REPRODUÇÃO NÃO CONFIRMADA')+
+       ' — tempo do vídeo avançou '+advanced.toFixed(1)+' s em 10 s. Evento: '+lastEvent+
+       '. Histórico: '+eventHistory.slice(-10).join(', ')+'.';
+     info('Resultado de 10 segundos');
+   }
+ },1000);
+});
 document.getElementById('webm').onclick=()=>choose('video/missao2_chance_ninja_edge.webm');
 document.getElementById('mp4').onclick=()=>choose('video/missao2_chance_ninja.mp4');
 const files=['video/missao2_chance_ninja_edge.webm','video/missao2_chance_ninja.mp4','video/missao2_chance_ninja_quicktime.mov'];
