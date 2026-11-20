@@ -100,7 +100,7 @@ h1 {font-size:clamp(1.6rem,4vw,2.25rem);margin:8px 0 6px}
   <label for="arquivo-legenda">Legendas opcionais (arquivo .vtt)</label>
   <input id="arquivo-legenda" type="file" accept=".vtt,text/vtt">
   <p id="video-ajuda">A gravação é carregada automaticamente do site, quando disponível. Um arquivo selecionado no computador não é enviado pela internet.</p>
-  <video id="video-local" controls preload="metadata" playsinline src="video/missao2_chance_ninja.mp4" aria-label="Vídeo educativo da Chance Ninja"><track kind="captions" src="video/missao2_chance_ninja.vtt" srclang="pt-BR" label="Português" default></video>
+  <video id="video-local" controls preload="metadata" playsinline aria-label="Vídeo educativo da Chance Ninja"><source src="video/missao2_chance_ninja_edge.webm" type="video/webm"><source src="video/missao2_chance_ninja.mp4" type="video/mp4"><track kind="captions" src="video/missao2_chance_ninja.vtt" srclang="pt-BR" label="Português" default></video><p><a href="teste_video.html" style="color:#275A86;font-weight:bold">🔎 Abrir teste de vídeo isolado</a> · <a href="video/missao2_chance_ninja_quicktime.mov" download style="color:#275A86;font-weight:bold">Baixar versão QuickTime (.mov)</a></p>
 </section>
 <nav id="passos" class="progresso" aria-label="Etapas da missão"></nav>
 <div class="grade">
@@ -315,7 +315,7 @@ byId('questao-proxima').addEventListener('click',avancarQuiz);
 byId('reiniciar').addEventListener('click',iniciarQuiz);
 var videoLocal = document.getElementById('video-local');
 videoLocal.addEventListener('error',function(){
- document.getElementById('video-ajuda').textContent='Não foi possível carregar o vídeo do site. A publicação pode ainda estar em andamento. Alternativa: selecione o arquivo MP4 baixado.';
+ document.getElementById('video-ajuda').textContent='O vídeo não pôde ser decodificado ou carregado. Abra o teste isolado abaixo e veja o diagnóstico. Código do player: '+(videoLocal.error?videoLocal.error.code:'desconhecido');
 });
 var videoObjectUrl = null, legendaObjectUrl = null;
 document.getElementById('arquivo-mp4').addEventListener('change',function(){
