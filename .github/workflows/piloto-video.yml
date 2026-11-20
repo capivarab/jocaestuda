@@ -40,5 +40,7 @@ jobs:
           git add piloto/video/missao2_chance_ninja.mp4 piloto/video/missao2_chance_ninja.vtt
           if ! git diff --cached --quiet; then
             git commit -m "build(piloto): atualizar video e legendas"
+            git fetch origin main
+            git rebase origin/main
             git push origin HEAD:main
           fi
