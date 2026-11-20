@@ -120,28 +120,74 @@ h1 {font-size:clamp(1.6rem,4vw,2.25rem);margin:8px 0 6px}
 var aula = JSON.parse(document.getElementById('dados-licao').textContent);
 var indice = 0, questao = 0, acertos = 0, respondida = false, tocando = false, fila = [];
 var byId = function (id) {return document.getElementById(id);};
-var falaDisponivel = ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
+// Hotfix: o SpeechSynthesis do Microsoft Edge pode congelar o navegador.
+ // Nao chamar speak() nem cancel() no Edge; manter os textos acessiveis.
+var navegadorEdge = /(?:Edg|Edge|EdgA|EdgiOS)\\//.test(navigator.userAgent);
+var falaDisponivel = !navegadorEdge &&
+  ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
+var audioSessao = 0;
+var audioPendente = null;
 function elemento(tag, classe, texto) {
   var e = document.createElement(tag); if (classe) e.className = classe;
   if (texto !== undefined) e.textContent = texto; return e;
 }
-function parar() {
-  tocando = false; fila = [];
-  if(falaDisponivel) window.speechSynthesis.cancel();
-  byId('status').textContent = '';
+function avisoAudio() {
+  if (navegadorEdge) {
+    byId('status').textContent = 'Narração desativada neste protótipo para evitar o travamento do Edge. Para ouvir, selecione um diálogo e procure "Ler em voz alta" no menu do navegador.';
+  } else if (!falaDisponivel) {
+    byId('status').textContent = 'A voz automática não está disponível neste navegador. Os diálogos continuam disponíveis para leitura.';
+  }
 }
-function proximaFala() {
-  if (!tocando || !fila.length) {tocando = false;byId('status').textContent = 'Narração concluída.';return;}
-  var entrada = fila.shift();var u = new SpeechSynthesisUtterance(entrada[1]);
-  u.lang = 'pt-BR';u.rate = entrada[0]==='SENSEI' ? .87 : .95;u.pitch = entrada[0]==='SENSEI' ? .9 : 1.12;
-  u.onend = proximaFala; u.onerror = function(){tocando=false;byId('status').textContent='Não foi possível reproduzir a voz neste navegador.';};
-  byId('status').textContent = 'Narrando: ' + (entrada[0]==='JORUTO'?'Joruto':'Sensei Capivara');
-  window.speechSynthesis.speak(u);
+function parar() {
+  var estavaTocando = tocando;
+  tocando = false; fila = []; audioSessao++;
+  if (audioPendente !== null) {clearTimeout(audioPendente);audioPendente=null;}
+  if (falaDisponivel && estavaTocando) {
+    try {window.speechSynthesis.cancel();} catch (_) {}
+  }
+  byId('status').textContent = '';
+  avisoAudio();
+}
+function proximaFala(sessao) {
+  if (sessao !== audioSessao || !tocando) return;
+  if (!fila.length) {
+    tocando=false;
+    byId('status').textContent = 'Narração concluída.';
+    return;
+  }
+  var entrada=fila.shift();
+  var u=new SpeechSynthesisUtterance(entrada[1]);
+  u.lang='pt-BR';
+  u.rate=entrada[0]==='SENSEI' ? .87 : .95;
+  u.pitch=entrada[0]==='SENSEI' ? .9 : 1.12;
+  u.onend=function(){
+    if(sessao===audioSessao && tocando) {
+      audioPendente=setTimeout(function(){audioPendente=null;proximaFala(sessao);},100);
+    }
+  };
+  u.onerror=function(){
+    if(sessao===audioSessao) {
+      tocando=false;
+      byId('status').textContent='A narração falhou. Leia os diálogos ou use a leitura em voz alta do navegador.';
+    }
+  };
+  byId('status').textContent='Narrando: '+(entrada[0]==='JORUTO'?'Joruto':'Sensei Capivara');
+  try {window.speechSynthesis.speak(u);} catch (_) {
+    tocando=false;
+    byId('status').textContent='Não foi possível iniciar a narração neste navegador.';
+  }
 }
 function ouvir() {
+  if (!falaDisponivel) {avisoAudio();return;}
   parar();
-  if (!falaDisponivel) {byId('status').textContent='A narração automática não está disponível neste navegador. Leia os diálogos na tela.';return;}
-  tocando=true;fila=aula.etapas[indice].falas.slice();proximaFala();
+  var sessao=audioSessao;
+  fila=aula.etapas[indice].falas.slice();
+  // Espera apos cancel() para evitar conflito na fila de voz do navegador.
+  audioPendente=setTimeout(function(){
+    audioPendente=null;
+    if(sessao!==audioSessao)return;
+    tocando=true;proximaFala(sessao);
+  },180);
 }
 function add(parent,tag,classe,texto) {var x=elemento(tag,classe,texto);parent.appendChild(x);return x;}
 function visual(tipo) {
@@ -235,6 +281,12 @@ function avancarQuiz(){
   byId('opcoes').replaceChildren();
   byId('feedback').textContent='Pode repetir quantas vezes quiser e revisar os exemplos nos cartões.';
   byId('questao-proxima').hidden=true;byId('reiniciar').hidden=false;
+}
+if (navegadorEdge) {
+  byId('ouvir').textContent='🔇 Áudio indisponível no Edge';
+  byId('ouvir').disabled=true;
+  byId('ouvir').title='A voz do navegador foi desativada para evitar travamentos.';
+  byId('parar').disabled=true;
 }
 byId('ouvir').addEventListener('click',ouvir);
 byId('parar').addEventListener('click',parar);
