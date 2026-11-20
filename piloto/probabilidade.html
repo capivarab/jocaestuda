@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missão 2 — A Chance Ninja | Joca Estuda</title>
+<meta name="description" content="Protótipo de aula interativa e narrada de Probabilidade.">
+<style>
+:root { --terra:#A8632B; --verde:#4A6B4D; --verde-claro:#8FAE8C; --creme:#FAF6EE; --marrom:#3E2F22; --branco:#fff; --azul:#275A86; --dourado:#F6E4B9; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body { margin:0; color:var(--marrom); background:var(--creme);font:17px/1.6 Verdana,Arial,sans-serif}
+button {font:inherit;cursor:pointer}
+button:focus-visible {outline:4px solid #1673b8;outline-offset:3px}
+header {background:var(--marrom);color:#fff;padding:18px max(20px,calc((100vw - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+header strong {font-size:1.3rem;letter-spacing:.2px}
+header span {border:1px solid #c9a476;border-radius:100px;padding:4px 12px;font-size:.76rem}
+main {max-width:1100px;margin:auto;padding:22px 18px 70px}
+.alerta {padding:10px 14px;background:#fff2d8;border:2px solid #e9c786;border-radius:12px;font-size:.9rem;margin-bottom:17px}
+h1,h2,h3 {line-height:1.23}
+h1 {font-size:clamp(1.6rem,4vw,2.25rem);margin:8px 0 6px}
+.subtitulo {color:#695447;margin:0 0 20px}
+.progresso {display:flex;gap:8px;overflow-x:auto;padding:5px 0 16px}
+.etapa {flex:1;min-width:125px;border:2px solid #bdd0b9;border-radius:13px;background:white;padding:12px 7px;font-weight:700;font-size:.82rem;line-height:1.25;text-align:center}
+.etapa[aria-current=step] {background:var(--verde);color:white;border-color:var(--verde)}
+.etapa small{display:block;opacity:.72;font-size:.69rem}
+.grade {display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:18px;align-items:start}
+.painel {border-radius:20px;background:white;border:3px solid var(--verde-claro);padding:22px;box-shadow:0 5px 0 #3e2f2212}
+.painel h2 {color:var(--terra);margin:0 0 17px;font-size:1.42rem}
+.falas {display:flex;flex-direction:column;gap:11px}
+.balao {background:#f5f4ed;border-left:6px solid var(--verde);border-radius:8px 14px 14px 8px;padding:12px 15px}
+.balao.joruto {background:#fff0dc;border-left-color:var(--terra)}
+.balao strong {display:block;font-size:.75rem;letter-spacing:.07em;margin-bottom:3px}
+.balao p {margin:0}
+.tips {background:#fff2dc;border-radius:12px;padding:15px;margin-top:17px;border-left:5px solid #d99b4f}
+.controles {display:flex;flex-wrap:wrap;gap:9px;margin-top:19px}
+.btn {background:var(--verde);color:white;border:2px solid var(--verde);border-radius:12px;padding:11px 16px;font-weight:700}
+.btn.secondary {background:white;color:var(--verde)}
+.btn.terra {background:var(--terra);border-color:var(--terra)}
+.btn:disabled {opacity:.35;cursor:not-allowed}
+.status {font-size:.84rem;color:#5c6259;min-height:1.6em;margin:8px 0}
+.quadro {border-radius:20px;background:#eaf0e4;border:3px solid var(--verde-claro);padding:20px;min-height:355px}
+.quadro h3 {margin:0 0 13px;font-size:1.05rem}
+.visual {min-height:218px}
+.dado-grande {display:grid;place-items:center;background:white;border:3px solid var(--verde);border-radius:18px;width:132px;height:132px;font-size:5.4rem;margin:10px auto 18px}
+.btn-lancar {display:block;margin:0 auto}
+.resultado {margin:12px 0 0;text-align:center;font-weight:700}
+.faces {display:flex;flex-wrap:wrap;gap:7px}
+.face {font-weight:800;width:47px;height:49px;background:white;border:2px solid #b5c8b0;border-radius:9px;display:grid;place-items:center}
+.face.destacada {background:#f6d28e;border-color:var(--terra)}
+.eventos {display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+.eventos button {background:white;border:2px solid var(--verde);border-radius:10px;padding:9px 10px;font-size:.87rem}
+.eventos button[aria-pressed=true] {background:var(--verde);color:white}
+.fracao {display:flex;align-items:center;flex-direction:column;margin:15px auto;font-size:2rem;font-weight:800;width:max-content}
+.fracao .linha {border-bottom:3px solid var(--marrom);padding:0 18px}
+.fracao .base {padding:0 18px}
+.exemplos {display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.exemplos div,.cartas div {background:white;border-radius:10px;padding:13px;text-align:center}
+.exemplos b,.cartas b {display:block;font-size:1.2rem}
+.cartas {display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cartas .ilustra {font-size:2rem}
+.pergaminho {background:#fff7df;border:2px solid #d6b375;border-radius:12px;padding:15px}
+.pergaminho p {margin:0 0 12px}
+.pergaminho p:last-child{margin:0}
+.nota {font-size:.85rem;color:#5b584d;margin:15px 0 0}
+.quiz {margin-top:24px;background:white;border:3px solid var(--terra);padding:20px;border-radius:20px}
+.quiz[hidden] {display:none}
+.quiz h2 {margin:0 0 6px;color:var(--terra)}
+.quiz h3 {font-size:1.18rem}
+.opcoes {display:grid;gap:10px}
+.opcao {text-align:left;border:2px solid #d6cdbd;background:#faf7f0;padding:13px 16px;border-radius:11px;font-weight:600}
+.opcao.correta {background:#def0e0;border-color:#3e8852}
+.opcao.errada {background:#f8e0d9;border-color:#ac4e37}
+.feedback {margin-top:12px;font-weight:600;min-height:1.5em}
+.footer {border-top:1px solid #d7d1c6;padding-top:15px;margin-top:25px;font-size:.85rem;color:#6a6056}
+@media(max-width:790px){.grade {grid-template-columns:1fr} .painel{padding:18px}.quadro{min-height:0}.etapa{min-width:116px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><strong>🥋 Joca Estuda · Laboratório do Joruto</strong><span>Protótipo de desenvolvimento — não publicado no site principal</span></header>
+<main>
+<div class="alerta">🔬 <strong>Experimento:</strong> esta aula funciona sem NotebookLM ou assinatura de vídeo. A narração usa a voz disponível no navegador, que pode variar entre aparelhos.</div>
+<h1>🎲 Missão 2: A Chance Ninja</h1>
+<p class="subtitulo">Matemática · 7º ano · Probabilidade · Joruto e Sensei Capivara</p>
+<nav id="passos" class="progresso" aria-label="Etapas da missão"></nav>
+<div class="grade">
+<section class="painel" aria-label="Explicação da missão">
+<h2 id="titulo"></h2>
+<div id="falas" class="falas"></div>
+<div class="tips" id="dica"></div>
+<div class="controles">
+<button class="btn secondary" id="anterior">← Voltar</button>
+<button class="btn" id="ouvir">🔊 Ouvir explicação</button>
+<button class="btn secondary" id="parar">■ Parar áudio</button>
+<button class="btn terra" id="proximo">Próxima etapa →</button>
+</div>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+</section>
+<aside class="quadro" aria-label="Exemplo visual interativo">
+<h3>👀 Veja e experimente</h3>
+<div id="visual" class="visual"></div>
+<p id="nota" class="nota"></p>
+</aside>
+</div>
+<section id="quiz" class="quiz" hidden aria-label="Prática de Probabilidade">
+<h2>✏️ Desafio do Sensei</h2>
+<p id="andamento"></p>
+<h3 id="pergunta"></h3>
+<div id="opcoes" class="opcoes"></div>
+<div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+<div class="controles"><button id="questao-proxima" class="btn terra" hidden>Próxima pergunta →</button><button id="reiniciar" class="btn secondary" hidden>Repetir desafio</button></div>
+</section>
+<div class="footer">Conteúdo adaptado do roteiro fornecido para o Joruto, fundamentado no material da escola. Versão piloto, sem envio de dados pessoais e sem integração com a produção.</div>
+</main>
+<script type="application/json" id="dados-licao">{"versao":"0.1.0","titulo":"Missão 2 — A Chance Ninja","materia":"Matemática","tema":"Probabilidade","ano":"7º ano","origem":"Roteiro do Joruto — Provas Abrangentes de Matemática (23/11), Vídeo 2","etapas":[{"titulo":"O dado misterioso","subtitulo":"O que é um experimento aleatório?","icone":"🎲","visual":"dado","falas":[["JORUTO","Sensei, se eu lançar este dado, vai sair o número 6?"],["SENSEI","Ninguém pode saber com certeza antes de lançar. Isso é um experimento aleatório: não conseguimos prever o resultado de cada lançamento."],["SENSEI","Um fenômeno determinístico é diferente. Por exemplo, esperamos que a comida esquente quando colocamos uma panela no fogo."],["SENSEI","A probabilidade mede a chance de um resultado acontecer."]],"macete":"Aleatório: não sabemos o resultado antes. Probabilidade: mede a chance."},{"titulo":"As possibilidades","subtitulo":"Espaço amostral e evento","icone":"🔍","visual":"eventos","falas":[["SENSEI","O espaço amostral reúne todos os resultados possíveis. Num dado comum, são os números um, dois, três, quatro, cinco e seis."],["JORUTO","E se eu quiser saber a chance de sair um número par?"],["SENSEI","Esse é o evento que nos interessa: dois, quatro ou seis. São três resultados favoráveis, entre seis possíveis."],["SENSEI","Clique nos eventos ao lado e observe quantos resultados favorecem cada um."]],"macete":"Espaço amostral = tudo o que pode sair. Evento = o que eu quero observar."},{"titulo":"A fórmula ninja","subtitulo":"Casos favoráveis ÷ casos possíveis","icone":"➗","visual":"formula","falas":[["SENSEI","A fórmula é: probabilidade igual ao número de casos favoráveis dividido pelo número de casos possíveis, quando todos os resultados têm a mesma chance."],["SENSEI","Num dado equilibrado, a chance de sair um número par é três dividido por seis: cinquenta por cento."],["SENSEI","A chance de sair seis é um dividido por seis, aproximadamente dezesseis vírgula sete por cento."],["SENSEI","Sair sete num dado comum é impossível: probabilidade zero. Sair algum número de um a seis é certo: probabilidade um, ou cem por cento."]],"macete":"P = favoráveis ÷ possíveis. Vai de 0 (impossível) a 1 (certo)."},{"titulo":"A missão do baralho","subtitulo":"Probabilidade com 52 cartas","icone":"🃏","visual":"baralho","falas":[["SENSEI","Agora pense num baralho comum, com cinquenta e duas cartas. Quatro delas são ases."],["SENSEI","A chance de tirar um ás é quatro dividido por cinquenta e dois: um treze avos, aproximadamente oito por cento."],["SENSEI","E a chance de não tirar um rei? Existem quatro reis e quarenta e oito cartas que não são reis. Portanto, quarenta e oito sobre cinquenta e dois: aproximadamente noventa e dois por cento."],["JORUTO","Entendi! Probabilidade é o que eu quero dividido por tudo o que pode acontecer!"]],"macete":"No baralho: 4 ases e 4 reis entre 52 cartas."},{"titulo":"Pergaminho final","subtitulo":"Revise e pratique","icone":"📜","visual":"resumo","falas":[["SENSEI","Antes de terminar, relembre três ideias importantes."],["SENSEI","Um experimento aleatório não tem resultado previsível a cada tentativa."],["SENSEI","Espaço amostral contém todos os resultados possíveis. Evento é o resultado ou grupo de resultados que queremos observar."],["SENSEI","Probabilidade é casos favoráveis divididos por casos possíveis. Agora, vamos praticar com quatro perguntas!"]],"macete":"Aleatório → possibilidades → evento → favoráveis ÷ possíveis."}],"perguntas":[{"pergunta":"Uma urna tem 8 bolas azuis e 2 vermelhas. Qual é a chance de tirar uma vermelha?","opcoes":["80%","20%","10%","25%"],"correta":1,"explicacao":"Há 2 bolas vermelhas entre 10 bolas. Portanto, 2 ÷ 10 = 20%."},{"pergunta":"Qual é a probabilidade de sair 7 em um dado comum de seis faces?","opcoes":["1/6","100%","0%","50%"],"correta":2,"explicacao":"Um dado comum só tem as faces de 1 a 6. Sair 7 é impossível, então a probabilidade é 0%."},{"pergunta":"Qual é o espaço amostral ao lançar uma moeda comum?","opcoes":["{cara, coroa}","{cara}","{coroa}","{1, 2, 3, 4, 5, 6}"],"correta":0,"explicacao":"A moeda pode dar cara ou coroa. O espaço amostral reúne os dois resultados."},{"pergunta":"Em uma moeda equilibrada, qual é a chance de sair cara?","opcoes":["25%","100%","0%","50%"],"correta":3,"explicacao":"Há um resultado favorável (cara) em dois possíveis (cara ou coroa). Assim, 1 ÷ 2 = 50%."}]}</script>
+<script>
+(function () {
+'use strict';
+var aula = JSON.parse(document.getElementById('dados-licao').textContent);
+var indice = 0, questao = 0, acertos = 0, respondida = false, tocando = false, fila = [];
+var byId = function (id) {return document.getElementById(id);};
+var falaDisponivel = ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
+function elemento(tag, classe, texto) {
+  var e = document.createElement(tag); if (classe) e.className = classe;
+  if (texto !== undefined) e.textContent = texto; return e;
+}
+function parar() {
+  tocando = false; fila = [];
+  if(falaDisponivel) window.speechSynthesis.cancel();
+  byId('status').textContent = '';
+}
+function proximaFala() {
+  if (!tocando || !fila.length) {tocando = false;byId('status').textContent = 'Narração concluída.';return;}
+  var entrada = fila.shift();var u = new SpeechSynthesisUtterance(entrada[1]);
+  u.lang = 'pt-BR';u.rate = entrada[0]==='SENSEI' ? .87 : .95;u.pitch = entrada[0]==='SENSEI' ? .9 : 1.12;
+  u.onend = proximaFala; u.onerror = function(){tocando=false;byId('status').textContent='Não foi possível reproduzir a voz neste navegador.';};
+  byId('status').textContent = 'Narrando: ' + (entrada[0]==='JORUTO'?'Joruto':'Sensei Capivara');
+  window.speechSynthesis.speak(u);
+}
+function ouvir() {
+  parar();
+  if (!falaDisponivel) {byId('status').textContent='A narração automática não está disponível neste navegador. Leia os diálogos na tela.';return;}
+  tocando=true;fila=aula.etapas[indice].falas.slice();proximaFala();
+}
+function add(parent,tag,classe,texto) {var x=elemento(tag,classe,texto);parent.appendChild(x);return x;}
+function visual(tipo) {
+  var caixa=byId('visual');caixa.replaceChildren();byId('nota').textContent='';
+  if(tipo==='dado'){
+    var dado=add(caixa,'div','dado-grande','⚀');dado.setAttribute('aria-label','Face do dado');
+    var b=add(caixa,'button','btn btn-lancar','🎲 Lançar o dado');
+    var texto=add(caixa,'p','resultado','Clique para sortear um número.');
+    b.addEventListener('click',function(){
+      var n=Math.floor(Math.random()*6)+1;var faces=['⚀','⚁','⚂','⚃','⚄','⚅'];
+      dado.textContent=faces[n-1];dado.setAttribute('aria-label','Dado: '+n);
+      texto.textContent='Saiu '+n+'! Em um dado equilibrado, a chance de sair 6 em cada lançamento é 1/6.';
+    });
+    byId('nota').textContent='Cada lançamento é um experimento aleatório.';
+  } else if(tipo==='eventos'||tipo==='formula'){
+    var dados=add(caixa,'div','faces');
+    var resposta=add(caixa,'p','resultado','');
+    var escolhas=add(caixa,'div','eventos');
+    var lista=[['Pares',[2,4,6]],['Sair 6',[6]],['Primos',[2,3,5]],['Sair 7',[]]];
+    var botoes=[];
+    lista.forEach(function(item,j){
+      var b=add(escolhas,'button','',item[0]);b.type='button';
+      b.addEventListener('click',function(){selecionar(j);});botoes.push(b);
+    });
+    var formas=[];
+    for(var n=1;n<=6;n++){formas.push(add(dados,'div','face',String(n)));}
+    function selecionar(j) {
+      var achados=lista[j][1];
+      formas.forEach(function(f,k){f.classList.toggle('destacada',achados.indexOf(k+1)!==-1);});
+      botoes.forEach(function(b,k){b.setAttribute('aria-pressed',String(j===k));});
+      var percent=Math.round(achados.length/6*1000)/10;
+      resposta.textContent=lista[j][0]+': '+achados.length+'/6 = '+percent.toLocaleString('pt-BR')+'%';
+    }
+    selecionar(tipo==='formula'?0:0);
+    byId('nota').textContent=tipo==='formula'?'Fórmula: P(evento) = casos favoráveis ÷ casos possíveis (resultados equiprováveis).':'Os quadrados destacados são os casos favoráveis.';
+  } else if(tipo==='baralho'){
+    var c=add(caixa,'div','cartas');
+    var a=add(c,'div','', '');add(a,'span','ilustra','🂱');add(a,'b','','4 ases / 52');add(a,'span','','≈ 7,7% (8% arredondado)');
+    var r=add(c,'div','', '');add(r,'span','ilustra','🂠');add(r,'b','','48 não reis / 52');add(r,'span','','≈ 92,3%');
+    byId('nota').textContent='Exemplo com baralho comum de 52 cartas, sem curingas.';
+  } else {
+    var p=add(caixa,'div','pergaminho');
+    ['🎲 Aleatório: o resultado não é conhecido antecipadamente.','🔍 Espaço amostral: todos os resultados possíveis.','🎯 Evento: o resultado que procuramos.','➗ P = casos favoráveis ÷ casos possíveis.'].forEach(function(t){add(p,'p','',t);});
+    var start=add(caixa,'button','btn terra','✏️ Começar as 4 perguntas');
+    start.style.marginTop='16px';start.addEventListener('click',iniciarQuiz);
+    byId('nota').textContent='O desafio tem quatro perguntas, com explicação após cada resposta.';
+  }
+}
+function mostrar(i) {
+  parar();indice=Math.min(Math.max(i,0),aula.etapas.length-1);
+  var etapa=aula.etapas[indice];byId('titulo').textContent=etapa.icone+' '+etapa.titulo;
+  var falas=byId('falas');falas.replaceChildren();
+  etapa.falas.forEach(function(f){
+    var b=add(falas,'div','balao '+(f[0]==='JORUTO'?'joruto':''));add(b,'strong','',f[0]==='JORUTO'?'JORUTO':'SENSEI CAPIVARA');add(b,'p','',f[1]);
+  });
+  byId('dica').textContent='💡 Pense assim: '+etapa.macete;
+  byId('anterior').disabled=indice===0;
+  byId('proximo').textContent=indice===aula.etapas.length-1?'✏️ Praticar':'Próxima etapa →';
+  byId('quiz').hidden=true;visual(etapa.visual);
+  var passos=byId('passos');passos.replaceChildren();
+  aula.etapas.forEach(function(s,j){
+    var e=add(passos,'button','etapa',s.icone+' '+s.titulo);
+    e.type='button';e.setAttribute('aria-current',j===indice?'step':'false');
+    add(e,'small','',String(j+1)+' de '+aula.etapas.length);
+    e.addEventListener('click',function(){mostrar(j);});
+  });
+}
+function iniciarQuiz(){parar();questao=0;acertos=0;byId('quiz').hidden=false;exibirQuestao();byId('quiz').scrollIntoView({behavior:'smooth',block:'start'});}
+function exibirQuestao() {
+  respondida=false;var q=aula.perguntas[questao];byId('andamento').textContent='Pergunta '+(questao+1)+' de '+aula.perguntas.length+' · Acertos: '+acertos;
+  byId('pergunta').textContent=q.pergunta;byId('feedback').textContent='';
+  byId('questao-proxima').hidden=true;byId('reiniciar').hidden=true;
+  var o=byId('opcoes');o.replaceChildren();
+  q.opcoes.forEach(function(resposta,j){
+    var b=add(o,'button','opcao',String.fromCharCode(65+j)+') '+resposta);
+    b.addEventListener('click',function(){
+      if(respondida)return;respondida=true;
+      Array.from(o.children).forEach(function(item,k){item.disabled=true;if(k===q.correta)item.classList.add('correta');if(k===j&&k!==q.correta)item.classList.add('errada');});
+      if(j===q.correta)acertos++;
+      byId('feedback').textContent=(j===q.correta?'✅ Correto! ':'🔎 Vamos revisar. ')+q.explicacao;
+      byId('andamento').textContent='Pergunta '+(questao+1)+' de '+aula.perguntas.length+' · Acertos: '+acertos;
+      byId('questao-proxima').hidden=false;
+      byId('questao-proxima').textContent=questao===aula.perguntas.length-1?'Ver resultado':'Próxima pergunta →';
+    });
+  });
+}
+function avancarQuiz(){
+  if(questao<aula.perguntas.length-1){questao++;exibirQuestao();return;}
+  byId('andamento').textContent='Missão concluída!';
+  byId('pergunta').textContent='Você acertou '+acertos+' de '+aula.perguntas.length+' perguntas.';
+  byId('opcoes').replaceChildren();
+  byId('feedback').textContent='Pode repetir quantas vezes quiser e revisar os exemplos nos cartões.';
+  byId('questao-proxima').hidden=true;byId('reiniciar').hidden=false;
+}
+byId('ouvir').addEventListener('click',ouvir);
+byId('parar').addEventListener('click',parar);
+byId('anterior').addEventListener('click',function(){mostrar(indice-1);});
+byId('proximo').addEventListener('click',function(){if(indice===aula.etapas.length-1)iniciarQuiz();else mostrar(indice+1);});
+byId('questao-proxima').addEventListener('click',avancarQuiz);
+byId('reiniciar').addEventListener('click',iniciarQuiz);
+window.addEventListener('pagehide',parar);
+mostrar(0);
+})();
+</script>
+</body>
+</html>
