@@ -1,0 +1,114 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.630
+Sensei, se eu lançar este dado, vai sair o número 6?
+
+2
+00:00:05.280 --> 00:00:17.717
+Ninguém pode saber com certeza antes de lançar. Isso é um experimento aleatório: não conseguimos prever o resultado de cada lançamento.
+
+3
+00:00:18.367 --> 00:00:29.555
+Um fenômeno determinístico é diferente. Por exemplo, esperamos que a comida esquente quando colocamos uma panela no fogo.
+
+4
+00:00:30.205 --> 00:00:35.616
+A probabilidade mede a chance de um resultado acontecer.
+
+5
+00:00:36.266 --> 00:00:48.972
+O espaço amostral reúne todos os resultados possíveis. Num dado comum, são os números um, dois, três, quatro, cinco e seis.
+
+6
+00:00:49.622 --> 00:00:53.511
+E se eu quiser saber a chance de sair um número par?
+
+7
+00:00:54.161 --> 00:01:05.120
+Esse é o evento que nos interessa: dois, quatro ou seis. São três resultados favoráveis, entre seis possíveis.
+
+8
+00:01:05.770 --> 00:01:12.678
+Clique nos eventos ao lado e observe quantos resultados favorecem cada um.
+
+9
+00:01:13.328 --> 00:01:26.924
+A fórmula é: probabilidade igual ao número de casos favoráveis dividido pelo número de casos possíveis, quando todos os resultados têm a mesma chance.
+
+10
+00:01:27.574 --> 00:01:36.925
+Num dado equilibrado, a chance de sair um número par é três dividido por seis: cinquenta por cento.
+
+11
+00:01:37.575 --> 00:01:46.495
+A chance de sair seis é um dividido por seis, aproximadamente dezesseis vírgula sete por cento.
+
+12
+00:01:47.145 --> 00:02:00.550
+Sair sete num dado comum é impossível: probabilidade zero. Sair algum número de um a seis é certo: probabilidade um, ou cem por cento.
+
+13
+00:02:01.200 --> 00:02:09.679
+Agora pense num baralho comum, com cinquenta e duas cartas. Quatro delas são ases.
+
+14
+00:02:10.329 --> 00:02:20.946
+A chance de tirar um ás é quatro dividido por cinquenta e dois: um treze avos, aproximadamente oito por cento.
+
+15
+00:02:21.596 --> 00:02:39.213
+E a chance de não tirar um rei? Existem quatro reis e quarenta e oito cartas que não são reis. Portanto, quarenta e oito sobre cinquenta e dois: aproximadamente noventa e dois por cento.
+
+16
+00:02:39.863 --> 00:02:46.345
+Entendi! Probabilidade é o que eu quero dividido por tudo o que pode acontecer!
+
+17
+00:02:46.995 --> 00:02:52.245
+Antes de terminar, relembre três ideias importantes.
+
+18
+00:02:52.895 --> 00:02:59.526
+Um experimento aleatório não tem resultado previsível a cada tentativa.
+
+19
+00:03:00.176 --> 00:03:11.264
+Espaço amostral contém todos os resultados possíveis. Evento é o resultado ou grupo de resultados que queremos observar.
+
+20
+00:03:11.914 --> 00:03:22.724
+Probabilidade é casos favoráveis divididos por casos possíveis. Agora, vamos praticar com quatro perguntas!
+
+21
+00:03:23.374 --> 00:03:31.439
+Uma urna tem 8 bolas azuis e 2 vermelhas. Qual é a chance de tirar uma vermelha?
+
+22
+00:03:35.039 --> 00:03:44.493
+20%. Há 2 bolas vermelhas entre 10 bolas. Portanto, 2 ÷ 10 = 20%.
+
+23
+00:03:45.343 --> 00:03:51.751
+Qual é a probabilidade de sair 7 em um dado comum de seis faces?
+
+24
+00:03:55.351 --> 00:04:05.432
+0%. Um dado comum só tem as faces de 1 a 6. Sair 7 é impossível, então a probabilidade é 0%.
+
+25
+00:04:06.282 --> 00:04:11.322
+Qual é o espaço amostral ao lançar uma moeda comum?
+
+26
+00:04:14.922 --> 00:04:22.961
+{cara, coroa}. A moeda pode dar cara ou coroa. O espaço amostral reúne os dois resultados.
+
+27
+00:04:23.811 --> 00:04:29.220
+Em uma moeda equilibrada, qual é a chance de sair cara?
+
+28
+00:04:32.820 --> 00:04:45.089
+50%. Há um resultado favorável (cara) em dois possíveis (cara ou coroa). Assim, 1 ÷ 2 = 50%.
+
