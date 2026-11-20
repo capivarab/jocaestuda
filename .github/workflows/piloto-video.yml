@@ -33,11 +33,17 @@ jobs:
           python piloto/gerar_video_auto.py --output piloto/video/missao2_chance_ninja.mp4
           ffprobe -v error -show_entries stream=codec_name,codec_type,profile,pix_fmt,sample_rate -of compact piloto/video/missao2_chance_ninja.mp4
           ffmpeg -v error -i piloto/video/missao2_chance_ninja.mp4 -f null -
-      - name: Publicar MP4 no endereco de testes
+      - name: Criar formatos alternativos para Edge e QuickTime
+        run: |
+          ffmpeg -hide_banner -v error -y -i piloto/video/missao2_chance_ninja.mp4 -map 0:v:0 -map 0:a:0 -c:v libvpx-vp9 -crf 38 -b:v 0 -deadline realtime -cpu-used 8 -row-mt 1 -c:a libopus -b:a 88k piloto/video/missao2_chance_ninja_edge.webm
+          ffmpeg -hide_banner -v error -y -i piloto/video/missao2_chance_ninja.mp4 -map 0:v:0 -map 0:a:0 -c:v copy -c:a aac -b:a 128k -ar 44100 -ac 2 -movflags +faststart piloto/video/missao2_chance_ninja_quicktime.mov
+          ffmpeg -v error -i piloto/video/missao2_chance_ninja_edge.webm -f null -
+          ffmpeg -v error -i piloto/video/missao2_chance_ninja_quicktime.mov -f null -
+      - name: Publicar MP4, WebM, MOV e legendas no endereco de testes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add piloto/video/missao2_chance_ninja.mp4 piloto/video/missao2_chance_ninja.vtt
+          git add piloto/video/missao2_chance_ninja.mp4 piloto/video/missao2_chance_ninja_edge.webm piloto/video/missao2_chance_ninja_quicktime.mov piloto/video/missao2_chance_ninja.vtt
           if ! git diff --cached --quiet; then
             git commit -m "build(piloto): atualizar video e legendas"
             git fetch origin main
