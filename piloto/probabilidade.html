@@ -75,6 +75,15 @@ h1 {font-size:clamp(1.6rem,4vw,2.25rem);margin:8px 0 6px}
 .footer {border-top:1px solid #d7d1c6;padding-top:15px;margin-top:25px;font-size:.85rem;color:#6a6056}
 @media(max-width:790px){.grade {grid-template-columns:1fr} .painel{padding:18px}.quadro{min-height:0}.etapa{min-width:116px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+
+/* Player HTML5: reproduz MP4 selecionado localmente até hospedagem definitiva. */
+.video-piloto {margin:0 0 22px;background:#fff;border:3px solid #8FAE8C;border-radius:18px;padding:19px}
+.video-piloto h2 {margin:0 0 8px;color:#385E46;font-size:1.3rem}
+.video-piloto p {margin:6px 0 12px;color:#60564a;font-size:.92rem}
+.video-piloto video {width:100%;max-width:850px;display:block;background:#242424;border-radius:12px;margin:11px auto 0;aspect-ratio:16/9}
+.video-piloto label {font-weight:700;display:block;margin:9px 0 4px}
+.video-piloto input {max-width:100%;font-size:.92rem}
+.video-piloto .badge-video {background:#FFF3D6;padding:6px 10px;border-radius:8px;display:inline-block}
 </style>
 </head>
 <body>
@@ -83,6 +92,16 @@ h1 {font-size:clamp(1.6rem,4vw,2.25rem);margin:8px 0 6px}
 <div class="alerta">🔬 <strong>Experimento:</strong> esta aula funciona sem NotebookLM ou assinatura de vídeo. A narração usa a voz disponível no navegador, que pode variar entre aparelhos.</div>
 <h1>🎲 Missão 2: A Chance Ninja</h1>
 <p class="subtitulo">Matemática · 7º ano · Probabilidade · Joruto e Sensei Capivara</p>
+<section class="video-piloto" aria-label="Vídeo piloto de Probabilidade">
+  <h2>▶️ Missão 2 — Vídeo da Chance Ninja</h2>
+  <p>Primeiro MP4 produzido automaticamente, com cenas ilustradas e voz sintética de demonstração. Enquanto hospedamos o vídeo, você pode reproduzir aqui o arquivo baixado no ChatGPT. <strong>O arquivo permanece no seu aparelho.</strong></p>
+  <label for="arquivo-mp4">Selecionar o arquivo missao2_chance_ninja.mp4</label>
+  <input id="arquivo-mp4" type="file" accept="video/mp4,.mp4" aria-describedby="video-ajuda">
+  <label for="arquivo-legenda">Legendas opcionais (arquivo .vtt)</label>
+  <input id="arquivo-legenda" type="file" accept=".vtt,text/vtt">
+  <p id="video-ajuda">O vídeo será mostrado neste espaço após a seleção. O navegador não envia seu arquivo ao site.</p>
+  <video id="video-local" controls preload="none" playsinline aria-label="Vídeo educativo da Chance Ninja"></video>
+</section>
 <nav id="passos" class="progresso" aria-label="Etapas da missão"></nav>
 <div class="grade">
 <section class="painel" aria-label="Explicação da missão">
@@ -294,6 +313,31 @@ byId('anterior').addEventListener('click',function(){mostrar(indice-1);});
 byId('proximo').addEventListener('click',function(){if(indice===aula.etapas.length-1)iniciarQuiz();else mostrar(indice+1);});
 byId('questao-proxima').addEventListener('click',avancarQuiz);
 byId('reiniciar').addEventListener('click',iniciarQuiz);
+var videoLocal = document.getElementById('video-local');
+var videoObjectUrl = null, legendaObjectUrl = null;
+document.getElementById('arquivo-mp4').addEventListener('change',function(){
+  if(videoObjectUrl){URL.revokeObjectURL(videoObjectUrl);videoObjectUrl=null;}
+  var f=this.files && this.files[0];
+  if(!f){videoLocal.removeAttribute('src');videoLocal.load();return;}
+  if(!f.name.toLowerCase().endsWith('.mp4')){document.getElementById('video-ajuda').textContent='Selecione um arquivo MP4.';return;}
+  videoObjectUrl=URL.createObjectURL(f);videoLocal.src=videoObjectUrl;videoLocal.load();
+  document.getElementById('video-ajuda').textContent='Vídeo carregado do seu aparelho. Aperte ▶ para assistir.';
+});
+document.getElementById('arquivo-legenda').addEventListener('change',function(){
+  if(legendaObjectUrl){URL.revokeObjectURL(legendaObjectUrl);legendaObjectUrl=null;}
+  videoLocal.querySelectorAll('track').forEach(function(t){t.remove();});
+  var f=this.files && this.files[0];if(!f)return;
+  if(!f.name.toLowerCase().endsWith('.vtt'))return;
+  legendaObjectUrl=URL.createObjectURL(f);
+  var track=document.createElement('track');
+  track.kind='captions';track.label='Português brasileiro';track.srclang='pt-BR';track.src=legendaObjectUrl;
+  videoLocal.appendChild(track);
+  track.addEventListener('load',function(){track.track.mode='showing';});
+});
+window.addEventListener('pagehide',function(){
+  if(videoObjectUrl)URL.revokeObjectURL(videoObjectUrl);
+  if(legendaObjectUrl)URL.revokeObjectURL(legendaObjectUrl);
+});
 window.addEventListener('pagehide',parar);
 mostrar(0);
 })();
