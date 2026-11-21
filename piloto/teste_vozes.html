@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Escolher vozes — Joca Estuda</title>
+<style>
+:root{--bg:#faf6ee;--dark:#3e2f22;--green:#4a6b4d;--brown:#a8632b}
+*{box-sizing:border-box}
+body{margin:0;padding:20px;font:17px/1.5 Verdana,Arial,sans-serif;background:var(--bg);color:var(--dark)}
+main{max-width:850px;margin:auto}h1{margin:15px 0 8px;font-size:1.8rem}
+.info{padding:12px 16px;border-radius:12px;background:#f9e5b8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+.card{background:white;border:2px solid #8fae8c;border-radius:18px;padding:20px}
+button{border:0;background:var(--green);color:#fff;border-radius:12px;padding:12px 16px;cursor:pointer;font-weight:bold;font-size:1rem}
+button:disabled{opacity:.5}button:focus-visible{outline:4px solid #1680a8;outline-offset:3px}
+.card h2{color:var(--brown);font-size:1.3rem}audio{width:100%;margin:13px 0}
+.status{font-size:.91rem;color:#574735;min-height:3em}
+footer{font-size:.85rem;color:#5b564e}
+@media(max-width:680px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body><main><h1>🎙️ Teste de vozes neurais — Joca Estuda</h1>
+<p class="info">Amostras de voz brasileira para comparar com a narração robotizada anterior. Ainda não alteram o vídeo do Joruto.</p>
+<div class="grid">
+<section class="card">
+<h2>🥷 Joruto</h2><p>Voz de teste: FabioNeural · ritmo ligeiramente animado.</p>
+<blockquote>Sensei, se eu lançar este dado, vai sair o número seis? Eu quero descobrir como calcular a chance de acertar!</blockquote>
+<button type="button" data-audio="vozes/amostra_joruto.mp3">▶️ Ouvir Joruto</button>
+<audio controls preload="none"></audio><p class="status" role="status">Aguardando sua escolha.</p>
+</section>
+<section class="card">
+<h2>🐹 Sensei Capivara</h2><p>Voz de teste: AntonioNeural · ritmo mais pausado.</p>
+<blockquote>Ninguém pode saber o resultado antes de lançar. Num dado equilibrado, existem seis resultados possíveis. A chance de sair seis é uma em seis.</blockquote>
+<button type="button" data-audio="vozes/amostra_sensei.mp3">▶️ Ouvir Sensei</button>
+<audio controls preload="none"></audio><p class="status" role="status">Aguardando sua escolha.</p>
+</section>
+</div>
+<p><a href="probabilidade.html">Voltar para a aula de Probabilidade</a></p>
+<footer>As vozes são geradas pelo serviço oficial de síntese Azure Speech quando as credenciais forem configuradas. Os arquivos MP3 são carregados por inteiro na memória do navegador, para evitar a falha de streaming identificada no Edge.</footer>
+</main>
+<script>
+(function(){
+'use strict';
+let urls=[];
+document.querySelectorAll('[data-audio]').forEach(function(button){
+ const card=button.closest('.card'),player=card.querySelector('audio'),status=card.querySelector('.status');
+ button.addEventListener('click',async function(){
+   button.disabled=true;status.textContent='Baixando amostra para ouvir...';
+   try{
+     const response=await fetch(button.dataset.audio,{cache:'no-store'});
+     if(!response.ok)throw new Error('Arquivo ainda não publicado (HTTP '+response.status+').');
+     const bytes=await response.arrayBuffer();
+     if(bytes.byteLength<300)throw new Error('Áudio incompleto.');
+     const url=URL.createObjectURL(new Blob([bytes],{type:'audio/mpeg'}));urls.push(url);
+     player.pause();player.src=url;player.load();
+     status.textContent='Amostra carregada. Se necessário, aperte ▶ no player.';
+     player.play().catch(function(){status.textContent='Amostra carregada. Aperte ▶ no player para ouvir.';});
+   }catch(err){status.textContent='A amostra não está disponível: '+err.message;}
+   finally{button.disabled=false;}
+ });
+});
+window.addEventListener('pagehide',function(){urls.forEach(function(x){URL.revokeObjectURL(x);});});
+})();
+</script></body></html>
