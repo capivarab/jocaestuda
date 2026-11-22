@@ -688,7 +688,7 @@
 
   .opcao .letra {
     background: var(--terra-claro);
-    color: var(--branco);
+    color: var(--marrom-escuro);
     font-weight: 700;
     width: 32px;
     height: 32px;
@@ -701,10 +701,11 @@
   }
 
   .opcao.correta { background: #E3F0E1; border-color: var(--azul-acerto); }
-  .opcao.correta .letra { background: var(--azul-acerto); }
+  .opcao.correta .letra { background: var(--azul-acerto); color: #fff; }
   .opcao.errada { background: #F7E4DC; border-color: var(--vermelho-erro); }
-  .opcao.errada .letra { background: var(--vermelho-erro); }
-  .opcao:disabled { cursor: default; }
+  .opcao.errada .letra { background: var(--vermelho-erro); color: #fff; }
+  .opcao:disabled { cursor: default; opacity: 1; }
+  .opcao { color: var(--marrom-escuro); }
 
   .feedback {
     margin-top: 18px;
@@ -826,11 +827,13 @@
   .missao-quiz { margin-top:12px; padding:12px; border-radius:12px; background:var(--creme); border:2px solid #DCCFB8; }
   .missao-quiz p { font-weight:700; margin-bottom:9px; }
   .missao-quiz button { display:block; width:100%; text-align:left; background:white; padding:11px 12px; border:2px solid var(--verde-claro); border-radius:11px; margin:7px 0; font:inherit; cursor:pointer; }
-  .missao-quiz button:disabled { cursor:default; }
+  .missao-quiz button:disabled { cursor:default; opacity:1; }
+  .missao-quiz .missao-opcao { color:var(--marrom-escuro); font-weight:600; }
   .missao-quiz button.acertou { border-color:var(--azul-acerto); background:#E3F0E1; }
   .missao-quiz button.errou { border-color:var(--vermelho-erro); background:#F7E4DC; }
   .missao-feedback { font-size:.94rem; padding-top:8px; font-weight:700; }
   .missao-quiz .missao-refazer { margin-top:10px; background:var(--verde); color:white; font-weight:700; text-align:center; }
+  .cartao-missao-historia .missao-video { margin-top:14px; }
   .missao-video:focus-within,.atalho-missao:focus-visible { outline:3px solid var(--terra); outline-offset:3px; }
   @media(max-width:540px) { .atalhos-missoes{grid-template-columns:1fr;} .missoes-painel{padding:12px;} .missoes-grade{grid-template-columns:1fr;} }
 
@@ -1161,61 +1164,7 @@
 </div>
 <section aria-label="Provas Abrangentes — Matemática" class="periodo-painel ativo" data-periodo="abrangentes">
 <h2 class="periodo-titulo">📘 Provas Abrangentes · 23/11</h2>
-<section aria-label="Missões em vídeo" class="missoes-painel" id="matematica-missoes">
-<h2>🎬 Missões do Joruto — Matemática</h2>
-<p>Assista ao vídeo e responda uma pergunta. As missões atuais estão nesta aba. Use “Provas Parciais” para acessar o conteúdo anterior.</p>
-<div class="missoes-grade">
-<article class="missao-video" data-missao="matematica-1" id="mate-missao-1">
-<div class="missao-numero">MISSÃO 1 DE 5</div>
-<h3>Regra de Três e Média</h3>
-<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
-<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1bdlecvfRcByRk4aXTn-DUlxvFpdimiYp/preview" loading="lazy" title="Missão 1: Regra de Três e Média"></iframe><button aria-label="Tocar vídeo da missão 1" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
-<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1bdlecvfRcByRk4aXTn-DUlxvFpdimiYp/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
-<div class="missao-quiz" data-explicacao="Com preço unitário fixo, o dobro da quantidade custa o dobro." data-resposta="0"><p>🧠 Em uma regra de três direta, se dobramos a quantidade comprada, o preço total...</p>
-<button class="missao-opcao" data-indice="0" type="button">A. dobra</button>
-<button class="missao-opcao" data-indice="1" type="button">B. diminui pela metade</button>
-<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
-<article class="missao-video" data-missao="matematica-2" id="mate-missao-2">
-<div class="missao-numero">MISSÃO 2 DE 5</div>
-<h3>A Chance Ninja — Probabilidade</h3>
-<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
-<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1RAB1QcSBtrodgXKj19gbfqpAlBkwm-wd/preview" loading="lazy" title="Missão 2: A Chance Ninja — Probabilidade"></iframe><button aria-label="Tocar vídeo da missão 2" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
-<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1RAB1QcSBtrodgXKj19gbfqpAlBkwm-wd/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
-<div class="missao-quiz" data-explicacao="Um dado comum tem seis faces: 1, 2, 3, 4, 5 e 6." data-resposta="0"><p>🧠 Em um dado comum, quantos resultados possíveis existem?</p>
-<button class="missao-opcao" data-indice="0" type="button">A. 6</button>
-<button class="missao-opcao" data-indice="1" type="button">B. 10</button>
-<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
-<article class="missao-video" data-missao="matematica-3" id="mate-missao-3">
-<div class="missao-numero">MISSÃO 3 DE 5</div>
-<h3>O Círculo e o π</h3>
-<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
-<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1qCRaXGeRyibVQnAaW2RSAs225ayIk89Q/preview" loading="lazy" title="Missão 3: O Círculo e o π"></iframe><button aria-label="Tocar vídeo da missão 3" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
-<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1qCRaXGeRyibVQnAaW2RSAs225ayIk89Q/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
-<div class="missao-quiz" data-explicacao="O diâmetro atravessa o centro e mede duas vezes o raio." data-resposta="0"><p>🧠 O diâmetro de um círculo equivale a quantos raios?</p>
-<button class="missao-opcao" data-indice="0" type="button">A. 2 raios</button>
-<button class="missao-opcao" data-indice="1" type="button">B. 4 raios</button>
-<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
-<article class="missao-video" data-missao="matematica-4" id="mate-missao-4">
-<div class="missao-numero">MISSÃO 4 DE 5</div>
-<h3>Medidas e Áreas</h3>
-<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
-<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1scCoy5as7vzbWl-5RBxpA86FnkYsZ24s/preview" loading="lazy" title="Missão 4: Medidas e Áreas"></iframe><button aria-label="Tocar vídeo da missão 4" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
-<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1scCoy5as7vzbWl-5RBxpA86FnkYsZ24s/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
-<div class="missao-quiz" data-explicacao="Área do retângulo = base × altura = 5 × 3 = 15 cm²." data-resposta="0"><p>🧠 Qual é a área de um retângulo de 5 cm por 3 cm?</p>
-<button class="missao-opcao" data-indice="0" type="button">A. 15 cm²</button>
-<button class="missao-opcao" data-indice="1" type="button">B. 8 cm²</button>
-<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
-<article class="missao-video" data-missao="matematica-5" id="mate-missao-5">
-<div class="missao-numero">MISSÃO 5 DE 5</div>
-<h3>Figuras e Volume</h3>
-<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
-<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1kAJNT7WegePELSGsu07CbrMEaNJZP71W/preview" loading="lazy" title="Missão 5: Figuras e Volume"></iframe><button aria-label="Tocar vídeo da missão 5" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
-<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1kAJNT7WegePELSGsu07CbrMEaNJZP71W/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
-<div class="missao-quiz" data-explicacao="Multiplicamos as três dimensões da caixa." data-resposta="0"><p>🧠 O volume de uma caixa retangular é calculado por...</p>
-<button class="missao-opcao" data-indice="0" type="button">A. comprimento × largura × altura</button>
-<button class="missao-opcao" data-indice="1" type="button">B. comprimento + largura + altura</button>
-<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
-</div></section>
+<p class="periodo-ajuda" id="matematica-missoes">🎬 Cada videoaula está no tópico correspondente, logo após a explicação. Assista e pratique.</p>
 <div class="linha-tempo" id="matematica-linha-tempo">
 <button class="linha-tempo-etapa" data-destino="mat-topico-14">
 <span class="linha-tempo-bola">1</span>
@@ -1314,7 +1263,7 @@
 <span class="linha-tempo-label">Sistemas de equações</span>
 </button>
 </div>
-<div class="aviso-prova">📌 Comece pelas cinco missões em vídeo acima. Prova Abrangente de Matemática: 23/11 (2ª feira). <strong>Tópicos 1 a 11: matéria nova</strong> (Livro 3 cap. 7 e Livro 4 caps. 10, 11 e 12). Os tópicos com ⚠️ (regra de três composta e área do círculo) estão no cronograma, mas não apareceram no livro. A revisão anterior está na aba “Provas Parciais”.</div>
+<div class="aviso-prova">📌 Os cinco vídeos estão nos tópicos correspondentes, abaixo. Prova Abrangente de Matemática: 23/11 (2ª feira). <strong>Tópicos 1 a 11: matéria nova</strong> (Livro 3 cap. 7 e Livro 4 caps. 10, 11 e 12). Os tópicos com ⚠️ (regra de três composta e área do círculo) estão no cronograma, mas não apareceram no livro. A revisão anterior está na aba “Provas Parciais”.</div>
 <div class="cartao" id="mat-topico-14">
 <h2>🔢 Regra de Três: Simples e Composta</h2>
 <p>A <strong>regra de três</strong> é um processo prático para problemas de proporcionalidade: conhecemos <strong>três valores</strong> e queremos descobrir o <strong>quarto</strong> (Livro 3, p. 36 a 38).</p>
@@ -1328,7 +1277,16 @@
 <li><strong>Exemplo composto:</strong> 2 máquinas fazem 100 peças em 5 dias. Quantas peças 4 máquinas fazem em 10 dias? Mais máquinas → mais peças (direta); mais dias → mais peças (direta). 100 × (4/2) × (10/5) = 100 × 2 × 2 = <strong>400 peças</strong>.</li>
 </ul>
 <div class="destaque">💡 Pense assim: pergunte "se uma <strong>aumenta</strong>, a outra <strong>aumenta</strong> ou <strong>diminui</strong>?". Aumenta = direta (multiplica em cruz). Diminui = inversa (inverte uma razão antes).</div>
-<div class="video-pendente">🎬 Vídeo do Joruto em breve (tópicos 1 e 2)</div>
+<article class="missao-video" data-missao="matematica-1" id="mate-missao-1">
+<div class="missao-numero">MISSÃO 1 DE 5</div>
+<h3>Regra de Três e Média</h3>
+<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
+<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1bdlecvfRcByRk4aXTn-DUlxvFpdimiYp/preview" loading="lazy" title="Missão 1: Regra de Três e Média"></iframe><button aria-label="Tocar vídeo da missão 1" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
+<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1bdlecvfRcByRk4aXTn-DUlxvFpdimiYp/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
+<div class="missao-quiz" data-explicacao="Com preço unitário fixo, o dobro da quantidade custa o dobro." data-resposta="0"><p>🧠 Em uma regra de três direta, se dobramos a quantidade comprada, o preço total...</p>
+<button class="missao-opcao" data-indice="0" type="button">A. dobra</button>
+<button class="missao-opcao" data-indice="1" type="button">B. diminui pela metade</button>
+<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
 <button class="botao-praticar" data-praticar="mat-topico-14">✏️ Praticar</button>
 <div class="pratica-inline" id="pratica-mat-topico-14" style="display:none;"></div>
 </div>
@@ -1362,7 +1320,16 @@
 <li><strong>Exemplos do livro:</strong> baralho de 52 cartas, tirar um ás: 4/52 = 1/13 ≈ 0,08 = <strong>8%</strong>. Não tirar um rei: 48/52 = 12/13 ≈ <strong>92%</strong>. Dado, sair par: 3/6 = <strong>50%</strong>. Sair o 6: 1/6 ≈ <strong>16,6%</strong>. Sair primo (2, 3, 5): 3/6 = <strong>50%</strong>.</li>
 </ul>
 <div class="destaque">💡 Pense assim: probabilidade = <strong>o que eu quero ÷ tudo o que pode acontecer</strong>.</div>
-<div class="video-pendente">🎬 Vídeo do Joruto em breve (tópico 3)</div>
+<article class="missao-video" data-missao="matematica-2" id="mate-missao-2">
+<div class="missao-numero">MISSÃO 2 DE 5</div>
+<h3>A Chance Ninja — Probabilidade</h3>
+<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
+<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1RAB1QcSBtrodgXKj19gbfqpAlBkwm-wd/preview" loading="lazy" title="Missão 2: A Chance Ninja — Probabilidade"></iframe><button aria-label="Tocar vídeo da missão 2" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
+<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1RAB1QcSBtrodgXKj19gbfqpAlBkwm-wd/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
+<div class="missao-quiz" data-explicacao="Um dado comum tem seis faces: 1, 2, 3, 4, 5 e 6." data-resposta="0"><p>🧠 Em um dado comum, quantos resultados possíveis existem?</p>
+<button class="missao-opcao" data-indice="0" type="button">A. 6</button>
+<button class="missao-opcao" data-indice="1" type="button">B. 10</button>
+<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
 <button class="botao-praticar" data-praticar="mat-topico-16">✏️ Praticar</button>
 <div class="pratica-inline" id="pratica-mat-topico-16" style="display:none;"></div>
 </div>
@@ -1380,7 +1347,16 @@
 <li><strong>Construção:</strong> com o <strong>compasso</strong>, abra na medida do raio, ponha a ponta seca no centro e gire.</li>
 </ul>
 <div class="destaque">💡 Pense assim: circunferência = <strong>bambolê</strong> (só a borda). Círculo = <strong>moeda</strong> (borda + recheio). Diâmetro = 2 raios.</div>
-<div class="video-pendente">🎬 Vídeo do Joruto em breve (tópicos 4 a 6)</div>
+<article class="missao-video" data-missao="matematica-3" id="mate-missao-3">
+<div class="missao-numero">MISSÃO 3 DE 5</div>
+<h3>O Círculo e o π</h3>
+<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
+<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1qCRaXGeRyibVQnAaW2RSAs225ayIk89Q/preview" loading="lazy" title="Missão 3: O Círculo e o π"></iframe><button aria-label="Tocar vídeo da missão 3" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
+<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1qCRaXGeRyibVQnAaW2RSAs225ayIk89Q/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
+<div class="missao-quiz" data-explicacao="O diâmetro atravessa o centro e mede duas vezes o raio." data-resposta="0"><p>🧠 O diâmetro de um círculo equivale a quantos raios?</p>
+<button class="missao-opcao" data-indice="0" type="button">A. 2 raios</button>
+<button class="missao-opcao" data-indice="1" type="button">B. 4 raios</button>
+<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
 <button class="botao-praticar" data-praticar="mat-topico-17">✏️ Praticar</button>
 <div class="pratica-inline" id="pratica-mat-topico-17" style="display:none;"></div>
 </div>
@@ -1430,7 +1406,16 @@
 <li><strong>Quilo</strong> (k) significa <strong>mil vezes</strong>: 1 km = 1 000 m.</li>
 </ul>
 <div class="destaque">💡 Pense assim: comprimento pula de <strong>10</strong> em 10; área (²) de <strong>100</strong> em 100; volume (³) de <strong>1 000</strong> em 1 000. O expoente diz quantos zeros por degrau!</div>
-<div class="video-pendente">🎬 Vídeo do Joruto em breve (tópicos 7 a 9)</div>
+<article class="missao-video" data-missao="matematica-4" id="mate-missao-4">
+<div class="missao-numero">MISSÃO 4 DE 5</div>
+<h3>Medidas e Áreas</h3>
+<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
+<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1scCoy5as7vzbWl-5RBxpA86FnkYsZ24s/preview" loading="lazy" title="Missão 4: Medidas e Áreas"></iframe><button aria-label="Tocar vídeo da missão 4" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
+<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1scCoy5as7vzbWl-5RBxpA86FnkYsZ24s/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
+<div class="missao-quiz" data-explicacao="Área do retângulo = base × altura = 5 × 3 = 15 cm²." data-resposta="0"><p>🧠 Qual é a área de um retângulo de 5 cm por 3 cm?</p>
+<button class="missao-opcao" data-indice="0" type="button">A. 15 cm²</button>
+<button class="missao-opcao" data-indice="1" type="button">B. 8 cm²</button>
+<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
 <button class="botao-praticar" data-praticar="mat-topico-20">✏️ Praticar</button>
 <div class="pratica-inline" id="pratica-mat-topico-20" style="display:none;"></div>
 </div>
@@ -1478,7 +1463,16 @@
 <li><strong>Áreas equivalentes:</strong> figuras diferentes podem ter a <strong>mesma área</strong>.</li>
 </ul>
 <div class="destaque">💡 Pense assim: <strong>decompor = cortar e somar</strong>. <strong>Compor = completar e subtrair</strong>.</div>
-<div class="video-pendente">🎬 Vídeo do Joruto em breve (tópicos 10 e 11)</div>
+<article class="missao-video" data-missao="matematica-5" id="mate-missao-5">
+<div class="missao-numero">MISSÃO 5 DE 5</div>
+<h3>Figuras e Volume</h3>
+<p class="missao-instrucao">1️⃣ Assista ao vídeo. 2️⃣ Responda ao desafio.</p>
+<div class="video-wrapper"><iframe allowfullscreen="" data-src="https://drive.google.com/file/d/1kAJNT7WegePELSGsu07CbrMEaNJZP71W/preview" loading="lazy" title="Missão 5: Figuras e Volume"></iframe><button aria-label="Tocar vídeo da missão 5" class="video-carregar" type="button">▶️ Tocar vídeo</button></div>
+<div class="missao-botoes"><a class="video-assistir" href="https://drive.google.com/file/d/1kAJNT7WegePELSGsu07CbrMEaNJZP71W/view" rel="noopener noreferrer" target="_blank">↗ Abrir vídeo</a></div>
+<div class="missao-quiz" data-explicacao="Multiplicamos as três dimensões da caixa." data-resposta="0"><p>🧠 O volume de uma caixa retangular é calculado por...</p>
+<button class="missao-opcao" data-indice="0" type="button">A. comprimento × largura × altura</button>
+<button class="missao-opcao" data-indice="1" type="button">B. comprimento + largura + altura</button>
+<div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
 <button class="botao-praticar" data-praticar="mat-topico-23">✏️ Praticar</button>
 <div class="pratica-inline" id="pratica-mat-topico-23" style="display:none;"></div>
 </div>
@@ -3226,10 +3220,15 @@
 </div>
 <section aria-label="Provas Abrangentes — História" class="periodo-painel ativo" data-periodo="abrangentes">
 <h2 class="periodo-titulo">📘 Provas Abrangentes · 25/11</h2>
-<section aria-label="Missões em vídeo" class="missoes-painel" id="historia-missoes">
-<h2>🎬 Missões do Joruto — História</h2>
-<p>Assista ao vídeo e responda uma pergunta. As missões atuais estão nesta aba. Use “Provas Parciais” para acessar o conteúdo anterior.</p>
-<div class="missoes-grade">
+<p class="periodo-ajuda" id="historia-missoes">🎬 Escolha o assunto. Cada vídeo e seu desafio ficam juntos no tópico correspondente.</p>
+<div class="linha-tempo" id="historia-abrangentes-linha-tempo">
+<button class="linha-tempo-etapa" data-destino="hist-missao-1" type="button"><span class="linha-tempo-bola">1</span><span class="linha-tempo-label">Invasões e União Ibérica</span></button>
+<button class="linha-tempo-etapa" data-destino="hist-missao-2" type="button"><span class="linha-tempo-bola">2</span><span class="linha-tempo-label">Guerra pelo Açúcar</span></button>
+<button class="linha-tempo-etapa" data-destino="hist-missao-3" type="button"><span class="linha-tempo-bola">3</span><span class="linha-tempo-label">Expansão colonial</span></button>
+<button class="linha-tempo-etapa" data-destino="hist-missao-4" type="button"><span class="linha-tempo-bola">4</span><span class="linha-tempo-label">Ouro e Minas</span></button>
+<button class="linha-tempo-etapa" data-destino="hist-missao-5" type="button"><span class="linha-tempo-bola">5</span><span class="linha-tempo-label">Desafio final</span></button>
+</div>
+<section class="cartao cartao-missao-historia"><h2>🌎 Invasões Francesas e União Ibérica</h2><p>França Antártica, França Equinocial e o período da União Ibérica.</p>
 <article class="missao-video" data-missao="historia-1" id="hist-missao-1">
 <div class="missao-numero">MISSÃO 1 DE 5</div>
 <h3>Os Invasores do Brasil</h3>
@@ -3240,6 +3239,8 @@
 <button class="missao-opcao" data-indice="0" type="button">A. No Rio de Janeiro</button>
 <button class="missao-opcao" data-indice="1" type="button">B. Em Minas Gerais</button>
 <div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
+</section>
+<section class="cartao cartao-missao-historia"><h2>⛵ Holandeses e a Guerra pelo Açúcar</h2><p>Invasões holandesas, Maurício de Nassau e a Insurreição Pernambucana.</p>
 <article class="missao-video" data-missao="historia-2" id="hist-missao-2">
 <div class="missao-numero">MISSÃO 2 DE 5</div>
 <h3>A Guerra pelo Açúcar</h3>
@@ -3250,6 +3251,8 @@
 <button class="missao-opcao" data-indice="0" type="button">A. Açúcar</button>
 <button class="missao-opcao" data-indice="1" type="button">B. Café</button>
 <div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
+</section>
+<section class="cartao cartao-missao-historia"><h2>🧭 A Expansão do Brasil Colonial</h2><p>Missões jesuíticas, criação de gado, bandeirantes e impactos sobre os povos indígenas.</p>
 <article class="missao-video" data-missao="historia-3" id="hist-missao-3">
 <div class="missao-numero">MISSÃO 3 DE 5</div>
 <h3>A Expansão Colonial</h3>
@@ -3260,6 +3263,8 @@
 <button class="missao-opcao" data-indice="0" type="button">A. Pecuária</button>
 <button class="missao-opcao" data-indice="1" type="button">B. Fabricação de automóveis</button>
 <div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
+</section>
+<section class="cartao cartao-missao-historia"><h2>⛏️ A Corrida do Ouro e a Vida nas Minas</h2><p>Ouro, tropeiros, impostos, Revolta de Vila Rica, diamantes e sociedade mineradora.</p>
 <article class="missao-video" data-missao="historia-4" id="hist-missao-4">
 <div class="missao-numero">MISSÃO 4 DE 5</div>
 <h3>A Corrida do Ouro</h3>
@@ -3270,6 +3275,8 @@
 <button class="missao-opcao" data-indice="0" type="button">A. Imposto de 20% do ouro</button>
 <button class="missao-opcao" data-indice="1" type="button">B. Metade de todo o ouro</button>
 <div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
+</section>
+<section class="cartao cartao-missao-historia"><h2>🧠 O Grande Desafio Final</h2><p>Revisão dos quatro temas anteriores com perguntas para praticar.</p>
 <article class="missao-video" data-missao="historia-5" id="hist-missao-5">
 <div class="missao-numero">MISSÃO 5 DE 5</div>
 <h3>O Desafio Final</h3>
@@ -3280,7 +3287,7 @@
 <button class="missao-opcao" data-indice="0" type="button">A. Transporte de mercadorias por tropeiros</button>
 <button class="missao-opcao" data-indice="1" type="button">B. Produção de aviões</button>
 <div aria-live="polite" class="missao-feedback"></div></div><div class="missao-selo" hidden="">✅ Desafio concluído!</div></article>
-</div></section>
+</section>
 </section>
 <section aria-label="Provas Parciais — História" class="periodo-painel" data-periodo="parciais">
 <h2 class="periodo-titulo">📗 Provas Parciais · revisão anterior</h2>
@@ -5574,7 +5581,7 @@ document.querySelectorAll('[data-abrir-missao]').forEach(function(botao) {
   botao.addEventListener('click', function() {
     const materia = botao.dataset.abrirMissao;
     irParaPagina(materia);
-    irParaTopico(materia === 'matematica' ? 'mate-missao-1' : 'hist-missao-1');
+    irParaTopico(materia === 'matematica' ? 'mat-topico-14' : 'hist-missao-1');
   });
 });
 document.querySelectorAll('.missao-quiz').forEach(function(quiz) {
